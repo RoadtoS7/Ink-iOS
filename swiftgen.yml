@@ -1,0 +1,18 @@
+xcassets:
+  inputs: 
+    - Mureng/Colors.xcassets
+  outputs: 
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+        enumName: Colors
+      output: Mureng/Colors+Generated.swift
+  
+  inputs: 
+   - Mureng/Images.xcassets
+  outputs:
+   - templateName: swift5
+     params:      
+        forceProvidesNamespaces: true
+        enumName: Images
+     output: Mureng/Images+Generated.swift	

@@ -18,6 +18,8 @@
 		2E4E557728576D0F001B5554 /* MurengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E557628576D0F001B5554 /* MurengUITests.swift */; };
 		2E4E557928576D0F001B5554 /* MurengUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */; };
 		2E4E558828577444001B5554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E558728577444001B5554 /* Images.xcassets */; };
+		2E4E558D285776F5001B5554 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E558C285776F5001B5554 /* SplashViewController.swift */; };
+		2E4E558F285779C9001B5554 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E558E285779C9001B5554 /* Images+Generated.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		2E4E557628576D0F001B5554 /* MurengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengUITests.swift; sourceTree = "<group>"; };
 		2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E4E558728577444001B5554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E4E558C285776F5001B5554 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2E4E558E285779C9001B5554 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mureng_MurengUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52455F99AEA6CCB4184EBD1B /* Pods_Mureng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mureng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB35D238D9991724C34759D /* Pods_MurengTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurengTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +122,8 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				2E4E558E285779C9001B5554 /* Images+Generated.swift */,
+				2E4E558B285776E8001B5554 /* Splash */,
 				2E4E555528576D0D001B5554 /* AppDelegate.swift */,
 				2E4E555728576D0D001B5554 /* SceneDelegate.swift */,
 				2E4E555928576D0D001B5554 /* ViewController.swift */,
@@ -145,6 +151,14 @@
 				2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */,
 			);
 			path = MurengUITests;
+			sourceTree = "<group>";
+		};
+		2E4E558B285776E8001B5554 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				2E4E558C285776F5001B5554 /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		C231FADECF0DFB6CB87A037D /* Frameworks */ = {
@@ -413,6 +427,8 @@
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
 				2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */,
+				2E4E558F285779C9001B5554 /* Images+Generated.swift in Sources */,
+				2E4E558D285776F5001B5554 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

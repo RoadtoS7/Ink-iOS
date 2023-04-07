@@ -28,6 +28,8 @@ class EntryViewController: UIViewController {
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
             loginButton.widthAnchor.constraint(equalTo: loginButton.heightAnchor, multiplier: 343 / 48),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
+            // TODO: 하단 간격 조절
+            loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 16)
         ])
     }
 }

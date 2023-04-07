@@ -128,7 +128,7 @@
 				2E4E5595285782D4001B5554 /* Images.xcassets */,
 				2E4E559028577A90001B5554 /* Extension */,
 				2E4E558E285779C9001B5554 /* Images+Generated.swift */,
-				2E4E558B285776E8001B5554 /* Splash */,
+				2E4E558B285776E8001B5554 /* Entry */,
 				2E4E555528576D0D001B5554 /* AppDelegate.swift */,
 				2E4E555728576D0D001B5554 /* SceneDelegate.swift */,
 				2E4E555928576D0D001B5554 /* ViewController.swift */,
@@ -157,12 +157,12 @@
 			path = MurengUITests;
 			sourceTree = "<group>";
 		};
-		2E4E558B285776E8001B5554 /* Splash */ = {
+		2E4E558B285776E8001B5554 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
 				2E4E558C285776F5001B5554 /* EntryViewController.swift */,
 			);
-			path = Splash;
+			path = Entry;
 			sourceTree = "<group>";
 		};
 		2E4E559028577A90001B5554 /* Extension */ = {

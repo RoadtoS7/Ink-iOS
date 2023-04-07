@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "frame_103.png",
+      "filename" : "appicon.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "frame_103-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "frame_103-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

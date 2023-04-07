@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EntryScreenViewController: UIViewController {
+class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let murengIcon: UIImageView = .init(image: Images.inkIcon.image)

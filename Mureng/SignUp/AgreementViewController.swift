@@ -22,17 +22,28 @@ class CheckBoxView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initViews()
+        checkButton.addTarget(self, action: #selector(toggleSelected), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         initViews()
+        checkButton.addTarget(self, action: #selector(toggleSelected), for: .touchUpInside)
+    }
+    
+    @objc private func toggleSelected() {
+        checkButton.isSelected.toggle()
     }
     
     private func initViews() {
         let stackView: UIStackView = .init()
         stackView.axis = .horizontal
         stackView.alignment = .fill
+        stackView.distribution = .fill
+        addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
         
         stackView.addArrangedSubview(checkButton)
         checkButton.setImage(Images.checkboxOn24.image, for: .selected)
@@ -44,6 +55,9 @@ class CheckBoxView: UIView {
         
         let label: UILabel = .init()
         stackView.addArrangedSubview(label)
+        label.snp.makeConstraints { make in
+            make.height.equalTo(24)
+        }
     }
 }
 
@@ -98,6 +112,8 @@ class AgreementViewController: UIViewController {
         
         let stackView: UIStackView = .init()
         stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
         stackView.layoutMargins = .init(top: 24, left: 0, bottom: 0, right: 0)
         view.addSubview(stackView)
         stackView.snp.makeConstraints { make in
@@ -106,7 +122,12 @@ class AgreementViewController: UIViewController {
         }
         
         let agreeAllCheckBox: CheckBoxView = .init(title: Constant.allAgreeText)
-        stackView.addArrangedSubview(agreeAllCheckBox)
-        stackView.setCustomSpacing(24, after: agreeAllCheckBox)
+//        stackView.addArrangedSubview(agreeAllCheckBox)
+//        stackView.setCustomSpacing(24, after: agreeAllCheckBox)
+        
+        view.addSubview(agreeAllCheckBox)
+        agreeAllCheckBox.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
     }
 }

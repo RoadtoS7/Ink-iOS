@@ -9,14 +9,13 @@ import UIKit
 import SnapKit
 
 class CheckBoxView: UIView {
-    private let checkButton: UIButton = {
-        return $0
-    }(UIButton())
-    private let label: UILabel = .init()
+    private let checkButton: UIButton!
+    private var label: UILabel!
     
     convenience init(title: String) {
         self.init(frame: .zero)
         label.text = title
+        layoutIfNeeded()
     }
     
     override init(frame: CGRect) {
@@ -45,6 +44,7 @@ class CheckBoxView: UIView {
             make.leading.trailing.top.bottom.equalToSuperview()
         }
         
+        let checkButton: UIButton = .init()
         stackView.addArrangedSubview(checkButton)
         checkButton.setImage(Images.checkboxOn24.image, for: .selected)
         checkButton.setImage(Images.checkboxOff24.image, for: .normal)
@@ -52,12 +52,11 @@ class CheckBoxView: UIView {
         checkButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        self.checkButton = checkButton
         
         let label: UILabel = .init()
         stackView.addArrangedSubview(label)
-        label.snp.makeConstraints { make in
-            make.height.equalTo(24)
-        }
+        self.label = label
     }
 }
 

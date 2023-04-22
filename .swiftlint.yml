@@ -1,0 +1,16 @@
+excluded: # 린트에서 무시할 파일 경로. `included`보다 우선순위 높음
+  - Pods
+
+disabled_rules:
+  - trailing_whitespace
+  - trailing_comma
+
+line_length:
+  warning: 200
+  ignores_comments: true
+
+type_name:
+  allowed_symbols: "_"
+
+identifier_name:
+  allowed_symbols: "_"

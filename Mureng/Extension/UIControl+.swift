@@ -8,9 +8,9 @@
 import UIKit
 
 extension UIControl {
-    func addAction(for event: Event, _ handler: (UIAction) -> Void) {
-        addAction(.init(handler: { action in
-            handler(action)
-        }), for:   event)
+    func addTouchAction(_ handler: @escaping (Self) -> Void) {
+        addAction(.init(handler: { _ in
+            handler(self as! Self)
+        }), for: .touchUpInside)
     }
 }

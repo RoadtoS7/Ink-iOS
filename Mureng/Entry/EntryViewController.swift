@@ -33,7 +33,8 @@ extension EntryViewController {
             murengIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             murengIcon.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        // MARK
+        
+        // MARK: LoginButton
         let loginButton: UIButton = .init()
         loginButton.setImage(Images.kakaoLoginButton.image, for: .normal)
         loginButton.translatesAutoresizingMaskIntoConstraints = false

@@ -33,19 +33,17 @@ extension EntryViewController {
             murengIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             murengIcon.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        
+        // MARK
         let loginButton: UIButton = .init()
         loginButton.setImage(Images.kakaoLoginButton.image, for: .normal)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(loginButton)
-        NSLayoutConstraint.activate([
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
-            loginButton.widthAnchor.constraint(equalTo: loginButton.heightAnchor, multiplier: 343 / 48),
-            loginButton.heightAnchor.constraint(equalToConstant: 48),
-            // TODO: 하단 간격 조절
-            loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 16)
-        ])
+        loginButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.width.equalTo(loginButton.snp.height).multipliedBy(343 / 48)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+        }
         self.loginButton = loginButton
     }
 }

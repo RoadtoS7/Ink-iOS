@@ -53,8 +53,10 @@ class CheckBoxView: UIView {
         self.checkButton = checkButton
         
         let label: UILabel = .init()
-        self.label = label
+        label.font = FontFamily.AppleSDGothicNeo.regular.font(size: 14)
         stackView.addArrangedSubview(label)
+        self.label = label
+        
     }
 }
 
@@ -129,6 +131,8 @@ class AgreementViewController: UIViewController {
         // MARK: - titleLable
         let titleLabel: UILabel = .init()
         titleLabel.text = Constant.title
+        titleLabel.font = FontFamily.LeeSeoyun.regular.font(size: 30)
+        titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         titleLabel.setContentHuggingPriority(.required, for: .horizontal)
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
@@ -151,7 +155,7 @@ class AgreementViewController: UIViewController {
         stackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(titleLabel).offset(60)
+            make.top.equalTo(titleLabel.snp.bottom).offset(60)
         }
         
         // MARK: - agreeAllCheckBox

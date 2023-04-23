@@ -19,12 +19,13 @@
 		2E4E557928576D0F001B5554 /* MurengUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */; };
 		2E4E558828577444001B5554 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E558728577444001B5554 /* Colors.xcassets */; };
 		2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E558C285776F5001B5554 /* EntryViewController.swift */; };
-		2E4E558F285779C9001B5554 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E558E285779C9001B5554 /* Images+Generated.swift */; };
 		2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E559128577AAC001B5554 /* UIView+Extension.swift */; };
 		2E4E5596285782D5001B5554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E5595285782D4001B5554 /* Images.xcassets */; };
 		2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
+		F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821A29F53042000E7A92 /* Images+Generated.swift */; };
+		F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
 		F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57829F3D15900338483 /* UIControl+.swift */; };
 		F4B9B57C29F3D4A400338483 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBox.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +66,6 @@
 		2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E4E558728577444001B5554 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2E4E558C285776F5001B5554 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
-		2E4E558E285779C9001B5554 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		2E4E559128577AAC001B5554 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2E4E5595285782D4001B5554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 		6C3EE829AACDD9F06D6F1AA4 /* Pods-Mureng-MurengUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.release.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A867191D321A92C26C8B0035 /* Pods-Mureng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.debug.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4B6821A29F53042000E7A92 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
+		F4B6821C29F53084000E7A92 /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		F4B9B57829F3D15900338483 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		F4B9B57B29F3D4A400338483 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,19 +134,15 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				F4B6821729F52F1C000E7A92 /* Source */,
 				F4B9B57A29F3D49000338483 /* CommonUI */,
 				2E6A9C7D29E0D6B900F8E2A4 /* SignUp */,
-				2E4E5595285782D4001B5554 /* Images.xcassets */,
 				2E4E559028577A90001B5554 /* Extension */,
-				2E4E558E285779C9001B5554 /* Images+Generated.swift */,
 				2E4E558B285776E8001B5554 /* Entry */,
 				2E4E555528576D0D001B5554 /* AppDelegate.swift */,
 				2E4E555728576D0D001B5554 /* SceneDelegate.swift */,
 				2E4E555928576D0D001B5554 /* ViewController.swift */,
-				2E4E555B28576D0D001B5554 /* Main.storyboard */,
-				2E4E556028576D0F001B5554 /* LaunchScreen.storyboard */,
 				2E4E556328576D0F001B5554 /* Info.plist */,
-				2E4E558728577444001B5554 /* Colors.xcassets */,
 				2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */,
 			);
 			path = Mureng;
@@ -213,6 +211,19 @@
 				16B634772C77526B813CE5EB /* Pods-MurengTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F4B6821729F52F1C000E7A92 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F4B6821C29F53084000E7A92 /* Colors+Generated.swift */,
+				F4B6821A29F53042000E7A92 /* Images+Generated.swift */,
+				2E4E558728577444001B5554 /* Colors.xcassets */,
+				2E4E5595285782D4001B5554 /* Images.xcassets */,
+				2E4E555B28576D0D001B5554 /* Main.storyboard */,
+				2E4E556028576D0F001B5554 /* LaunchScreen.storyboard */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		F4B9B57A29F3D49000338483 /* CommonUI */ = {
@@ -502,11 +513,12 @@
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
+				F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
 				F4B9B57C29F3D4A400338483 /* CheckBox.swift in Sources */,
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,
+				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
 				2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */,
-				2E4E558F285779C9001B5554 /* Images+Generated.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,
 			);

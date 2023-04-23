@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class CheckBoxView: UIView {
-    private let checkButton: UIButton!
+    private var checkButton: CheckButton!
     private var label: UILabel!
     
     convenience init(title: String) {
@@ -21,17 +21,13 @@ class CheckBoxView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initViews()
-        checkButton.addTarget(self, action: #selector(toggleSelected), for: .touchUpInside)
+        checkButton.addTouchAction { checkButton in
+            checkButton.isSelected.toggle()
+        }
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initViews()
-        checkButton.addTarget(self, action: #selector(toggleSelected), for: .touchUpInside)
-    }
-    
-    @objc private func toggleSelected() {
-        checkButton.isSelected.toggle()
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func initViews() {
@@ -44,11 +40,10 @@ class CheckBoxView: UIView {
             make.leading.trailing.top.bottom.equalToSuperview()
         }
         
-        let checkButton: UIButton = .init()
+        let checkButton: CheckButton = .init()
         stackView.addArrangedSubview(checkButton)
-        checkButton.setImage(Images.checkboxOn24.image, for: .selected)
-        checkButton.setImage(Images.checkboxOff24.image, for: .normal)
         checkButton.setContentHuggingPriority(.required, for: .horizontal)
+        checkButton.setContentHuggingPriority(.required, for: .vertical)
         checkButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
@@ -101,6 +96,7 @@ class AgreementViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        // MARK: - titleLable
         let titleLabel: UILabel = .init()
         titleLabel.text = Constant.title
         view.addSubview(titleLabel)
@@ -108,7 +104,7 @@ class AgreementViewController: UIViewController {
             make.leading.trailing.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(88)
         }
-        
+       
         let stackView: UIStackView = .init()
         stackView.axis = .vertical
         stackView.distribution = .fill
@@ -126,7 +122,20 @@ class AgreementViewController: UIViewController {
         
         view.addSubview(agreeAllCheckBox)
         agreeAllCheckBox.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.height.equalTo(24)
         }
+        stackView.addArrangedSubview(agreeAllCheckBox)
+        stackView.setCustomSpacing(24, after: agreeAllCheckBox)
+        
+        let backgroundOfStackView: UIStackView = .init()
+        backgroundOfStackView.layer.cornerRadius = 10
+        backgroundOfStackView.clipsToBounds = true
+        view.addSubview(backgroundOfStackView)
+        backgroundOfStackView.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalTo(stackView)
+        }
+        
+        
+//        backgroundOfStackView.layer.borderColor = Colors.lightestBg3.color
     }
 }

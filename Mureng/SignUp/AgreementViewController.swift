@@ -103,6 +103,7 @@ class ArrowCheckBoxView: UIView {
         self.checkButton = checkButton
         
         let label: UILabel = .init()
+        label.font = FontFamily.AppleSDGothicNeo.regular.font(size: 14)
         stackView.addArrangedSubview(label)
         self.label = label
         

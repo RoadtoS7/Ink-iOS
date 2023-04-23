@@ -18,11 +18,35 @@ internal typealias Font = FontConvertible.Font
 
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum FontFamily {
+  internal enum AppleSDGothicNeoI {
+    internal static let bold = FontConvertible(name: ".AppleSDGothicNeoI-Bold", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let extraBold = FontConvertible(name: ".AppleSDGothicNeoI-ExtraBold", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let heavy = FontConvertible(name: ".AppleSDGothicNeoI-Heavy", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let light = FontConvertible(name: ".AppleSDGothicNeoI-Light", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let medium = FontConvertible(name: ".AppleSDGothicNeoI-Medium", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let regular = FontConvertible(name: ".AppleSDGothicNeoI-Regular", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let semiBold = FontConvertible(name: ".AppleSDGothicNeoI-SemiBold", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let thin = FontConvertible(name: ".AppleSDGothicNeoI-Thin", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let ultraLight = FontConvertible(name: ".AppleSDGothicNeoI-UltraLight", family: ".Apple SD Gothic NeoI", path: "AppleSDGothicNeo.ttc")
+    internal static let all: [FontConvertible] = [bold, extraBold, heavy, light, medium, regular, semiBold, thin, ultraLight]
+  }
+  internal enum AppleSDGothicNeo {
+    internal static let bold = FontConvertible(name: "AppleSDGothicNeo-Bold", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let extraBold = FontConvertible(name: "AppleSDGothicNeo-ExtraBold", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let heavy = FontConvertible(name: "AppleSDGothicNeo-Heavy", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let light = FontConvertible(name: "AppleSDGothicNeo-Light", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let medium = FontConvertible(name: "AppleSDGothicNeo-Medium", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let regular = FontConvertible(name: "AppleSDGothicNeo-Regular", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let semiBold = FontConvertible(name: "AppleSDGothicNeo-SemiBold", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let thin = FontConvertible(name: "AppleSDGothicNeo-Thin", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let ultraLight = FontConvertible(name: "AppleSDGothicNeo-UltraLight", family: "Apple SD Gothic Neo", path: "AppleSDGothicNeo.ttc")
+    internal static let all: [FontConvertible] = [bold, extraBold, heavy, light, medium, regular, semiBold, thin, ultraLight]
+  }
   internal enum LeeSeoyun {
     internal static let regular = FontConvertible(name: "LeeSeoyun", family: "LeeSeoyun", path: "LeeSeoyun.otf")
     internal static let all: [FontConvertible] = [regular]
   }
-  internal static let allCustomFonts: [FontConvertible] = [LeeSeoyun.all].flatMap { $0 }
+  internal static let allCustomFonts: [FontConvertible] = [AppleSDGothicNeoI.all, AppleSDGothicNeo.all, LeeSeoyun.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

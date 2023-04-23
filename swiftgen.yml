@@ -19,3 +19,8 @@ xcassets:
           enumName: Images
         output: Mureng/Source/Images+Generated.swift
 
+fonts:
+  inputs: Mureng/Source
+  outputs:
+    templateName: swift5
+    output: Mureng/Source/Fonts.swift

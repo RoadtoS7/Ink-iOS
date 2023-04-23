@@ -28,6 +28,8 @@
 		F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
 		F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57829F3D15900338483 /* UIControl+.swift */; };
 		F4B9B57C29F3D4A400338483 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBox.swift */; };
+		F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */; };
+		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		F4B6821C29F53084000E7A92 /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		F4B9B57829F3D15900338483 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		F4B9B57B29F3D4A400338483 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeeSeoyun.otf; sourceTree = "<group>"; };
+		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 		F4B6821729F52F1C000E7A92 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F4BB300B29F5668200F1E9F5 /* Fonts.swift */,
+				F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */,
 				F4B6821C29F53084000E7A92 /* Colors+Generated.swift */,
 				F4B6821A29F53042000E7A92 /* Images+Generated.swift */,
 				2E4E558728577444001B5554 /* Colors.xcassets */,
@@ -347,6 +353,7 @@
 			files = (
 				2E4E556228576D0F001B5554 /* LaunchScreen.storyboard in Resources */,
 				2E4E5596285782D5001B5554 /* Images.xcassets in Resources */,
+				F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */,
 				2E4E558828577444001B5554 /* Colors.xcassets in Resources */,
 				2E4E555D28576D0D001B5554 /* Main.storyboard in Resources */,
 			);
@@ -514,6 +521,7 @@
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
 				F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */,
+				F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
 				F4B9B57C29F3D4A400338483 /* CheckBox.swift in Sources */,
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,

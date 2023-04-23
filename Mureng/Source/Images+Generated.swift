@@ -24,6 +24,7 @@ internal enum Images {
   internal static let checkboxOff24 = ImageAsset(name: "checkbox-off-24")
   internal static let checkboxOn24 = ImageAsset(name: "checkbox-on-24")
   internal static let chevronMore24 = ImageAsset(name: "chevron-more-24")
+  internal static let iconsChevronMore24 = ImageAsset(name: "iconsChevronMore24")
   internal static let imgSplashLogo = ImageAsset(name: "img_splash_logo")
   internal static let kakaoLoginButton = ImageAsset(name: "kakaoLoginButton")
 }

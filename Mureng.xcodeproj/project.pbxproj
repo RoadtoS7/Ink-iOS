@@ -30,6 +30,7 @@
 		F4B9B57C29F3D4A400338483 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBox.swift */; };
 		F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
+		F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		F4B9B57B29F3D4A400338483 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeeSeoyun.otf; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B9B57B29F3D4A400338483 /* CheckBox.swift */,
+				F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				F4B9B57C29F3D4A400338483 /* CheckBox.swift in Sources */,
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
+				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
 				2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,

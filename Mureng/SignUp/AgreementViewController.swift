@@ -75,6 +75,12 @@ class AgreementViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViews()
+    }
+}
+
+extension AgreementViewController {
+    private func initViews() {
         view.backgroundColor = .white
         
         // MARK: - titleLable

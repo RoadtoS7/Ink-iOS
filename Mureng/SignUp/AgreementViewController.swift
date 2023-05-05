@@ -7,14 +7,107 @@
 
 import UIKit
 import SnapKit
+import Combine
+import ComposableArchitecture
+
+struct Agreement: ReducerProtocol {
+    struct State: Equatable, Identifiable {
+        let id = UUID()
+        var text: String
+        var agreed: Bool = false
+    }
+    
+    enum Action: Equatable {
+        case agree
+        case disagree
+    }
+    
+    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+      switch action {
+      case .agree:
+          state.agreed = true
+          return .none
+      case .disagree:
+          state.agreed = false
+          return .none
+      }
+    }
+}
+
+struct AgreementList: ReducerProtocol {
+    struct State: Equatable {
+        var agreements: IdentifiedArrayOf<Agreement.State> = []
+    }
+    
+    enum Action: Equatable {
+        case agreement(id: Agreement.State.ID, action: Agreement.Action)
+    }
+    
+    var body: some ReducerProtocol<State, Action> {
+        EmptyReducer()
+            .forEach(\.agreements, action: /Action.agreement) {
+                Agreement()
+            }
+    }
+}
+
+struct AgreementChecker: ReducerProtocol {
+    struct State: Equatable, Identifiable {
+        let id = UUID()
+        var agreedService: Bool
+        var agreedPrivacy: Bool
+        var agreedAll: Bool
+        var nextButtonActive: Bool {
+            agreedAll
+        }
+    }
+    
+    enum Action: Equatable {
+        case agreeAllButtonTapped
+        case agreeServiceButtonTapped
+        case agreePrivacyButtonTapped
+    }
+    
+    var body: some ReducerProtocol<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .agreeAllButtonTapped:
+                state.agreedAll.toggle()
+                state.agreedService = state.agreedAll
+                state.agreedPrivacy = state.agreedAll
+                return .none
+            case .agreeServiceButtonTapped:
+                state.agreedService.toggle()
+                state.agreedAll = state.agreedService && state.agreedService
+                return .none
+            case .agreePrivacyButtonTapped:
+                state.agreedPrivacy.toggle()
+                state.agreedAll = state.agreedService && state.agreedService
+                return .none
+            }
+        }
+    }
+}
 
 class AgreementViewController: UIViewController {
+    let store: StoreOf<AgreementList>
+    let viewStore: ViewStoreOf<AgreementList>
+    var cancellables: Set<AnyCancellable> = []
+    
+    init(store: StoreOf<AgreementList>) {
+        self.store = store
+        self.viewStore = ViewStore(store)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private enum Constant {
         static let next = "다음"
         static let title = "먼저 이용약관을 읽고\n동의해주세요."
         static let allAgreeText = "모든 약관을 읽었으며, 이에 동의해요."
-        static let agreeServiceText = "[필수] 서비스 이용약관 동의"
-        static let agreePrivacyText = "[필수] 서비스 이용약관 동의"
     }
     
     private let nextButton: ButtonSolid48 = .init(text: Constant.next)
@@ -79,25 +172,23 @@ extension AgreementViewController {
         }
         
         stackView.setCustomSpacing(24, after: line)
-
-        // MARK: - Agree Service
-        let agreeServiceView: ArrowCheckBoxView = .init(title: Constant.agreeServiceText)
-        stackView.addArrangedSubview(agreeServiceView)
-        agreeServiceView.snp.makeConstraints { make in
-            make.height.equalTo(24)
-            make.width.equalToSuperview().offset(-32)
-        }
-
-        stackView.setCustomSpacing(16, after: agreeServiceView)
         
-        // MARK: - Agree Privacy
-        let agreePrivacy: ArrowCheckBoxView = .init(title: Constant.agreePrivacyText)
-        stackView.addArrangedSubview(agreePrivacy)
-        agreePrivacy.snp.makeConstraints { make in
-            make.height.equalTo(24)
-            make.width.equalToSuperview().offset(-32)
-        }
-        
+        viewStore.publisher.agreements
+            .sink { states in
+                states.forEach { state in
+                    let agreementView = ArrowCheckBoxView(title: state.text)
+                    stackView.addArrangedSubview(agreementView)
+                    agreementView.snp.makeConstraints { make in
+                        make.height.equalTo(24)
+                        make.width.equalToSuperview().offset(-32)
+                    }
+                    
+                    if state != states.last {
+                        stackView.setCustomSpacing(16, after: agreementView)
+                    }
+                }
+            }.store(in: &self.cancellables)
+
         // MARK: - 다음 버튼
         view.addSubview(nextButton)
         nextButton.isEnabled = false

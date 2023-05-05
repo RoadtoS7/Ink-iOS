@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ComposableArchitecture
 
 class EntryViewController: UIViewController {
     private var loginButton: UIButton!
@@ -17,7 +18,18 @@ class EntryViewController: UIViewController {
     }
             
     @objc func navigateToLoginProcess() {
-        let agreementViewController = AgreementViewController()
+        let agreementViewController = AgreementViewController(
+          store: Store(
+            initialState: AgreementList.State(
+              agreements: [
+                Agreement.State(text: "[필수] 서비스 이용약관 동의"),
+                Agreement.State(text: "[필수] 개인정보 수집/이용 동의"),
+              ]
+            ),
+            reducer: AgreementList()
+          )
+        )
+     
         self.navigationController?.pushViewController(agreementViewController, animated: true)
         self.dismiss(animated: false)
     }

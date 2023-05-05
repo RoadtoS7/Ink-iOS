@@ -8,6 +8,20 @@
 import UIKit
 import SnapKit
 
+final class TapGestureRecognizerUsingClosure: UITapGestureRecognizer {
+    private var action: () -> Void
+
+    init(action: @escaping () -> Void) {
+        self.action = action
+        super.init(target: nil, action: nil)
+        self.addTarget(self, action: #selector(execute))
+    }
+
+    @objc private func execute() {
+        action()
+    }
+}
+
 class CheckBoxView: UIView {
     private var checkButton: CheckButton!
     private var label: UILabel!
@@ -36,6 +50,10 @@ class CheckBoxView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
+        let tapRecognizer = TapGestureRecognizerUsingClosure { [unowned self] in 
+            self.checkButton.isSelected.toggle()
+        }
+        stackView.addGestureRecognizer(tapRecognizer)
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
@@ -47,6 +65,7 @@ class CheckBoxView: UIView {
         checkButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
+        checkButton.isUserInteractionEnabled = false
         stackView.addArrangedSubview(checkButton)
         
         self.checkButton = checkButton

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Mureng
 //
-//  Created by nylah.j on 2022/06/13.
+//  Created by RoadtoS7(김수현) on 2022/06/13.
 //
 
 import UIKit

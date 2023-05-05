@@ -25,6 +25,7 @@
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
 		F4A15FE32A053C030023AC96 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F4A15FE22A053C030023AC96 /* ComposableArchitecture */; };
+		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
 		F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */; };
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
 		F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821A29F53042000E7A92 /* Images+Generated.swift */; };
@@ -81,6 +82,7 @@
 		6C3EE829AACDD9F06D6F1AA4 /* Pods-Mureng-MurengUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.release.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A867191D321A92C26C8B0035 /* Pods-Mureng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.debug.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
 		F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowCheckBoxView.swift; sourceTree = "<group>"; };
 		F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSolid48.swift; sourceTree = "<group>"; };
 		F4B6821A29F53042000E7A92 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */,
 				F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */,
 				F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */,
+				F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
 				F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */,
+				F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */,
 				F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
 				F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */,

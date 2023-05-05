@@ -12,10 +12,9 @@ class CheckBoxView: UIView {
     private var checkButton: CheckButton!
     private var label: UILabel!
     
-    init(title: String) {
-        super.init(frame: .zero)
+    convenience init(title: String) {
+        self.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
-        initViews()
         label.text = title
         layoutIfNeeded()
     }

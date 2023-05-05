@@ -36,6 +36,10 @@ class ArrowCheckBoxView: UIView {
         stackView.distribution = .fill
         stackView.alignment = .center
         addSubview(stackView)
+        let tapRecognizer = TapGestureRecognizerUsingClosure { [unowned self] in
+            self.checkButton.isSelected.toggle()
+        }
+        stackView.addGestureRecognizer(tapRecognizer)
         stackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
@@ -43,6 +47,7 @@ class ArrowCheckBoxView: UIView {
         let checkButton: CheckButton = .init()
         checkButton.setContentHuggingPriority(.required, for: .horizontal)
         checkButton.setContentHuggingPriority(.required, for: .vertical)
+        checkButton.isUserInteractionEnabled = false
         checkButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }

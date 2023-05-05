@@ -22,6 +22,7 @@ internal enum Colors {
   internal static let black = ColorAsset(name: "black")
   internal static let greylight0 = ColorAsset(name: "greylight0")
   internal static let light2Placeholder = ColorAsset(name: "light2-placeholder")
+  internal static let light3Bg = ColorAsset(name: "light3-bg")
   internal static let lightest2Bg2 = ColorAsset(name: "lightest-2-bg2")
   internal static let lightestBg3 = ColorAsset(name: "lightestBg3")
   internal static let white = ColorAsset(name: "white")

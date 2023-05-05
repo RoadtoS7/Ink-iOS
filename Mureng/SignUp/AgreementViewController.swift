@@ -10,11 +10,14 @@ import SnapKit
 
 class AgreementViewController: UIViewController {
     private enum Constant {
+        static let next = "다음"
         static let title = "먼저 이용약관을 읽고\n동의해주세요."
         static let allAgreeText = "모든 약관을 읽었으며, 이에 동의해요."
         static let agreeServiceText = "[필수] 서비스 이용약관 동의"
         static let agreePrivacyText = "[필수] 서비스 이용약관 동의"
     }
+    
+    private let nextButton: ButtonSolid48 = .init(text: Constant.next)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +96,15 @@ extension AgreementViewController {
         agreePrivacy.snp.makeConstraints { make in
             make.height.equalTo(24)
             make.width.equalToSuperview().offset(-32)
+        }
+        
+        // MARK: - 다음 버튼
+        view.addSubview(nextButton)
+        nextButton.isEnabled = false
+        nextButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(48)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
 }

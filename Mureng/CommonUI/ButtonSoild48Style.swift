@@ -17,11 +17,11 @@ struct ButtonSoild48Style: ButtonStyle {
                              : Colors.Grey.grey1Disabled1.swiftUIColor)
             .frame(maxWidth: .infinity,
                    maxHeight: .infinity,
-                   alignment: .center)
-            .background(
-                isEnabled
-                ? RoundedRectangle(cornerRadius: 24).fill(Colors.black.swiftUIColor)
-                : RoundedRectangle(cornerRadius: 24).fill(Colors.Grey.greylight0.swiftUIColor)
+                   alignment: .center
+            )
+            .background(isEnabled
+                        ? RoundedRectangle(cornerRadius: 24).fill(Colors.black.swiftUIColor)
+                        : RoundedRectangle(cornerRadius: 24).fill(Colors.Grey.greylight0.swiftUIColor)
             )
     }
 }

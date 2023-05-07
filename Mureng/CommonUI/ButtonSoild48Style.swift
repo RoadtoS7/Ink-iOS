@@ -13,14 +13,15 @@ struct ButtonSoild48Style: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         return configuration.label
             .foregroundColor(isEnabled
-                             ? Colors.lightestBg3.swiftUIColor
-                             : Colors.black.swiftUIColor)
+                             ? Colors.white.swiftUIColor
+                             : Colors.Grey.grey1Disabled1.swiftUIColor)
             .frame(maxWidth: .infinity,
                    maxHeight: .infinity,
                    alignment: .center)
             .background(
-                isEnabled ? RoundedRectangle(cornerRadius: 24).fill(Color.black)
-                : RoundedRectangle(cornerRadius: 24).fill(Color.white)
+                isEnabled
+                ? RoundedRectangle(cornerRadius: 24).fill(Colors.black.swiftUIColor)
+                : RoundedRectangle(cornerRadius: 24).fill(Colors.Grey.greylight0.swiftUIColor)
             )
     }
 }

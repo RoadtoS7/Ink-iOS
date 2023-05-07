@@ -46,7 +46,11 @@ internal enum FontFamily {
     internal static let regular = FontConvertible(name: "LeeSeoyun", family: "LeeSeoyun", path: "LeeSeoyun.otf")
     internal static let all: [FontConvertible] = [regular]
   }
-  internal static let allCustomFonts: [FontConvertible] = [AppleSDGothicNeoI.all, AppleSDGothicNeo.all, LeeSeoyun.all].flatMap { $0 }
+  internal enum OmyuPretty {
+    internal static let regular = FontConvertible(name: "omyu_pretty", family: "omyu pretty", path: "oyun.ttf")
+    internal static let all: [FontConvertible] = [regular]
+  }
+  internal static let allCustomFonts: [FontConvertible] = [AppleSDGothicNeoI.all, AppleSDGothicNeo.all, LeeSeoyun.all, OmyuPretty.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

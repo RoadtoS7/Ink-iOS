@@ -34,6 +34,7 @@ extension ButtonSolid48 {
     private func initViews() {
         setTitleColor(Colors.Grey.grey1Disabled1.color, for: .disabled)
         setTitleColor(Colors.white.color, for: .normal)
+        setEnabledColor()
         titleLabel?.font = FontFamily.AppleSDGothicNeo.regular.font(size: 16)
         titleLabel?.textAlignment = .center
         layer.cornerRadius = 24
@@ -48,5 +49,4 @@ extension ButtonSolid48 {
         backgroundColor = Colors.Grey.greylight0.color
     }
 }
-
 

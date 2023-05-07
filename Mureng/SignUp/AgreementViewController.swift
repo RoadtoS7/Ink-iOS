@@ -191,11 +191,14 @@ extension AgreementViewController {
 
         // MARK: - 다음 버튼
         view.addSubview(nextButton)
-        nextButton.isEnabled = false
+//        nextButton.isEnabled = false
         nextButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(48)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        nextButton.addTouchAction { _ in
+            self.navigationController?.pushViewController(PutUserNicknameViewController(), animated: true)
         }
     }
 }

@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ButtonSoild48Style: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         return configuration.label
-            .foregroundColor(.white)
+            .foregroundColor(isEnabled
+                             ? Colors.lightestBg3.swiftUIColor
+                             : Colors.black.swiftUIColor)
             .frame(maxWidth: .infinity,
                    maxHeight: .infinity,
                    alignment: .center)
-            .background(RoundedRectangle(cornerRadius: 24).fill(Color.black))
+            .background(
+                isEnabled ? RoundedRectangle(cornerRadius: 24).fill(Color.black)
+                : RoundedRectangle(cornerRadius: 24).fill(Color.white)
+            )
     }
 }

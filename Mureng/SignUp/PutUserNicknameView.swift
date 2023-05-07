@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PutUserNicknameView: View {
     @State var nickname: String = ""
+    @State var nextButtonDisabled: Bool = true
+    
     typealias NextButtonAction = () -> Void
     private var nextButtonAction: NextButtonAction?
     
@@ -24,17 +26,19 @@ struct PutUserNicknameView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 48) {
             Text(Constant.title)
-                .font(.custom(FontFamily.OmyuPretty.regular.name, size: 22))
+                .font(.custom(FontFamily.OmyuPretty.regular, size: 30))
             
             VStack(spacing: 7) {
                 TextField("닉네임", text: $nickname)
                 Divider()
             }
+            
             Spacer()
             
             Button("다음") {
                 nextButtonAction?()
             }
+            .disabled(nextButtonDisabled)
             .buttonStyle(ButtonSoild48Style())
             .frame(minWidth: 0,
                    maxWidth: .infinity,

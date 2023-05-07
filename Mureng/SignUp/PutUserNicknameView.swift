@@ -9,6 +9,13 @@ import SwiftUI
 
 struct PutUserNicknameView: View {
     @State var nickname: String = ""
+    typealias NextButtonAction = () -> Void
+    private var nextButtonAction: NextButtonAction?
+    
+    init(nextButtonAction: NextButtonAction? = nil) {
+        self.nextButtonAction = nextButtonAction
+    }
+    
     enum Constant {
         static let title: String = "잉크에서 사용할\n닉네임을 알려주세요."
         
@@ -18,16 +25,23 @@ struct PutUserNicknameView: View {
         VStack(alignment: .leading, spacing: 48) {
             Text(Constant.title)
                 .font(.custom(FontFamily.OmyuPretty.regular.name, size: 22))
-
+            
             VStack(spacing: 7) {
                 TextField("닉네임", text: $nickname)
                 Divider()
             }
             Spacer()
+            
             Button("다음") {
-                // TODO: 다음
+                nextButtonAction?()
             }
-            .frame(maxWidth: .infinity)
+            .buttonStyle(ButtonSoild48Style())
+            .frame(minWidth: 0,
+                   maxWidth: .infinity,
+                   minHeight: 0,
+                   maxHeight: 48,
+                   alignment: .topLeading
+            )
         }
         .edgesIgnoringSafeArea(.all)
         .padding(.init(top: 52, leading: 20, bottom: 22, trailing: 20))

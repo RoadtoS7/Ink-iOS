@@ -22,7 +22,6 @@ class PutUserNicknameViewController: UIViewController {
         hostView.snp.makeConstraints { make in
             make.width.height.equalToSuperview()
             make.leading.trailing.top.bottom.equalToSuperview()
-//            make.centerY.centerX.equalToSuperview()
         }
         hostVC.didMove(toParent: self)
     }

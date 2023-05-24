@@ -29,9 +29,10 @@ struct NicknameChecker: ReducerProtocol {
             case .binding:
                 return .none
             case .nextButtonTapped:
-                return .task {
-                    // TODO: 닉네임 중복체크 서버 통신
-                }
+                return .none
+//                return .task {
+//                    // TODO: 닉네임 중복체크 서버 통신
+//                }
             }
             
         }
@@ -57,8 +58,8 @@ struct PutUserNicknameView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 48) {
             Text(Constant.title)
-                .font(.custom(FontFamily.OmyuPretty.regular, size: 30))
-            
+                .font(.custom(FontFamily.OmyuPretty.regular.name, size: 30))
+                
             VStack(spacing: 7) {
                 TextField("닉네임", text: $nickname)
                 Divider()

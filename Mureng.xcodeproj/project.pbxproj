@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F45CECD7A01D3A31007820D /* Pods_Mureng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52455F99AEA6CCB4184EBD1B /* Pods_Mureng.framework */; };
 		2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */; };
+		2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */; };
 		2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555528576D0D001B5554 /* AppDelegate.swift */; };
 		2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555728576D0D001B5554 /* SceneDelegate.swift */; };
 		2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555928576D0D001B5554 /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		16B634772C77526B813CE5EB /* Pods-MurengTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurengTests.release.xcconfig"; path = "Target Support Files/Pods-MurengTests/Pods-MurengTests.release.xcconfig"; sourceTree = "<group>"; };
 		1BB3183B14AE01074D9B51A2 /* Pods-MurengTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurengTests.debug.xcconfig"; path = "Target Support Files/Pods-MurengTests/Pods-MurengTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
+		2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpDoneView.swift; sourceTree = "<group>"; };
 		2E4E555228576D0D001B5554 /* Mureng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mureng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4E555528576D0D001B5554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4E555728576D0D001B5554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */,
 				F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */,
 				F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */,
+				2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
+				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

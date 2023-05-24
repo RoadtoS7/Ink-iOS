@@ -6,6 +6,37 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
+struct NicknameChecker: ReducerProtocol {
+    struct State: Equatable {
+        @BindingState var nickname: String = ""
+    }
+    
+    enum Field: String, Hashable {
+      case nickname
+    }
+    
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
+        case nextButtonTapped
+    }
+    
+    var body: some ReducerProtocol<State, Action> {
+        BindingReducer()
+        Reduce { state, action in
+            switch action {
+            case .binding:
+                return .none
+            case .nextButtonTapped:
+                return .task {
+                    // TODO: 닉네임 중복체크 서버 통신
+                }
+            }
+            
+        }
+    }
+}
 
 struct PutUserNicknameView: View {
     @State var nickname: String = ""

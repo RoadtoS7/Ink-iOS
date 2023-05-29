@@ -8,35 +8,62 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct NicknameChecker: ReducerProtocol {
-    struct State: Equatable {
-        @BindingState var nickname: String = ""
+struct NicknameFactory {
+    enum Result {
+        case success(nickname: Nickname)
+        case fail(messages: [String])
     }
     
-    enum Field: String, Hashable {
-      case nickname
-    }
+    let nicknameViolationCases: [NicknameRuleBreakable]
     
-    enum Action: BindableAction, Equatable {
-        case binding(BindingAction<State>)
-        case nextButtonTapped
-    }
-    
-    var body: some ReducerProtocol<State, Action> {
-        BindingReducer()
-        Reduce { state, action in
-            switch action {
-            case .binding:
-                return .none
-            case .nextButtonTapped:
-                return .none
-//                return .task {
-//                    // TODO: 닉네임 중복체크 서버 통신
-//                }
-            }
-            
+    func make(nickname: String) async -> Result {
+        var violations: [NicknameRuleBreakable] = []
+        
+        for violation in nicknameViolationCases {
+            let result = await violation.check(nickname: nickname)
+            if result == false { violations.append(violation) }
         }
+        
+        if violations.isEmpty {
+            let nickname: Nickname = .init(value: nickname)
+            return .success(nickname: nickname)
+        }
+        let messages = violations.map(\.message)
+        return .fail(messages: messages)
     }
+}
+
+struct Nickname {
+    let value: String
+}
+
+protocol NicknameRuleBreakable {
+    var message: String { get }
+    func check(nickname: String) async -> Bool
+}
+
+struct NicknameContainsSpecialSymbols: NicknameRuleBreakable {
+    let message: String = "특수문자는 쓸 수 없어요."
+    
+    func check(nickname: String) async -> Bool {
+        let regex = ".*[^A-Za-z0-9].*"
+        let testString = NSPredicate(format:"SELF MATCHES %@", regex)
+        return testString.evaluate(with: nickname)
+    }
+}
+
+struct DuplicateNickname: NicknameRuleBreakable {
+    let message: String = "이미 사용중인 닉네임이에요."
+    
+    let signUpRepository: SignUpRepository
+    
+    func check(nickname: String) async -> Bool {
+        return await signUpRepository.requestIfNicknameIsDuplicate(nickname: nickname)
+    }
+}
+
+protocol SignUpRepository {
+    func requestIfNicknameIsDuplicate(nickname: String) async -> Bool
 }
 
 struct PutUserNicknameView: View {

@@ -26,6 +26,7 @@
 		2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
+		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F4A15FE32A053C030023AC96 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F4A15FE22A053C030023AC96 /* ComposableArchitecture */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
 		F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */; };
@@ -91,6 +92,7 @@
 		6C3EE829AACDD9F06D6F1AA4 /* Pods-Mureng-MurengUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.release.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A867191D321A92C26C8B0035 /* Pods-Mureng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.debug.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
 		F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameView.swift; sourceTree = "<group>"; };
 		F4A74FA82A077A6A004D73A3 /* oyun.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oyun.ttf; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				F43605652A24783E0014E34D /* DI */,
 				F4B6821729F52F1C000E7A92 /* Source */,
 				F4B9B57A29F3D49000338483 /* CommonUI */,
 				2E6A9C7D29E0D6B900F8E2A4 /* SignUp */,
@@ -250,6 +253,14 @@
 				16B634772C77526B813CE5EB /* Pods-MurengTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F43605652A24783E0014E34D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				F43605662A2478460014E34D /* AppState.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		F4B6821729F52F1C000E7A92 /* Source */ = {
@@ -582,6 +593,7 @@
 				F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
 				F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */,
+				F43605672A2478460014E34D /* AppState.swift in Sources */,
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,

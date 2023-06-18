@@ -53,15 +53,7 @@ class EntryViewController: UIViewController {
         
         
         let agreementViewController = AgreementViewController(
-          store: Store(
-            initialState: AgreementList.State(
-              agreements: [
-                Agreement.State(text: "[필수] 서비스 이용약관 동의"),
-                Agreement.State(text: "[필수] 개인정보 수집/이용 동의"),
-              ]
-            ),
-            reducer: AgreementList()
-          )
+            viewModel: AgreementViewModel()
         )
      
         self.navigationController?.pushViewController(agreementViewController, animated: true)

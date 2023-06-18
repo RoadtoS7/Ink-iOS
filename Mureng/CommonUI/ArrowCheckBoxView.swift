@@ -11,6 +11,15 @@ class ArrowCheckBoxView: UIView {
     private var checkButton: CheckButton!
     private var label: UILabel!
     
+    @objc var isSelected: Bool {
+        get {
+            checkButton.isSelected
+        }
+        set {
+            checkButton.isSelected = newValue
+        }
+    }
+    
     convenience init(title: String) {
         self.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false

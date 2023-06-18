@@ -1,4 +1,3 @@
-//
 //  CheckBoxView.swift
 //  Mureng
 //
@@ -9,8 +8,17 @@ import UIKit
 import SnapKit
 
 class CheckBoxView: UIView {
-    private var checkButton: CheckButton!
+    @objc private dynamic var checkButton: CheckButton!
     private var label: UILabel!
+    var isEnabled: Bool {
+        get {
+            checkButton.isEnabled
+        }
+        set {
+            checkButton.isEnabled = newValue
+        }
+    }
+    private(set) var isSelected: Bool = false
     
     convenience init(title: String) {
         self.init(frame: .zero)
@@ -53,13 +61,15 @@ class CheckBoxView: UIView {
         }
         checkButton.isUserInteractionEnabled = false
         stackView.addArrangedSubview(checkButton)
-        
+        checkButton.observe(\.isSelected) { button, isSelected in
+            guard let isSelected = isSelected.newValue else {return }
+            self.isSelected = isSelected
+        }
         self.checkButton = checkButton
         
         let label: UILabel = .init()
         label.font = FontFamily.AppleSDGothicNeo.regular.font(size: 14)
         stackView.addArrangedSubview(label)
         self.label = label
-        
     }
 }

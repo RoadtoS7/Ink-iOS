@@ -10,7 +10,9 @@ import SnapKit
 import Combine
 import ComposableArchitecture
 
-struct Agreement: ReducerProtocol {
+struct Agreement: Equatable {
+    let text: String
+    
     struct State: Equatable, Identifiable {
         let id = UUID()
         var text: String
@@ -34,22 +36,7 @@ struct Agreement: ReducerProtocol {
     }
 }
 
-struct AgreementList: ReducerProtocol {
-    struct State: Equatable {
-        var agreements: IdentifiedArrayOf<Agreement.State> = []
-    }
-    
-    enum Action: Equatable {
-        case agreement(id: Agreement.State.ID, action: Agreement.Action)
-    }
-    
-    var body: some ReducerProtocol<State, Action> {
-        EmptyReducer()
-            .forEach(\.agreements, action: /Action.agreement) {
-                Agreement()
-            }
-    }
-}
+
 
 struct AgreementChecker: ReducerProtocol {
     struct State: Equatable, Identifiable {
@@ -89,14 +76,43 @@ struct AgreementChecker: ReducerProtocol {
     }
 }
 
+class Agreements {
+    let value: [Agreement]
+    
+    var last: Agreement? {
+        value.last
+    }
+    
+    subscript(_ index: Int) -> Agreement? {
+        value[index]
+    }
+    
+    init(_ value: [Agreement]) {
+        self.value = value
+    }
+    
+    func agree() {
+        
+    }
+    
+    func disagree() {
+        
+    }
+}
+
+class AgreementViewModel {
+    @Published var agreements: Agreements = .init([
+        Agreement(text: "[필수] 서비스 이용약관 동의"),
+        Agreement(text: "[필수] 개인정보 수집/이용 동의")
+    ])
+}
+
 class AgreementViewController: UIViewController {
-    let store: StoreOf<AgreementList>
-    let viewStore: ViewStoreOf<AgreementList>
+    private let viewModel: AgreementViewModel
     var cancellables: Set<AnyCancellable> = []
     
-    init(store: StoreOf<AgreementList>) {
-        self.store = store
-        self.viewStore = ViewStore(store)
+    init(viewModel: AgreementViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -173,9 +189,10 @@ extension AgreementViewController {
         
         stackView.setCustomSpacing(24, after: line)
         
-        viewStore.publisher.agreements
-            .sink { states in
-                states.forEach { state in
+        // MARK: - 각 약관
+        viewModel.$agreements
+            .sink { agreements in
+                agreements.value.forEach { state in
                     let agreementView = ArrowCheckBoxView(title: state.text)
                     stackView.addArrangedSubview(agreementView)
                     agreementView.snp.makeConstraints { make in
@@ -183,12 +200,12 @@ extension AgreementViewController {
                         make.width.equalToSuperview().offset(-32)
                     }
                     
-                    if state != states.last {
+                    if state != agreements.last {
                         stackView.setCustomSpacing(16, after: agreementView)
                     }
                 }
             }.store(in: &self.cancellables)
-
+        
         // MARK: - 다음 버튼
         view.addSubview(nextButton)
 //        nextButton.isEnabled = false

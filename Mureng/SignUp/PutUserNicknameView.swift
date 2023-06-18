@@ -47,7 +47,7 @@ struct NicknameContainsSpecialSymbols: NicknameRuleBreakable {
     
     func check(nickname: String) async -> Bool {
         let regex = ".*[^A-Za-z0-9].*"
-        let testString = NSPredicate(format:"SELF MATCHES %@", regex)
+        let testString = NSPredicate(format: "SELF MATCHES %@", regex)
         return testString.evaluate(with: nickname)
     }
 }
@@ -66,20 +66,49 @@ protocol SignUpRepository {
     func requestIfNicknameIsDuplicate(nickname: String) async -> Bool
 }
 
+protocol SignUpInteractor {
+    func validateNickname(userInput: String)
+}
+
+struct StubSignUpInteractor: SignUpInteractor {
+    func validateNickname(userInput: String) {}
+}
+struct RealSignUpInteractor: SignUpInteractor {
+    let nicknameFactory: NicknameFactory
+    let repository: SignUpRepository
+    
+    func validateNickname(userInput: String) {
+        Task {
+            let result = await nicknameFactory.make(nickname: userInput)
+            switch result {
+            case .success(let nickname):
+                // FIXME: state 변경
+                return
+            case .fail(let messages):
+                // FIXME: state 변경
+                return
+            }
+        }
+    }
+}
+
 struct PutUserNicknameView: View {
     @State var nickname: String = ""
     @State var nextButtonDisabled: Bool = true
+    @State var errorMessage: String = ""
+    
+    private let signUpInteractor: SignUpInteractor
     
     typealias NextButtonAction = () -> Void
     private var nextButtonAction: NextButtonAction?
     
-    init(nextButtonAction: NextButtonAction? = nil) {
+    init(nextButtonAction: NextButtonAction? = nil, signUpInteractor: SignUpInteractor) {
         self.nextButtonAction = nextButtonAction
+        self.signUpInteractor = signUpInteractor
     }
     
     enum Constant {
         static let title: String = "잉크에서 사용할\n닉네임을 알려주세요."
-        
     }
     
     var body: some View {
@@ -95,7 +124,7 @@ struct PutUserNicknameView: View {
             Spacer()
             
             Button("다음") {
-                nextButtonAction?()
+                signUpInteractor.validateNickname(userInput: nickname)
             }
             .disabled(nextButtonDisabled)
             .buttonStyle(ButtonSoild48Style())
@@ -113,6 +142,6 @@ struct PutUserNicknameView: View {
 
 struct PutUserNicknameView_Previews: PreviewProvider {
     static var previews: some View {
-        PutUserNicknameView()
+        PutUserNicknameView(signUpInteractor: StubSignUpInteractor())
     }
 }

@@ -13,7 +13,7 @@ class PutUserNicknameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hostVC = UIHostingController(rootView: PutUserNicknameView())
+        let hostVC = UIHostingController(rootView: PutUserNicknameView(signUpInteractor: StubSignUpInteractor()))
         let hostView = hostVC.view!
         
         hostView.translatesAutoresizingMaskIntoConstraints = false

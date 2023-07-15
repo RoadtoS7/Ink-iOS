@@ -57,7 +57,9 @@ struct SignUpNickNameView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination:  SingUpDoneView(), tag: 2, selection: $nextButtonTapped) {
+                NavigationLink(destination: SingUpDoneView(),
+                               tag: 2,
+                               selection: $nextButtonTapped) {
                     Button("다음 버튼") {
                         nextButtonTapped = 1
                     }
@@ -66,9 +68,9 @@ struct SignUpNickNameView: View {
                     .buttonStyle(ButtonSoild48Style())
                 }
             }
-            .navigationBarHidden(true)
             .padding(.horizontal, 20)
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func limitText(_ upper: Int) {

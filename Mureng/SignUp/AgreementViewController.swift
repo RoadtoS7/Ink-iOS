@@ -10,8 +10,26 @@ import SnapKit
 import Combine
 import ComposableArchitecture
 
-struct Agreement: Equatable {
+class Agreement: Equatable {
+    static func == (lhs: Agreement, rhs: Agreement) -> Bool {
+        return lhs.text == rhs.text
+        && lhs.agreed == rhs.agreed
+    }
+    
     let text: String
+    @Published var agreed: Bool = false
+    
+    init(text: String) {
+        self.text = text
+    }
+    
+    func agree() {
+        self.agreed = true
+    }
+    
+    func disagree() {
+        self.agreed = false
+    }
     
     struct State: Equatable, Identifiable {
         let id = UUID()
@@ -35,8 +53,6 @@ struct Agreement: Equatable {
       }
     }
 }
-
-
 
 struct AgreementChecker: ReducerProtocol {
     struct State: Equatable, Identifiable {
@@ -77,7 +93,8 @@ struct AgreementChecker: ReducerProtocol {
 }
 
 class Agreements {
-    let value: [Agreement]
+    @Published var value: [Agreement]
+    @Published var agreedAll: Bool = false
     
     var last: Agreement? {
         value.last
@@ -91,12 +108,28 @@ class Agreements {
         self.value = value
     }
     
-    func agree() {
-        
+    func agree(_ agreement: Agreement) {
+        agreement.agree()
+        checkAgreedAll()
     }
     
-    func disagree() {
-        
+    func disagree(_ agreement: Agreement) {
+        agreement.disagree()
+        checkAgreedAll()
+    }
+    
+    func agreeAll() {
+        value.forEach { $0.agree() }
+        checkAgreedAll()
+    }
+    
+    func disagreeAll() {
+        value.forEach { $0.disagree() }
+        checkAgreedAll()
+    }
+    
+    private func checkAgreedAll() {
+        agreedAll = value.allSatisfy { $0.agreed == true}
     }
 }
 
@@ -105,11 +138,34 @@ class AgreementViewModel {
         Agreement(text: "[필수] 서비스 이용약관 동의"),
         Agreement(text: "[필수] 개인정보 수집/이용 동의")
     ])
+    
+    var agreedAll: some Publisher<Bool, Never> {
+        agreements.$agreedAll
+    }
+    
+    func agree(_ agree: Agreement) {
+        agreements.agree(agree)
+    }
+    
+    func disagree(_ agreement: Agreement) {
+        agreements.disagree(agreement)
+    }
+    
+    func toggleAllAgreed() {
+        if agreements.agreedAll {
+            agreements.disagreeAll()
+            return
+        }
+        agreements.agreeAll()
+    }
 }
 
 class AgreementViewController: UIViewController {
     private let viewModel: AgreementViewModel
-    var cancellables: Set<AnyCancellable> = []
+    private var cancellables: Set<AnyCancellable> = []
+    private var agreeAllCheckBox: CheckBoxView!
+    private var agreementCheckBoxes: [ArrowCheckBoxView] = []
+    
     
     init(viewModel: AgreementViewModel) {
         self.viewModel = viewModel
@@ -131,6 +187,7 @@ class AgreementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
+        bind()
     }
 }
 
@@ -169,12 +226,15 @@ extension AgreementViewController {
         }
         
         // MARK: - agreeAllCheckBox
-        let agreeAllCheckBox: CheckBoxView = .init(title: Constant.allAgreeText)
+        let agreeAllCheckBox: CheckBoxView = .init(title: Constant.allAgreeText, checkAction: { [weak self] in
+            self?.viewModel.toggleAllAgreed()
+        })
         stackView.addArrangedSubview(agreeAllCheckBox)
         agreeAllCheckBox.snp.makeConstraints { make in
             make.height.equalTo(24)
             make.width.equalToSuperview().offset(-32)
         }
+        self.agreeAllCheckBox = agreeAllCheckBox
         
         stackView.setCustomSpacing(24, after: agreeAllCheckBox)
         
@@ -191,9 +251,9 @@ extension AgreementViewController {
         
         // MARK: - 각 약관
         viewModel.$agreements
-            .sink { agreements in
+            .sink { [weak self] agreements in
                 agreements.value.forEach { state in
-                    let agreementView = ArrowCheckBoxView(title: state.text)
+                    let agreementView = ArrowCheckBoxView(agreement: state)
                     stackView.addArrangedSubview(agreementView)
                     agreementView.snp.makeConstraints { make in
                         make.height.equalTo(24)
@@ -203,12 +263,13 @@ extension AgreementViewController {
                     if state != agreements.last {
                         stackView.setCustomSpacing(16, after: agreementView)
                     }
+                    self?.agreementCheckBoxes.append(agreementView)
                 }
             }.store(in: &self.cancellables)
         
         // MARK: - 다음 버튼
         view.addSubview(nextButton)
-//        nextButton.isEnabled = false
+        nextButton.isEnabled = false
         nextButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(48)
@@ -217,5 +278,14 @@ extension AgreementViewController {
         nextButton.addTouchAction { _ in
             self.navigationController?.pushViewController(PutUserNicknameViewController(), animated: true)
         }
+    }
+    
+    private func bind() {
+        viewModel.agreedAll
+            .sink { [weak self] agreedAll in
+                self?.agreeAllCheckBox.isSelected = agreedAll
+                self?.agreementCheckBoxes.forEach { $0.isSelected = agreedAll }
+                self?.nextButton.isEnabled = agreedAll
+            }.store(in: &cancellables)
     }
 }

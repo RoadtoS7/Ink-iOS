@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftUI
+
 
 class CheckButton: UIButton {
     override init(frame: CGRect) {
@@ -18,3 +20,4 @@ class CheckButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

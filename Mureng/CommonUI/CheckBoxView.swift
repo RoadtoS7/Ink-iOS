@@ -6,9 +6,30 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
+
+struct CheckBox: View {
+    private let height: CGFloat = 24
+    @Binding var checked: Bool
+    
+    var body: some View {
+        GeometryReader { geometry in
+            HStack {
+                Button(action: {
+                    
+                }, label: {
+                    
+                })
+            }
+            .frame(width: geometry.size.width, height: height)
+        }
+    }
+}
 
 class CheckBoxView: UIView {
-    @objc private dynamic var checkButton: CheckButton!
+    typealias CheckAction = () -> Void
+    private var checkButton: CheckButton!
+    private var checkAction: CheckAction?
     private var label: UILabel!
     var isEnabled: Bool {
         get {
@@ -18,22 +39,29 @@ class CheckBoxView: UIView {
             checkButton.isEnabled = newValue
         }
     }
-    private(set) var isSelected: Bool = false
+    @objc dynamic var isSelected: Bool = false
     
-    convenience init(title: String) {
+    convenience init(title: String, checkAction: CheckAction? = nil) {
         self.init(frame: .zero)
+        self.checkAction = checkAction
         translatesAutoresizingMaskIntoConstraints = false
         label.text = title
         layoutIfNeeded()
+        
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         initViews()
-        checkButton.addTouchAction { checkButton in
-            checkButton.isSelected.toggle()
-        }
+//        addCheckButtonAction()
     }
+    
+//    private func addCheckButtonAction(_ checkAction: CheckAction? = nil) {
+//        checkButton.addTouchAction { checkButton in
+//            checkButton.isSelected.toggle()
+//            checkAction?()
+//        }
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -46,6 +74,7 @@ class CheckBoxView: UIView {
         stackView.distribution = .fill
         let tapRecognizer = TapGestureRecognizerUsingClosure { [unowned self] in
             self.checkButton.isSelected.toggle()
+            self.checkAction?()
         }
         stackView.addGestureRecognizer(tapRecognizer)
         addSubview(stackView)
@@ -61,10 +90,6 @@ class CheckBoxView: UIView {
         }
         checkButton.isUserInteractionEnabled = false
         stackView.addArrangedSubview(checkButton)
-        checkButton.observe(\.isSelected) { button, isSelected in
-            guard let isSelected = isSelected.newValue else {return }
-            self.isSelected = isSelected
-        }
         self.checkButton = checkButton
         
         let label: UILabel = .init()

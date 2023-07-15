@@ -6,18 +6,23 @@
 //
 
 import UIKit
+import Combine
 
 class ArrowCheckBoxView: UIView {
+    typealias CheckAction = () -> Void
     private var checkButton: CheckButton!
     private var label: UILabel!
+    private var cancellables: Set<AnyCancellable> = .init()
+    private var agreement: Agreement?
     
-    @objc var isSelected: Bool {
-        get {
-            checkButton.isSelected
-        }
-        set {
-            checkButton.isSelected = newValue
-        }
+    @objc dynamic var isSelected: Bool = false
+    
+    convenience init(agreement: Agreement) {
+        self.init(title: agreement.text)
+        self.agreement = agreement
+        agreement.$agreed
+            .assign(to: \.isSelected, on: checkButton)
+            .store(in: &cancellables)
     }
     
     convenience init(title: String) {
@@ -59,6 +64,10 @@ class ArrowCheckBoxView: UIView {
         checkButton.isUserInteractionEnabled = false
         checkButton.snp.makeConstraints { make in
             make.width.height.equalTo(24)
+        }
+        checkButton.observe(\.isSelected) { button, isSelected in
+            guard let isSelected = isSelected.newValue else {return }
+            self.isSelected = isSelected
         }
         stackView.addArrangedSubview(checkButton)
         self.checkButton = checkButton

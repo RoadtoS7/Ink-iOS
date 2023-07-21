@@ -7,6 +7,8 @@
 
 import UIKit
 import ComposableArchitecture
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class EntryViewController: UIViewController {
     private var loginButton: UIButton!
@@ -18,6 +20,38 @@ class EntryViewController: UIViewController {
     }
             
     @objc func navigateToLoginProcess() {
+        // 카카오톡 실행 가능 여부 확인
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+
+                    //do something
+                    _ = oauthToken
+                    print("$$ oauthToken")
+                }
+            }
+            return
+        }
+        
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    oauthToken?.accessToken
+                    
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        return
+        
+        
         let agreementViewController = AgreementViewController(
           store: Store(
             initialState: AgreementList.State(

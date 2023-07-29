@@ -29,9 +29,8 @@
 		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F436056A2A247C700014E34D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605692A247C700014E34D /* Store.swift */; };
-		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
-		F446BFC12A5AF977000005C5 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFC02A5AF977000005C5 /* MurengToggle.swift */; };
 		F47C9D382A74CAD000AC2B82 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* APILogger.swift */; };
+		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
 		F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */; };
 		F4A74FA92A077A6A004D73A3 /* oyun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4A74FA82A077A6A004D73A3 /* oyun.ttf */; };
@@ -47,7 +46,6 @@
 		F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
 		F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */; };
-		F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */; };
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
 /* End PBXBuildFile section */
@@ -101,9 +99,9 @@
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43605692A247C700014E34D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F47C9D372A74CAD000AC2B82 /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
+		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
 		F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameView.swift; sourceTree = "<group>"; };
 		F4A74FA82A077A6A004D73A3 /* oyun.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oyun.ttf; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 		F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeeSeoyun.otf; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
-		F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNickNameView.swift; sourceTree = "<group>"; };
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +167,7 @@
 				2E4E555328576D0D001B5554 /* Products */,
 				F11959C7E22CDAB82EE57E39 /* Pods */,
 				C231FADECF0DFB6CB87A037D /* Frameworks */,
+				F47C9D3C2A754AE500AC2B82 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +294,14 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		F47C9D3C2A754AE500AC2B82 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F446BFC02A5AF977000005C5 /* MurengToggle.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F4B6821729F52F1C000E7A92 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +321,7 @@
 		F4B9B57A29F3D49000338483 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */,
 				F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */,
 				F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */,
 				F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */,
@@ -631,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,
@@ -655,7 +663,6 @@
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
-				F446BFC12A5AF977000005C5 /* MurengToggle.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,
 			);

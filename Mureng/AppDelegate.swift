@@ -10,7 +10,7 @@ import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let nativeAppKey: String = "81e6d349cfd84771e8e20876e041773c"
+    let nativeAppKey: String = "62a367c9801c01fec459e90dd5e083f0"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

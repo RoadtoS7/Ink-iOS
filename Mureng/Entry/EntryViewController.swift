@@ -10,13 +10,6 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import SwiftUI
 
-struct AuthServiceUser {
-    let id: String
-    let email: String
-    let nickname: String
-}
-
-
 enum LoginResult {
     case success(AuthServiceUser)
     case fail

@@ -24,6 +24,7 @@
 		2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E559128577AAC001B5554 /* UIView+Extension.swift */; };
 		2E4E5596285782D5001B5554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E5595285782D4001B5554 /* Images.xcassets */; };
 		2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */; };
+		2E8F64132A79F174003DCDAE /* AuthServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F64122A79F174003DCDAE /* AuthServiceUser.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
 		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
@@ -95,6 +96,7 @@
 		2E4E559128577AAC001B5554 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2E4E5595285782D4001B5554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		2E8F64122A79F174003DCDAE /* AuthServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceUser.swift; sourceTree = "<group>"; };
 		4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mureng_MurengUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52455F99AEA6CCB4184EBD1B /* Pods_Mureng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mureng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB35D238D9991724C34759D /* Pods_MurengTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurengTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,7 +248,7 @@
 		2E6A9C7D29E0D6B900F8E2A4 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				F47C9D392A74F41900AC2B82 /* KakaoLogin */,
+				F47C9D392A74F41900AC2B82 /* AuthService */,
 				2E1041A82A1DE83E008F8F84 /* SignUpDone */,
 				2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */,
 				F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */,
@@ -304,12 +306,13 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
-		F47C9D392A74F41900AC2B82 /* KakaoLogin */ = {
+		F47C9D392A74F41900AC2B82 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
 				F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */,
+				2E8F64122A79F174003DCDAE /* AuthServiceUser.swift */,
 			);
-			path = KakaoLogin;
+			path = AuthService;
 			sourceTree = "<group>";
 		};
 		F4B6821729F52F1C000E7A92 /* Source */ = {
@@ -668,6 +671,7 @@
 				F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */,
 				F43605672A2478460014E34D /* AppState.swift in Sources */,
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,
+				2E8F64132A79F174003DCDAE /* AuthServiceUser.swift in Sources */,
 				F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */,
 				F47C9D382A74CAD000AC2B82 /* APILogger.swift in Sources */,
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,

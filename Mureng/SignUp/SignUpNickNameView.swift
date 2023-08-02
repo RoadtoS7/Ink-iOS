@@ -70,7 +70,8 @@ struct SignUpNickNameView: View {
             }
             .padding(.horizontal, 20)
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        .padding(.horizontal, 20)
     }
     
     private func limitText(_ upper: Int) {

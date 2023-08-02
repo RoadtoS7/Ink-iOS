@@ -11,7 +11,6 @@ struct SingUpDoneView: View {
     @State var nextButtonTapped: Int?
     
     var body: some View {
-        NavigationView {
             VStack {
                 Spacer()
                 
@@ -35,8 +34,7 @@ struct SingUpDoneView: View {
             }
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
-        .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
 }
 

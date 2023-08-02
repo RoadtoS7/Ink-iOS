@@ -87,6 +87,7 @@ struct AgreementView: View {
                 maxHeight: .infinity,
                 alignment: .topLeading
             )
+            .hideNavigationBar()
         }
     }
 }

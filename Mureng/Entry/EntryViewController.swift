@@ -10,13 +10,13 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import SwiftUI
 
-enum LoginResult {
+enum AutServiceLoginResult {
     case success(AuthServiceUser)
     case fail
 }
 
 protocol AuthenticationService {
-    func login() async -> LoginResult
+    func login() async -> AutServiceLoginResult
 }
 
 final class DummySuccessAuthService: AuthenticationService {
@@ -31,7 +31,7 @@ final class DummySuccessAuthService: AuthenticationService {
         self.init(authServiceUser: authService)
     }
     
-    func login() -> LoginResult {
+    func login() -> AutServiceLoginResult {
         .success(authServiceUser)
     }
      
@@ -42,7 +42,7 @@ final class DummySuccessAuthService: AuthenticationService {
 
 
 final class DefaultAuthService: AuthenticationService {
-    func login() async -> LoginResult {
+    func login() async -> AutServiceLoginResult {
         let oauthToken: OAuthToken? = await getOauthToken()
         guard let oauthToken = oauthToken else {
             return .fail
@@ -170,7 +170,7 @@ struct EntryView: View {
                         
                         Button(action: {
                             Task {
-                                let result: LoginResult = await authenticationService.login()
+                                let result: AutServiceLoginResult = await authenticationService.login()
                                 switch result {
                                 case .success:
                                     navigationToAgreement = 1

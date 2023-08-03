@@ -12,7 +12,9 @@ import SwiftUI
 
 struct EntryView: View {
     let authenticationService: AuthenticationService
-    @State private var navigationToAgreement: Int?
+    
+    @State private var navigationToAgreement: Bool = false
+    @State private var loginTask: Task<Void, Error>? = nil
     
     var body: some View {
         NavigationView {
@@ -24,33 +26,41 @@ struct EntryView: View {
                     Images.inkIcon.swiftUIImage
                     Spacer()
                     
-                    ZStack {
-                        NavigationLink(destination: AgreementView(), tag: 1, selection: $navigationToAgreement) {
-                            EmptyView()
-                        }
+                    Button(action: {
+                        guard loginTask == nil else { return }
                         
-                        Button(action: {
-                            Task {
-                                let result: AutServiceLoginResult = await authenticationService.login()
-                                switch result {
-                                case .success:
-                                    navigationToAgreement = 1
-                                case .fail:
-                                    return
-                                    // TODO: fail 처리
-                                }
+                        loginTask = Task {
+                            let result: AutServiceLoginResult = await authenticationService.login()
+                            switch result {
+                            case .success:
+                                navigationToAgreement = true
+                                print("$$ sucess")
+                            case .fail:
+                                print("$$ fail")
+                                return
+                                // TODO: fail 처리
                             }
                             
-                        }, label: {
-                            Images.kakaoLoginButton.swiftUIImage
-                                .resizable()
-                                .aspectRatio(343 / 48, contentMode: .fit)
-                                .padding(.horizontal, 16)
-                            
-                        })
-                    }
+                            loginTask = nil
+                        }
+                    }, label: {
+                        Images.kakaoLoginButton.swiftUIImage
+                            .resizable()
+                            .aspectRatio(343 / 48, contentMode: .fit)
+                            .padding(.horizontal, 16)
+                        
+                    })
+                    
+                    NavigationLink(destination: AgreementView(),
+                                   isActive: $navigationToAgreement,
+                                   label: {
+                        EmptyView()
+                    }).hidden()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .onDisappear {
+                    loginTask?.cancel()
+                }
             }
         }
     }
@@ -70,13 +80,9 @@ struct EntryNavigationView: View {
 struct KakaoLoginButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .background(
-                Images.kakaoLoginButton.swiftUIImage
-                    .resizable()
-                    .aspectRatio(343 / 48, contentMode: .fit)
-                    .padding(.horizontal, 16)
-            )
-        
+            .overlay(Images.kakaoLoginButton.swiftUIImage)
+            .aspectRatio(343 / 48, contentMode: .fit)
+            .padding(.horizontal, 16)
     }
 }
 

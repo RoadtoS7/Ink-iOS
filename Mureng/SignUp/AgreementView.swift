@@ -34,61 +34,57 @@ struct AgreementView: View {
     }
     
     @State private var nextButtonTapped: Int? = nil
-
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: 64) {
-                OnBoardingHeadline(text: Constant.headline)
-                
-                VStack {
-                    VStack(alignment: .leading, spacing: 30) {
-                        MurengToggle(isOn: all.projectedValue, text: Constant.allAgreeText)
-                            .padding(.horizontal, 16)
-                        
-                        Rectangle()
-                            .fill(Colors.lightestBg3.swiftUIColor)
-                            .frame(maxWidth: .infinity, maxHeight: 1)
-                        
-                        MurengArrowToggle(isOn: $serviceUsageAgreed, text: Constant.serviceUsageAgreedText)
-                            .padding(.horizontal, 16)
-                        
-                        MurengArrowToggle(isOn: $privacyPolicyAgreed, text: Constant.privacyPolicyAgreed)
-                            .padding(.horizontal, 16)
-                        
-                    }
+        VStack(alignment: .leading, spacing: 64) {
+            OnBoardingHeadline(text: Constant.headline)
+            
+            VStack {
+                VStack(alignment: .leading, spacing: 30) {
+                    MurengToggle(isOn: all.projectedValue, text: Constant.allAgreeText)
+                        .padding(.horizontal, 16)
                     
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 24)
+                    Rectangle()
+                        .fill(Colors.lightestBg3.swiftUIColor)
+                        .frame(maxWidth: .infinity, maxHeight: 1)
+                    
+                    MurengArrowToggle(isOn: $serviceUsageAgreed, text: Constant.serviceUsageAgreedText)
+                        .padding(.horizontal, 16)
+                    
+                    MurengArrowToggle(isOn: $privacyPolicyAgreed, text: Constant.privacyPolicyAgreed)
+                        .padding(.horizontal, 16)
+                    
                 }
+                
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Colors.lightestBg3.swiftUIColor, lineWidth: 1)
-                )
-                
-                Spacer()
-                
-                NavigationLink(destination:  SignUpNickNameView(), tag: 1, selection: $nextButtonTapped) {
-                    Button("다음 버튼") {
-                        nextButtonTapped = 1
-                    }
-                    .disabled(!all.wrappedValue)
-                    .frame(height: 48)
-                    .buttonStyle(ButtonSoild48Style())
-                }
- 
+                .padding(.vertical, 24)
             }
-            .padding(.horizontal, 20)
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Colors.lightestBg3.swiftUIColor, lineWidth: 1)
             )
-            .hideNavigationBar()
+            
+            Spacer()
+            
+            NavigationLink(destination:  SignUpNickNameView(), tag: 1, selection: $nextButtonTapped) {
+                Button("다음") {
+                    nextButtonTapped = 1
+                }
+                .disabled(!all.wrappedValue)
+                .frame(height: 48)
+                .buttonStyle(ButtonSoild48Style())
+            }
         }
+        .padding(.horizontal, 20)
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
+        .hideNavigationBar()
     }
 }
 

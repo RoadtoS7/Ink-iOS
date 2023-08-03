@@ -24,54 +24,51 @@ struct SignUpNickNameView: View {
     let textLimit = 10
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: 64) {
-                OnBoardingHeadline(text: Constant.headline)
+        VStack(alignment: .leading, spacing: 64) {
+            OnBoardingHeadline(text: Constant.headline)
+            
+            VStack(alignment: .leading) {
+                TextField("영어 12자/한글 6자까지 쓸 수 있어요.", text: $nickname)
+                    .keyboardType(.alphabet)
+                    .onReceive(Just(nickname)) { _ in
+                        limitText(textLimit)
+                    }
                 
-                VStack(alignment: .leading) {
-                    TextField("영어 12자/한글 6자까지 쓸 수 있어요.", text: $nickname)
-                        .keyboardType(.alphabet)
-                        .onReceive(Just(nickname)) { _ in
-                            limitText(textLimit)
-                        }
-                    
-                    Divider()
-                     .frame(height: 1)
-                     .background(Colors.lightestBg3.swiftUIColor)
-                    
-                    if alreayUsedWarning {
-                        Text("이미 사용 중인 닉네임이에요!")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.custom(FontFamily.AppleSDGothicNeo.regular, size: 12))
-                            .foregroundColor(Colors.Basic.caution.swiftUIColor)
-                    }
-                    
-                    if specialSymbolExisting {
-                        Text("특수문자는 쓸 수 없어요!")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.custom(FontFamily.AppleSDGothicNeo.regular, size: 12))
-                            .foregroundColor(Colors.Basic.caution.swiftUIColor)
-                    }
+                Divider()
+                    .frame(height: 1)
+                    .background(Colors.lightestBg3.swiftUIColor)
+                
+                if alreayUsedWarning {
+                    Text("이미 사용 중인 닉네임이에요!")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.custom(FontFamily.AppleSDGothicNeo.regular, size: 12))
+                        .foregroundColor(Colors.Basic.caution.swiftUIColor)
                 }
                 
-                
-                Spacer()
-                
-                NavigationLink(destination: SingUpDoneView(),
-                               tag: 2,
-                               selection: $nextButtonTapped) {
-                    Button("다음 버튼") {
-                        nextButtonTapped = 1
-                    }
-                    .disabled(nextButtonDisabled)
-                    .frame(height: 48)
-                    .buttonStyle(ButtonSoild48Style())
+                if specialSymbolExisting {
+                    Text("특수문자는 쓸 수 없어요!")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.custom(FontFamily.AppleSDGothicNeo.regular, size: 12))
+                        .foregroundColor(Colors.Basic.caution.swiftUIColor)
                 }
             }
-            .padding(.horizontal, 20)
+            
+            
+            Spacer()
+            
+            NavigationLink(destination: SingUpDoneView(),
+                           tag: 2,
+                           selection: $nextButtonTapped) {
+                Button("다음") {
+                    nextButtonTapped = 1
+                }
+                .disabled(nextButtonDisabled)
+                .frame(height: 48)
+                .buttonStyle(ButtonSoild48Style())
+            }
         }
-        .navigationBarHidden(true)
         .padding(.horizontal, 20)
+        .navigationBarHidden(true)
     }
     
     private func limitText(_ upper: Int) {

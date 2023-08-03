@@ -14,7 +14,10 @@ fileprivate struct Constant {
 }
 
 struct SignUpNickNameView: View {
+    private let textLimit = 10
+    
     @State var nickname: String = ""
+<<<<<<< HEAD
     var nextButtonDisabled: Bool {
         nickname.isEmpty || specialSymbolExisting
     }
@@ -28,6 +31,13 @@ struct SignUpNickNameView: View {
     init(authService: AuthenticationService) {
         self.authService = authService
     }
+=======
+    @State var nextButtonTapped: Int?
+    @State var navigationToNext: Bool = false
+    
+    var alreayUsedWarning: Bool = false
+    var specialSymbolExisting: Bool = false
+>>>>>>> bd735c1 (refactor: SignUpNicknameView - 다음 버튼을 NavigationLink가 담당하도록 수정)
     
     var body: some View {
         VStack(alignment: .leading, spacing: 64) {
@@ -60,6 +70,7 @@ struct SignUpNickNameView: View {
             
             Spacer()
             
+<<<<<<< HEAD
             NavigationLink(destination: SingUpDoneView(), isActive: $navigateToNext) {
                 Button("다음") {
                     Task {
@@ -84,6 +95,15 @@ struct SignUpNickNameView: View {
 //            .disabled(nextButtonDisabled)
 //            .frame(height: 48)
 //            .buttonStyle(ButtonSoild48Style())
+=======
+            NavigationLink("다음",
+                           destination: {
+                SingUpDoneView()
+            })
+            .disabled(nickname.isEmpty)
+            .frame(height: 48)
+            .buttonStyle(ButtonSoild48Style())
+>>>>>>> bd735c1 (refactor: SignUpNicknameView - 다음 버튼을 NavigationLink가 담당하도록 수정)
         }
         .padding(.horizontal, 20)
         .navigationBarHidden(true)

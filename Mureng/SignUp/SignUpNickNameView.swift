@@ -10,19 +10,25 @@ import Combine
 
 fileprivate struct Constant {
     static let headline: String = "잉크에서 사용할\n닉네임을 알려주세요."
+    static let textLimit = 10
 }
 
 struct SignUpNickNameView: View {
     @State var nickname: String = ""
-    
-    var alreayUsedWarning: Bool = false
-    var specialSymbolExisting: Bool = false
-    
     var nextButtonDisabled: Bool {
         nickname.isEmpty
     }
     
-    let textLimit = 10
+    @State var navigateToNext: Bool = false
+    
+    @State var alreayUsedWarning: Bool = false
+    var specialSymbolExisting: Bool = false
+    
+    let authService: AuthenticationService
+    
+    init(authService: AuthenticationService) {
+        self.authService = authService
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 64) {
@@ -32,7 +38,7 @@ struct SignUpNickNameView: View {
                 TextField("영어 12자/한글 6자까지 쓸 수 있어요.", text: $nickname)
                     .keyboardType(.alphabet)
                     .onReceive(Just(nickname)) { _ in
-                        limitText(textLimit)
+                        limitText(Constant.textLimit)
                     }
                 
                 Divider()
@@ -52,12 +58,31 @@ struct SignUpNickNameView: View {
             
             Spacer()
             
-            NavigationLink("다음") {
-                SingUpDoneView()
+            
+            NavigationLink(destination: SingUpDoneView(), isActive: $navigateToNext) {
+                Button("다음") {
+                    Task {
+                        guard let existed = await authService.isNickNameExisted(nickname) else {
+                            // TODO: 다시 시도 팝업
+                            return
+                        }
+                        alreayUsedWarning = existed
+                        if existed == false {
+                            navigateToNext = true
+                        }
+                    }
+                }
+                
             }
             .disabled(nextButtonDisabled)
             .frame(height: 48)
             .buttonStyle(ButtonSoild48Style())
+//            NavigationLink("다음", isActive: $navigateToNext) {
+//                SingUpDoneView()
+//            }
+//            .disabled(nextButtonDisabled)
+//            .frame(height: 48)
+//            .buttonStyle(ButtonSoild48Style())
         }
         .padding(.horizontal, 20)
         .navigationBarHidden(true)
@@ -72,6 +97,6 @@ struct SignUpNickNameView: View {
 
 struct SignUpNickNameView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpNickNameView()
+        SignUpNickNameView(authService: DummySuccessAuthService())
     }
 }

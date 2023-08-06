@@ -15,13 +15,18 @@ enum AutServiceLoginResult {
 
 protocol AuthenticationService {
     func login() async -> AutServiceLoginResult
+    func isNickNameExisted(_ nickname: String) async -> Bool?
 }
 
 final class DummySuccessAuthService: AuthenticationService {
     let authServiceUser: AuthServiceUser
+    let nicknameExisted: Bool
+    let loginResult: AutServiceLoginResult
     
-    init(authServiceUser: AuthServiceUser) {
+    init(authServiceUser: AuthServiceUser, loginSuccess: Bool = true, nicknameExisted: Bool = false) {
         self.authServiceUser = authServiceUser
+        self.nicknameExisted = nicknameExisted
+        self.loginResult = loginSuccess ? .success(authServiceUser) : .fail
     }
     
     convenience init() {
@@ -31,6 +36,10 @@ final class DummySuccessAuthService: AuthenticationService {
     
     func login() -> AutServiceLoginResult {
         .success(authServiceUser)
+    }
+    
+    func isNickNameExisted(_ nickname: String) async -> Bool? {
+        return nicknameExisted
     }
 }
 
@@ -50,12 +59,12 @@ final class DefaultAuthService: AuthenticationService {
         let id = String(describing: user.id)
         
         guard let nickname = user.kakaoAccount?.profile?.nickname else {
-            APILogger.logError(InkError.unknownError("kakaologin didn't return"))
+            APILogger.shared.logError(InkError.unknownError("kakaologin didn't return"))
             return .fail
         }
         
         guard let email = user.kakaoAccount?.email else {
-            APILogger.logError(InkError.unknownError("kakaologin didn't return email"))
+            APILogger.shared.logError(InkError.unknownError("kakaologin didn't return email"))
             return .fail
         }
         
@@ -69,7 +78,7 @@ final class DefaultAuthService: AuthenticationService {
                 let oauthToken: OAuthToken = try await loginAtKakaoApp()
                 return oauthToken
             } catch {
-                APILogger.logError(error)
+                APILogger.shared.logError(error)
                 return nil
             }
         }
@@ -78,7 +87,7 @@ final class DefaultAuthService: AuthenticationService {
             let oauthToken: OAuthToken = try await loginAtKakaoWeb()
             return oauthToken
         } catch {
-            APILogger.logError(error)
+            APILogger.shared.logError(error)
             return nil
         }
     }
@@ -133,5 +142,15 @@ final class DefaultAuthService: AuthenticationService {
                 continuation.resume(throwing: InkError.unknownError("kakaologin at web "))
             }
         })
+    }
+    
+    func isNickNameExisted(_ nickname: String) async -> Bool? {
+        do {
+            let response = try await MemberAuthAPI.shared.checkNicknameDuplicated(nickName: nickname)
+            return response.data.duplicated
+        } catch {
+            APILogger.shared.logError(error)
+            return nil
+        }
     }
 }

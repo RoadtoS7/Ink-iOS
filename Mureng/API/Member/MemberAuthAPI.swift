@@ -16,7 +16,7 @@ struct MemberAuthService: MemberAuthable {
     static func signUp(_ signUp: SignUp, completion: @escaping (Member?) -> Void) {
         let signUpDTO: SignUpDTO = .init(signUp)
         
-        MemberAuthAPI.signUp(signUPDTO: signUpDTO) { memberDTO in
+        MemberAuthAPI.shared.signUp(signUPDTO: signUpDTO) { memberDTO in
             guard let memberDTO = memberDTO else {
                 completion(nil)
                 return
@@ -28,7 +28,7 @@ struct MemberAuthService: MemberAuthable {
 }
 
 
-struct APIResponse<Data: Decodable> {
+struct APIResponse<Data: Decodable>: Decodable {
     let message: String
     let data: Data
     let timeStamp: Int
@@ -116,7 +116,18 @@ struct SignUpDTO: Encodable {
 }
 
 class MemberAuthAPI {
-    static func signUp(signUPDTO: SignUpDTO, completion: @escaping (MemberDTO?) -> Void) {
+    static let shared = MemberAuthAPI()
+    
+    private init() {}
+    
+    private let session: Session = {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 10
+        configuration.timeoutIntervalForResource = 10
+        return Session(configuration: configuration)
+    }()
+    
+    func signUp(signUPDTO: SignUpDTO, completion: @escaping (MemberDTO?) -> Void) {
         let path: String = "/api/member/signup"
         let url: String = Host.baseURL + path
        
@@ -138,6 +149,29 @@ class MemberAuthAPI {
                 }
             }
     }
+    
+    func checkNicknameDuplicated(nickName: String) async throws -> APIResponse<NicknameDuplicatedDTO> {
+        let path: String = "/api/member/nickname-exists/\(nickName)"
+        let url: String = Host.baseURL + path
+        let response = try await requestJSON(url, responseData: NicknameDuplicatedDTO.self, method: .get)
+        return response
+    }
+    
+    func requestJSON<T: Decodable>(
+        _ url: String,
+        responseData: T.Type,
+        method: HTTPMethod,
+        parameters: Parameters? = nil
+    ) async throws -> APIResponse<T> {
+        return try await session.request(
+            url,
+            method: method,
+            parameters: parameters,
+            encoding: URLEncoding.default
+        )
+        .serializingDecodable(APIResponse<T>.self)
+        .value
+  }
     
     private static func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
         guard let url = URL(string: urlString) else {
@@ -162,4 +196,19 @@ class MemberAuthAPI {
             return nil
         }
     }
+    
+    private static func makeGetRequest(urlString: String) -> URLRequest? {
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+}
+
+struct NicknameDuplicatedDTO: Decodable {
+    let duplicated: Bool
 }

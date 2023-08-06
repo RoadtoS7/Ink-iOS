@@ -11,18 +11,17 @@ import OSLog
 final class APILogger {
     static let shared: APILogger = .init()
     
-    static let logger: Logger = .init(subsystem: Bundle.main.bundleIdentifier ?? "",
-                                      category: "APILogger")
+    private let logger: Logger = .init()
     
-    static func logError(_ error: Error) {
+    func logError(_ error: Error) {
         logger.error("\(error)")
     }
     
-    static func logDebug(_ message: String) {
+    func logDebug(_ message: String) {
         logger.debug("\(message)")
     }
     
-    static func logNotice(_ object: Any) {
+    func logNotice(_ object: Any) {
         
     }
 }

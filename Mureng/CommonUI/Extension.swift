@@ -20,3 +20,9 @@ extension View {
         }
     }
 }
+
+extension String {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}

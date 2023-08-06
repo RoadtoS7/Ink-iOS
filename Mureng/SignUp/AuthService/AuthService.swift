@@ -30,7 +30,7 @@ final class DummySuccessAuthService: AuthenticationService {
     }
     
     convenience init() {
-        let authService = AuthServiceUser(id: "dummy_id", email: "dummy_email", nickname: "dummy_nickname")
+        let authService = AuthServiceUser(identifier: "dummy_id", email: "dummy_email", image: "dummy_nickname")
         self.init(authServiceUser: authService)
     }
     
@@ -68,7 +68,7 @@ final class DefaultAuthService: AuthenticationService {
             return .fail
         }
         
-        let authServiceUser: AuthServiceUser = .init(id: id, email: email, nickname: nickname)
+        let authServiceUser: AuthServiceUser = .init(identifier: id, email: email, image: nickname)
         return .success(authServiceUser)
     }
     

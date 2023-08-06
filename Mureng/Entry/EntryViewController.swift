@@ -16,6 +16,11 @@ struct EntryView: View {
     @State private var navigationToAgreement: Bool = false
     @State private var loginTask: Task<Void, Error>? = nil
     
+    private var signUpUser: SignUpUser? = nil
+    private var agreementView: AgreementView {
+        AgreementView(authServiceUser: )
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -32,7 +37,8 @@ struct EntryView: View {
                         loginTask = Task {
                             let result: AutServiceLoginResult = await authenticationService.login()
                             switch result {
-                            case .success:
+                            case .success(let userInfo):
+                                
                                 navigationToAgreement = true
                                 print("$$ sucess")
                             case .fail:
@@ -51,7 +57,7 @@ struct EntryView: View {
                         
                     })
                     
-                    NavigationLink(destination: AgreementView(),
+                    NavigationLink(destination: AgreementView(authServiceUser: ),
                                    isActive: $navigationToAgreement,
                                    label: {
                         EmptyView()

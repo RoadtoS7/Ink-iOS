@@ -6,7 +6,23 @@
 //
 
 struct AuthServiceUser {
-    let id: String
+    let identifier: String
     let email: String
-    let nickname: String
+    let image: String
+    let nickname: String? = nil
+    
+    func enoughForSignUp() -> Bool {
+        guard let nickname = nickname else {
+            return false
+        }
+        
+        guard identifier.isNotEmpty,
+              email.isNotEmpty,
+              nickname.isNotEmpty,
+              image.isNotEmpty else {
+            return false
+        }
+        
+        return true
+    }
 }

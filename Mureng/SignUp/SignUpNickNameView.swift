@@ -13,7 +13,6 @@ fileprivate struct Constant {
 }
 struct SignUpNickNameView: View {
     @State var nickname: String = ""
-    @State var nextButtonTapped: Int?
     
     var alreayUsedWarning: Bool = false
     var specialSymbolExisting: Bool = false
@@ -21,6 +20,7 @@ struct SignUpNickNameView: View {
     var nextButtonDisabled: Bool {
         nickname.isEmpty
     }
+    
     let textLimit = 10
     
     var body: some View {
@@ -53,19 +53,14 @@ struct SignUpNickNameView: View {
                 }
             }
             
-            
             Spacer()
             
-            NavigationLink(destination: SingUpDoneView(),
-                           tag: 2,
-                           selection: $nextButtonTapped) {
-                Button("다음") {
-                    nextButtonTapped = 1
-                }
-                .disabled(nextButtonDisabled)
-                .frame(height: 48)
-                .buttonStyle(ButtonSoild48Style())
+            NavigationLink("다음") {
+                SingUpDoneView()
             }
+            .disabled(nextButtonDisabled)
+            .frame(height: 48)
+            .buttonStyle(ButtonSoild48Style())
         }
         .padding(.horizontal, 20)
         .navigationBarHidden(true)

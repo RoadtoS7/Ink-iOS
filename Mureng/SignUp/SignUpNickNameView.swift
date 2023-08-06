@@ -16,13 +16,12 @@ fileprivate struct Constant {
 struct SignUpNickNameView: View {
     @State var nickname: String = ""
     var nextButtonDisabled: Bool {
-        nickname.isEmpty
+        nickname.isEmpty || specialSymbolExisting
     }
     
-    @State var navigateToNext: Bool = false
-    
     @State var alreayUsedWarning: Bool = false
-    var specialSymbolExisting: Bool = false
+    @State var specialSymbolExisting: Bool = false
+    @State var navigateToNext: Bool = false
     
     let authService: AuthenticationService
     
@@ -39,6 +38,9 @@ struct SignUpNickNameView: View {
                     .keyboardType(.alphabet)
                     .onReceive(Just(nickname)) { _ in
                         limitText(Constant.textLimit)
+                        
+                        let nonLiteralCharacterSet = CharacterSet.alphanumerics.inverted
+                        specialSymbolExisting = nickname.rangeOfCharacter(from: nonLiteralCharacterSet) != nil
                     }
                 
                 Divider()
@@ -57,7 +59,6 @@ struct SignUpNickNameView: View {
             }
             
             Spacer()
-            
             
             NavigationLink(destination: SingUpDoneView(), isActive: $navigateToNext) {
                 Button("다음") {

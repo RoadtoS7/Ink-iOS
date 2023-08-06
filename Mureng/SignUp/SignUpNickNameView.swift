@@ -11,6 +11,7 @@ import Combine
 fileprivate struct Constant {
     static let headline: String = "잉크에서 사용할\n닉네임을 알려주세요."
 }
+
 struct SignUpNickNameView: View {
     @State var nickname: String = ""
     
@@ -40,16 +41,12 @@ struct SignUpNickNameView: View {
                 
                 if alreayUsedWarning {
                     Text("이미 사용 중인 닉네임이에요!")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.custom(FontFamily.AppleSDGothicNeo.regular, size: 12))
-                        .foregroundColor(Colors.Basic.caution.swiftUIColor)
+                        .modifier(NicknameWarningTextStyle())
                 }
                 
                 if specialSymbolExisting {
                     Text("특수문자는 쓸 수 없어요!")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.custom(FontFamily.AppleSDGothicNeo.regular, size: 12))
-                        .foregroundColor(Colors.Basic.caution.swiftUIColor)
+                        .modifier(NicknameWarningTextStyle())
                 }
             }
             

@@ -28,6 +28,7 @@
 		2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F64142A79F6A5003DCDAE /* AuthService.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
+		F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */; };
 		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F436056A2A247C700014E34D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605692A247C700014E34D /* Store.swift */; };
@@ -105,6 +106,7 @@
 		6C3EE829AACDD9F06D6F1AA4 /* Pods-Mureng-MurengUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.release.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A867191D321A92C26C8B0035 /* Pods-Mureng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.debug.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameWarningTextStyle.swift; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43605692A247C700014E34D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */,
 				F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */,
 				F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */,
+				F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			files = (
 				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
+				F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */,
 				F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */,
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,

@@ -13,7 +13,7 @@ extension EdgeInsets {
     }
 }
 
-fileprivate enum Constant {
+private enum Constant {
     static let next = "다음"
     static let headline = "먼저 이용약관을 읽고\n동의해주세요."
     static let allAgreeText = "모든 약관을 읽었으며, 이에 동의해요."

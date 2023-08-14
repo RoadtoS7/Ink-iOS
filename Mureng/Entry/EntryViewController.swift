@@ -16,10 +16,7 @@ struct EntryView: View {
     @State private var navigationToAgreement: Bool = false
     @State private var loginTask: Task<Void, Error>? = nil
     
-    private var signUpUser: SignUpUser? = nil
-    private var agreementView: AgreementView {
-        AgreementView(authServiceUser: )
-    }
+    @StateObject var authServiceUser: AuthServiceUser = .init()
     
     var body: some View {
         NavigationView {
@@ -38,9 +35,8 @@ struct EntryView: View {
                             let result: AutServiceLoginResult = await authenticationService.login()
                             switch result {
                             case .success(let userInfo):
-                                
+                                authServiceUser.fill(with: userInfo)
                                 navigationToAgreement = true
-                                print("$$ sucess")
                             case .fail:
                                 print("$$ fail")
                                 return
@@ -57,7 +53,7 @@ struct EntryView: View {
                         
                     })
                     
-                    NavigationLink(destination: AgreementView(authServiceUser: ),
+                    NavigationLink(destination: AgreementView(authServiceUser: authServiceUser),
                                    isActive: $navigationToAgreement,
                                    label: {
                         EmptyView()
@@ -71,17 +67,6 @@ struct EntryView: View {
         }
     }
 }
-
-struct EntryNavigationView: View {
-    let authenticationService: AuthenticationService
-    
-    var body: some View {
-        NavigationView {
-            EntryView(authenticationService: authenticationService)
-        }
-    }
-}
-
 
 struct KakaoLoginButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -146,9 +131,6 @@ class EntryViewController: UIViewController {
         return
         
         
-        let agreementViewController = FullScreenHostingViewController(swiftUIView: AgreementView())
-        self.navigationController?.pushViewController(agreementViewController, animated: true)
-        self.dismiss(animated: false)
     }
 }
 
@@ -178,10 +160,10 @@ extension EntryViewController {
     }
 }
 
-struct EntryView_Previews: PreviewProvider {
-    private static let dummyService: AuthenticationService = DummySuccessAuthService()
-    static var previews: some View {
-        EntryView(authenticationService: dummyService)
-    }
-}
-
+//struct EntryView_Previews: PreviewProvider {
+//    static let dummyService: AuthenticationService = DummySuccessAuthService()
+//
+//    static var previews: some View {
+//        EntryView(authenticationService: dummyService)
+//
+//}

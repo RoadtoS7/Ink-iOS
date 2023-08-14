@@ -22,8 +22,8 @@ fileprivate enum Constant {
 }
 
 struct AgreementView: View {
-    let authServiceUser: AuthServiceUser
-    
+    @ObservedObject var authServiceUser: AuthServiceUser
+
     @State private var serviceUsageAgreed: Bool = false
     @State private var privacyPolicyAgreed: Bool = false
     
@@ -95,7 +95,7 @@ struct AgreementView: View {
 }
 
 struct AgreementView_Previews: PreviewProvider {
-    let authServiceUser: AuthServiceUser = .init(identifier: "identifier", email: "email", image: "image")
+    private static let authServiceUser: AuthServiceUser = .init(identifier: "identifier", email: "email", image: "image")
     
     static var previews: some View {
         AgreementView(authServiceUser: authServiceUser)

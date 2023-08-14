@@ -59,7 +59,7 @@ final class DefaultAuthService: AuthenticationService {
         let id = String(describing: user.id)
         
         guard let nickname = user.kakaoAccount?.profile?.nickname else {
-            APILogger.shared.logError(InkError.unknownError("kakaologin didn't return"))
+            APILogger.shared.logError(InkError.unknownError("kakaologin didn't return nickname"))
             return .fail
         }
         

@@ -7,6 +7,7 @@
 
 import KakaoSDKAuth
 import KakaoSDKUser
+import KakaoSDKCommon
 
 enum AutServiceLoginResult {
     case success(AuthServiceUser)
@@ -44,6 +45,12 @@ final class DummySuccessAuthService: AuthenticationService {
 }
 
 final class DefaultAuthService: AuthenticationService {
+    // 토큰 얻어오기 -> 토큰 없음 -> 카카오톡으로 토큰 얻어옴 -> 회원가입 로직
+    //              -> 토큰 있음 -> 서비스에 존재하는 사용자인지 체크 -> 서비스 회원가입 시작
+    //                              -> 서비스에 존재하지 않는 사용자 -> 회원가입 로직
+    // 기존에 존재하는 사용자인지 체크 (provider의 access token 필요)
+    // 없으면 -> 회원가입 -> 로그인 시도
+    // 있으면 -> 로그인 시도
     func login() async -> AutServiceLoginResult {
         let oauthToken: OAuthToken? = await getOauthToken()
         guard let oauthToken = oauthToken else {
@@ -73,6 +80,53 @@ final class DefaultAuthService: AuthenticationService {
     }
     
     private func getOauthToken() async -> OAuthToken? {
+        if AuthApi.hasToken() {
+            let valid = await isAcessTokenValid()
+            if valid {
+                let oauthToken = await refreshAccessToken()
+                return oauthToken
+            }
+        }
+        
+        let oauthToken: OAuthToken? = await loginAtKakao()
+        return oauthToken
+    }
+    
+    private func refreshAccessToken() async -> OAuthToken? {
+        let checkedBody: (CheckedContinuation<OAuthToken?, Never>) -> Void = { continuation in
+            AuthApi.shared.refreshToken { oauthToken, error in
+                if let error = error {
+                    MurengLogger.shared.logError(error)
+                    continuation.resume(returning: nil)
+                    return
+                }
+                
+                if oauthToken == nil {
+                    MurengLogger.shared.logError(InkError.unknownError("refreshAccessToken() - OAuthToken is nil"))
+                }
+                
+                continuation.resume(returning: oauthToken)
+            }
+        }
+        
+        return await withCheckedContinuation(checkedBody)
+    }
+    
+    private func isAcessTokenValid() async -> Bool {
+        await withCheckedContinuation { continuation in
+            UserApi.shared.accessTokenInfo { _, error in
+                if let error = error {
+                    MurengLogger.shared.logError(error)
+                    continuation.resume(returning: false)
+                    return
+                }
+                
+                continuation.resume(returning: true)
+            }
+        }
+    }
+    
+    private func loginAtKakao() async -> OAuthToken? {
         if UserApi.isKakaoTalkLoginAvailable() {
             do {
                 let oauthToken: OAuthToken = try await loginAtKakaoApp()

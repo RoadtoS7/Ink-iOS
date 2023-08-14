@@ -166,7 +166,6 @@ class AgreementViewController: UIViewController {
     private var agreeAllCheckBox: CheckBoxView!
     private var agreementCheckBoxes: [ArrowCheckBoxView] = []
     
-    
     init(viewModel: AgreementViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

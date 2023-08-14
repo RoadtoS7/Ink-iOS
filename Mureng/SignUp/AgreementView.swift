@@ -28,12 +28,14 @@ struct AgreementView: View {
     @State private var privacyPolicyAgreed: Bool = false
     
     var all: Binding<Bool> {
-        Binding(get: {
-            self.serviceUsageAgreed && self.privacyPolicyAgreed
-        }, set: { value in
-            self.serviceUsageAgreed = value
-            self.privacyPolicyAgreed = value
-        })
+        Binding(
+            get: {
+                self.serviceUsageAgreed && self.privacyPolicyAgreed
+            },
+            set: { value in
+                self.serviceUsageAgreed = value
+                self.privacyPolicyAgreed = value
+            })
     }
     
     @State private var nextButtonTapped: Int? = nil

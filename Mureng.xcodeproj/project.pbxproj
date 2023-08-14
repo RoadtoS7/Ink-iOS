@@ -33,7 +33,7 @@
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F436056A2A247C700014E34D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605692A247C700014E34D /* Store.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
-		F47C9D382A74CAD000AC2B82 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* APILogger.swift */; };
+		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
@@ -111,7 +111,7 @@
 		F43605692A247C700014E34D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
-		F47C9D372A74CAD000AC2B82 /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
+		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		F47C9D362A74CAA100AC2B82 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				F47C9D372A74CAD000AC2B82 /* APILogger.swift */,
+				F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -680,7 +680,7 @@
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,
 				2E8F64132A79F174003DCDAE /* AuthServiceUser.swift in Sources */,
 				F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */,
-				F47C9D382A74CAD000AC2B82 /* APILogger.swift in Sources */,
+				F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */,
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  APILogger.swift
+//  MurengLogger.swift
 //  Mureng
 //
 //  Created by 김수현 on 2023/07/29.
@@ -8,8 +8,8 @@
 import Foundation
 import OSLog
 
-final class APILogger {
-    static let shared: APILogger = .init()
+final class MurengLogger {
+    static let shared: MurengLogger = .init()
     
     private let logger: Logger = .init()
     

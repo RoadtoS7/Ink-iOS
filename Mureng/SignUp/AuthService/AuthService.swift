@@ -59,12 +59,12 @@ final class DefaultAuthService: AuthenticationService {
         let id = String(describing: user.id)
         
         guard let nickname = user.kakaoAccount?.profile?.nickname else {
-            APILogger.shared.logError(InkError.unknownError("kakaologin didn't return nickname"))
+            MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return nickname"))
             return .fail
         }
         
         guard let email = user.kakaoAccount?.email else {
-            APILogger.shared.logError(InkError.unknownError("kakaologin didn't return email"))
+            MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return email"))
             return .fail
         }
         
@@ -78,7 +78,7 @@ final class DefaultAuthService: AuthenticationService {
                 let oauthToken: OAuthToken = try await loginAtKakaoApp()
                 return oauthToken
             } catch {
-                APILogger.shared.logError(error)
+                MurengLogger.shared.logError(error)
                 return nil
             }
         }
@@ -87,7 +87,7 @@ final class DefaultAuthService: AuthenticationService {
             let oauthToken: OAuthToken = try await loginAtKakaoWeb()
             return oauthToken
         } catch {
-            APILogger.shared.logError(error)
+            MurengLogger.shared.logError(error)
             return nil
         }
     }
@@ -149,7 +149,7 @@ final class DefaultAuthService: AuthenticationService {
             let response = try await MemberAuthAPI.shared.checkNicknameDuplicated(nickName: nickname)
             return response.data.duplicated
         } catch {
-            APILogger.shared.logError(error)
+            MurengLogger.shared.logError(error)
             return nil
         }
     }

@@ -127,6 +127,7 @@ final class DefaultAuthService: AuthenticationService {
         })
     }
     
+    @MainActor
     private func loginAtKakaoWeb() async throws -> OAuthToken {
         try await withCheckedThrowingContinuation({ continuation in
             UserApi.shared.loginWithKakaoAccount { token, error in

@@ -41,6 +41,10 @@ struct EntryView: View {
                                 print("$$ fail")
                                 return
                                 // TODO: fail 처리
+                            case .needSignUp:
+                                print("$$ needSignUp")
+                                // TODO: needSignUp 처리
+                                return
                             }
                             
                             loginTask = nil

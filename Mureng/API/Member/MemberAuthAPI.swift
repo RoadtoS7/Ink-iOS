@@ -105,7 +105,7 @@ struct SignUpDTO: Encodable {
         image = signUp.image
     }
     
-    func asBody() -> [String : Any] {
+    func asBody() -> [String: Any] {
         [
             "identifier": identifier,
             "email": email,
@@ -113,6 +113,25 @@ struct SignUpDTO: Encodable {
             "image": image
         ]
     }
+}
+
+struct ProviderTokenDTO: Encodable {
+    let providerAccessToken: String
+    let providerName: String
+    
+    func asBody() -> [String: Any] {
+        print("$$ CodingKeys.providerAccessToken.stringValue: ", CodingKeys.providerAccessToken.stringValue)
+        print("$$ CodingKeys.providerName.stringValue: ", CodingKeys.providerName.stringValue)
+        return [
+            CodingKeys.providerAccessToken.stringValue: providerAccessToken,
+            CodingKeys.providerName.stringValue: providerName
+        ]
+    }
+}
+
+struct UserExistDTO: Decodable {
+    let exist: Bool
+    let identifier: String
 }
 
 class MemberAuthAPI {
@@ -148,6 +167,13 @@ class MemberAuthAPI {
                     completion(nil)
                 }
             }
+    }
+    
+    func checkUserExist(dto: ProviderTokenDTO) async throws -> APIResponse<UserExistDTO> {
+        let path: String = "/api/member/user-exists"
+        let url: String = Host.baseURL + path
+        let response = try await requestJSON(url, responseData: UserExistDTO.self, method: .post, parameters: dto.asBody())
+        return response
     }
     
     func checkNicknameDuplicated(nickName: String) async throws -> APIResponse<NicknameDuplicatedDTO> {

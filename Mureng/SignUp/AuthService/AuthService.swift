@@ -10,6 +10,7 @@ import KakaoSDKUser
 import KakaoSDKCommon
 
 enum AutServiceLoginResult {
+    case needSignUp
     case success(AuthServiceUser)
     case fail
 }
@@ -57,12 +58,22 @@ final class DefaultAuthService: AuthenticationService {
             return .fail
         }
         
+        let accessToken = oauthToken.accessToken
+        let providerName: String = "kakao"
+        guard let exist = await checkUserExist(providerAccessToken: accessToken, providerName: providerName) else {
+            return .fail
+        }
+        if exist {
+            
+        }
+      
+        
         let user: User? = try? await getUserInfo()
         guard let user = user else {
             return .fail
         }
         
-        let accessToken = oauthToken.accessToken
+        
         let id = String(describing: user.id)
         
         guard let nickname = user.kakaoAccount?.profile?.nickname else {
@@ -77,6 +88,19 @@ final class DefaultAuthService: AuthenticationService {
         
         let authServiceUser: AuthServiceUser = .init(identifier: id, email: email, image: nickname)
         return .success(authServiceUser)
+    }
+    
+    
+    private func checkUserExist(providerAccessToken: String, providerName: String) async -> Bool? {
+        let providerTokenDTO: ProviderTokenDTO = .init(providerAccessToken: providerAccessToken, providerName: providerName)
+        
+        do {
+            let response = try await MemberAuthAPI.shared.checkUserExist(dto: providerTokenDTO)
+            return response.data.exist
+        } catch {
+            MurengLogger.shared.logError(error)
+            return nil
+        }
     }
     
     private func getOauthToken() async -> OAuthToken? {

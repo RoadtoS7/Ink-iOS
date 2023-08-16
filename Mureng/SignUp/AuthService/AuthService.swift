@@ -10,8 +10,8 @@ import KakaoSDKUser
 import KakaoSDKCommon
 
 enum AutServiceLoginResult {
-    case needSignUp
-    case success(AuthServiceUser)
+    case authenticated
+    case signUp(AuthServiceUser)
     case fail
 }
 
@@ -28,7 +28,7 @@ final class DummySuccessAuthService: AuthenticationService {
     init(authServiceUser: AuthServiceUser, loginSuccess: Bool = true, nicknameExisted: Bool = false) {
         self.authServiceUser = authServiceUser
         self.nicknameExisted = nicknameExisted
-        self.loginResult = loginSuccess ? .success(authServiceUser) : .fail
+        self.loginResult = loginSuccess ? .signUp(authServiceUser) : .fail
     }
     
     convenience init() {
@@ -37,7 +37,7 @@ final class DummySuccessAuthService: AuthenticationService {
     }
     
     func login() -> AutServiceLoginResult {
-        .success(authServiceUser)
+        .signUp(authServiceUser)
     }
     
     func isNickNameExisted(_ nickname: String) async -> Bool? {
@@ -63,16 +63,22 @@ final class DefaultAuthService: AuthenticationService {
         guard let exist = await checkUserExist(providerAccessToken: accessToken, providerName: providerName) else {
             return .fail
         }
+        
         if exist {
+            let token: Token? = await loginInkServer(providerAccessToken: accessToken, providerName: providerName)
             
+            if let token = token {
+                Token.shared.set(token: token)
+                return .authenticated
+            }
+            
+            return .fail
         }
-      
         
         let user: User? = try? await getUserInfo()
         guard let user = user else {
             return .fail
         }
-        
         
         let id = String(describing: user.id)
         
@@ -87,9 +93,20 @@ final class DefaultAuthService: AuthenticationService {
         }
         
         let authServiceUser: AuthServiceUser = .init(identifier: id, email: email, image: nickname)
-        return .success(authServiceUser)
+        return .signUp(authServiceUser)
     }
     
+    private func loginInkServer(providerAccessToken: String, providerName: String) async -> Token? {
+        let providerTokenDTO: ProviderTokenDTO = .init(providerAccessToken: providerAccessToken, providerName: providerName)
+        
+        do {
+            let response = try await MemberAuthAPI.shared.signIn(providerTokenDTO: providerTokenDTO)
+            return response.data.asInkToken()
+        } catch {
+            MurengLogger.shared.logError(error)
+            return nil
+        }
+    }
     
     private func checkUserExist(providerAccessToken: String, providerName: String) async -> Bool? {
         let providerTokenDTO: ProviderTokenDTO = .init(providerAccessToken: providerAccessToken, providerName: providerName)

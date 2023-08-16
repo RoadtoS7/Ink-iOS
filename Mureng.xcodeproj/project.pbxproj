@@ -52,6 +52,7 @@
 		F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
 		F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */; };
+		F4E859052A8B347000B74F64 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E859042A8B347000B74F64 /* Token.swift */; };
 		F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */; };
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
@@ -129,6 +130,7 @@
 		F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeeSeoyun.otf; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		F4E859042A8B347000B74F64 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNickNameView.swift; sourceTree = "<group>"; };
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				F4E859012A8B341400B74F64 /* SingletonStorage */,
 				F47C9D362A74CAA100AC2B82 /* Logger */,
 				F4FB9ACF2A621BF600388AC3 /* API */,
 				F43605682A247C610014E34D /* Utilities */,
@@ -352,6 +355,14 @@
 				F4A8CA412A76053E0019DCFE /* Extension.swift */,
 			);
 			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		F4E859012A8B341400B74F64 /* SingletonStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F4E859042A8B347000B74F64 /* Token.swift */,
+			);
+			path = SingletonStorage;
 			sourceTree = "<group>";
 		};
 		F4FB9ACF2A621BF600388AC3 /* API */ = {
@@ -660,6 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
+				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
 				F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */,
 				F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */,

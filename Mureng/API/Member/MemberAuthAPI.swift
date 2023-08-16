@@ -120,12 +120,19 @@ struct ProviderTokenDTO: Encodable {
     let providerName: String
     
     func asBody() -> [String: Any] {
-        print("$$ CodingKeys.providerAccessToken.stringValue: ", CodingKeys.providerAccessToken.stringValue)
-        print("$$ CodingKeys.providerName.stringValue: ", CodingKeys.providerName.stringValue)
         return [
             CodingKeys.providerAccessToken.stringValue: providerAccessToken,
             CodingKeys.providerName.stringValue: providerName
         ]
+    }
+}
+
+struct InkTokenDTO: Decodable {
+    let inkAccessToken: String
+    let inkRefreshToken: String
+    
+    func asInkToken() -> Token {
+        .init(accessToken: inkAccessToken, refreshToken: inkRefreshToken)
     }
 }
 
@@ -145,6 +152,13 @@ class MemberAuthAPI {
         configuration.timeoutIntervalForResource = 10
         return Session(configuration: configuration)
     }()
+    
+    func signIn(providerTokenDTO: ProviderTokenDTO) async throws -> APIResponse<InkTokenDTO> {
+        let path: String = "/api/member/signin"
+        let url: String = Host.baseURL + path
+        let response = try await requestJSON(url, responseData: InkTokenDTO.self, method: .post, parameters: providerTokenDTO.asBody())
+        return response
+    }
     
     func signUp(signUPDTO: SignUpDTO, completion: @escaping (MemberDTO?) -> Void) {
         let path: String = "/api/member/signup"

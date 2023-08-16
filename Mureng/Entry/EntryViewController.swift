@@ -34,14 +34,14 @@ struct EntryView: View {
                         loginTask = Task {
                             let result: AutServiceLoginResult = await authenticationService.login()
                             switch result {
-                            case .success(let userInfo):
+                            case .signUp(let userInfo):
                                 authServiceUser.fill(with: userInfo)
                                 navigationToAgreement = true
                             case .fail:
                                 print("$$ fail")
                                 return
                                 // TODO: fail 처리
-                            case .needSignUp:
+                            case .authenticated:
                                 print("$$ needSignUp")
                                 // TODO: needSignUp 처리
                                 return

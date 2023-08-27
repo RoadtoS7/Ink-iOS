@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
+    
+    let nativeAppKey: String = "81e6d349cfd84771e8e20876e041773c"
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -17,7 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: scene)
-        window.rootViewController = RootNavigationViewController(rootViewController: EntryViewController())
+        let service: AuthenticationService = DefaultAuthService()
+        let view: EntryView = .init(authenticationService: service)
+        let viewController = FullScreenHostingViewController(swiftUIView: view)
+        let navigationController = RootNavigationViewController(rootViewController: viewController)
+        
+        window.rootViewController = navigationController
+        navigationController.navigationBar.isHidden = true
+        
         self.window = window
         window.makeKeyAndVisible()
     }
@@ -49,4 +58,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+            if let url = URLContexts.first?.url {
+                if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                    _ = AuthController.handleOpenUrl(url: url)
+                }
+            }
+        }
 }

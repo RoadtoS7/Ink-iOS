@@ -2,19 +2,24 @@
 //  AppDelegate.swift
 //  Mureng
 //
-//  Created by nylah.j on 2022/06/13.
+//  Created by RoadtoS7(김수현) on 2022/06/13.
 //
 
 import UIKit
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let nativeAppKey: String = "62a367c9801c01fec459e90dd5e083f0"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // 카카오 로그인
+        KakaoSDK.initSDK(appKey: nativeAppKey)
+        
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

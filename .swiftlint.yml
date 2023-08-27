@@ -4,6 +4,7 @@ excluded: # 린트에서 무시할 파일 경로. `included`보다 우선순위 
 disabled_rules:
   - trailing_whitespace
   - trailing_comma
+  - force_cast
 
 line_length:
   warning: 200

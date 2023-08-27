@@ -19,7 +19,6 @@
 		2E4E556D28576D0F001B5554 /* MurengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E556C28576D0F001B5554 /* MurengTests.swift */; };
 		2E4E557728576D0F001B5554 /* MurengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E557628576D0F001B5554 /* MurengUITests.swift */; };
 		2E4E557928576D0F001B5554 /* MurengUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */; };
-		2E4E558828577444001B5554 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E558728577444001B5554 /* Colors.xcassets */; };
 		2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E558C285776F5001B5554 /* EntryViewController.swift */; };
 		2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E559128577AAC001B5554 /* UIView+Extension.swift */; };
 		2E4E5596285782D5001B5554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E5595285782D4001B5554 /* Images.xcassets */; };
@@ -29,6 +28,21 @@
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
 		F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */; };
+		F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */; };
+		F40F97622A9B254A008895A5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40F97612A9B254A008895A5 /* Colors.xcassets */; };
+		F40F97652A9B25F4008895A5 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F97642A9B25F4008895A5 /* QuestionCard.swift */; };
+		F40F976F2A9B308C008895A5 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97662A9B308C008895A5 /* Pretendard-SemiBold.otf */; };
+		F40F97702A9B308C008895A5 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97672A9B308C008895A5 /* Pretendard-ExtraLight.otf */; };
+		F40F97712A9B308C008895A5 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97682A9B308C008895A5 /* Pretendard-Regular.otf */; };
+		F40F97722A9B308C008895A5 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97692A9B308C008895A5 /* Pretendard-Light.otf */; };
+		F40F97732A9B308C008895A5 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F976A2A9B308C008895A5 /* Pretendard-Bold.otf */; };
+		F40F97742A9B308C008895A5 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F976B2A9B308C008895A5 /* Pretendard-Medium.otf */; };
+		F40F97752A9B308C008895A5 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */; };
+		F40F97762A9B308C008895A5 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F976D2A9B308C008895A5 /* Pretendard-Thin.otf */; };
+		F40F97772A9B308C008895A5 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F976E2A9B308C008895A5 /* Pretendard-ExtraBold.otf */; };
+		F40F977C2A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */; };
+		F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */; };
+		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
 		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F436056A2A247C700014E34D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605692A247C700014E34D /* Store.swift */; };
@@ -94,7 +108,6 @@
 		2E4E557228576D0F001B5554 /* MurengUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MurengUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4E557628576D0F001B5554 /* MurengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengUITests.swift; sourceTree = "<group>"; };
 		2E4E557828576D0F001B5554 /* MurengUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2E4E558728577444001B5554 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2E4E558C285776F5001B5554 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		2E4E559128577AAC001B5554 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2E4E5595285782D4001B5554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -108,6 +121,21 @@
 		A867191D321A92C26C8B0035 /* Pods-Mureng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.debug.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameWarningTextStyle.swift; sourceTree = "<group>"; };
+		F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionCard.swift; sourceTree = "<group>"; };
+		F40F97612A9B254A008895A5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F40F97642A9B25F4008895A5 /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
+		F40F97662A9B308C008895A5 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		F40F97672A9B308C008895A5 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		F40F97682A9B308C008895A5 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		F40F97692A9B308C008895A5 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		F40F976A2A9B308C008895A5 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		F40F976B2A9B308C008895A5 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		F40F976D2A9B308C008895A5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		F40F976E2A9B308C008895A5 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
+		F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43605692A247C700014E34D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
@@ -199,6 +227,7 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				F40F97632A9B25E9008895A5 /* Home */,
 				F4E859012A8B341400B74F64 /* SingletonStorage */,
 				F47C9D362A74CAA100AC2B82 /* Logger */,
 				F4FB9ACF2A621BF600388AC3 /* API */,
@@ -214,6 +243,7 @@
 				2E4E555928576D0D001B5554 /* ViewController.swift */,
 				2E4E556328576D0F001B5554 /* Info.plist */,
 				2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */,
+				F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */,
 			);
 			path = Mureng;
 			sourceTree = "<group>";
@@ -290,6 +320,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F40F97632A9B25E9008895A5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F40F97642A9B25F4008895A5 /* QuestionCard.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F40F97782A9B3091008895A5 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */,
+				F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */,
+				F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */,
+				F4A74FA82A077A6A004D73A3 /* oyun.ttf */,
+				F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */,
+				F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */,
+				F40F976A2A9B308C008895A5 /* Pretendard-Bold.otf */,
+				F40F976E2A9B308C008895A5 /* Pretendard-ExtraBold.otf */,
+				F40F97672A9B308C008895A5 /* Pretendard-ExtraLight.otf */,
+				F40F97692A9B308C008895A5 /* Pretendard-Light.otf */,
+				F40F976B2A9B308C008895A5 /* Pretendard-Medium.otf */,
+				F40F97682A9B308C008895A5 /* Pretendard-Regular.otf */,
+				F40F97662A9B308C008895A5 /* Pretendard-SemiBold.otf */,
+				F40F976D2A9B308C008895A5 /* Pretendard-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		F43605652A24783E0014E34D /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,12 +386,11 @@
 		F4B6821729F52F1C000E7A92 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				F4A74FA82A077A6A004D73A3 /* oyun.ttf */,
+				F40F97782A9B3091008895A5 /* Font */,
+				F40F97612A9B254A008895A5 /* Colors.xcassets */,
 				F4BB300B29F5668200F1E9F5 /* Fonts.swift */,
-				F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */,
 				F4B6821C29F53084000E7A92 /* Colors+Generated.swift */,
 				F4B6821A29F53042000E7A92 /* Images+Generated.swift */,
-				2E4E558728577444001B5554 /* Colors.xcassets */,
 				2E4E5595285782D4001B5554 /* Images.xcassets */,
 				2E4E555B28576D0D001B5554 /* Main.storyboard */,
 				2E4E556028576D0F001B5554 /* LaunchScreen.storyboard */,
@@ -501,12 +559,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40F977C2A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf in Resources */,
+				F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */,
+				F40F97732A9B308C008895A5 /* Pretendard-Bold.otf in Resources */,
 				2E4E556228576D0F001B5554 /* LaunchScreen.storyboard in Resources */,
+				F40F97772A9B308C008895A5 /* Pretendard-ExtraBold.otf in Resources */,
 				2E4E5596285782D5001B5554 /* Images.xcassets in Resources */,
+				F40F97702A9B308C008895A5 /* Pretendard-ExtraLight.otf in Resources */,
+				F40F97722A9B308C008895A5 /* Pretendard-Light.otf in Resources */,
+				F40F97752A9B308C008895A5 /* Pretendard-Black.otf in Resources */,
+				F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */,
+				F40F976F2A9B308C008895A5 /* Pretendard-SemiBold.otf in Resources */,
+				F40F97712A9B308C008895A5 /* Pretendard-Regular.otf in Resources */,
 				F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */,
+				F40F97762A9B308C008895A5 /* Pretendard-Thin.otf in Resources */,
 				F4A74FA92A077A6A004D73A3 /* oyun.ttf in Resources */,
-				2E4E558828577444001B5554 /* Colors.xcassets in Resources */,
 				2E4E555D28576D0D001B5554 /* Main.storyboard in Resources */,
+				F40F97622A9B254A008895A5 /* Colors.xcassets in Resources */,
+				F40F97742A9B308C008895A5 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +766,7 @@
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
+				F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */,
 				2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,
@@ -703,6 +774,7 @@
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
+				F40F97652A9B25F4008895A5 /* QuestionCard.swift in Sources */,
 				F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */,
 				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,
 			);

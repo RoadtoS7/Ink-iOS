@@ -48,11 +48,29 @@ internal enum FontFamily {
     internal static let regular = FontConvertible(name: "LeeSeoyun", family: "LeeSeoyun", path: "LeeSeoyun.otf")
     internal static let all: [FontConvertible] = [regular]
   }
+  internal enum NanumMyeongjo {
+    internal static let regular = FontConvertible(name: "NanumMyeongjo", family: "NanumMyeongjo", path: "NanumMyeongjo-Regular.ttf")
+    internal static let bold = FontConvertible(name: "NanumMyeongjoBold", family: "NanumMyeongjo", path: "NanumMyeongjo-Bold.ttf")
+    internal static let extraBold = FontConvertible(name: "NanumMyeongjoExtraBold", family: "NanumMyeongjo", path: "NanumMyeongjo-ExtraBold.ttf")
+    internal static let all: [FontConvertible] = [regular, bold, extraBold]
+  }
+  internal enum Pretendard {
+    internal static let black = FontConvertible(name: "Pretendard-Black", family: "Pretendard", path: "Pretendard-Black.otf")
+    internal static let bold = FontConvertible(name: "Pretendard-Bold", family: "Pretendard", path: "Pretendard-Bold.otf")
+    internal static let extraBold = FontConvertible(name: "Pretendard-ExtraBold", family: "Pretendard", path: "Pretendard-ExtraBold.otf")
+    internal static let extraLight = FontConvertible(name: "Pretendard-ExtraLight", family: "Pretendard", path: "Pretendard-ExtraLight.otf")
+    internal static let light = FontConvertible(name: "Pretendard-Light", family: "Pretendard", path: "Pretendard-Light.otf")
+    internal static let medium = FontConvertible(name: "Pretendard-Medium", family: "Pretendard", path: "Pretendard-Medium.otf")
+    internal static let regular = FontConvertible(name: "Pretendard-Regular", family: "Pretendard", path: "Pretendard-Regular.otf")
+    internal static let semiBold = FontConvertible(name: "Pretendard-SemiBold", family: "Pretendard", path: "Pretendard-SemiBold.otf")
+    internal static let thin = FontConvertible(name: "Pretendard-Thin", family: "Pretendard", path: "Pretendard-Thin.otf")
+    internal static let all: [FontConvertible] = [black, bold, extraBold, extraLight, light, medium, regular, semiBold, thin]
+  }
   internal enum OmyuPretty {
     internal static let regular = FontConvertible(name: "omyu_pretty", family: "omyu pretty", path: "oyun.ttf")
     internal static let all: [FontConvertible] = [regular]
   }
-  internal static let allCustomFonts: [FontConvertible] = [AppleSDGothicNeoI.all, AppleSDGothicNeo.all, LeeSeoyun.all, OmyuPretty.all].flatMap { $0 }
+  internal static let allCustomFonts: [FontConvertible] = [AppleSDGothicNeoI.all, AppleSDGothicNeo.all, LeeSeoyun.all, NanumMyeongjo.all, Pretendard.all, OmyuPretty.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

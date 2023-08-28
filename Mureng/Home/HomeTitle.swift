@@ -21,6 +21,8 @@ struct HomeTitle: View {
     }
 }
 
-#Preview {
-    HomeTitle(nickname: "잉크")
+struct HomeTitle_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeTitle(nickname: "잉크")
+    }
 }

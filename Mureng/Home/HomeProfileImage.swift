@@ -21,6 +21,8 @@ struct HomeProfileImage: View {
     }
 }
 
-#Preview {
-    HomeProfileImage(imageUrl: "")
+struct HomeProfileImage_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeProfileImage(imageUrl: "")
+    }
 }

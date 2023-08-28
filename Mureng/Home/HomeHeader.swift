@@ -21,6 +21,8 @@ struct HomeHeader: View {
     }
 }
 
-#Preview {
-    HomeHeader(nickname: "잉크", imageUrl: "")
+struct HomeHeader_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeHeader(nickname: "잉크", imageUrl: "")
+    }
 }

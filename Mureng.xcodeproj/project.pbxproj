@@ -30,7 +30,7 @@
 		F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */; };
 		F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */; };
 		F40F97622A9B254A008895A5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40F97612A9B254A008895A5 /* Colors.xcassets */; };
-		F40F97652A9B25F4008895A5 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F97642A9B25F4008895A5 /* QuestionCard.swift */; };
+		F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F97642A9B25F4008895A5 /* QuestionCardView.swift */; };
 		F40F976F2A9B308C008895A5 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97662A9B308C008895A5 /* Pretendard-SemiBold.otf */; };
 		F40F97702A9B308C008895A5 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97672A9B308C008895A5 /* Pretendard-ExtraLight.otf */; };
 		F40F97712A9B308C008895A5 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97682A9B308C008895A5 /* Pretendard-Regular.otf */; };
@@ -122,7 +122,7 @@
 		F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameWarningTextStyle.swift; sourceTree = "<group>"; };
 		F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionCard.swift; sourceTree = "<group>"; };
 		F40F97612A9B254A008895A5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		F40F97642A9B25F4008895A5 /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
+		F40F97642A9B25F4008895A5 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		F40F97662A9B308C008895A5 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		F40F97672A9B308C008895A5 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		F40F97682A9B308C008895A5 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		F40F97632A9B25E9008895A5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F40F97642A9B25F4008895A5 /* QuestionCard.swift */,
+				F40F97642A9B25F4008895A5 /* QuestionCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -770,7 +770,7 @@
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
-				F40F97652A9B25F4008895A5 /* QuestionCard.swift in Sources */,
+				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,
 				F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */,
 				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,
 			);

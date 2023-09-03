@@ -27,7 +27,6 @@ struct MemberAuthService: MemberAuthable {
     }
 }
 
-
 struct APIResponse<Data: Decodable>: Decodable {
     let message: String
     let data: Data

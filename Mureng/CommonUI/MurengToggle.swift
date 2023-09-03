@@ -51,8 +51,6 @@ struct MurengToggleStyle: ToggleStyle {
     }
 }
 
-
-
 struct OnBoardingHeadline: View {
     let text: String
     

@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-fileprivate struct Constant {
+private struct Constant {
     static let headline: String = "잉크에서 사용할\n닉네임을 알려주세요."
     static let textLimit = 10
 }

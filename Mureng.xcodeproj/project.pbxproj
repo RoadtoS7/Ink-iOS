@@ -45,7 +45,6 @@
 		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
 		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
-		F436056A2A247C700014E34D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605692A247C700014E34D /* Store.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
 		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
@@ -139,7 +138,6 @@
 		F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
 		F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		F43605692A247C700014E34D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F4684BB72AA466CB006549AE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 		F43605682A247C610014E34D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F43605692A247C700014E34D /* Store.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -755,7 +752,6 @@
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
 				F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */,
 				F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */,
-				F436056A2A247C700014E34D /* Store.swift in Sources */,
 				F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */,
 				F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */,
 				F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */,

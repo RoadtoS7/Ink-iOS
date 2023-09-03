@@ -48,6 +48,7 @@
 		F436056A2A247C700014E34D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605692A247C700014E34D /* Store.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
+		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
@@ -141,6 +142,7 @@
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F4684BB72AA466CB006549AE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		F4684BB92AA47A37006549AE /* ExpressionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionRowView.swift; sourceTree = "<group>"; };
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			children = (
 				F40F97642A9B25F4008895A5 /* QuestionCardView.swift */,
 				F4684BB72AA466CB006549AE /* HomeScreenView.swift */,
+				F4684BB92AA47A37006549AE /* ExpressionRowView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
+				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,
 				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,
 				F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */,
 				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,

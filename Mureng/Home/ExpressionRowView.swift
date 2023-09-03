@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EnglishExpression {
+struct EnglishExpression: Identifiable {
     let id: Int
     let content: String
     let koConent: String

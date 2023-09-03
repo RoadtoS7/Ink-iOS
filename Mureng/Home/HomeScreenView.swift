@@ -10,22 +10,27 @@ import SwiftUI
 struct HomeScreenView: View {
     let question: Question
     @State var todayExpressions: [EnglishExpression]
+    @State var writableTodayDiary: Bool
     
     var body: some View {
         VStack(spacing: 0) {
             HomeHeaderView()
-                .padding(.bottom, 28)
+                
+            Spacer().frame(height: 28)
             
             QuestionCardView(question: question, refreshAction: {})
-                .padding(.bottom, 24)
                 .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
             
-            Button("글쓰기", action: {
+            Spacer().frame(height: 24)
+            
+            Button(writableTodayDiary ? "글쓰기" : "밤 12시에 다시 쓸 수 있어요.", action: {
                 
             })
             .buttonStyle(ButtonSoild48Style())
+            .disabled(!writableTodayDiary)
             .frame(height: 48)
-            .padding(.bottom, 28)
+            
+            Spacer().frame(height: 28)
             
             VStack(spacing: 20) {
                 // TODO: 폰트 색상 수정
@@ -66,8 +71,12 @@ struct HomeScreenView_Previews: PreviewProvider {
     ]
     
     static var previews: some View {
-        HomeScreenView(question: question,
-                       todayExpressions: todayExprssions)
+        Group {
+            HomeScreenView(question: question,
+                           todayExpressions: todayExprssions, writableTodayDiary: true)
+            HomeScreenView(question: question,
+                           todayExpressions: todayExprssions, writableTodayDiary: false)
+        }
     }
 }
 

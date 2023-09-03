@@ -28,6 +28,7 @@ struct HomeScreenView: View {
             .padding(.bottom, 28)
             
             VStack(spacing: 20) {
+                // TODO: 폰트 색상 수정
                 Text("오늘의 표현")
                 .font(FontFamily.Pretendard.regular.swiftUIFont(size: 16))
                 .frame(maxWidth: .infinity, alignment: .leading)

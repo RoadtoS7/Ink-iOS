@@ -20,10 +20,11 @@ struct ExpressionRowView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
+            // TODO: 색상 변경
             Rectangle()
                 .frame(minWidth: 3, maxWidth: 3, minHeight: 3, maxHeight: .infinity)
                 .background(Colors.Grey.grey2Default1.swiftUIColor)
-            
+            // TODO: 텍스트 줄간 간격 변경
             VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .firstTextBaseline, spacing: 12) {
                     Text(engExpression.content)

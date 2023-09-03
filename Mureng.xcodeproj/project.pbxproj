@@ -63,7 +63,6 @@
 		F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
 		F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57829F3D15900338483 /* UIControl+.swift */; };
 		F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */; };
-		F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
 		F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */; };
 		F4E859052A8B347000B74F64 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E859042A8B347000B74F64 /* Token.swift */; };
@@ -155,7 +154,6 @@
 		F4B6821C29F53084000E7A92 /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		F4B9B57829F3D15900338483 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
-		F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeeSeoyun.otf; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		F4E859042A8B347000B74F64 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 				F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */,
 				F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */,
 				F4A74FA82A077A6A004D73A3 /* oyun.ttf */,
-				F4BB300929F5657200F1E9F5 /* LeeSeoyun.otf */,
 				F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */,
 				F40F976A2A9B308C008895A5 /* Pretendard-Bold.otf */,
 				F40F976E2A9B308C008895A5 /* Pretendard-ExtraBold.otf */,
@@ -571,7 +568,6 @@
 				F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */,
 				F40F976F2A9B308C008895A5 /* Pretendard-SemiBold.otf in Resources */,
 				F40F97712A9B308C008895A5 /* Pretendard-Regular.otf in Resources */,
-				F4BB300A29F5657200F1E9F5 /* LeeSeoyun.otf in Resources */,
 				F40F97762A9B308C008895A5 /* Pretendard-Thin.otf in Resources */,
 				F4A74FA92A077A6A004D73A3 /* oyun.ttf in Resources */,
 				2E4E555D28576D0D001B5554 /* Main.storyboard in Resources */,

@@ -214,8 +214,6 @@ class MemberAuthAPI: API {
         return response
     }
     
-    
-    
     private static func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
         guard let url = URL(string: urlString) else {
             return nil

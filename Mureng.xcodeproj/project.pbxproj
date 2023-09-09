@@ -431,19 +431,11 @@
 		F4FB9ACF2A621BF600388AC3 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				F4FB9AD02A621BFC00388AC3 /* Member */,
+				F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */,
+				F4FB9AD32A62328400388AC3 /* Host.swift */,
 				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		F4FB9AD02A621BFC00388AC3 /* Member */ = {
-			isa = PBXGroup;
-			children = (
-				F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */,
-				F4FB9AD32A62328400388AC3 /* Host.swift */,
-			);
-			path = Member;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

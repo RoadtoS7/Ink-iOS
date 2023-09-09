@@ -15,6 +15,10 @@ struct TodayExpressionDTO: Decodable {
     let example: String
     let exampleMeaning: String
     let scrappedByRequester: Bool
+    
+    var englishExpression: EnglishExpression {
+        .init(id: id, content: expression, koConent: meaning, example: example, koExample: exampleMeaning)
+    }
 }
 
 final class TodayExpressionAPI: API {
@@ -23,12 +27,13 @@ final class TodayExpressionAPI: API {
     private override init() {}
     
     /// 오늘의 표현을 가져옵니다.
-    func get() async throws -> APIResponse<TodayExpressionDTO> {
+    typealias TodayExpressionDTOs = [TodayExpressionDTO]
+    func get() async throws -> APIResponse<TodayExpressionDTOs> {
         let path: String = "/api/today-expression"
         let url: String = Host.baseURL + path
-        let response: APIResponse<TodayExpressionDTO> = try await requestJSON(
+        let response: APIResponse<TodayExpressionDTOs> = try await requestJSON(
             url,
-            responseData: TodayExpressionDTO.self,
+            responseData: TodayExpressionDTOs.self,
             method: .get
         )
         return response

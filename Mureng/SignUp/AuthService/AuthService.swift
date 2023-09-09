@@ -82,17 +82,12 @@ final class DefaultAuthService: AuthenticationService {
         
         let id = String(describing: user.id)
         
-        guard let nickname = user.kakaoAccount?.profile?.nickname else {
-            MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return nickname"))
-            return .fail
-        }
-        
         guard let email = user.kakaoAccount?.email else {
             MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return email"))
             return .fail
         }
         
-        let authServiceUser: AuthServiceUser = .init(identifier: id, email: email, image: nickname)
+        let authServiceUser: AuthServiceUser = .init(identifier: id, email: email)
         return .signUp(authServiceUser)
     }
     

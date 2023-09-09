@@ -116,6 +116,10 @@ final class DefaultAuthService: AuthenticationService {
             return response.data.exist
         } catch {
             MurengLogger.shared.logError(error)
+            MurengLogger.shared.logDebug(
+                "providerAccessToken: \(providerAccessToken)" +
+                " providerName: \(providerName)"
+            )
             return nil
         }
     }

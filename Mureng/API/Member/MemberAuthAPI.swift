@@ -148,7 +148,6 @@ class API {
         return Session(configuration: configuration)
     }()
     
-    
     func requestJSON<T: Decodable>(
         _ url: String,
         responseData: T.Type,
@@ -167,7 +166,7 @@ class API {
 }
 
 class MemberAuthAPI: API {
-    static let shared = MemberAuthAPI()
+    static let shared: MemberAuthAPI = .init()
     
     private override init() {}
     

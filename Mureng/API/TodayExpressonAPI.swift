@@ -1,0 +1,36 @@
+//
+//  TodayExpressonAPI.swift
+//  Mureng
+//
+//  Created by 김수현 on 2023/09/03.
+//
+
+import Foundation
+import Alamofire
+
+struct TodayExpressionDTO: Decodable {
+    let id: Int
+    let expression: String
+    let meaning: String
+    let example: String
+    let exampleMeaning: String
+    let scrappedByRequester: Bool
+}
+
+final class TodayExpressionAPI: API {
+    static let shared: TodayExpressionAPI = .init()
+    
+    private override init() {}
+    
+    /// 오늘의 표현을 가져옵니다.
+    func get() async throws -> APIResponse<TodayExpressionDTO> {
+        let path: String = "/api/today-expression"
+        let url: String = Host.baseURL + path
+        let response: APIResponse<TodayExpressionDTO> = try await requestJSON(
+            url,
+            responseData: TodayExpressionDTO.self,
+            method: .get
+        )
+        return response
+    }
+}

@@ -49,6 +49,7 @@
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
 		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
 		F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */; };
+		F4684BBE2AA49436006549AE /* TodayExpressonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */; };
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
@@ -143,6 +144,7 @@
 		F4684BB72AA466CB006549AE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		F4684BB92AA47A37006549AE /* ExpressionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionRowView.swift; sourceTree = "<group>"; };
 		F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionListView.swift; sourceTree = "<group>"; };
+		F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressonAPI.swift; sourceTree = "<group>"; };
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FB9AD02A621BFC00388AC3 /* Member */,
+				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */,
 				F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */,
 				F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */,
+				F4684BBE2AA49436006549AE /* TodayExpressonAPI.swift in Sources */,
 				F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */,
 				F4A74FAD2A07A1D9004D73A3 /* ButtonSoild48Style.swift in Sources */,
 				F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */,

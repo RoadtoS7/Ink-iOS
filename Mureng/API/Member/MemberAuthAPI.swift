@@ -140,17 +140,36 @@ struct UserExistDTO: Decodable {
     let identifier: String
 }
 
-class MemberAuthAPI {
-    static let shared = MemberAuthAPI()
-    
-    private init() {}
-    
-    private let session: Session = {
+class API {
+    let session: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10
         configuration.timeoutIntervalForResource = 10
         return Session(configuration: configuration)
     }()
+    
+    
+    func requestJSON<T: Decodable>(
+        _ url: String,
+        responseData: T.Type,
+        method: HTTPMethod,
+        parameters: Parameters? = nil
+    ) async throws -> APIResponse<T> {
+        return try await session.request(
+            url,
+            method: method,
+            parameters: parameters,
+            encoding: URLEncoding.default
+        )
+        .serializingDecodable(APIResponse<T>.self)
+        .value
+  }
+}
+
+class MemberAuthAPI: API {
+    static let shared = MemberAuthAPI()
+    
+    private override init() {}
     
     func signIn(providerTokenDTO: ProviderTokenDTO) async throws -> APIResponse<InkTokenDTO> {
         let path: String = "/api/member/signin"
@@ -196,21 +215,7 @@ class MemberAuthAPI {
         return response
     }
     
-    func requestJSON<T: Decodable>(
-        _ url: String,
-        responseData: T.Type,
-        method: HTTPMethod,
-        parameters: Parameters? = nil
-    ) async throws -> APIResponse<T> {
-        return try await session.request(
-            url,
-            method: method,
-            parameters: parameters,
-            encoding: URLEncoding.default
-        )
-        .serializingDecodable(APIResponse<T>.self)
-        .value
-  }
+    
     
     private static func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
         guard let url = URL(string: urlString) else {

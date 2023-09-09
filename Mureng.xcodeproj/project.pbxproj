@@ -213,7 +213,6 @@
 		2E4E554928576D0D001B5554 = {
 			isa = PBXGroup;
 			children = (
-				2E3DF4602A95F6E8004AF96D /* Localizable.xcstrings */,
 				2E4E555428576D0D001B5554 /* Mureng */,
 				2E4E556B28576D0F001B5554 /* MurengTests */,
 				2E4E557528576D0F001B5554 /* MurengUITests */,

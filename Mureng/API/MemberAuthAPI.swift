@@ -30,7 +30,11 @@ struct MemberAuthService: MemberAuthable {
 struct APIResponse<Data: Decodable>: Decodable {
     let message: String
     let data: Data
-    let timeStamp: Int
+    let timestamp: Int
+    
+    static func empty(message: String, data: Data) -> APIResponse {
+        .init(message: message, data: data, timestamp: Date().hashValue)
+    }
 }
 
 struct MemberSetting {
@@ -120,8 +124,8 @@ struct ProviderTokenDTO: Encodable {
     
     func asBody() -> [String: Any] {
         return [
-            CodingKeys.providerAccessToken.stringValue: providerAccessToken,
-            CodingKeys.providerName.stringValue: providerName
+            "providerAccessToken": providerAccessToken,
+            "providerName": providerName
         ]
     }
 }
@@ -135,9 +139,23 @@ struct InkTokenDTO: Decodable {
     }
 }
 
-struct UserExistDTO: Decodable {
+struct UserExistDTO: Codable {
     let exist: Bool
     let identifier: String
+}
+
+final class ResponseLogger: DataPreprocessor {
+    private let url: String
+    
+    init(url: String) {
+        self.url = url
+    }
+    
+    func preprocess(_ data: Data) throws -> Data {
+        let json: String = String(decoding: data, as: UTF8.self)
+        print("$$ \(url) - response: \(json)")
+        return data
+    }
 }
 
 class API {
@@ -146,6 +164,13 @@ class API {
         configuration.timeoutIntervalForRequest = 10
         configuration.timeoutIntervalForResource = 10
         return Session(configuration: configuration)
+    }()
+    
+    let urlSession: URLSession  = {
+        let session: URLSession = URLSession.shared
+        session.configuration.timeoutIntervalForRequest = 10
+        session.configuration.timeoutIntervalForResource = 10
+        return session
     }()
     
     func requestJSON<T: Decodable>(
@@ -160,9 +185,21 @@ class API {
             parameters: parameters,
             encoding: URLEncoding.default
         )
-        .serializingDecodable(APIResponse<T>.self)
+        .serializingDecodable(
+            APIResponse<T>.self,
+            dataPreprocessor: ResponseLogger(url: url)
+        )
         .value
   }
+    
+    func requestJsonWithURLSession<T: Decodable> (
+        urlRequest: URLRequest
+    ) async throws -> APIResponse<T> {
+        let (data, response): (Data, URLResponse) = try await urlSession.data(for: urlRequest)
+        print("$$ \(urlRequest.url) - response: \(String(data: data, encoding: .utf8))")
+        let apiResponse = try JSONDecoder().decode(APIResponse<T>.self, from: data)
+        return apiResponse
+    }
 }
 
 class MemberAuthAPI: API {
@@ -203,8 +240,24 @@ class MemberAuthAPI: API {
     func checkUserExist(dto: ProviderTokenDTO) async throws -> APIResponse<UserExistDTO> {
         let path: String = "/api/member/user-exists"
         let url: String = Host.baseURL + path
-        let response = try await requestJSON(url, responseData: UserExistDTO.self, method: .post, parameters: dto.asBody())
+        
+        guard let request = makePostRequest(urlString: url, bodyObject: dto) else {
+            return APIResponse.empty(
+                message: "$$ make post request fail",
+                data: UserExistDTO(exist: false, identifier: "")
+            )
+        }
+        
+        let response: APIResponse<UserExistDTO> = try await requestJsonWithURLSession(urlRequest: request)
         return response
+        
+//        let response = try await requestJSON(
+//            url,
+//            responseData: UserExistDTO.self,
+//            method: .post,
+//            parameters: dto.asBody()
+//        )
+//        return response
     }
     
     func checkNicknameDuplicated(nickName: String) async throws -> APIResponse<NicknameDuplicatedDTO> {
@@ -214,7 +267,7 @@ class MemberAuthAPI: API {
         return response
     }
     
-    private static func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
+    func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
         guard let url = URL(string: urlString) else {
             return nil
         }

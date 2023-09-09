@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct EnglishExpression: Identifiable {
-    let id: Int
-    let content: String
-    let koConent: String
-    let example: String
-    let koExample: String
-}
-
 struct ExpressionRowView: View {
     let engExpression: EnglishExpression
     

@@ -64,6 +64,8 @@
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
 		F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821A29F53042000E7A92 /* Images+Generated.swift */; };
 		F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
+		F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */; };
+		F4B8888A2AAC319600BBD2F3 /* EnglishExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B888892AAC319600BBD2F3 /* EnglishExpression.swift */; };
 		F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57829F3D15900338483 /* UIControl+.swift */; };
 		F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
@@ -158,6 +160,8 @@
 		F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSolid48.swift; sourceTree = "<group>"; };
 		F4B6821A29F53042000E7A92 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		F4B6821C29F53084000E7A92 /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
+		F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionService.swift; sourceTree = "<group>"; };
+		F4B888892AAC319600BBD2F3 /* EnglishExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishExpression.swift; sourceTree = "<group>"; };
 		F4B9B57829F3D15900338483 /* UIControl+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+.swift"; sourceTree = "<group>"; };
 		F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				F4B888882AAC318700BBD2F3 /* Model */,
 				F40F97632A9B25E9008895A5 /* Home */,
 				F4E859012A8B341400B74F64 /* SingletonStorage */,
 				F47C9D362A74CAA100AC2B82 /* Logger */,
@@ -327,6 +332,7 @@
 		F40F97632A9B25E9008895A5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F4B888852AAC314C00BBD2F3 /* Service */,
 				F40F97642A9B25F4008895A5 /* QuestionCardView.swift */,
 				F4684BB72AA466CB006549AE /* HomeScreenView.swift */,
 				F4684BB92AA47A37006549AE /* ExpressionRowView.swift */,
@@ -401,6 +407,22 @@
 				2E4E556028576D0F001B5554 /* LaunchScreen.storyboard */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		F4B888852AAC314C00BBD2F3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F4B888882AAC318700BBD2F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4B888892AAC319600BBD2F3 /* EnglishExpression.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4B9B57A29F3D49000338483 /* CommonUI */ = {
@@ -737,10 +759,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B8888A2AAC319600BBD2F3 /* EnglishExpression.swift in Sources */,
 				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
 				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
 				F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */,
+				F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */,
 				F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */,
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,

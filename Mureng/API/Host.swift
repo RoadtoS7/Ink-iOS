@@ -8,5 +8,5 @@
 import Foundation
 
 struct Host {
-    static let baseURL: String = "https://dev.hkpark.net/v2/api-docs"
+    static let baseURL: String = "https://dev.hkpark.net"
 }

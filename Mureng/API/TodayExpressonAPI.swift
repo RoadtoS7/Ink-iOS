@@ -22,9 +22,7 @@ struct TodayExpressionDTO: Decodable {
 }
 
 final class TodayExpressionAPI: API {
-    static lazy var shared: TodayExpressionAPI {
-        return .init()
-    }()
+    static var shared: TodayExpressionAPI = .init()
     
     private override init() {}
     
@@ -32,12 +30,30 @@ final class TodayExpressionAPI: API {
     typealias TodayExpressionDTOs = [TodayExpressionDTO]
     func get() async throws -> APIResponse<TodayExpressionDTOs> {
         let path: String = "/api/today-expression"
-        let url: String = Host.baseURL + path
-        let response: APIResponse<TodayExpressionDTOs> = try await requestJSON(
-            url,
-            responseData: TodayExpressionDTOs.self,
-            method: .get
-        )
+        let absoluteURL: String = Host.baseURL + path
+        
+        
+        guard let url: URL = .init(string: absoluteURL) else {
+            throw APIError.invalidURL
+        }
+        
+        var urlRequest: URLRequest = .init(url: url)
+        urlRequest.addAuthHeader()
+        
+        let response: APIResponse<TodayExpressionDTOs> = try await requestJsonWithURLSession(urlRequest: urlRequest)
+//        let response: APIResponse<TodayExpressionDTOs> = try await requestJSON(
+//            url,
+//            responseData: TodayExpressionDTOs.self,
+//            method: .get
+//        )
         return response
+    }
+}
+
+extension URLRequest {
+    mutating func addAuthHeader(value: String = "") {
+        let key: String = "X-AUTH-TOKEN"
+        let value: String = Token.shared.accessToken ?? ""
+        addValue(value, forHTTPHeaderField: key)
     }
 }

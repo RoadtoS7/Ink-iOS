@@ -24,13 +24,10 @@ struct SingUpDoneView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: SingUpDoneView(), tag: 2, selection: $nextButtonTapped) {
-                    Button("시작하기") {
-                        nextButtonTapped = 1
-                    }
-                    .frame(height: 48)
-                    .buttonStyle(ButtonSoild48Style())
-                }
+                NavigationLink("시작하기",
+                               destination: { HomeScreenView() })
+                .frame(height: 48)
+                .buttonStyle(ButtonSoild48Style())
             }
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, maxHeight: .infinity)

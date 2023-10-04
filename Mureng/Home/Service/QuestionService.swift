@@ -12,7 +12,6 @@ protocol QuestionService {
     func refreshTodayQuestion() async -> Question
 }
 
-
 struct RemoteQuestionService: QuestionService {
     func getTodayQuestion() async -> Question {
         do {
@@ -34,4 +33,3 @@ struct RemoteQuestionService: QuestionService {
         }
     }
 }
-

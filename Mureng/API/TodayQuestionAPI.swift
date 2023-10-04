@@ -5,6 +5,8 @@
 //  Created by nylah.j on 2023/10/04.
 //
 
+import Foundation
+
 struct QuestionDTO: Decodable {
     let questionId: Int
     let category: String
@@ -37,21 +39,19 @@ struct AuthorDTO: Decodable {
 }
 
 final class TodayQuestionAPI: API {
-    static lazy var shared: TodayQuestionAPI {
-        return .init()
-    }()
-    
+    static var shared: TodayQuestionAPI = .init()
     private override init() {}
     
     /// 현재 로그인한 사용자의 오늘의 질문을 가져옵니다.
     func get() async throws -> APIResponse<QuestionDTO> {
         let path: String = "/api/today-question"
         let url: String = Host.baseURL + path
-        let response: APIResponse<QuestionDTO> = try await requestJSON(
-            url,
-            responseData: QuestionDTO.self,
-            method: .get
-        )
+        
+        var urlRequest: URLRequest = try .init(url: url, method: .get)
+        let accessToken: String = Token.shared.accessToken ?? ""
+        urlRequest.addAuthHeader(value: accessToken)
+
+        let response: APIResponse<QuestionDTO> =  try await requestJsonWithURLSession(urlRequest: urlRequest)
         return response
     }
     

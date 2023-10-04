@@ -158,6 +158,16 @@ final class ResponseLogger: DataPreprocessor {
     }
 }
 
+enum APIError: LocalizedError {
+    case invalidURL
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "형식이 올바르지 않은 url 입니다."
+        }
+    }
+}
+
 class API {
     let session: Session = {
         let configuration = URLSessionConfiguration.default
@@ -177,13 +187,18 @@ class API {
         _ url: String,
         responseData: T.Type,
         method: HTTPMethod,
-        parameters: Parameters? = nil
+        parameters: Parameters? = nil,
+        tokenOnHeader: Bool = false
     ) async throws -> APIResponse<T> {
+        let accessToken: String = Token.shared.accessToken ?? ""
+        let httpHeader: HTTPHeader = .init(name: "X-AUTH-TOKEN", value: accessToken)
+        
         return try await session.request(
             url,
             method: method,
             parameters: parameters,
-            encoding: URLEncoding.default
+            encoding: URLEncoding.default,
+            headers: .init([httpHeader])
         )
         .serializingDecodable(
             APIResponse<T>.self,
@@ -195,10 +210,58 @@ class API {
     func requestJsonWithURLSession<T: Decodable> (
         urlRequest: URLRequest
     ) async throws -> APIResponse<T> {
+        log(request: urlRequest)
         let (data, response): (Data, URLResponse) = try await urlSession.data(for: urlRequest)
         print("$$ \(urlRequest.url) - response: \(String(data: data, encoding: .utf8))")
+        
         let apiResponse = try JSONDecoder().decode(APIResponse<T>.self, from: data)
         return apiResponse
+    }
+    
+    func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(bodyObject)
+            let json = String(data: jsonData, encoding: String.Encoding.utf8)
+            let data = json?.data(using: .utf8)
+            
+            request.httpBody = data
+            return request
+        } catch {
+            #if DEBUG
+                print(error)
+            #endif
+            return nil
+        }
+    }
+    
+    func makeGetRequest(urlString: String) -> URLRequest? {
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+ 
+    func log(request: URLRequest) {
+        let url: String = request.url?.absoluteString ?? ""
+        let httpMethod: String = request.httpMethod ?? ""
+        let httpBody: Data = request.httpBody ?? Data()
+        let httpBodyText: String = String(data: httpBody, encoding: .utf8) ?? ""
+        let headers = request.headers.reduce("") { partialResult, httpHeader in
+            partialResult + "\n" + "\(httpHeader.name) - \(httpHeader.value)"
+        }
+        print("$$ \(url) - \(httpMethod) - request header: \(headers) \n- httpBody: \(httpBodyText)")
     }
 }
 
@@ -265,41 +328,6 @@ class MemberAuthAPI: API {
         let url: String = Host.baseURL + path
         let response = try await requestJSON(url, responseData: NicknameDuplicatedDTO.self, method: .get)
         return response
-    }
-    
-    func makePostRequest(urlString: String, bodyObject: Encodable) -> URLRequest? {
-        guard let url = URL(string: urlString) else {
-            return nil
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let jsonData = try JSONEncoder().encode(bodyObject)
-            let json = String(data: jsonData, encoding: String.Encoding.utf8)
-            let data = json?.data(using: .utf8)
-            
-            request.httpBody = data
-            return request
-        } catch {
-            #if DEBUG
-                print(error)
-            #endif
-            return nil
-        }
-    }
-    
-    private static func makeGetRequest(urlString: String) -> URLRequest? {
-        guard let url = URL(string: urlString) else {
-            return nil
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.get.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        return request
     }
 }
 

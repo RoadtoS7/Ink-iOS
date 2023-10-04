@@ -22,7 +22,9 @@ struct TodayExpressionDTO: Decodable {
 }
 
 final class TodayExpressionAPI: API {
-    static let shared: TodayExpressionAPI = .init()
+    static lazy var shared: TodayExpressionAPI {
+        return .init()
+    }()
     
     private override init() {}
     

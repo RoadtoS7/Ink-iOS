@@ -11,6 +11,8 @@
 		2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */; };
 		2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */; };
 		2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1041A92A1DE8C1008F8F84 /* FullScreenHostingViewController.swift */; };
+		2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63D2ACCF2D8000D2D03 /* QuestionService.swift */; };
+		2E35C6402ACCF37F000D2D03 /* TodayQuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */; };
 		2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555528576D0D001B5554 /* AppDelegate.swift */; };
 		2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555728576D0D001B5554 /* SceneDelegate.swift */; };
 		2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555928576D0D001B5554 /* ViewController.swift */; };
@@ -100,6 +102,8 @@
 		2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpDoneView.swift; sourceTree = "<group>"; };
 		2E1041A92A1DE8C1008F8F84 /* FullScreenHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenHostingViewController.swift; sourceTree = "<group>"; };
+		2E35C63D2ACCF2D8000D2D03 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayQuestionAPI.swift; sourceTree = "<group>"; };
 		2E4E555228576D0D001B5554 /* Mureng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mureng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4E555528576D0D001B5554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4E555728576D0D001B5554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -413,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */,
+				2E35C63D2ACCF2D8000D2D03 /* QuestionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */,
 				F4FB9AD32A62328400388AC3 /* Host.swift */,
 				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
+				2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -792,11 +798,13 @@
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
 				F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */,
 				2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */,
+				2E35C6402ACCF37F000D2D03 /* TodayQuestionAPI.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,
 				2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */,
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
+				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,
 				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,

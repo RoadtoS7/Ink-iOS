@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    let service: TodayExprssionService = RemoteTodayExpressionService()
     let question: Question
-    @State var todayExpressions: [EnglishExpression]
-    @State var writableTodayDiary: Bool
+    @State var todayExpressions: [EnglishExpression] = []
+    @State var writableTodayDiary: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -18,8 +19,10 @@ struct HomeScreenView: View {
                 
             Spacer().frame(height: 28)
             
-            QuestionCardView(question: question, refreshAction: {})
-                .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
+            QuestionCardView(question: question, refreshAction: {
+                // TODO: refresh action
+            })
+            .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
             
             Spacer().frame(height: 24)
             
@@ -43,6 +46,12 @@ struct HomeScreenView: View {
             .padding(.vertical, 20)
         }
         .padding(.horizontal, 24)
+        .onAppear {
+            Task  {
+                let todayExpressions: [EnglishExpression] = await service.get() ?? []
+                self.todayExpressions = todayExpressions
+            }
+        }
     }
 }
 

@@ -13,6 +13,12 @@ struct Question {
     let koreanContent: String
 }
 
+extension Question {
+    static var notReady: Question {
+        Question(id: -1, content: "Not Ready 😉", koreanContent: "아직 준비중입니다.")
+    }
+}
+
 struct QuestionCardView: View {
     let question: Question
     let refreshAction: () -> Void

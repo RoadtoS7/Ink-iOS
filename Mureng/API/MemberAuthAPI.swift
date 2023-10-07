@@ -64,18 +64,22 @@ struct MemberSettingDTO: Decodable {
 }
 
 struct MemberDTO: Decodable {
-    let id: Int
+    let memberId: Int
     let identifier: String
     let email: String
     let nickname: String
     let image: String
     let inkCount: Int
     let attendanceCount: Int
-    let lastAttendanceDate: Date
+    let lastAttendanceDate: String // "2023-10-07"
     let memberSetting: MemberSettingDTO
     
     func asModel() -> Member {
-        .init(id: id,
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let lastAttendanceDate = dateFormatter.date(from: lastAttendanceDate) ?? Date()
+        
+        return .init(id: memberId,
               identifier: identifier,
               email: email,
               nickname: nickname,
@@ -106,6 +110,13 @@ struct SignUpDTO: Encodable {
         email = signUp.email
         nickname = signUp.nickname
         image = signUp.image
+    }
+    
+    init(_ authServiceUser: AuthServiceUser) {
+        self.identifier = authServiceUser.identifier ?? ""
+        self.email = authServiceUser.email ?? ""
+        self.nickname = authServiceUser.nickname ?? ""
+        self.image = authServiceUser.image ?? ""
     }
     
     func asBody() -> [String: Any] {
@@ -274,6 +285,17 @@ class MemberAuthAPI: API {
         let path: String = "/api/member/signin"
         let url: String = Host.baseURL + path
         let response = try await requestJSON(url, responseData: InkTokenDTO.self, method: .post, parameters: providerTokenDTO.asBody())
+        return response
+    }
+    
+    func signUp(signUpDTO: SignUpDTO) async throws -> APIResponse<MemberDTO> {
+        let path: String = "/api/member/signup"
+        let url: String = Host.baseURL + path
+      
+        guard let urlRequest: URLRequest = makePostRequest(urlString: url, bodyObject: signUpDTO) else {
+            throw APIError.invalidURL
+        }
+        let response: APIResponse<MemberDTO> = try await requestJsonWithURLSession(urlRequest: urlRequest)
         return response
     }
     

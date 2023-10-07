@@ -8,10 +8,10 @@
 import Combine
 
 class AuthServiceUser: ObservableObject {
-    private var identifier: String?
-    private var email: String?
-    private var image: String?
-    private var nickname: String?
+    private(set) var identifier: String?
+    private(set) var email: String?
+    private(set) var image: String?
+    private(set) var nickname: String?
     
     init() {
         self.identifier = nil
@@ -34,6 +34,10 @@ class AuthServiceUser: ObservableObject {
         nickname = authServiceUser.nickname
     }
     
+    func fill(nickname: String) {
+        self.nickname = nickname
+    }
+    
     func enoughForSignUp() -> Bool {
         guard let identifier = identifier,
               let email,
@@ -50,5 +54,14 @@ class AuthServiceUser: ObservableObject {
         }
         
         return true
+    }
+}
+
+extension AuthServiceUser: Equatable {
+    static func == (lhs: AuthServiceUser, rhs: AuthServiceUser) -> Bool {
+        return lhs.identifier == rhs.identifier
+        && lhs.email == rhs.email
+        && lhs.image == rhs.image
+        && lhs.nickname == rhs.nickname
     }
 }

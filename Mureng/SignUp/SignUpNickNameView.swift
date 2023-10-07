@@ -14,6 +14,7 @@ private struct Constant {
 }
 
 struct SignUpNickNameView: View {
+    @ObservedObject var authServiceUser: AuthServiceUser
     @State var nickname: String = ""
     var nextButtonDisabled: Bool {
         nickname.isEmpty || specialSymbolExisting
@@ -25,7 +26,9 @@ struct SignUpNickNameView: View {
     
     let authService: AuthenticationService
     
-    init(authService: AuthenticationService) {
+    
+    init(authServiceUser: AuthServiceUser, authService: AuthenticationService) {
+        self.authServiceUser = authServiceUser
         self.authService = authService
     }
     
@@ -60,24 +63,42 @@ struct SignUpNickNameView: View {
             
             Spacer()
             
-            NavigationLink(destination: SingUpDoneView(), isActive: $navigateToNext) {
-                Button("다음") {
-                    Task {
-                        guard let existed = await authService.isNickNameExisted(nickname) else {
-                            // TODO: 다시 시도 팝업
-                            return
-                        }
-                        alreayUsedWarning = existed
-                        if existed == false {
+            Button("다음") {
+                Task {
+                    print("Task work")
+                    guard let existed = await authService.isNickNameExisted(nickname) else {
+                        // TODO: 다시 시도 팝업
+                        return
+                    }
+                    alreayUsedWarning = existed
+                    if existed == false {
+                        authServiceUser.fill(nickname: nickname)
+                        Task {
+                            let member: Member? = await authService.signUp(authServiceUser: authServiceUser)
+                            guard let member else {
+                                // TODO: 다시 시도 팝업
+                                return
+                            }
+                            let loginResult = await authService.login()
+                            guard loginResult == .authenticated else {
+                                // TODO: 에러 팝업
+                                return
+                            }
                             navigateToNext = true
                         }
                     }
                 }
-                
             }
             .disabled(nextButtonDisabled)
             .frame(height: 48)
             .buttonStyle(ButtonSoild48Style())
+            
+            
+            NavigationLink(destination: SingUpDoneView(), isActive: $navigateToNext) {
+                
+            }
+            .hidden()
+            
 //            NavigationLink("다음", isActive: $navigateToNext) {
 //                SingUpDoneView()
 //            }
@@ -87,6 +108,9 @@ struct SignUpNickNameView: View {
         }
         .padding(.horizontal, 20)
         .navigationBarHidden(true)
+        .onAppear {
+            print("닉네임 입력 onAppear")
+        }
     }
     
     private func limitText(_ upper: Int) {
@@ -97,7 +121,8 @@ struct SignUpNickNameView: View {
 }
 
 struct SignUpNickNameView_Previews: PreviewProvider {
+    private static let authServiceUser: AuthServiceUser = .init(identifier: "", email: "")
     static var previews: some View {
-        SignUpNickNameView(authService: DummySuccessAuthService())
+        SignUpNickNameView(authServiceUser: authServiceUser, authService: DummySuccessAuthService())
     }
 }

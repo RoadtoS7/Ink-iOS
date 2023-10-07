@@ -72,7 +72,7 @@ struct AgreementView: View {
             Spacer()
             
             NavigationLink(
-                destination: SignUpNickNameView(authService: DefaultAuthService()),
+                destination: SignUpNickNameView(authServiceUser: authServiceUser, authService: DefaultAuthService()),
                 tag: 1,
                 selection: $nextButtonTapped) {
                 Button("다음") {

@@ -39,6 +39,7 @@ final class TodayExpressionAPI: API {
         
         var urlRequest: URLRequest = .init(url: url)
         urlRequest.addAuthHeader()
+        urlRequest.httpMethod = "GET"
         
         let response: APIResponse<TodayExpressionDTOs> = try await requestJsonWithURLSession(urlRequest: urlRequest)
 //        let response: APIResponse<TodayExpressionDTOs> = try await requestJSON(

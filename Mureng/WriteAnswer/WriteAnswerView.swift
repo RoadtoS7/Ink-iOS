@@ -13,16 +13,41 @@ struct WriteAnswerView: View {
     private let placeholder: String = "질문에 대한 내 생각을 적어보세요. 50 글자만 넘기면 돼요."
     @State private var editing: Bool = false
     @State private var answer: String = ""
+    @State private var image: UIImage? = nil
+    @State private var galleryPickerPresented: Bool = false
     
     var body: some View {
         VStack(spacing: 20) {
             QuestionView(question: question)
+            
             Rectangle()
                 .frame(minWidth: 1, maxWidth: .infinity, maxHeight: 1)
                 .foregroundColor(.clear)
                 .background(Colors.Greyscale.greyscale200.swiftUIColor)
             
             EditorView(answer: $answer, placeholder: placeholder)
+            
+            if let image {
+                GeometryReader(content: { geometry in
+                    Image(uiImage: image)
+                        .resizable()
+                        .frame(width: geometry.size.width)
+                        .aspectRatio(1.0, contentMode: .fit)
+                })
+            }
+            
+            HStack {
+                Button {
+                    galleryPickerPresented.toggle()
+                } label: {
+                    Text("사진")
+                }
+            }
+            .sheet(isPresented: $galleryPickerPresented) {
+                GalleryPickerView(sourceType: .photoLibrary) { image in
+                    self.image = image
+                }
+            }
         }.padding(.horizontal, 24)
     }
 }

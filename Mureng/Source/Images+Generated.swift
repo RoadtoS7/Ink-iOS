@@ -31,6 +31,7 @@ internal enum Images {
   internal static let imgSplashLogo = ImageAsset(name: "img_splash_logo")
   internal static let kakaoLoginButton = ImageAsset(name: "kakaoLoginButton")
   internal static let logoDark112 = ImageAsset(name: "logoDark112")
+  internal static let selected24 = ImageAsset(name: "selected-24")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

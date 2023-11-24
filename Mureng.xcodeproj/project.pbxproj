@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		1F45CECD7A01D3A31007820D /* Pods_Mureng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52455F99AEA6CCB4184EBD1B /* Pods_Mureng.framework */; };
 		2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */; };
+		2E0FD8452B04F9A300CAF0F5 /* AnswerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */; };
 		2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */; };
 		2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1041A92A1DE8C1008F8F84 /* FullScreenHostingViewController.swift */; };
 		2E2338CF2B0241D700FFEF51 /* GalleryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2338CE2B0241D700FFEF51 /* GalleryPickerView.swift */; };
+		2E2338D12B024ED500FFEF51 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2338D02B024ED500FFEF51 /* BottomSheetView.swift */; };
 		2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63D2ACCF2D8000D2D03 /* QuestionService.swift */; };
 		2E35C6402ACCF37F000D2D03 /* TodayQuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */; };
 		2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E555528576D0D001B5554 /* AppDelegate.swift */; };
@@ -102,9 +104,11 @@
 		16B634772C77526B813CE5EB /* Pods-MurengTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurengTests.release.xcconfig"; path = "Target Support Files/Pods-MurengTests/Pods-MurengTests.release.xcconfig"; sourceTree = "<group>"; };
 		1BB3183B14AE01074D9B51A2 /* Pods-MurengTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurengTests.debug.xcconfig"; path = "Target Support Files/Pods-MurengTests/Pods-MurengTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E0E28DC29E29FD7001C32C3 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
+		2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBackgroundView.swift; sourceTree = "<group>"; };
 		2E1041A62A1DDFF5008F8F84 /* SingUpDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpDoneView.swift; sourceTree = "<group>"; };
 		2E1041A92A1DE8C1008F8F84 /* FullScreenHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenHostingViewController.swift; sourceTree = "<group>"; };
 		2E2338CE2B0241D700FFEF51 /* GalleryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerView.swift; sourceTree = "<group>"; };
+		2E2338D02B024ED500FFEF51 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		2E35C63D2ACCF2D8000D2D03 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayQuestionAPI.swift; sourceTree = "<group>"; };
 		2E4E555228576D0D001B5554 /* Mureng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mureng.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				2EBFBE552AD0EE6100D3AB18 /* WriteAnswerView.swift */,
+				2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */,
 			);
 			path = WriteAnswer;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 				F446BFC02A5AF977000005C5 /* MurengToggle.swift */,
 				F4A8CA412A76053E0019DCFE /* Extension.swift */,
 				2E2338CE2B0241D700FFEF51 /* GalleryPickerView.swift */,
+				2E2338D02B024ED500FFEF51 /* BottomSheetView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -780,6 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0FD8452B04F9A300CAF0F5 /* AnswerBackgroundView.swift in Sources */,
 				F4B8888A2AAC319600BBD2F3 /* EnglishExpression.swift in Sources */,
 				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
 				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
@@ -800,6 +807,7 @@
 				F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */,
 				F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */,
 				F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */,
+				2E2338D12B024ED500FFEF51 /* BottomSheetView.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
 				F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */,
 				F43605672A2478460014E34D /* AppState.swift in Sources */,
@@ -1015,6 +1023,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1044,6 +1053,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

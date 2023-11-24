@@ -240,10 +240,7 @@ class API {
         
         do {
             let jsonData = try JSONEncoder().encode(bodyObject)
-            let json = String(data: jsonData, encoding: String.Encoding.utf8)
-            let data = json?.data(using: .utf8)
-            
-            request.httpBody = data
+            request.httpBody = jsonData
             return request
         } catch {
             #if DEBUG

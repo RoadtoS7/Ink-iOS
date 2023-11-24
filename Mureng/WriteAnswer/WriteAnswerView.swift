@@ -8,6 +8,11 @@
 import SwiftUI
 import PhotosUI
 
+struct AnswerBackground: Identifiable {
+    let id = UUID()
+    let color: Color
+}
+
 struct WriteAnswerView: View {
     let question: Question
     private let placeholder: String = "질문에 대한 내 생각을 적어보세요. 50 글자만 넘기면 돼요."
@@ -15,40 +20,87 @@ struct WriteAnswerView: View {
     @State private var answer: String = ""
     @State private var image: UIImage? = nil
     @State private var galleryPickerPresented: Bool = false
+    @State private var backgroundPickerPresented: Bool = false
+    let backgroundViews: [AnswerBackground] = [.init(color: .red),
+                                               .init(color: .yellow),
+                                               .init(color: .orange),
+                                               .init(color: .green),
+                                               .init(color: .blue),
+                                               .init(color: .purple)]
+    
+    private var heightFactor: CGFloat {
+        UIScreen.main.bounds.height > 800 ? 3.6 : 3
+    }
+    
+    private var offset: CGFloat {
+        backgroundPickerPresented ? 0 : UIScreen.main.bounds.height / heightFactor
+    }
     
     var body: some View {
-        VStack(spacing: 20) {
-            QuestionView(question: question)
+        ZStack {
+            VStack(spacing: 20) {
+                QuestionView(question: question)
+                
+                Rectangle()
+                    .frame(minWidth: 1, maxWidth: .infinity, maxHeight: 1)
+                    .foregroundColor(.clear)
+                    .background(Colors.Greyscale.greyscale200.swiftUIColor)
+                
+                EditorView(answer: $answer, placeholder: placeholder)
+                
+                if let image {
+                    GeometryReader(content: { geometry in
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: geometry.size.width)
+                            .aspectRatio(1.0, contentMode: .fit)
+                    })
+                }
+                
+            }.padding(.horizontal, 24)
             
-            Rectangle()
-                .frame(minWidth: 1, maxWidth: .infinity, maxHeight: 1)
-                .foregroundColor(.clear)
-                .background(Colors.Greyscale.greyscale200.swiftUIColor)
-            
-            EditorView(answer: $answer, placeholder: placeholder)
-            
-            if let image {
-                GeometryReader(content: { geometry in
-                    Image(uiImage: image)
-                        .resizable()
-                        .frame(width: geometry.size.width)
-                        .aspectRatio(1.0, contentMode: .fit)
-                })
-            }
-            
-            HStack {
-                Button {
-                    galleryPickerPresented.toggle()
-                } label: {
-                    Text("사진")
+            GeometryReader { proxy in
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Button {
+                            galleryPickerPresented.toggle()
+                        } label: {
+                            Text("사진")
+                        }
+                        
+                        Button("배경") {
+                            self.backgroundPickerPresented = true
+                        }
+                    }
+                    .frame(width: proxy.size.width)
+                    
+                    
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.flexible()),
+                                            GridItem(.flexible()),
+                                            GridItem(.flexible())],
+                                  spacing: 5, content: {
+                            ForEach(backgroundViews) { background in
+                                AnswerBackgroundView(color: background.color, selected: false)
+                                    .frame(width: 90, height: 100)
+                                    
+                            }
+                        })
+                    }
+                    .frame(width: proxy.size.width, height: 500)
                 }
             }
             .sheet(isPresented: $galleryPickerPresented) {
                 GalleryPickerView(sourceType: .photoLibrary) { image in
                     self.image = image
                 }
+                .ignoresSafeArea()
             }
-        }.padding(.horizontal, 24)
+            .ignoresSafeArea()
+        }
+        
     }
 }
 

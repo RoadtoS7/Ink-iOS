@@ -92,18 +92,18 @@ final class DefaultAuthService: AuthenticationService {
         }
         
         let user: User? = try? await getUserInfo()
-        guard let user = user else {
+        guard let user = user,
+              let userId = user.id else {
             return .fail
         }
-        
-        let id = String(describing: user.id)
         
         guard let email = user.kakaoAccount?.email else {
             MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return email"))
             return .fail
         }
         
-        let authServiceUser: AuthServiceUser = .init(identifier: id, email: email)
+        let idText = String(userId)
+        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: email)
         return .signUp(authServiceUser)
     }
     

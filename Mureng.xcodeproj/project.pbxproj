@@ -31,6 +31,7 @@
 		2E8F64132A79F174003DCDAE /* AuthServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F64122A79F174003DCDAE /* AuthServiceUser.swift */; };
 		2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F64142A79F6A5003DCDAE /* AuthService.swift */; };
 		2EBFBE562AD0EE6100D3AB18 /* WriteAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBFBE552AD0EE6100D3AB18 /* WriteAnswerView.swift */; };
+		2EE1601F2B10C950009B8E62 /* WriteAnswerImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
 		F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */; };
@@ -130,6 +131,7 @@
 		2E8F64122A79F174003DCDAE /* AuthServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceUser.swift; sourceTree = "<group>"; };
 		2E8F64142A79F6A5003DCDAE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2EBFBE552AD0EE6100D3AB18 /* WriteAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAnswerView.swift; sourceTree = "<group>"; };
+		2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAnswerImagePickerView.swift; sourceTree = "<group>"; };
 		4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mureng_MurengUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52455F99AEA6CCB4184EBD1B /* Pods_Mureng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mureng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB35D238D9991724C34759D /* Pods_MurengTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurengTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +326,7 @@
 			children = (
 				2EBFBE552AD0EE6100D3AB18 /* WriteAnswerView.swift */,
 				2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */,
+				2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */,
 			);
 			path = WriteAnswer;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				F4A74FAD2A07A1D9004D73A3 /* ButtonSoild48Style.swift in Sources */,
 				F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */,
 				F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */,
+				2EE1601F2B10C950009B8E62 /* WriteAnswerImagePickerView.swift in Sources */,
 				F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */,
 				2E2338D12B024ED500FFEF51 /* BottomSheetView.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,

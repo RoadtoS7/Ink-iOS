@@ -59,51 +59,8 @@ struct WriteAnswerView: View {
                 
             }.padding(.horizontal, 24)
             
-            GeometryReader { proxy in
-                VStack {
-                    Spacer()
-                    
-                    VStack(content: {
-                        HStack(spacing: 24) {
-                            Button("사진") {
-                                galleryPickerPresented.toggle()
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: 44)
-                            
-                            Button("배경") {
-                                self.backgroundPickerPresented = true
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: 44)
-                        }
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 4)
-                        
-                        ScrollView {
-                            LazyVGrid(columns: [GridItem(.flexible()),
-                                                GridItem(.flexible()),
-                                                GridItem(.flexible())],
-                                      spacing: 5, content: {
-                                ForEach(backgroundViews) { background in
-                                    AnswerBackgroundView(color: background.color, selected: false)
-                                        .frame(width: 90, height: 100)
-                                        
-                                }
-                            })
-                        }
-                        .frame(width: proxy.size.width, height: 500)
-                    })
-                    .background(Color.white)
-                }
-            }
-            .sheet(isPresented: $galleryPickerPresented) {
-                GalleryPickerView(sourceType: .photoLibrary) { image in
-                    self.image = image
-                }
-                .ignoresSafeArea()
-            }
-            .ignoresSafeArea()
+            WriteAnswerImagePickerView(imageFromGallery: $image)
         }
-        
     }
 }
 

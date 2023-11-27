@@ -57,7 +57,6 @@ struct WriteAnswerImagePickerView: View {
                 .frame(height: .infinity)
             }
         }
-        .background(.white)
         .sheet(isPresented: $galleryPickerPresented) {
             GalleryPickerView(sourceType: .photoLibrary) { image in
                 self.imageFromGallery = image

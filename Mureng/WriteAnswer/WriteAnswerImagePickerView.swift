@@ -24,24 +24,28 @@ struct WriteAnswerImagePickerView: View {
     var body: some View {
         VStack {
             Spacer()
+                .onTapGesture {
+                    galleryPickerPresented = false
+                }
             
             HStack(spacing: 24) {
                 Button("사진") {
                     galleryPickerPresented.toggle()
                     backgroundPickerPresented = false
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(maxWidth: .infinity, minHeight: 44, maxHeight: .infinity)
                 
                 Button("배경") {
                     backgroundPickerPresented = true
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(height: 44)
+                .frame(maxWidth: .infinity, minHeight: 44, maxHeight: .infinity)
             }
             .frame(maxWidth: .infinity, maxHeight: 52)
-            .padding(.horizontal, 24)
             .padding(.vertical, 4)
+            .background(.white)
             
-            if backgroundPickerPresented {
+//            if backgroundPickerPresented {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()),
                                         GridItem(.flexible()),
@@ -55,14 +59,14 @@ struct WriteAnswerImagePickerView: View {
                     })
                 }
                 .frame(height: .infinity)
-            }
+                .background(.white)
+//            }
         }
         .sheet(isPresented: $galleryPickerPresented) {
             GalleryPickerView(sourceType: .photoLibrary) { image in
                 self.imageFromGallery = image
             }
         }
-        
     }
 }
 

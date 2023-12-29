@@ -13,12 +13,14 @@ struct BottomSheetView<ContentView: View>: View {
     @Binding var bottomSheetHeight: PresentationDetent
     
     var body: some View {
-        Button("Show Credits") {
-            presenting.toggle()
-        }
+        ZStack(content: {
+            Button("Show Credits") {
+                presenting.toggle()
+            }
+        })
         .sheet(isPresented: $presenting, content: {
             contentView
-                .presentationDetents([.height(52), .medium, .large], selection: $bottomSheetHeight)
+                .presentationDetents([.height(52), .large], selection: $bottomSheetHeight)
         })
     }
 }

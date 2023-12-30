@@ -64,12 +64,9 @@ struct WriteAnswerView: View {
     }
 }
 
-struct WriteAnswerView_Previews: PreviewProvider {
-    private static let question: Question = .init(id: 0, content: "What are the habits you want to build?", koreanContent: "어떤 습관을 만들고 싶나요?")
-    
-    static var previews: some View {
-        WriteAnswerView(question: question)
-    }
+#Preview {
+    let question: Question = .init(id: 0, content: "What are the habits you want to build?", koreanContent: "어떤 습관을 만들고 싶나요?")
+    return WriteAnswerView(question: question)
 }
 
 struct EditorView: View {

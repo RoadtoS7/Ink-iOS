@@ -82,6 +82,8 @@
 		F4F35DA42B4040390097347B /* QuestionListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */; };
 		F4F35DA72B4046610097347B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DA62B4046610097347B /* TestView.swift */; };
 		F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */; };
+		F4F35DAD2B40FE0B0097347B /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAC2B40FE0B0097347B /* QuestionListView.swift */; };
+		F4F35DAF2B40FE9D0097347B /* MockDataForPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */; };
 		F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */; };
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
@@ -189,6 +191,8 @@
 		F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListHeaderView.swift; sourceTree = "<group>"; };
 		F4F35DA62B4046610097347B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListCellView.swift; sourceTree = "<group>"; };
+		F4F35DAC2B40FE0B0097347B /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
+		F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataForPreview.swift; sourceTree = "<group>"; };
 		F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNickNameView.swift; sourceTree = "<group>"; };
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 			children = (
 				F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */,
 				F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */,
+				F4F35DAC2B40FE0B0097347B /* QuestionListView.swift */,
 			);
 			path = QuestionList;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F35DA62B4046610097347B /* TestView.swift */,
+				F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -821,6 +827,7 @@
 				F4B8888A2AAC319600BBD2F3 /* EnglishExpression.swift in Sources */,
 				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
 				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
+				F4F35DAD2B40FE0B0097347B /* QuestionListView.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
 				F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */,
 				F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */,
@@ -862,6 +869,7 @@
 				2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */,
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4F35DA42B4040390097347B /* QuestionListHeaderView.swift in Sources */,
+				F4F35DAF2B40FE9D0097347B /* MockDataForPreview.swift in Sources */,
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,

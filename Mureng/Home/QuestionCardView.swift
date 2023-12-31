@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Question {
+struct Question: Identifiable {
     let id: Int
     let content: String
     let koreanContent: String

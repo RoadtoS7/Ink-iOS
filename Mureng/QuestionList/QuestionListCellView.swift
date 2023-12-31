@@ -12,6 +12,13 @@ struct QuestionListCellView: View {
     let question: Question
     
     var body: some View {
+        VStack(spacing: 28) {
+            contentArea
+            divider
+        }
+    }
+ 
+    var contentArea: some View {
         VStack(alignment: .trailing, spacing: 16, content: {
             HStack(alignment: .firstTextBaseline,
                    spacing: 8) {
@@ -25,7 +32,6 @@ struct QuestionListCellView: View {
                 .frame(width: 44, height: 28)
         })
     }
-               
     var textArea: some View {
         VStack {
             Text(question.content)
@@ -46,9 +52,16 @@ struct QuestionListCellView: View {
         }
         
     }
+    var divider: some View {
+        Rectangle()
+            .frame(height: 1)
+            .frame(maxWidth: .infinity)
+            .overlay(Colors.Greyscale
+                .greyscale200.swiftUIColor)
+    }
 }
 
 #Preview {
-    let question: Question = .init(id: 0, content: "What are the habits you want to build? ", koreanContent: "어떤 습관을 만들고 싶나요?")
+    let question: Question = .init(id: 0, content: "What are the habits you want to build?", koreanContent: "어떤 습관을 만들고 싶나요?")
     return QuestionListCellView(question: question)
 }

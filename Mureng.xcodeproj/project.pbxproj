@@ -81,6 +81,7 @@
 		F4F35D9F2B403FFD0097347B /* StringRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35D9E2B403FFD0097347B /* StringRes.swift */; };
 		F4F35DA42B4040390097347B /* QuestionListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */; };
 		F4F35DA72B4046610097347B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DA62B4046610097347B /* TestView.swift */; };
+		F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */; };
 		F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */; };
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
@@ -187,6 +188,7 @@
 		F4F35D9E2B403FFD0097347B /* StringRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRes.swift; sourceTree = "<group>"; };
 		F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListHeaderView.swift; sourceTree = "<group>"; };
 		F4F35DA62B4046610097347B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListCellView.swift; sourceTree = "<group>"; };
 		F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNickNameView.swift; sourceTree = "<group>"; };
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */,
+				F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */,
 			);
 			path = QuestionList;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */,
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4F35DA42B4040390097347B /* QuestionListHeaderView.swift in Sources */,
+				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,

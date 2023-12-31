@@ -42,6 +42,12 @@ internal enum Colors {
   }
   internal static let lightest2Bg2 = ColorAsset(name: "lightest-2-bg2")
   internal static let lightestBg3 = ColorAsset(name: "lightestBg3")
+  internal enum Neutral {
+    internal enum Label {
+      internal static let quaternary = ColorAsset(name: "quaternary")
+      internal static let secondary = ColorAsset(name: "secondary")
+    }
+  }
   internal static let white = ColorAsset(name: "white")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

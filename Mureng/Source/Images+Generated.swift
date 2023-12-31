@@ -27,11 +27,13 @@ internal enum Images {
   internal static let checkboxOn24 = ImageAsset(name: "checkbox-on-24")
   internal static let chevron24 = ImageAsset(name: "chevron-24")
   internal static let chevronMore24 = ImageAsset(name: "chevron-more-24")
+  internal static let commentCount = ImageAsset(name: "comment-count")
   internal static let iconsChevronMore24 = ImageAsset(name: "iconsChevronMore24")
   internal static let iconsRefresh = ImageAsset(name: "icons_refresh")
   internal static let imgSplashLogo = ImageAsset(name: "img_splash_logo")
   internal static let kakaoLoginButton = ImageAsset(name: "kakaoLoginButton")
   internal static let logoDark112 = ImageAsset(name: "logoDark112")
+  internal static let question = ImageAsset(name: "question")
   internal static let selected24 = ImageAsset(name: "selected-24")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

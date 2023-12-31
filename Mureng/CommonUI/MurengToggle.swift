@@ -56,6 +56,6 @@ struct OnBoardingHeadline: View {
     
     var body: some View {
         Text(text)
-            .font(FontFamily.OmyuPretty.regular.swiftUIFont(fixedSize: 32))
+            .font(FontFamily.Pretendard.regular.swiftUIFont(fixedSize: 32))
     }
 }

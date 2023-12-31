@@ -197,7 +197,7 @@ extension AgreementViewController {
         // MARK: - titleLable
         let titleLabel: UILabel = .init()
         titleLabel.text = Constant.title
-        titleLabel.font = FontFamily.OmyuPretty.regular.font(size: 30)
+        titleLabel.font = FontFamily.Pretendard.regular.font(size: 30)
         titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         titleLabel.setContentHuggingPriority(.required, for: .horizontal)

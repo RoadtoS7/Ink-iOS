@@ -114,7 +114,7 @@ struct PutUserNicknameView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 48) {
             Text(Constant.title)
-                .font(.custom(FontFamily.OmyuPretty.regular.name, size: 30))
+                .font(.custom(FontFamily.Pretendard.regular.name, size: 30))
                 
             VStack(spacing: 7) {
                 TextField("닉네임", text: $nickname)

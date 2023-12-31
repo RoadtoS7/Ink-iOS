@@ -62,7 +62,6 @@
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
 		F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */; };
-		F4A74FA92A077A6A004D73A3 /* oyun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4A74FA82A077A6A004D73A3 /* oyun.ttf */; };
 		F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */; };
 		F4A74FAD2A07A1D9004D73A3 /* ButtonSoild48Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */; };
 		F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */; };
@@ -84,6 +83,8 @@
 		F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */; };
 		F4F35DAD2B40FE0B0097347B /* QuestionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAC2B40FE0B0097347B /* QuestionListView.swift */; };
 		F4F35DAF2B40FE9D0097347B /* MockDataForPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */; };
+		F4F35DB12B4102A40097347B /* QuestionListScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DB02B4102A40097347B /* QuestionListScreenView.swift */; };
+		F4F35DB52B415FDD0097347B /* Typo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35DB42B415FDD0097347B /* Typo.swift */; };
 		F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */; };
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
@@ -172,7 +173,6 @@
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
 		F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameView.swift; sourceTree = "<group>"; };
-		F4A74FA82A077A6A004D73A3 /* oyun.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = oyun.ttf; sourceTree = "<group>"; };
 		F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameViewController.swift; sourceTree = "<group>"; };
 		F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSoild48Style.swift; sourceTree = "<group>"; };
 		F4A8CA412A76053E0019DCFE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -193,6 +193,8 @@
 		F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListCellView.swift; sourceTree = "<group>"; };
 		F4F35DAC2B40FE0B0097347B /* QuestionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListView.swift; sourceTree = "<group>"; };
 		F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataForPreview.swift; sourceTree = "<group>"; };
+		F4F35DB02B4102A40097347B /* QuestionListScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListScreenView.swift; sourceTree = "<group>"; };
+		F4F35DB42B415FDD0097347B /* Typo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typo.swift; sourceTree = "<group>"; };
 		F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNickNameView.swift; sourceTree = "<group>"; };
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
@@ -386,7 +388,6 @@
 				F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */,
 				F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */,
 				F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */,
-				F4A74FA82A077A6A004D73A3 /* oyun.ttf */,
 				F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */,
 				F40F976A2A9B308C008895A5 /* Pretendard-Bold.otf */,
 				F40F976E2A9B308C008895A5 /* Pretendard-ExtraBold.otf */,
@@ -396,6 +397,7 @@
 				F40F97682A9B308C008895A5 /* Pretendard-Regular.otf */,
 				F40F97662A9B308C008895A5 /* Pretendard-SemiBold.otf */,
 				F40F976D2A9B308C008895A5 /* Pretendard-Thin.otf */,
+				F4F35DB42B415FDD0097347B /* Typo.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -499,6 +501,7 @@
 				F4F35DA32B4040390097347B /* QuestionListHeaderView.swift */,
 				F4F35DAA2B40EE970097347B /* QuestionListCellView.swift */,
 				F4F35DAC2B40FE0B0097347B /* QuestionListView.swift */,
+				F4F35DB02B4102A40097347B /* QuestionListScreenView.swift */,
 			);
 			path = QuestionList;
 			sourceTree = "<group>";
@@ -656,7 +659,6 @@
 				F40F976F2A9B308C008895A5 /* Pretendard-SemiBold.otf in Resources */,
 				F40F97712A9B308C008895A5 /* Pretendard-Regular.otf in Resources */,
 				F40F97762A9B308C008895A5 /* Pretendard-Thin.otf in Resources */,
-				F4A74FA92A077A6A004D73A3 /* oyun.ttf in Resources */,
 				2E4E555D28576D0D001B5554 /* Main.storyboard in Resources */,
 				F40F97622A9B254A008895A5 /* Colors.xcassets in Resources */,
 				F40F97742A9B308C008895A5 /* Pretendard-Medium.otf in Resources */,
@@ -829,6 +831,7 @@
 				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
 				F4F35DAD2B40FE0B0097347B /* QuestionListView.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
+				F4F35DB12B4102A40097347B /* QuestionListScreenView.swift in Sources */,
 				F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */,
 				F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */,
 				F4F35D9F2B403FFD0097347B /* StringRes.swift in Sources */,
@@ -872,6 +875,7 @@
 				F4F35DAF2B40FE9D0097347B /* MockDataForPreview.swift in Sources */,
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
+				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,

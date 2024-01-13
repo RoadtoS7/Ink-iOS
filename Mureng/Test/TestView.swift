@@ -8,9 +8,28 @@
 
 import SwiftUI
 
-struct TestView: View {
+struct FullScreenModalView: View {
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.primary.edgesIgnoringSafeArea(.all)
+            Button("Dismiss Modal") {
+                dismiss()
+            }
+        }
+    }
+}
+
+struct TestView: View {
+    @State private var isPresented = false
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        Button("Present!") {
+            isPresented.toggle()
+        }
+                .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
     }
 }
 

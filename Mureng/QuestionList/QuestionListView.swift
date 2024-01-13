@@ -11,12 +11,15 @@ struct QuestionListView: View {
     let questionGroup: [Question]
     
     var body: some View {
-        LazyVStack(content: {
+        LazyVStack(spacing: 28, content: {
             ForEach(questionGroup) { question in
                 QuestionListCellView(question: question)
             }
         })
-        .padding(.horizontal, 20)
+        .background(Colors.Neutral
+            .Container
+            .primary
+            .swiftUIColor)
     }
 }
 

@@ -14,6 +14,9 @@ extension SwiftUI.Font {
     private static let pretendardRegular: String = "Pretendard-Regular"
     private static let pretendardSemiBold: String = "Pretendard-SemiBold"
     
+    static let question: Self = .custom(nanumMyeonJoRegular, size: 32).weight(.bold)
+    static let questionSubtitle: Self = .custom(pretendardRegular, size: 14)
+    
     // title
     static let title20R: Self = .custom(pretendardRegular, fixedSize: 20)
     static let title18R: Self = .custom(pretendardRegular, fixedSize: 18)

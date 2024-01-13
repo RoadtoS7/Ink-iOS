@@ -31,6 +31,7 @@ internal enum Images {
   internal static let iconsChevronMore24 = ImageAsset(name: "iconsChevronMore24")
   internal static let iconsRefresh = ImageAsset(name: "icons_refresh")
   internal static let imgSplashLogo = ImageAsset(name: "img_splash_logo")
+  internal static let inkAppIcon = ImageAsset(name: "ink_app_icon")
   internal static let kakaoLoginButton = ImageAsset(name: "kakaoLoginButton")
   internal static let logoDark112 = ImageAsset(name: "logoDark112")
   internal static let question = ImageAsset(name: "question")

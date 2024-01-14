@@ -24,6 +24,7 @@ struct QuestionListScreenView: View {
                 .ignoresSafeArea()
             titleArea
             questionGroupScrollView
+                .ignoresSafeArea(edges: .bottom)
             if questionGroupReachedStatusBar {
                 questionNavigationTitle
             }

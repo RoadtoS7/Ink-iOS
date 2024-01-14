@@ -49,6 +49,7 @@ internal enum Colors {
     internal enum Label {
       internal static let quaternary = ColorAsset(name: "quaternary")
       internal static let secondary = ColorAsset(name: "secondary")
+      internal static let tertiary = ColorAsset(name: "tertiary")
     }
   }
   internal static let white = ColorAsset(name: "white")

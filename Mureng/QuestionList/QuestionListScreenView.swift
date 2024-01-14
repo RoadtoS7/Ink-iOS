@@ -8,35 +8,21 @@
 import SwiftUI
 
 struct QuestionListScreenView: View {
+    @StateObject var scrollObservable: ScrollObservableViewModel = .init()
+    
+    let questionGroupTopMargin: CGFloat = 292
+    
+    var questionGroupReachedStatusBar: Bool {
+        scrollObservable.offsetY <= -questionGroupTopMargin
+    }
+    
     var questionGroup: [Question]
     
     var body: some View {
         ZStack(alignment: .top, content: {
             gradientBackground
             titleArea
-            
-            ScrollView {
-                VStack {
-                    QuestionListHeaderView()
-                        .offset(y: 12.0)
-                    QuestionListView(questionGroup: questionGroup)
-                        .offset(y: 28.0)
-                }
-                .padding(.bottom, 28.0)
-                .padding(.horizontal, 20.0)
-                .background(Colors.Neutral
-                    .Container
-                    .primary
-                    .swiftUIColor)
-                .clipShape(RoundedRectangle(cornerRadius: 12.0))
-                .padding(.top, 292.0)
-            }
-            .onAppear {
-                UIScrollView.appearance().bounces = false
-            }
-            .onDisappear {
-                UIScrollView.appearance().bounces = true
-            }
+            questionGroupScrollView
         })
         .ignoresSafeArea()
         .frame(width: .infinity, height: .infinity)
@@ -57,7 +43,7 @@ struct QuestionListScreenView: View {
              maxWidth: .infinity,
              maxHeight: .infinity,
              alignment: .topLeading
-           )
+       )
         .foregroundStyle(.white)
     }
     
@@ -69,6 +55,65 @@ struct QuestionListScreenView: View {
             ],
             startPoint: UnitPoint(x: 0.5, y: 0),
             endPoint: UnitPoint(x: 0.5, y: 1)
+        )
+    }
+    
+    var questionGroupScrollView: some View {
+        ScrollView {
+            ScrollObservableView(viewModel: scrollObservable)
+            
+            VStack {
+                if questionGroupReachedStatusBar == false {
+                    QuestionListHeaderView()
+                        .frame(height: 44)
+                }
+                
+                QuestionListView(questionGroup: questionGroup)
+                    .offset(y: 28.0)
+            }
+            .safeAreaInset(edge: .top, content: {
+                if questionGroupReachedStatusBar {
+                    questionNavigationTitle
+                }
+            })
+            .padding(.top, 12.0)
+            .padding(.bottom, 28.0)
+            .padding(.horizontal, 20.0)
+            .background(Colors.Neutral
+                .Container
+                .primary
+                .swiftUIColor)
+            .clipShape(RoundedRectangle(cornerRadius: 12.0))
+            .padding(.top, 292.0)
+        }
+        .onPreferenceChange(ScrollOffsetKey.self, perform: { value in
+            scrollObservable.setOffset(value)
+        })
+        .onAppear {
+            UIScrollView.appearance().bounces = false
+        }
+        .onDisappear {
+            UIScrollView.appearance().bounces = true
+        }
+    }
+    
+    var questionNavigationTitle: some View {
+        HStack(content: {
+            Text("questions")
+                .font(.questionAsNavigationTitle)
+                .foregroundStyle(
+                    Colors.Neutral
+                    .Label
+                    .tertiary
+                    .swiftUIColor
+                )
+        })
+        .frame(height: 28)
+        .padding(.vertical, 8)
+        .frame(
+             maxWidth: .infinity,
+             maxHeight: .infinity,
+             alignment: .topLeading
         )
     }
 }

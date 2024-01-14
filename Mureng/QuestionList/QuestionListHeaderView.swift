@@ -43,14 +43,14 @@ struct QuestionListHeaderView: View {
     @State var questionSort: QuestionSort = LikeQuestionSort()
     
     var body: some View {
-        HStack {
+        HStack(content: {
             Text(questionCountText)
             
             Spacer()
             
             Toggle("정렬", isOn: $latestSorted)
                 .toggleStyle(QuestionSortToggle())
-        }
+        })
     }
 }
 

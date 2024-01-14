@@ -16,6 +16,7 @@ extension SwiftUI.Font {
     
     static let question: Self = .custom(nanumMyeonJoRegular, size: 32).weight(.bold)
     static let questionSubtitle: Self = .custom(pretendardRegular, size: 14)
+    static let questionAsNavigationTitle: Self = .custom(nanumMyeonJoRegular, size: 18).weight(.medium)
     
     // title
     static let title20R: Self = .custom(pretendardRegular, fixedSize: 20)

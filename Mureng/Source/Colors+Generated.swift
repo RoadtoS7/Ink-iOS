@@ -51,6 +51,9 @@ internal enum Colors {
       internal static let secondary = ColorAsset(name: "secondary")
       internal static let tertiary = ColorAsset(name: "tertiary")
     }
+    internal enum Surface {
+      internal static let tertiary = ColorAsset(name: "tertiary")
+    }
   }
   internal static let white = ColorAsset(name: "white")
 }

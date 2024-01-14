@@ -21,10 +21,13 @@ struct QuestionListScreenView: View {
     var body: some View {
         ZStack(alignment: .top, content: {
             gradientBackground
+                .ignoresSafeArea()
             titleArea
             questionGroupScrollView
+            if questionGroupReachedStatusBar {
+                questionNavigationTitle
+            }
         })
-        .ignoresSafeArea()
         .frame(width: .infinity, height: .infinity)
     }
     
@@ -63,19 +66,12 @@ struct QuestionListScreenView: View {
             ScrollObservableView(viewModel: scrollObservable)
             
             VStack {
-                if questionGroupReachedStatusBar == false {
-                    QuestionListHeaderView()
-                        .frame(height: 44)
-                }
+                QuestionListHeaderView()
+                    .frame(height: 44)
                 
                 QuestionListView(questionGroup: questionGroup)
                     .offset(y: 28.0)
             }
-            .safeAreaInset(edge: .top, content: {
-                if questionGroupReachedStatusBar {
-                    questionNavigationTitle
-                }
-            })
             .padding(.top, 12.0)
             .padding(.bottom, 28.0)
             .padding(.horizontal, 20.0)
@@ -110,10 +106,13 @@ struct QuestionListScreenView: View {
         })
         .frame(height: 28)
         .padding(.vertical, 8)
+        .padding(.horizontal, 20)
         .frame(
              maxWidth: .infinity,
-             maxHeight: .infinity,
              alignment: .topLeading
+        )
+        .background(
+            Color(red: 0.98, green: 0.98, blue: 0.98).opacity(0.9)
         )
     }
 }

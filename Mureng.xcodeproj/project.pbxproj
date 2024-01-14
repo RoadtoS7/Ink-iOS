@@ -60,6 +60,8 @@
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
+		F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */; };
+		F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52042B534F680091684C /* ScrollObservableView.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
 		F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */; };
 		F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */; };
@@ -171,6 +173,8 @@
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
+		F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPreferenceKey.swift; sourceTree = "<group>"; };
+		F49F52042B534F680091684C /* ScrollObservableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollObservableView.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
 		F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameView.swift; sourceTree = "<group>"; };
 		F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +439,14 @@
 			path = AuthService;
 			sourceTree = "<group>";
 		};
+		F49F52012B534E160091684C /* PreferenceKey */ = {
+			isa = PBXGroup;
+			children = (
+				F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */,
+			);
+			path = PreferenceKey;
+			sourceTree = "<group>";
+		};
 		F4B6821729F52F1C000E7A92 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +483,7 @@
 		F4B9B57A29F3D49000338483 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				F49F52012B534E160091684C /* PreferenceKey */,
 				F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */,
 				F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */,
 				F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */,
@@ -483,6 +496,7 @@
 				F4A8CA412A76053E0019DCFE /* Extension.swift */,
 				2E2338CE2B0241D700FFEF51 /* GalleryPickerView.swift */,
 				2E2338D02B024ED500FFEF51 /* BottomSheetView.swift */,
+				F49F52042B534F680091684C /* ScrollObservableView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -826,6 +840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0FD8452B04F9A300CAF0F5 /* AnswerBackgroundView.swift in Sources */,
+				F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */,
 				F4B8888A2AAC319600BBD2F3 /* EnglishExpression.swift in Sources */,
 				F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */,
 				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
@@ -840,6 +855,7 @@
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
 				F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */,
+				F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */,
 				F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */,
 				F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */,
 				F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */,

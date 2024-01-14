@@ -57,7 +57,8 @@ struct WriteAnswerView: View {
                     })
                 }
                 
-            }.padding(.horizontal, 24)
+            }
+            .padding(.horizontal, 24)
             
             WriteAnswerImagePickerView(imageFromGallery: $image)
         }

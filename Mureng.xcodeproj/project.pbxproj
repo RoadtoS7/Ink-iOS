@@ -277,7 +277,7 @@
 				F4FB9ACF2A621BF600388AC3 /* API */,
 				F43605682A247C610014E34D /* Utilities */,
 				F43605652A24783E0014E34D /* DI */,
-				F4B6821729F52F1C000E7A92 /* Source */,
+				F4B6821729F52F1C000E7A92 /* Resource */,
 				F4B9B57A29F3D49000338483 /* CommonUI */,
 				2E6A9C7D29E0D6B900F8E2A4 /* SignUp */,
 				2E4E559028577A90001B5554 /* Extension */,
@@ -447,7 +447,7 @@
 			path = PreferenceKey;
 			sourceTree = "<group>";
 		};
-		F4B6821729F52F1C000E7A92 /* Source */ = {
+		F4B6821729F52F1C000E7A92 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				F40F97782A9B3091008895A5 /* Font */,
@@ -460,7 +460,7 @@
 				2E4E556028576D0F001B5554 /* LaunchScreen.storyboard */,
 				F4F35D9E2B403FFD0097347B /* StringRes.swift */,
 			);
-			path = Source;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		F4B888852AAC314C00BBD2F3 /* Service */ = {

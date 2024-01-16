@@ -20,7 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: scene)
         let service: AuthenticationService = DefaultAuthService()
-        let view: EntryView = .init(authenticationService: service)
+//        let view: EntryView = .init(authenticationService: service)
+        let view = WriteAnswerView(question: <#T##Question#>)
+        
         let viewController = FullScreenHostingViewController(swiftUIView: view)
         let navigationController = RootNavigationViewController(rootViewController: viewController)
         

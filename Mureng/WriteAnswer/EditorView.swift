@@ -15,6 +15,7 @@ struct EditorView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             TextEditor(text: $answer)
+                .scrollContentBackground(.hidden)
                 .focused($isTextEditorFocused)
                 .onTapGesture {
                     if isTextEditorFocused {

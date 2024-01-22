@@ -119,6 +119,7 @@ struct WriteAnswerImagePickerView: View {
                     )
             })
         }
+        .foregroundStyle(Colors.Greyscale.greyscale800.swiftUIColor)
         .frame(maxWidth: .infinity, maxHeight: 52)
         .padding(.vertical, 4)
         .background(.white)

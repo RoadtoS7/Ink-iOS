@@ -55,12 +55,14 @@ struct WriteAnswerView: View {
                             .frame(maxWidth: .infinity)
                             .aspectRatio(1.0, contentMode: .fit)
                             .offset(y: -136.0)
+                            .cornerRadius(8.0)
                     }
                 }
             }
             .ignoresSafeArea(.keyboard)
             .ignoresSafeArea(.container, edges: .bottom)
             .padding(.horizontal, 24)
+            .background(Colors.Grey.light3Bg.swiftUIColor)
             
             WriteAnswerImagePickerView(imageFromGallery: $image)
                 .ignoresSafeArea(.keyboard)

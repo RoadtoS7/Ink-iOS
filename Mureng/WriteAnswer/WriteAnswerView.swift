@@ -54,13 +54,16 @@ struct WriteAnswerView: View {
                             .resizable()
                             .frame(maxWidth: .infinity)
                             .aspectRatio(1.0, contentMode: .fit)
+                            .offset(y: -136.0)
                     }
                 }
             }
+            .ignoresSafeArea(.keyboard)
+            .ignoresSafeArea(.container, edges: .bottom)
             .padding(.horizontal, 24)
-            .ignoresSafeArea(.keyboard )
             
             WriteAnswerImagePickerView(imageFromGallery: $image)
+                .ignoresSafeArea(.keyboard)
         }
     }
 }

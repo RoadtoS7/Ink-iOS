@@ -62,7 +62,6 @@ struct WriteAnswerImagePickerView: View {
                 self.imageFromGallery = image
             }
         }
-        .ignoresSafeArea()
     }
     
     var collpasedBackgroundPicker : some View {

@@ -34,6 +34,7 @@
 		2EE1601F2B10C950009B8E62 /* WriteAnswerImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */; };
 		826BDD25A2CA8ECC8528763F /* Pods_Mureng_MurengUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */; };
 		98D6EFF5B4F6951B6310338C /* Pods_MurengTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB35D238D9991724C34759D /* Pods_MurengTests.framework */; };
+		F40C1F3D2B56B86400948F9B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C1F3C2B56B86400948F9B /* Question.swift */; };
 		F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */; };
 		F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */; };
 		F40F97622A9B254A008895A5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40F97612A9B254A008895A5 /* Colors.xcassets */; };
@@ -60,6 +61,7 @@
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
+		F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D2C132B5D333B0097A4E0 /* EditorView.swift */; };
 		F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */; };
 		F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52042B534F680091684C /* ScrollObservableView.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
@@ -147,6 +149,7 @@
 		6C3EE829AACDD9F06D6F1AA4 /* Pods-Mureng-MurengUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.release.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A867191D321A92C26C8B0035 /* Pods-Mureng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.debug.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.debug.xcconfig"; sourceTree = "<group>"; };
 		B9A4DA80CD29A0E45C067FAC /* Pods-Mureng-MurengUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng-MurengUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F40C1F3C2B56B86400948F9B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameWarningTextStyle.swift; sourceTree = "<group>"; };
 		F40F975F2A9B23FC008895A5 /* ExpressionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionCard.swift; sourceTree = "<group>"; };
 		F40F97612A9B254A008895A5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
+		F48D2C132B5D333B0097A4E0 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPreferenceKey.swift; sourceTree = "<group>"; };
 		F49F52042B534F680091684C /* ScrollObservableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollObservableView.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 				2EBFBE552AD0EE6100D3AB18 /* WriteAnswerView.swift */,
 				2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */,
 				2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */,
+				F48D2C132B5D333B0097A4E0 /* EditorView.swift */,
 			);
 			path = WriteAnswer;
 			sourceTree = "<group>";
@@ -372,6 +377,14 @@
 				16B634772C77526B813CE5EB /* Pods-MurengTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F40C1F3B2B56B85200948F9B /* TestDataForPreview */ = {
+			isa = PBXGroup;
+			children = (
+				F40C1F3C2B56B86400948F9B /* Question.swift */,
+			);
+			path = TestDataForPreview;
 			sourceTree = "<group>";
 		};
 		F40F97632A9B25E9008895A5 /* Home */ = {
@@ -450,6 +463,7 @@
 		F4B6821729F52F1C000E7A92 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F40C1F3B2B56B85200948F9B /* TestDataForPreview */,
 				F40F97782A9B3091008895A5 /* Font */,
 				F40F97612A9B254A008895A5 /* Colors.xcassets */,
 				F4BB300B29F5668200F1E9F5 /* Fonts.swift */,
@@ -884,6 +898,7 @@
 				2E2338CF2B0241D700FFEF51 /* GalleryPickerView.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
 				2EBFBE562AD0EE6100D3AB18 /* WriteAnswerView.swift in Sources */,
+				F40C1F3D2B56B86400948F9B /* Question.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,
 				2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */,
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
@@ -896,6 +911,7 @@
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,
 				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,
+				F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */,
 				F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */,
 				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,
 			);

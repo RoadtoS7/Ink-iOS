@@ -22,14 +22,21 @@ struct FullScreenModalView: View {
 }
 
 struct TestView: View {
-    @State private var isPresented = false
-    @Environment(\.dismiss) var dismiss
+    @State var email: String = ""
     
     var body: some View {
-        Button("Present!") {
-            isPresented.toggle()
+        ZStack(alignment: .leading) {
+            if email.isEmpty {
+                Text("이메일이 비어있씁니다.")
+                    .font(.custom("Helvetica", size: 24))
+                    .padding(.all)
+                    .foregroundStyle(.black)
+            }
+            
+            TextEditor(text: $email)
+                .font(.custom("Helvetica", size: 24))
+                .padding(.all)
         }
-                .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
     }
 }
 

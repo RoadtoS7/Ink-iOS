@@ -38,7 +38,7 @@ struct WriteAnswerView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 20) {
+            VStack(spacing: 20.0) {
                 QuestionView(question: question)
                 
                 Rectangle()
@@ -46,19 +46,19 @@ struct WriteAnswerView: View {
                     .foregroundColor(.clear)
                     .background(Colors.Greyscale.greyscale200.swiftUIColor)
                 
-                EditorView(answer: $answer, placeholder: placeholder)
-                
-                if let image {
-                    GeometryReader(content: { geometry in
+                VStack(spacing: 40.0) {
+                    EditorView(answer: $answer, placeholder: placeholder)
+                    
+                    if let image {
                         Image(uiImage: image)
                             .resizable()
-                            .frame(width: geometry.size.width)
+                            .frame(maxWidth: .infinity)
                             .aspectRatio(1.0, contentMode: .fit)
-                    })
+                    }
                 }
-                
             }
             .padding(.horizontal, 24)
+            .ignoresSafeArea(.keyboard )
             
             WriteAnswerImagePickerView(imageFromGallery: $image)
         }
@@ -70,32 +70,7 @@ struct WriteAnswerView: View {
     return WriteAnswerView(question: question)
 }
 
-struct EditorView: View {
-    @State var editing: Bool = false
-    @Binding var answer: String
-    let placeholder: String
-    
-    var body: some View {
-        ZStack(alignment: .topLeading, content: {
-            TextEditor(text: $answer)
-                .multilineTextAlignment(.leading)
-                .background(Color.clear)
-                .font(FontFamily.Pretendard
-                    .regular
-                    .swiftUIFont(fixedSize: 18))
-                .onChange(of: answer, perform: { _ in
-                    editing = true
-                })
-            
-            if answer.isEmpty && editing == false {
-                Text(placeholder)
-                    .frame(maxWidth: .infinity,
-                           alignment: .topLeading)
-                    .foregroundColor(Colors.Greyscale.greyscale200.swiftUIColor)
-            }
-        })
-    }
-}
+
 
 struct QuestionView: View {
     let question: Question

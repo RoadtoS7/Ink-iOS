@@ -46,23 +46,28 @@ struct WriteAnswerView: View {
                     .foregroundColor(.clear)
                     .background(Colors.Greyscale.greyscale200.swiftUIColor)
                 
-                VStack(spacing: 40.0) {
-                    EditorView(answer: $answer, placeholder: placeholder)
-                    
-                    if let image {
-                        Image(uiImage: image)
-                            .resizable()
-                            .frame(maxWidth: .infinity)
-                            .aspectRatio(1.0, contentMode: .fit)
-                            .offset(y: -136.0)
-                            .cornerRadius(8.0)
+                ScrollView {
+                    VStack(spacing: 40.0) {
+                        EditorView(answer: $answer, placeholder: placeholder)
+                            .border(Color.gray, width: 1)
+                        
+                        if let image {
+                            GeometryReader { proxy in
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: proxy.size.width, height: proxy.size.width)
+                                    .aspectRatio(1.0, contentMode: .fit)
+                                    .cornerRadius(8.0)
+//                                    .offset(y: -136.0)
+                            }
+                        }
                     }
                 }
             }
-            .ignoresSafeArea(.keyboard)
-            .ignoresSafeArea(.container, edges: .bottom)
             .padding(.horizontal, 24)
+            .padding(.bottom, 60)
             .background(Colors.Grey.light3Bg.swiftUIColor)
+            .ignoresSafeArea(.keyboard)
             
             WriteAnswerImagePickerView(imageFromGallery: $image)
                 .ignoresSafeArea(.keyboard)

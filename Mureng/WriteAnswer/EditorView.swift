@@ -34,7 +34,6 @@ struct EditorView: View {
                     .padding(.leading, 5)
             }
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .onAppear(perform: {
             UIScrollView.appearance().bounces = false
         })

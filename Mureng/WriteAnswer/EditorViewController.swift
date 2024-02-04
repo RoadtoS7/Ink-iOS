@@ -196,10 +196,3 @@ extension EditorViewController: UITextViewDelegate {
         }
     }
 }
-
-extension NSLayoutConstraint {
-    func settingPriority(_ priority: UILayoutPriority) -> NSLayoutConstraint {
-        self.priority = priority
-        return self
-    }
-}

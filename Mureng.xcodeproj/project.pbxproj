@@ -94,6 +94,7 @@
 		F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */; };
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
+		F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +211,7 @@
 		F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNickNameView.swift; sourceTree = "<group>"; };
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 				2E4E559128577AAC001B5554 /* UIView+Extension.swift */,
 				F4B9B57829F3D15900338483 /* UIControl+.swift */,
 				F4C4D34E2B664BFA004C6804 /* Font+.swift */,
+				F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,
+				F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */,
 				F46357412B6E7B6D00641CBF /* EditorViewController.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,

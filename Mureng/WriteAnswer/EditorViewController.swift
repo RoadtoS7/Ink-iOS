@@ -186,8 +186,8 @@ extension EditorViewController: UITextViewDelegate {
     }
     
     private func adjustTextViewHeight() {
-        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.infinity))
-
+        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, 
+                                                height: CGFloat.infinity))
         let textViewHeight: CGFloat = size.height > self.textViewHeight ? size.height : self.textViewHeight
         
         textViewHeightConstraint?.constant = textViewHeight

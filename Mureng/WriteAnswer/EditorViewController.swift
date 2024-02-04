@@ -14,10 +14,13 @@ final class ImageSourceSelectionView: UIView {
         $0.distribution = .fillEqually
         return $0
     }(UIStackView())
+    
     private let galleryButton: UIButton = {
         $0.setTitle("앨범", for: .normal)
+        $0.setTitleColor(Colors.Greyscale.greyscale800.color, for: .normal)
         return $0
     }(UIButton())
+    
     private var appSourcingButton: UIButton = {
         $0.setTitle("배경", for: .normal)
         return $0
@@ -45,8 +48,8 @@ final class ImageSourceSelectionView: UIView {
     
     private func addSubviews() {
         self.addSubview(stackView)
-        stackView.addSubview(galleryButton)
-        stackView.addSubview(appSourcingButton)
+        stackView.addArrangedSubview(galleryButton)
+        stackView.addArrangedSubview(appSourcingButton)
     }
 }
 
@@ -59,7 +62,7 @@ class EditorViewController: UIViewController {
     
     let textView: UITextView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-//        $0.isScrollEnabled = false
+        $0.bounces = false
         $0.showsVerticalScrollIndicator = false
         return $0
     }(UITextView())
@@ -97,12 +100,29 @@ class EditorViewController: UIViewController {
         return $0
     }(ImageSourceSelectionView())
     
+    private var textViewHeight: CGFloat = .zero
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        makeTextViewFillHalfOfScrollView()
+    }
+    
+    private func makeTextViewFillHalfOfScrollView() {
+        let halfScrollViewHeight = scrollView.frame.height / 2
+        textViewHeightConstraint?.constant = halfScrollViewHeight
+        self.textViewHeight = halfScrollViewHeight
+        
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initLayout()
     }
     
-    func initLayout() {
+    private func initLayout() {
         view.backgroundColor = .white
         textView.delegate = self
         addSubviews()
@@ -112,7 +132,6 @@ class EditorViewController: UIViewController {
             questionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             questionLabel.topAnchor.constraint(equalTo: view.topAnchor),
         ])
-        
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 20),
@@ -126,7 +145,6 @@ class EditorViewController: UIViewController {
             scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             scrollContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
-        
         
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: scrollContentView.topAnchor),
@@ -142,20 +160,23 @@ class EditorViewController: UIViewController {
         
         textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: 40)
         textViewHeightConstraint?.isActive = true
+        
+        NSLayoutConstraint.activate([
+            imageSourceSelectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageSourceSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageSourceSelectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 40)
+        ])
     }
     
     private func addSubviews() {
         view.addSubview(questionLabel)
         view.addSubview(scrollView)
+        view.addSubview(imageSourceSelectionView)
         
         scrollView.addSubview(scrollContentView)
         scrollContentView.addSubview(textView)
         scrollContentView.addSubview(imageView)
-        
-        //        scrollContentView.addSubview(editorStack)
-        
-        //        editorStack.addSubview(editorView)
-        //        editorStack.addSubview(imageView)
     }
 }
 
@@ -166,8 +187,10 @@ extension EditorViewController: UITextViewDelegate {
     
     private func adjustTextViewHeight() {
         let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.infinity))
-        print("$$ textView heigt: ", size.height)
-        textViewHeightConstraint?.constant = size.height
+
+        let textViewHeight: CGFloat = size.height > self.textViewHeight ? size.height : self.textViewHeight
+        
+        textViewHeightConstraint?.constant = textViewHeight
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }

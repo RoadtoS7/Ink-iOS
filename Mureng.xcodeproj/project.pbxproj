@@ -54,6 +54,7 @@
 		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
+		F46357412B6E7B6D00641CBF /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* EditorViewController.swift */; };
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
 		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
 		F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */; };
@@ -170,6 +171,7 @@
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
+		F46357402B6E7B6D00641CBF /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		F4684BB72AA466CB006549AE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		F4684BB92AA47A37006549AE /* ExpressionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionRowView.swift; sourceTree = "<group>"; };
 		F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionListView.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */,
 				2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */,
 				F48D2C132B5D333B0097A4E0 /* EditorView.swift */,
+				F46357402B6E7B6D00641CBF /* EditorViewController.swift */,
 			);
 			path = WriteAnswer;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,
+				F46357412B6E7B6D00641CBF /* EditorViewController.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,

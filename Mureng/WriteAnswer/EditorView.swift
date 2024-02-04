@@ -17,15 +17,15 @@ struct EditorView: View {
             TextEditor(text: $answer)
                 .scrollContentBackground(.hidden)
                 .focused($isTextEditorFocused)
-                .onTapGesture {
-                    if isTextEditorFocused {
-                        // 키보드가 보이는 상태에서 TextField를 다시 탭하면 키보드 숨김
-                        isTextEditorFocused = false
-                    } else {
-                        // TextField가 포커스를 잃었을 때 탭하면 키보드 표시
-                        isTextEditorFocused = true
-                    }
-                }
+//                .onTapGesture {
+//                    if isTextEditorFocused {
+//                        // 키보드가 보이는 상태에서 TextField를 다시 탭하면 키보드 숨김
+//                        isTextEditorFocused = false
+//                    } else {
+//                        // TextField가 포커스를 잃었을 때 탭하면 키보드 표시
+//                        isTextEditorFocused = true
+//                    }
+//                }
             
             if answer.isEmpty && !isTextEditorFocused {
                 Text("여기에 입력하세요...")

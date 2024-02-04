@@ -52,14 +52,16 @@ struct WriteAnswerView: View {
                             .border(Color.gray, width: 1)
                         
                         if let image {
-                            GeometryReader { proxy in
+//                            GeometryReader { proxy in
                                 Image(uiImage: image)
                                     .resizable()
-                                    .frame(width: proxy.size.width, height: proxy.size.width)
+                                    .frame(width: .infinity)
+//                                    .frame(width: proxy.size.width, height: proxy.size.width)
                                     .aspectRatio(1.0, contentMode: .fit)
                                     .cornerRadius(8.0)
-//                                    .offset(y: -136.0)
-                            }
+                                    .ignoresSafeArea(.keyboard)
+//                            }
+                            
                         }
                     }
                 }
@@ -67,7 +69,7 @@ struct WriteAnswerView: View {
             .padding(.horizontal, 24)
             .padding(.bottom, 60)
             .background(Colors.Grey.light3Bg.swiftUIColor)
-            .ignoresSafeArea(.keyboard)
+//            .ignoresSafeArea(.keyboard)
             
             WriteAnswerImagePickerView(imageFromGallery: $image)
                 .ignoresSafeArea(.keyboard)

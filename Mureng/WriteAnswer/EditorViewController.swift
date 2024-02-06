@@ -6,8 +6,41 @@
 //
 
 import UIKit
+import PhotosUI
+
+protocol GalleryPickerDelegate {
+    func present()
+}
+
+struct GalleryPickerUseCase: GalleryPickerDelegate {
+    weak var rootViewController: UIViewController?
+    
+    func present() {
+        let view = PHPickerViewController(configuration: PHPickerConfiguration())
+        rootViewController?.present(view, animated: true)
+    }
+}
 
 final class ImageSourceSelectionView: UIView {
+    class SourceButton: UIButton {
+        let title: String
+        
+        init(title: String) {
+            self.title = title
+            
+            super.init(frame: .zero)
+            
+            backgroundColor = .white
+            setTitle(title, for: .normal)
+            setTitleColor(Colors.Greyscale.greyscale800.color, for: .normal)
+        }
+        
+        @available(*, unavailable)
+        required init?(coder: NSCoder) {
+            fatalError()
+        }
+    }
+    
     private let stackView: UIStackView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .horizontal
@@ -15,27 +48,29 @@ final class ImageSourceSelectionView: UIView {
         return $0
     }(UIStackView())
     
-    private let galleryButton: UIButton = {
-        $0.setTitle("앨범", for: .normal)
-        $0.setTitleColor(Colors.Greyscale.greyscale800.color, for: .normal)
-        return $0
-    }(UIButton())
+    private let galleryButton = SourceButton(title: "사진")
+    private var appSourcingButton = SourceButton(title:"배경")
     
-    private var appSourcingButton: UIButton = {
-        $0.setTitle("배경", for: .normal)
-        return $0
-    }(UIButton())
+    private let galleryPickerDelegate: GalleryPickerDelegate
     
-    init() {
+    init(galleryPickerDelegate: GalleryPickerDelegate) {
+        self.galleryPickerDelegate = galleryPickerDelegate
         super.init(frame: .zero)
         initLayout()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func initLayout() {
+        backgroundColor = .white
+        
+        galleryButton.addTouchAction { [unowned self] _ in
+            self.galleryPickerDelegate.present()
+        }
+        
         addSubviews()
         
         NSLayoutConstraint.activate([
@@ -95,10 +130,7 @@ class EditorViewController: UIViewController {
         return $0
     }(UIStackView())
     
-    let imageSourceSelectionView: ImageSourceSelectionView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(ImageSourceSelectionView())
+    private var imageSourceSelectionView: ImageSourceSelectionView!
     
     private var textViewHeight: CGFloat = .zero
     
@@ -123,6 +155,10 @@ class EditorViewController: UIViewController {
     }
     
     private func initLayout() {
+        let galleryPickerDelegate = GalleryPickerUseCase(rootViewController: self)
+        imageSourceSelectionView = .init(galleryPickerDelegate: galleryPickerDelegate)
+        imageSourceSelectionView.translatesAutoresizingMaskIntoConstraints = false
+        
         view.backgroundColor = .white
         textView.delegate = self
         addSubviews()
@@ -164,8 +200,9 @@ class EditorViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageSourceSelectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageSourceSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageSourceSelectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 40)
+            imageSourceSelectionView.bottomAnchor.constraint(equalTo:
+                                                                view.safeAreaLayoutGuide.bottomAnchor),
+            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 52)
         ])
     }
     
@@ -178,6 +215,11 @@ class EditorViewController: UIViewController {
         scrollContentView.addSubview(textView)
         scrollContentView.addSubview(imageView)
     }
+    
+    private func showImagePickerVC() {
+        let viewController = UIImagePickerController(rootViewController: self)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension EditorViewController: UITextViewDelegate {
@@ -186,12 +228,11 @@ extension EditorViewController: UITextViewDelegate {
     }
     
     private func adjustTextViewHeight() {
-        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, 
-                                                height: CGFloat.infinity))
+        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.infinity))
         let textViewHeight: CGFloat = size.height > self.textViewHeight ? size.height : self.textViewHeight
         
-        textViewHeightConstraint?.constant = textViewHeight
-        UIView.animate(withDuration: 0.2) {
+        if textViewHeightConstraint?.constant != textViewHeight  {
+            textViewHeightConstraint?.constant = textViewHeight
             self.view.layoutIfNeeded()
         }
     }

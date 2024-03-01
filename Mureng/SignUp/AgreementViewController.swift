@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import Combine
-import ComposableArchitecture
 
 class Agreement: Equatable {
     static func == (lhs: Agreement, rhs: Agreement) -> Bool {
@@ -40,55 +39,6 @@ class Agreement: Equatable {
     enum Action: Equatable {
         case agree
         case disagree
-    }
-    
-    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-      switch action {
-      case .agree:
-          state.agreed = true
-          return .none
-      case .disagree:
-          state.agreed = false
-          return .none
-      }
-    }
-}
-
-struct AgreementChecker: ReducerProtocol {
-    struct State: Equatable, Identifiable {
-        let id = UUID()
-        var agreedService: Bool
-        var agreedPrivacy: Bool
-        var agreedAll: Bool
-        var nextButtonActive: Bool {
-            agreedAll
-        }
-    }
-    
-    enum Action: Equatable {
-        case agreeAllButtonTapped
-        case agreeServiceButtonTapped
-        case agreePrivacyButtonTapped
-    }
-    
-    var body: some ReducerProtocol<State, Action> {
-        Reduce { state, action in
-            switch action {
-            case .agreeAllButtonTapped:
-                state.agreedAll.toggle()
-                state.agreedService = state.agreedAll
-                state.agreedPrivacy = state.agreedAll
-                return .none
-            case .agreeServiceButtonTapped:
-                state.agreedService.toggle()
-                state.agreedAll = state.agreedService && state.agreedService
-                return .none
-            case .agreePrivacyButtonTapped:
-                state.agreedPrivacy.toggle()
-                state.agreedAll = state.agreedService && state.agreedService
-                return .none
-            }
-        }
     }
 }
 

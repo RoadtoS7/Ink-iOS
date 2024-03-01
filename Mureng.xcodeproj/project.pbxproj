@@ -51,7 +51,6 @@
 		F40F977C2A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */; };
 		F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */; };
 		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
-		F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F41052B92A3E953B00ABA305 /* ComposableArchitecture */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
 		F46357412B6E7B6D00641CBF /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* EditorViewController.swift */; };
@@ -225,7 +224,6 @@
 			files = (
 				1F45CECD7A01D3A31007820D /* Pods_Mureng.framework in Frameworks */,
 				F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */,
-				F41052BA2A3E953B00ABA305 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +589,6 @@
 			name = Mureng;
 			packageProductDependencies = (
 				F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */,
-				F41052B92A3E953B00ABA305 /* ComposableArchitecture */,
 			);
 			productName = Mureng;
 			productReference = 2E4E555228576D0D001B5554 /* Mureng.app */;
@@ -671,7 +668,6 @@
 			mainGroup = 2E4E554928576D0D001B5554;
 			packageReferences = (
 				F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
-				F41052B82A3E953B00ABA305 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 2E4E555328576D0D001B5554 /* Products */;
 			projectDirPath = "";
@@ -1289,14 +1285,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F41052B82A3E953B00ABA305 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = exactVersion;
-				version = 0.54.1;
-			};
-		};
 		F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -1308,11 +1296,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F41052B92A3E953B00ABA305 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F41052B82A3E953B00ABA305 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
 		F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;

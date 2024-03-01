@@ -11,8 +11,28 @@ class TestViewController: UIViewController {
     private var scrollView: UIScrollView!
     private var contentView: UIView!
     private var questionHeaderView: QuestionHeaderView!
-    let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
     private var divider: UIView!
+    
+    private var textView: UITextView!
+    private var textViewHeightConstraint: NSLayoutConstraint?
+    private var textViewHeight: CGFloat = .zero
+    
+    let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        makeTextViewFillHalfOfScrollView()
+    }
+    
+    private func makeTextViewFillHalfOfScrollView() {
+        let halfScrollViewHeight = scrollView.frame.height / 2
+        textViewHeightConstraint?.constant = halfScrollViewHeight
+        self.textViewHeight = halfScrollViewHeight
+        
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +40,7 @@ class TestViewController: UIViewController {
         setupContentView()
         setupHeaderView()
         setupDivider()
+        setupDiaryTextView()
     }
     
     private func setupScrollView() {
@@ -39,6 +60,7 @@ class TestViewController: UIViewController {
     private func setupContentView() {
         contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = .yellow
         scrollView.addSubview(contentView)
         
         NSLayoutConstraint.activate([
@@ -48,8 +70,6 @@ class TestViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
-        
-        contentView.backgroundColor = .yellow
     }
     
     private func setupHeaderView() {
@@ -62,11 +82,6 @@ class TestViewController: UIViewController {
             questionHeaderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             questionHeaderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
-        
-        // Ensure the contentView's bottom is pinned to the last view
-        NSLayoutConstraint.activate([
-            contentView.bottomAnchor.constraint(equalTo: questionHeaderView.bottomAnchor)
-        ])
     }
     
     private func setupDivider() {
@@ -76,11 +91,47 @@ class TestViewController: UIViewController {
         contentView.addSubview(divider)
         
         NSLayoutConstraint.activate([
-            divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             divider.topAnchor.constraint(equalTo: questionHeaderView.bottomAnchor, constant: 26),
             divider.widthAnchor.constraint(equalTo: contentView.widthAnchor),
             divider.heightAnchor.constraint(equalToConstant: 1),
         ])
+    }
+    
+    private func setupDiaryTextView() {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.bounces = false
+        textView.showsVerticalScrollIndicator = false
+        contentView.addSubview(textView)
+        self.textView = textView
+        
+        
+        NSLayoutConstraint.activate([
+            textView.topAnchor.constraint(equalTo: divider.bottomAnchor, constant: 32),
+            textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            contentView.bottomAnchor.constraint(greaterThanOrEqualTo: textView.bottomAnchor),
+        ])
+        
+        textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: 40)
+        textViewHeightConstraint?.isActive = true
+    }
+}
+
+extension TestViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        adjustTextViewHeight()
+    }
+    
+    private func adjustTextViewHeight() {
+        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.infinity))
+        let textViewHeight: CGFloat = size.height > self.textViewHeight ? size.height : self.textViewHeight
+        
+        if textViewHeightConstraint?.constant != textViewHeight  {
+            textViewHeightConstraint?.constant = textViewHeight
+            self.view.layoutIfNeeded()
+        }
     }
 }

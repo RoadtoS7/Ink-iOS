@@ -17,6 +17,8 @@ class TestViewController: UIViewController {
     private var textViewHeightConstraint: NSLayoutConstraint?
     private var textViewHeight: CGFloat = .zero
     
+    private var imageSourceTapBar: ImageSourceTapBar!
+    
     let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
     
     override func viewDidLayoutSubviews() {
@@ -41,6 +43,7 @@ class TestViewController: UIViewController {
         setupHeaderView()
         setupDivider()
         setupDiaryTextView()
+        setupImageSourceSelectionView()
     }
     
     private func setupScrollView() {
@@ -117,6 +120,22 @@ class TestViewController: UIViewController {
         
         textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: 40)
         textViewHeightConstraint?.isActive = true
+    }
+    
+    private func setupImageSourceSelectionView() {
+        let galleryPickerDelegate = GalleryPickerUseCase(rootViewController: self)
+        let imageSourceSelectionView = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate)
+        imageSourceSelectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.imageSourceTapBar = imageSourceSelectionView
+        view.addSubview(imageSourceSelectionView)
+        
+        NSLayoutConstraint.activate([
+            imageSourceSelectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageSourceSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageSourceSelectionView.bottomAnchor.constraint(equalTo:
+                                                                view.safeAreaLayoutGuide.bottomAnchor),
+            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 52)
+        ])
     }
 }
 

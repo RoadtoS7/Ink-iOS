@@ -8,12 +8,16 @@
 import UIKit
 import PhotosUI
 
-protocol GalleryPickerDelegate {
+protocol GalleryPickerDelegate: AnyObject {
     func present()
 }
 
-struct GalleryPickerUseCase: GalleryPickerDelegate {
-    weak var rootViewController: UIViewController?
+final class GalleryPickerUseCase: GalleryPickerDelegate {
+    weak var rootViewController: UIViewController!
+    
+    init(rootViewController: UIViewController) {
+        self.rootViewController = rootViewController
+    }
     
     func present() {
         let view = PHPickerViewController(configuration: PHPickerConfiguration())
@@ -21,7 +25,7 @@ struct GalleryPickerUseCase: GalleryPickerDelegate {
     }
 }
 
-final class ImageSourceSelectionView: UIView {
+final class ImageSourceTapBar: UIView {
     class SourceButton: UIButton {
         let title: String
         
@@ -133,7 +137,7 @@ class EditorViewController: UIViewController {
         return $0
     }(UIStackView())
     
-    private var imageSourceSelectionView: ImageSourceSelectionView!
+    private var imageSourceSelectionView: ImageSourceTapBar!
     
     private var textViewHeight: CGFloat = .zero
     

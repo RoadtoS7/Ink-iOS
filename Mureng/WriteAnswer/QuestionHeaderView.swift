@@ -8,10 +8,6 @@
 import UIKit
 
 class QuestionHeaderView: UIView {
-//    override var intrinsicContentSize: CGSize {
-//        return .init(width: UIView.noIntrinsicMetric, height: rootStackView.bounds.height)
-//    }
-    
     private var rootStackView: UIStackView!
     
     private let questionMark: UILabel = {
@@ -35,7 +31,14 @@ class QuestionHeaderView: UIView {
         didSet {
             questionLabel.text = question?.content
             translationLabel.text = question?.koreanContent
+            layoutIfNeeded()
+            invalidateIntrinsicContentSize()
         }
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        layoutSubviews() // Ensure the layout is updated
+        return CGSize(width: UIView.noIntrinsicMetric, height: rootStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height)
     }
     
     init(question: Question) {

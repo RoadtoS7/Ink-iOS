@@ -12,12 +12,14 @@ class TestViewController: UIViewController {
     private var contentView: UIView!
     private var questionHeaderView: QuestionHeaderView!
     let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
+    private var divider: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
         setupContentView()
         setupHeaderView()
+        setupDivider()
     }
     
     private func setupScrollView() {
@@ -59,13 +61,26 @@ class TestViewController: UIViewController {
             questionHeaderView.topAnchor.constraint(equalTo: contentView.topAnchor),
             questionHeaderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             questionHeaderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            questionHeaderView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            questionHeaderView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         // Ensure the contentView's bottom is pinned to the last view
         NSLayoutConstraint.activate([
             contentView.bottomAnchor.constraint(equalTo: questionHeaderView.bottomAnchor)
+        ])
+    }
+    
+    private func setupDivider() {
+        self.divider = UIView()
+        divider.backgroundColor = Colors.Greyscale.greyscale200.color
+        divider.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(divider)
+        
+        NSLayoutConstraint.activate([
+            divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            divider.topAnchor.constraint(equalTo: questionHeaderView.bottomAnchor, constant: 26),
+            divider.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            divider.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
 }

@@ -14,13 +14,17 @@ protocol GalleryPickerDelegate: AnyObject {
 
 final class GalleryPickerUseCase: GalleryPickerDelegate {
     weak var rootViewController: UIViewController!
+    let galleryPickerReceiver: GalleryPickerReceiver
     
-    init(rootViewController: UIViewController) {
+    init(rootViewController: UIViewController, imageLoadingDone: @escaping (UIImage?) -> Void) {
         self.rootViewController = rootViewController
+        self.galleryPickerReceiver = .init(imageLoadingDone: imageLoadingDone)
     }
     
     func present() {
         let view = PHPickerViewController(configuration: PHPickerConfiguration())
+        view.delegate = galleryPickerReceiver
+        
         rootViewController?.present(view, animated: true)
     }
 }
@@ -162,7 +166,9 @@ class EditorViewController: UIViewController {
     }
     
     private func initLayout() {
-        let galleryPickerDelegate = GalleryPickerUseCase(rootViewController: self)
+        let galleryPickerDelegate = GalleryPickerUseCase(rootViewController: self) { image in
+            self.imageView.image = image
+        }
         imageSourceSelectionView = .init(galleryPickerDelegate: galleryPickerDelegate)
         imageSourceSelectionView.translatesAutoresizingMaskIntoConstraints = false
         

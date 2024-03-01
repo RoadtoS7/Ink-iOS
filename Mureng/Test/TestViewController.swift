@@ -17,9 +17,20 @@ class TestViewController: UIViewController {
     private var textViewHeightConstraint: NSLayoutConstraint?
     private var textViewHeight: CGFloat = .zero
     
+    private var imageView: UIImageView!
+    private var imageViewHeightZeroConstraint: NSLayoutConstraint!
+    private var imageViewDimensionRatioConstraint: NSLayoutConstraint!
     private var imageSourceTapBar: ImageSourceTapBar!
     
     let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
+    
+    var image: UIImage? {
+        didSet {
+            let imageIsHidden = image == nil
+            imageViewHeightZeroConstraint.isActive = imageIsHidden
+            imageView.image = image
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -44,11 +55,13 @@ class TestViewController: UIViewController {
         setupDivider()
         setupDiaryTextView()
         setupImageSourceSelectionView()
+        setupImageView()
     }
     
     private func setupScrollView() {
         scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInset = UIEdgeInsets(bottom: 52)
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
@@ -109,7 +122,6 @@ class TestViewController: UIViewController {
         contentView.addSubview(textView)
         self.textView = textView
         
-        
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: divider.bottomAnchor, constant: 32),
             textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
@@ -119,10 +131,20 @@ class TestViewController: UIViewController {
         
         textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: 40)
         textViewHeightConstraint?.isActive = true
+        
+        let bottomConstraint = contentView.bottomAnchor.constraint(equalTo: textView.bottomAnchor)
+        bottomConstraint.priority = .defaultLow
+        bottomConstraint.isActive = true
     }
     
     private func setupImageSourceSelectionView() {
-        let galleryPickerDelegate = GalleryPickerUseCase(rootViewController: self)
+        let galleryPickerDelegate = GalleryPickerUseCase(
+            rootViewController: self,
+            imageLoadingDone: { [weak self] image in
+            DispatchQueue.main.async {
+                self?.image = image
+            }
+        })
         let imageSourceSelectionView = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate)
         imageSourceSelectionView.translatesAutoresizingMaskIntoConstraints = false
         self.imageSourceTapBar = imageSourceSelectionView
@@ -135,6 +157,26 @@ class TestViewController: UIViewController {
                                                                 view.safeAreaLayoutGuide.bottomAnchor),
             imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 52)
         ])
+    }
+    
+    private func setupImageView() {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        self.imageView = imageView
+        contentView.addSubview(imageView)
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 40),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 50),
+        ])
+        
+        imageViewHeightZeroConstraint = imageView.heightAnchor.constraint(equalToConstant: .zero)
+        imageViewHeightZeroConstraint.isActive = true
     }
 }
 

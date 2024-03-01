@@ -31,6 +31,7 @@ class GalleryPickerReceiver: PHPickerViewControllerDelegate {
             
             if let image = image as? UIImage {
                 self?.imageLoadingDone(image)
+                return
             }
 
             self?.imageLoadingDone(nil)

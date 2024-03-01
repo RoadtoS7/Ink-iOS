@@ -89,6 +89,9 @@ final class ImageSourceSelectionView: UIView {
 }
 
 class EditorViewController: UIViewController {
+    let question = Question(id: 0, content: "This is Question", koreanContent: "이것은 한국어 번역입니다.")
+    private lazy var questionHeaderView = QuestionHeaderView(question: question)
+    
     let questionLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "이것은 영어질문입니다."
@@ -164,9 +167,9 @@ class EditorViewController: UIViewController {
         addSubviews()
         
         NSLayoutConstraint.activate([
-            questionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            questionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            questionLabel.topAnchor.constraint(equalTo: view.topAnchor),
+            questionHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            questionHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            questionHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
         ])
         
         NSLayoutConstraint.activate([
@@ -208,6 +211,7 @@ class EditorViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(questionLabel)
+        view.addSubview(questionHeaderView)
         view.addSubview(scrollView)
         view.addSubview(imageSourceSelectionView)
         

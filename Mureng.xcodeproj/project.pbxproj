@@ -62,6 +62,7 @@
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
+		F47D5AF62B725A5B00640B98 /* QuestionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D5AF52B725A5B00640B98 /* QuestionHeaderView.swift */; };
 		F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D2C132B5D333B0097A4E0 /* EditorView.swift */; };
 		F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */; };
 		F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52042B534F680091684C /* ScrollObservableView.swift */; };
@@ -73,6 +74,7 @@
 		F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8CA412A76053E0019DCFE /* Extension.swift */; };
 		F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */; };
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
+		F4B314032B91997B00E01D32 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314022B91997B00E01D32 /* TestViewController.swift */; };
 		F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821A29F53042000E7A92 /* Images+Generated.swift */; };
 		F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
 		F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */; };
@@ -180,6 +182,7 @@
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
+		F47D5AF52B725A5B00640B98 /* QuestionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeaderView.swift; sourceTree = "<group>"; };
 		F48D2C132B5D333B0097A4E0 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPreferenceKey.swift; sourceTree = "<group>"; };
 		F49F52042B534F680091684C /* ScrollObservableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollObservableView.swift; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 		F4A8CA412A76053E0019DCFE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowCheckBoxView.swift; sourceTree = "<group>"; };
 		F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSolid48.swift; sourceTree = "<group>"; };
+		F4B314022B91997B00E01D32 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F4B6821A29F53042000E7A92 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		F4B6821C29F53084000E7A92 /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionService.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 				2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */,
 				F48D2C132B5D333B0097A4E0 /* EditorView.swift */,
 				F46357402B6E7B6D00641CBF /* EditorViewController.swift */,
+				F47D5AF52B725A5B00640B98 /* QuestionHeaderView.swift */,
 			);
 			path = WriteAnswer;
 			sourceTree = "<group>";
@@ -548,6 +553,7 @@
 			children = (
 				F4F35DA62B4046610097347B /* TestView.swift */,
 				F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */,
+				F4B314022B91997B00E01D32 /* TestViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -903,10 +909,12 @@
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
 				F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */,
+				F47D5AF62B725A5B00640B98 /* QuestionHeaderView.swift in Sources */,
 				2E4E555828576D0D001B5554 /* SceneDelegate.swift in Sources */,
 				2E35C6402ACCF37F000D2D03 /* TodayQuestionAPI.swift in Sources */,
 				2E2338CF2B0241D700FFEF51 /* GalleryPickerView.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
+				F4B314032B91997B00E01D32 /* TestViewController.swift in Sources */,
 				2EBFBE562AD0EE6100D3AB18 /* WriteAnswerView.swift in Sources */,
 				F40C1F3D2B56B86400948F9B /* Question.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,

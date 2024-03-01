@@ -73,7 +73,7 @@
 		F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8CA412A76053E0019DCFE /* Extension.swift */; };
 		F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */; };
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
-		F4B314032B91997B00E01D32 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314022B91997B00E01D32 /* TestViewController.swift */; };
+		F4B314032B91997B00E01D32 /* DiaryEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314022B91997B00E01D32 /* DiaryEditorViewController.swift */; };
 		F4B314052B91C00E00E01D32 /* GalleryPickerReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */; };
 		F4B314072B91CB0600E01D32 /* UIEdgeInset+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314062B91CB0600E01D32 /* UIEdgeInset+.swift */; };
 		F4B3140A2B91D02100E01D32 /* ImageSourceTapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314092B91D02100E01D32 /* ImageSourceTapBar.swift */; };
@@ -195,7 +195,7 @@
 		F4A8CA412A76053E0019DCFE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowCheckBoxView.swift; sourceTree = "<group>"; };
 		F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSolid48.swift; sourceTree = "<group>"; };
-		F4B314022B91997B00E01D32 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		F4B314022B91997B00E01D32 /* DiaryEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditorViewController.swift; sourceTree = "<group>"; };
 		F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerReceiver.swift; sourceTree = "<group>"; };
 		F4B314062B91CB0600E01D32 /* UIEdgeInset+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInset+.swift"; sourceTree = "<group>"; };
 		F4B314092B91D02100E01D32 /* ImageSourceTapBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSourceTapBar.swift; sourceTree = "<group>"; };
@@ -567,7 +567,7 @@
 			children = (
 				F4F35DA62B4046610097347B /* TestView.swift */,
 				F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */,
-				F4B314022B91997B00E01D32 /* TestViewController.swift */,
+				F4B314022B91997B00E01D32 /* DiaryEditorViewController.swift */,
 				F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */,
 			);
 			path = Test;
@@ -929,7 +929,7 @@
 				2E35C6402ACCF37F000D2D03 /* TodayQuestionAPI.swift in Sources */,
 				2E2338CF2B0241D700FFEF51 /* GalleryPickerView.swift in Sources */,
 				2E6A9C8029E0D8C700F8E2A4 /* AgreementViewController.swift in Sources */,
-				F4B314032B91997B00E01D32 /* TestViewController.swift in Sources */,
+				F4B314032B91997B00E01D32 /* DiaryEditorViewController.swift in Sources */,
 				2EBFBE562AD0EE6100D3AB18 /* WriteAnswerView.swift in Sources */,
 				F40C1F3D2B56B86400948F9B /* Question.swift in Sources */,
 				2E4E558D285776F5001B5554 /* EntryViewController.swift in Sources */,

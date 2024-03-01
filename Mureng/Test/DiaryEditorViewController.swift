@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestViewController: UIViewController {
+class DiaryEditorViewController: UIViewController {
     private var scrollView: UIScrollView!
     private var contentView: UIView!
     private var questionHeaderView: QuestionHeaderView!
@@ -155,7 +155,7 @@ class TestViewController: UIViewController {
             imageSourceSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             imageSourceSelectionView.bottomAnchor.constraint(equalTo:
                                                                 view.safeAreaLayoutGuide.bottomAnchor),
-            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 52)
+            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
@@ -180,7 +180,7 @@ class TestViewController: UIViewController {
     }
 }
 
-extension TestViewController: UITextViewDelegate {
+extension DiaryEditorViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         adjustTextViewHeight()
     }

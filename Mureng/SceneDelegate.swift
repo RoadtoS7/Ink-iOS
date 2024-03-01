@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let view: EntryView = .init(authenticationService: service)
         
 //        let viewController = FullScreenHostingViewController(swiftUIView: view)
-        let viewController = TestViewController()
+        let viewController = DiaryEditorViewController()
         let navigationController = RootNavigationViewController(rootViewController: viewController)
         
         window.rootViewController = navigationController

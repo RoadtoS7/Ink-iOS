@@ -97,7 +97,6 @@ class TestViewController: UIViewController {
             divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             divider.topAnchor.constraint(equalTo: questionHeaderView.bottomAnchor, constant: 26),
-            divider.widthAnchor.constraint(equalTo: contentView.widthAnchor),
             divider.heightAnchor.constraint(equalToConstant: 1),
         ])
     }

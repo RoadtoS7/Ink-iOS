@@ -89,6 +89,7 @@ final class ImageSourceTapBar: UIView {
         backgroundStackView.spacing = 8.0
         backgroundStackView.translatesAutoresizingMaskIntoConstraints = false
         backgroundStackView.distribution = .equalSpacing
+        backgroundStackView.isHidden = true
         scrollView.addSubview(backgroundStackView)
         appSourcingBackgroundListView = backgroundStackView
         
@@ -113,6 +114,7 @@ final class ImageSourceTapBar: UIView {
             self.galleryPickerDelegate.present()
         }
         appSourcingButton.addTouchAction { [unowned self] _ in
+            appSourcingBackgroundListView.isHidden = false
             localSourceButtonDelegate.touched()
         }
     }

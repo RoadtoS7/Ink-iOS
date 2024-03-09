@@ -56,6 +56,7 @@ class DiaryEditorViewController: UIViewController {
         setupDiaryTextView()
         setupImageSourceSelectionView()
         setupImageView()
+        setupTapDownGesture()
     }
     
     private func setupScrollView() {
@@ -145,17 +146,18 @@ class DiaryEditorViewController: UIViewController {
                 self?.image = image
             }
         })
-        let imageSourceSelectionView = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate)
-        imageSourceSelectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageSourceTapBar = imageSourceSelectionView
-        view.addSubview(imageSourceSelectionView)
+        let imageSourceTabBar = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate, localSourceButtonDelegate: self)
+        imageSourceTabBar.translatesAutoresizingMaskIntoConstraints = false
+        imageSourceTabBar.transform = CGAffineTransform(translationX: 0, y: 144)
+        self.imageSourceTapBar = imageSourceTabBar
+        view.addSubview(imageSourceTabBar)
         
         NSLayoutConstraint.activate([
-            imageSourceSelectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageSourceSelectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageSourceSelectionView.bottomAnchor.constraint(equalTo:
+            imageSourceTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageSourceTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageSourceTabBar.bottomAnchor.constraint(equalTo:
                                                                 view.safeAreaLayoutGuide.bottomAnchor),
-            imageSourceSelectionView.heightAnchor.constraint(equalToConstant: 100)
+            imageSourceTabBar.heightAnchor.constraint(equalToConstant: 196)
         ])
     }
     
@@ -178,6 +180,20 @@ class DiaryEditorViewController: UIViewController {
         imageViewHeightZeroConstraint = imageView.heightAnchor.constraint(equalToConstant: .zero)
         imageViewHeightZeroConstraint.isActive = true
     }
+    
+    private func setupTapDownGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapOutside))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTapOutside(sender: UITapGestureRecognizer) {
+        let location = sender.location(in: view)
+        if imageSourceTapBar.transform == CGAffineTransform.identity, !imageSourceTapBar.frame.contains(location) {
+            UIView.animate(withDuration: 0.3) {
+                self.imageSourceTapBar.transform = CGAffineTransform(translationX: 0, y: 144)
+            }
+        }
+    }
 }
 
 extension DiaryEditorViewController: UITextViewDelegate {
@@ -192,6 +208,20 @@ extension DiaryEditorViewController: UITextViewDelegate {
         if textViewHeightConstraint?.constant != textViewHeight  {
             textViewHeightConstraint?.constant = textViewHeight
             self.view.layoutIfNeeded()
+        }
+    }
+}
+
+extension DiaryEditorViewController: LocalSourceButtonDelegate {
+    func touched() {
+        UIView.animate(withDuration: 0.2) {
+            self.imageSourceTapBar.transform = .identity
+        }
+    }
+    
+    private func disappearImageSourceTapBar() {
+        UIView.animate(withDuration: 0.2) {
+            self.imageSourceTapBar.transform = CGAffineTransform(translationX: 0, y: 144)
         }
     }
 }

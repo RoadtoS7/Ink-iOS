@@ -77,6 +77,7 @@
 		F4B314052B91C00E00E01D32 /* GalleryPickerReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */; };
 		F4B314072B91CB0600E01D32 /* UIEdgeInset+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314062B91CB0600E01D32 /* UIEdgeInset+.swift */; };
 		F4B3140A2B91D02100E01D32 /* ImageSourceTapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B314092B91D02100E01D32 /* ImageSourceTapBar.swift */; };
+		F4B3140C2B91E0DA00E01D32 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3140B2B91E0DA00E01D32 /* TestViewController.swift */; };
 		F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821A29F53042000E7A92 /* Images+Generated.swift */; };
 		F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
 		F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */; };
@@ -199,6 +200,7 @@
 		F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerReceiver.swift; sourceTree = "<group>"; };
 		F4B314062B91CB0600E01D32 /* UIEdgeInset+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInset+.swift"; sourceTree = "<group>"; };
 		F4B314092B91D02100E01D32 /* ImageSourceTapBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSourceTapBar.swift; sourceTree = "<group>"; };
+		F4B3140B2B91E0DA00E01D32 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F4B6821A29F53042000E7A92 /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		F4B6821C29F53084000E7A92 /* Colors+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
 		F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionService.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */,
 				F4B314022B91997B00E01D32 /* DiaryEditorViewController.swift */,
 				F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */,
+				F4B3140B2B91E0DA00E01D32 /* TestViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B3140C2B91E0DA00E01D32 /* TestViewController.swift in Sources */,
 				2E0FD8452B04F9A300CAF0F5 /* AnswerBackgroundView.swift in Sources */,
 				F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */,
 				F4C4D34F2B664BFA004C6804 /* Font+.swift in Sources */,

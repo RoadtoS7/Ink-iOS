@@ -37,7 +37,7 @@ class QuestionHeaderView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        layoutSubviews() // Ensure the layout is updated
+        layoutSubviews()
         return CGSize(width: UIView.noIntrinsicMetric, height: rootStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height)
     }
     

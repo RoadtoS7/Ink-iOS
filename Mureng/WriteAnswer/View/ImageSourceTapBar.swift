@@ -8,7 +8,7 @@
 import UIKit
 
 final class ImageSourceTapBar: UIView {
-    class SourceButton: UIButton {
+    final class SourceButton: UIButton {
         let title: String
         
         init(title: String) {
@@ -16,7 +16,6 @@ final class ImageSourceTapBar: UIView {
             
             super.init(frame: .zero)
             
-            backgroundColor = .white
             setTitle(title, for: .normal)
             setTitleColor(Colors.Greyscale.greyscale800.color, for: .normal)
         }
@@ -36,14 +35,19 @@ final class ImageSourceTapBar: UIView {
     
     private let galleryButton = SourceButton(title: "사진")
     private let appSourcingButton = SourceButton(title: "배경")
-    private var appSourcingBackgroundStackView: UIStackView!
+    private var appSourcingBackgroundListView: UIStackView!
+    private var appSourcingBackgroundScrollView: UIScrollView!
+    private var images: [UIImage] = []
     
     private let galleryPickerDelegate: GalleryPickerDelegate
+    private let localSourceButtonDelegate: LocalSourceButtonDelegate
     
-    init(galleryPickerDelegate: GalleryPickerDelegate) {
+    init(galleryPickerDelegate: GalleryPickerDelegate, localSourceButtonDelegate: LocalSourceButtonDelegate) {
         self.galleryPickerDelegate = galleryPickerDelegate
+        self.localSourceButtonDelegate = localSourceButtonDelegate
         super.init(frame: .zero)
         initLayout()
+        addButtonActions()
     }
     
     @available(*, unavailable)
@@ -53,25 +57,53 @@ final class ImageSourceTapBar: UIView {
     
     private func initLayout() {
         backgroundColor = .white
-        setupSubViews()
         addSubviews()
+        setupSubViews()
         
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: self.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 52),
         ])
     }
     
     private func setupSubViews() {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.appSourcingBackgroundStackView = stackView
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInset = UIEdgeInsets(top: 12, left: 24, bottom: 12, right: 24)
+        addSubview(scrollView)
+        appSourcingBackgroundScrollView = scrollView
+        
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: self.stackView.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: 144),
+        ])
+        
+        
+        let backgroundStackView = UIStackView()
+        backgroundStackView.axis = .horizontal
+        backgroundStackView.spacing = 8.0
+        backgroundStackView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundStackView.distribution = .equalSpacing
+        scrollView.addSubview(backgroundStackView)
+        appSourcingBackgroundListView = backgroundStackView
+        
+        NSLayoutConstraint.activate([
+            backgroundStackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
+            backgroundStackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
+            backgroundStackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
+            backgroundStackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
+        ])
+        
+        setBackgroundImages()
     }
     
     private func addSubviews() {
-        self.addSubview(stackView)
+        addSubview(stackView)
         stackView.addArrangedSubview(galleryButton)
         stackView.addArrangedSubview(appSourcingButton)
     }
@@ -81,7 +113,31 @@ final class ImageSourceTapBar: UIView {
             self.galleryPickerDelegate.present()
         }
         appSourcingButton.addTouchAction { [unowned self] _ in
-            
+            localSourceButtonDelegate.touched()
         }
+    }
+    
+    func setBackgroundImages() {
+        if images.isEmpty {
+            let placeholderCount: Int = 5
+            placeholderViews(count: placeholderCount).forEach { view in
+                appSourcingBackgroundListView.addArrangedSubview(view)
+            }
+        }
+    }
+    
+    func placeholderViews(count: Int) -> [UIView] {
+        (0..<count).map { _ in
+            return placeholderView()
+        }
+    }
+    
+    func placeholderView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        return view
     }
 }

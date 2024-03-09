@@ -12,6 +12,11 @@ protocol GalleryPickerDelegate: AnyObject {
     func present()
 }
 
+protocol LocalSourceButtonDelegate: AnyObject {
+    func touched()
+}
+
+
 final class GalleryPickerUseCase: GalleryPickerDelegate {
     weak var rootViewController: UIViewController!
     let galleryPickerReceiver: GalleryPickerReceiver
@@ -103,7 +108,7 @@ class EditorViewController: UIViewController {
         let galleryPickerDelegate = GalleryPickerUseCase(rootViewController: self) { image in
             self.imageView.image = image
         }
-        imageSourceSelectionView = .init(galleryPickerDelegate: galleryPickerDelegate)
+        imageSourceSelectionView = .init(galleryPickerDelegate: galleryPickerDelegate, localSourceButtonDelegate: self)
         imageSourceSelectionView.translatesAutoresizingMaskIntoConstraints = false
         
         view.backgroundColor = .white
@@ -183,5 +188,11 @@ extension EditorViewController: UITextViewDelegate {
             textViewHeightConstraint?.constant = textViewHeight
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+extension EditorViewController: LocalSourceButtonDelegate {
+    func touched() {
+        // TODO: implement
     }
 }

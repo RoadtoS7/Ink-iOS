@@ -18,7 +18,6 @@ class DiaryEditorViewController: UIViewController {
     private var textViewHeight: CGFloat = .zero
     
     private var imageView: UIImageView!
-    private var imageViewHeightZeroConstraint: NSLayoutConstraint!
     private var imageViewDimensionRatioConstraint: NSLayoutConstraint!
     private var imageSourceTapBar: ImageSourceTapBar!
     
@@ -27,7 +26,7 @@ class DiaryEditorViewController: UIViewController {
     var image: UIImage? {
         didSet {
             let imageIsHidden = image == nil
-            imageViewHeightZeroConstraint.isActive = imageIsHidden
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
             imageView.image = image
         }
     }
@@ -155,8 +154,7 @@ class DiaryEditorViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageSourceTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageSourceTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageSourceTabBar.bottomAnchor.constraint(equalTo:
-                                                                view.safeAreaLayoutGuide.bottomAnchor),
+            imageSourceTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             imageSourceTabBar.heightAnchor.constraint(equalToConstant: 196)
         ])
     }
@@ -173,12 +171,9 @@ class DiaryEditorViewController: UIViewController {
             imageView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 40),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 0).settingPriority(.defaultLow),
             contentView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 50),
         ])
-        
-        imageViewHeightZeroConstraint = imageView.heightAnchor.constraint(equalToConstant: .zero)
-        imageViewHeightZeroConstraint.isActive = true
     }
     
     private func setupTapDownGesture() {

@@ -25,7 +25,7 @@ class DiaryEditorViewController: UIViewController {
     
     var image: UIImage? {
         didSet {
-            let imageIsHidden = image == nil
+            guard let image = image else { return }
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
             imageView.image = image
         }

@@ -12,7 +12,7 @@ protocol GalleryPickerDelegate: AnyObject {
     func present()
 }
 
-protocol LocalSourceButtonDelegate: AnyObject {
+protocol ImageSourceTapBarDelegate: AnyObject {
     func touched()
 }
 
@@ -191,7 +191,7 @@ extension EditorViewController: UITextViewDelegate {
     }
 }
 
-extension EditorViewController: LocalSourceButtonDelegate {
+extension EditorViewController: ImageSourceTapBarDelegate {
     func touched() {
         // TODO: implement
     }

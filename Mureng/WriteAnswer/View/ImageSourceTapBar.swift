@@ -40,9 +40,9 @@ final class ImageSourceTapBar: UIView {
     private var images: [UIImage] = []
     
     private let galleryPickerDelegate: GalleryPickerDelegate
-    private let localSourceButtonDelegate: LocalSourceButtonDelegate
+    private let localSourceButtonDelegate: ImageSourceTapBarDelegate
     
-    init(galleryPickerDelegate: GalleryPickerDelegate, localSourceButtonDelegate: LocalSourceButtonDelegate) {
+    init(galleryPickerDelegate: GalleryPickerDelegate, localSourceButtonDelegate: ImageSourceTapBarDelegate) {
         self.galleryPickerDelegate = galleryPickerDelegate
         self.localSourceButtonDelegate = localSourceButtonDelegate
         super.init(frame: .zero)

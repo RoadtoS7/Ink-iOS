@@ -150,7 +150,6 @@ class DiaryEditorViewController: UIViewController {
         }
     }
     
-    
     private func setupImageSourceSelectionView() {
         let galleryPickerDelegate = GalleryPickerUseCase(
             rootViewController: self,
@@ -222,7 +221,7 @@ extension DiaryEditorViewController: UITextViewDelegate {
     }
 }
 
-extension DiaryEditorViewController: LocalSourceButtonDelegate {
+extension DiaryEditorViewController: ImageSourceTapBarDelegate {
     func touched() {
         UIView.animate(withDuration: 0.2) {
             self.imageSourceTapBar.transform = .identity

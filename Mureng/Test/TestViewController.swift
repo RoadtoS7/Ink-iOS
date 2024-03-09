@@ -32,7 +32,7 @@ class TestViewController: UIViewController {
     }
 }
 
-extension TestViewController: LocalSourceButtonDelegate {
+extension TestViewController: ImageSourceTapBarDelegate {
     func touched() {
         UIView.animate(withDuration: 0.2) {
             self.imageSourceTapBar.transform = .identity

@@ -119,6 +119,7 @@ class DiaryEditorViewController: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.bounces = false
         textView.showsVerticalScrollIndicator = false
+        textView.delegate = self
         contentView.addSubview(textView)
         self.textView = textView
         
@@ -135,16 +136,29 @@ class DiaryEditorViewController: UIViewController {
         let bottomConstraint = contentView.bottomAnchor.constraint(equalTo: textView.bottomAnchor)
         bottomConstraint.priority = .defaultLow
         bottomConstraint.isActive = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textViewTapped))
+        tapGesture.delegate = self
+        textView.addGestureRecognizer(tapGesture)
     }
+    
+    @objc func textViewTapped(sender: UITapGestureRecognizer) {
+        if scrollView.transform == CGAffineTransform.identity {
+            UIView.animate(withDuration: 0.3) {
+                self.dismissImageSourceTapBar()
+            }
+        }
+    }
+    
     
     private func setupImageSourceSelectionView() {
         let galleryPickerDelegate = GalleryPickerUseCase(
             rootViewController: self,
             imageLoadingDone: { [weak self] image in
-            DispatchQueue.main.async {
-                self?.image = image
-            }
-        })
+                DispatchQueue.main.async {
+                    self?.image = image
+                }
+            })
         let imageSourceTabBar = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate, localSourceButtonDelegate: self)
         imageSourceTabBar.translatesAutoresizingMaskIntoConstraints = false
         imageSourceTabBar.transform = CGAffineTransform(translationX: 0, y: 144)
@@ -178,6 +192,7 @@ class DiaryEditorViewController: UIViewController {
     
     private func setupTapDownGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapOutside))
+        tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -214,9 +229,22 @@ extension DiaryEditorViewController: LocalSourceButtonDelegate {
         }
     }
     
-    private func dismissImageSourceTapBar() {
+    @objc private func dismissImageSourceTapBar() {
         UIView.animate(withDuration: 0.2) {
             self.imageSourceTapBar.transform = CGAffineTransform(translationX: 0, y: 144)
         }
+    }
+}
+
+
+extension DiaryEditorViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let location = touch.location(in: textView)
+        
+        if textView.bounds.contains(location) {
+            textView.becomeFirstResponder()
+            return true
+        }
+        return false
     }
 }

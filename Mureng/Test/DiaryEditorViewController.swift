@@ -96,8 +96,8 @@ class DiaryEditorViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             questionHeaderView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            questionHeaderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            questionHeaderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            questionHeaderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24.0),
+            questionHeaderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24.0),
         ])
     }
     
@@ -219,7 +219,7 @@ extension DiaryEditorViewController: LocalSourceButtonDelegate {
         }
     }
     
-    private func disappearImageSourceTapBar() {
+    private func dismissImageSourceTapBar() {
         UIView.animate(withDuration: 0.2) {
             self.imageSourceTapBar.transform = CGAffineTransform(translationX: 0, y: 144)
         }

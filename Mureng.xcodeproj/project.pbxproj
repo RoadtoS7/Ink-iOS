@@ -52,7 +52,7 @@
 		F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */; };
 		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
-		F43998842BAD570F00C48BD7 /* TopNavigationTapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationTapBar.swift */; };
+		F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */; };
 		F43998862BAD58E300C48BD7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998852BAD58E300C48BD7 /* UIViewController+.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
 		F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */; };
@@ -177,7 +177,7 @@
 		F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
 		F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		F43998832BAD570F00C48BD7 /* TopNavigationTapBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationTapBar.swift; sourceTree = "<group>"; };
+		F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
 		F43998852BAD58E300C48BD7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
@@ -492,7 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B314092B91D02100E01D32 /* ImageSourceTapBar.swift */,
-				F43998832BAD570F00C48BD7 /* TopNavigationTapBar.swift */,
+				F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -905,7 +905,7 @@
 				F4B888872AAC315E00BBD2F3 /* TodayExpressionService.swift in Sources */,
 				F4F35D9F2B403FFD0097347B /* StringRes.swift in Sources */,
 				F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */,
-				F43998842BAD570F00C48BD7 /* TopNavigationTapBar.swift in Sources */,
+				F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */,
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,

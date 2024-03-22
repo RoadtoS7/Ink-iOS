@@ -30,6 +30,7 @@ internal enum Colors {
   internal enum DiaryBackground {
     internal static let empty = ColorAsset(name: "empty")
   }
+  internal static let diaryContent = ColorAsset(name: "diary-content")
   internal enum Grey {
     internal static let dark1 = ColorAsset(name: "dark-1")
     internal static let dark2 = ColorAsset(name: "dark-2")

@@ -81,7 +81,6 @@ class QuestionHeaderView: UIView {
     }
     
     func initLayout() {
-        backgroundColor = .white
         addSubviews()
         
         print("$$ questionLable: ", questionLabel.contentHuggingPriority(for: .horizontal) == .defaultHigh)

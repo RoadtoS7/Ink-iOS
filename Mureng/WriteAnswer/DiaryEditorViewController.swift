@@ -7,7 +7,8 @@
 
 import UIKit
 
-class DiaryEditorViewController: UIViewController {
+// TODO: DiaryEditorViewContoller 코드 정리 
+class DiaryEditorViewController: BaseTopNavigationTabBarController {
     private var scrollView: UIScrollView!
     private var contentView: UIView!
     private var questionHeaderView: QuestionHeaderView!
@@ -48,6 +49,8 @@ class DiaryEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Colors.Neutral.Container.primary.color
+        setupTopNavigationBar()
         setupScrollView()
         setupContentView()
         setupHeaderView()
@@ -56,6 +59,13 @@ class DiaryEditorViewController: UIViewController {
         setupImageSourceSelectionView()
         setupImageView()
         setupTapDownGesture()
+    }
+    
+    private func setupTopNavigationBar() {
+        navigationBar.addRightButtons([TopNavigationBarItem(title: "등록", action: UIAction(handler: { _ in
+            // TODO: 등록 action
+            print("$$ 등록!!")
+        }))])
     }
     
     private func setupScrollView() {
@@ -76,7 +86,6 @@ class DiaryEditorViewController: UIViewController {
     private func setupContentView() {
         contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .yellow
         scrollView.addSubview(contentView)
         
         NSLayoutConstraint.activate([
@@ -120,6 +129,9 @@ class DiaryEditorViewController: UIViewController {
         textView.bounces = false
         textView.showsVerticalScrollIndicator = false
         textView.delegate = self
+        textView.backgroundColor = Colors.Neutral.Container.primary.color
+        textView.textColor = Colors.diaryContent.color
+        
         contentView.addSubview(textView)
         self.textView = textView
         
@@ -140,6 +152,8 @@ class DiaryEditorViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textViewTapped))
         tapGesture.delegate = self
         textView.addGestureRecognizer(tapGesture)
+        
+        showHintText()
     }
     
     @objc func textViewTapped(sender: UITapGestureRecognizer) {
@@ -206,6 +220,35 @@ class DiaryEditorViewController: UIViewController {
 }
 
 extension DiaryEditorViewController: UITextViewDelegate {
+    var hintText: String {
+        """
+        질문에 대한 내 생각을 적어보세요.
+        50 글자만 넘기면 돼요.
+        """
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard textView.text.isNotEmpty,
+              textView.text == hintText else {
+            return
+        }
+        
+        textView.text = nil
+        textView.textColor = Colors.diaryContent.color
+        textView.font = .body18R
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            showHintText()
+        }
+    }
+    
+    private func showHintText() {
+        textView.text = hintText
+        textView.textColor = Colors.Greyscale.greyscale600.color
+        textView.font = .body16R
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         adjustTextViewHeight()
     }

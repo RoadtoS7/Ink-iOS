@@ -6,6 +6,20 @@
 //
 
 import SwiftUI
+import UIKit
+
+public enum FontName {
+    public static let nanumMyeonJoRegular: String = "NanumMyeongjo"
+    public static let nanumMyeonJoBold: String = "NanumMyeongjoBold"
+    public static let nanumMyeonJoExtraBold: String = "NanumMyeongjoExtraBold"
+    public static let pretendardRegular: String = "Pretendard-Regular"
+    public static let pretendardSemiBold: String = "Pretendard-SemiBold"
+}
+
+extension UIFont {
+    static let body18R: UIFont? = UIFont(name: FontName.pretendardRegular, size: 18.0)
+    static let body16R: UIFont? = UIFont(name: FontName.pretendardRegular, size: 16.0)
+}
 
 extension SwiftUI.Font {
     private static let nanumMyeonJoRegular: String = "NanumMyeongjo"

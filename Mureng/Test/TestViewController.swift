@@ -38,4 +38,8 @@ extension TestViewController: ImageSourceTapBarDelegate {
             self.imageSourceTapBar.transform = .identity
         }
     }
+    
+    func imageSourceTabBar(_ imageSourceTapBar: ImageSourceTapBar, didSelect localImage: UIImage?) {
+        
+    }
 }

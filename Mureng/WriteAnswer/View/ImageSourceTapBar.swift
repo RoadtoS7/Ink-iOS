@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ImageSourceTapBarDelegate: AnyObject {
+    func touched()
+    func imageSourceTabBar(_ imageSourceTapBar: ImageSourceTapBar, didSelect localImage: UIImage?)
+}
+
 final class ImageSourceTapBar: UIView {
     final class SourceButton: UIButton {
         let title: String
@@ -130,7 +135,7 @@ final class ImageSourceTapBar: UIView {
     
     func placeholderViews(count: Int) -> [UIView] {
         (0..<count).map { _ in
-            return placeholderView()
+            return makeImageButton(image: .add)
         }
     }
     
@@ -141,5 +146,14 @@ final class ImageSourceTapBar: UIView {
         view.widthAnchor.constraint(equalToConstant: 100).isActive = true
         view.heightAnchor.constraint(equalToConstant: 120).isActive = true
         return view
+    }
+    
+    func makeImageButton(image: UIImage) -> UIButton {
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        button.addTouchAction { [unowned self] _  in
+            self.localSourceButtonDelegate.imageSourceTabBar(self, didSelect: image)
+        }
+        return button
     }
 }

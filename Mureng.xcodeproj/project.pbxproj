@@ -53,7 +53,7 @@
 		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
-		F46357412B6E7B6D00641CBF /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* EditorViewController.swift */; };
+		F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */; };
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
 		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
 		F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */; };
@@ -177,7 +177,7 @@
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
-		F46357402B6E7B6D00641CBF /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerUseCase.swift; sourceTree = "<group>"; };
 		F4684BB72AA466CB006549AE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		F4684BB92AA47A37006549AE /* ExpressionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionRowView.swift; sourceTree = "<group>"; };
 		F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionListView.swift; sourceTree = "<group>"; };
@@ -372,7 +372,8 @@
 				2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */,
 				2EE1601E2B10C950009B8E62 /* WriteAnswerImagePickerView.swift */,
 				F48D2C132B5D333B0097A4E0 /* EditorView.swift */,
-				F46357402B6E7B6D00641CBF /* EditorViewController.swift */,
+				F4B314022B91997B00E01D32 /* DiaryEditorViewController.swift */,
+				F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */,
 				F47D5AF52B725A5B00640B98 /* QuestionHeaderView.swift */,
 			);
 			path = WriteAnswer;
@@ -569,7 +570,6 @@
 			children = (
 				F4F35DA62B4046610097347B /* TestView.swift */,
 				F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */,
-				F4B314022B91997B00E01D32 /* DiaryEditorViewController.swift */,
 				F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */,
 				F4B3140B2B91E0DA00E01D32 /* TestViewController.swift */,
 			);
@@ -945,7 +945,7 @@
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,
 				F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */,
-				F46357412B6E7B6D00641CBF /* EditorViewController.swift in Sources */,
+				F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,
 				F4B314072B91CB0600E01D32 /* UIEdgeInset+.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,

@@ -235,7 +235,6 @@ extension DiaryEditorViewController: ImageSourceTapBarDelegate {
     }
 }
 
-
 extension DiaryEditorViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         let location = touch.location(in: textView)
@@ -245,5 +244,9 @@ extension DiaryEditorViewController: UIGestureRecognizerDelegate {
             return true
         }
         return false
+    }
+    
+    func imageSourceTabBar(_ imageSourceTapBar: ImageSourceTapBar, didSelect localImage: UIImage?) {
+        image = localImage
     }
 }

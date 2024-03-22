@@ -13,6 +13,8 @@ struct TopNavigationBarItem {
 }
 
 class TopNavigationBar: UIView {
+    private unowned let viewController: UIViewController
+    
     private var hStackView: UIStackView = { hStackView in
         hStackView.axis = .horizontal
         hStackView.distribution = .fill
@@ -40,8 +42,9 @@ class TopNavigationBar: UIView {
         CGSize(width: .greatestFiniteMagnitude, height: 44.0)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+        super.init(frame: .zero)
         initLayout()
     }
     
@@ -51,6 +54,9 @@ class TopNavigationBar: UIView {
     
     private func initLayout() {
         addSubviews()
+        backButton.addTouchAction { _ in
+            self.viewController.navigationController?.popViewController(animated: true)
+        }
         
         let horizontalPadding: CGFloat = 16.0
         let verticalPadding: CGFloat = 6.0
@@ -92,7 +98,7 @@ class BaseTopNavigationTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navigationBar = TopNavigationBar()
+        let navigationBar = TopNavigationBar(viewController: self)
         navigationBar.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(navigationBar)
         self.navigationBar = navigationBar

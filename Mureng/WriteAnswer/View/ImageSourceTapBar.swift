@@ -73,6 +73,12 @@ final class ImageSourceTapBar: UIView {
         ])
     }
     
+    private func addSubviews() {
+        addSubview(stackView)
+        stackView.addArrangedSubview(galleryButton)
+        stackView.addArrangedSubview(appSourcingButton)
+    }
+    
     private func setupSubViews() {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,12 +112,6 @@ final class ImageSourceTapBar: UIView {
         ])
         
         setBackgroundImages()
-    }
-    
-    private func addSubviews() {
-        addSubview(stackView)
-        stackView.addArrangedSubview(galleryButton)
-        stackView.addArrangedSubview(appSourcingButton)
     }
     
     private func addButtonActions() {

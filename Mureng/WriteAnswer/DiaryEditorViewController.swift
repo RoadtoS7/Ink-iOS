@@ -21,6 +21,7 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     private var imageView: UIImageView!
     private var imageViewDimensionRatioConstraint: NSLayoutConstraint!
     private var imageSourceTapBar: ImageSourceTapBar!
+    private var imageSourceTapBarBottomAnchor: NSLayoutConstraint!
     
     private var dictionaryButton: UIButton!
     
@@ -160,10 +161,8 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     }
     
     @objc func textViewTapped(sender: UITapGestureRecognizer) {
-        if scrollView.transform == CGAffineTransform.identity {
-            UIView.animate(withDuration: 0.3) {
-                self.dismissImageSourceTapBar()
-            }
+        if imageSourceTapBarBottomAnchor.constant == .zero {
+            dismissImageSourceTapBar()
         }
     }
     
@@ -177,16 +176,18 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
             })
         let imageSourceTabBar = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate, localSourceButtonDelegate: self)
         imageSourceTabBar.translatesAutoresizingMaskIntoConstraints = false
-        imageSourceTabBar.transform = CGAffineTransform(translationX: 0, y: 144)
         self.imageSourceTapBar = imageSourceTabBar
         view.addSubview(imageSourceTabBar)
         
         NSLayoutConstraint.activate([
             imageSourceTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageSourceTabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageSourceTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             imageSourceTabBar.heightAnchor.constraint(equalToConstant: 196)
         ])
+        
+        let bottomAnchor =  imageSourceTabBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 144.0)
+        bottomAnchor.isActive = true
+        imageSourceTapBarBottomAnchor = bottomAnchor
     }
     
     private func setupImageView() {
@@ -220,7 +221,7 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            button.bottomAnchor.constraint(equalTo: imageSourceTapBar.topAnchor, constant: 27.0),
+            button.bottomAnchor.constraint(equalTo: imageSourceTapBar.topAnchor, constant: -27.0),
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0),
             button.widthAnchor.constraint(equalToConstant: 56.0),
             button.heightAnchor.constraint(equalTo: button.widthAnchor)
@@ -229,9 +230,10 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     
     @objc func handleTapOutside(sender: UITapGestureRecognizer) {
         let location = sender.location(in: view)
-        if imageSourceTapBar.transform == CGAffineTransform.identity, !imageSourceTapBar.frame.contains(location) {
+        if imageSourceTapBarBottomAnchor.constant == .zero,
+           !imageSourceTapBar.frame.contains(location) {
             UIView.animate(withDuration: 0.3) {
-                self.imageSourceTapBar.transform = CGAffineTransform(translationX: 0, y: 144)
+                self.dismissImageSourceTapBar()
             }
         }
     }
@@ -275,7 +277,7 @@ extension DiaryEditorViewController: UITextViewDelegate {
         let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.infinity))
         let textViewHeight: CGFloat = size.height > self.textViewHeight ? size.height : self.textViewHeight
         
-        if textViewHeightConstraint?.constant != textViewHeight  {
+        if textViewHeightConstraint?.constant != textViewHeight {
             textViewHeightConstraint?.constant = textViewHeight
             self.view.layoutIfNeeded()
         }
@@ -285,13 +287,15 @@ extension DiaryEditorViewController: UITextViewDelegate {
 extension DiaryEditorViewController: ImageSourceTapBarDelegate {
     func touched() {
         UIView.animate(withDuration: 0.2) {
-            self.imageSourceTapBar.transform = .identity
+            self.imageSourceTapBarBottomAnchor.constant = .zero
+            self.view.layoutIfNeeded()
         }
     }
     
     @objc private func dismissImageSourceTapBar() {
         UIView.animate(withDuration: 0.2) {
-            self.imageSourceTapBar.transform = CGAffineTransform(translationX: 0, y: 144)
+            self.imageSourceTapBarBottomAnchor.constant = 144
+            self.view.layoutIfNeeded()
         }
     }
 }

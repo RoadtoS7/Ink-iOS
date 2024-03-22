@@ -54,6 +54,7 @@
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */; };
 		F43998862BAD58E300C48BD7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998852BAD58E300C48BD7 /* UIViewController+.swift */; };
+		F43998882BAD77D400C48BD7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998872BAD77D400C48BD7 /* CustomButton.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
 		F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */; };
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
@@ -179,6 +180,7 @@
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
 		F43998852BAD58E300C48BD7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		F43998872BAD77D400C48BD7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerUseCase.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				F4F35DAE2B40FE9D0097347B /* MockDataForPreview.swift */,
 				F4B314042B91C00E00E01D32 /* GalleryPickerReceiver.swift */,
 				F4B3140B2B91E0DA00E01D32 /* TestViewController.swift */,
+				F43998872BAD77D400C48BD7 /* CustomButton.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,
 				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,
+				F43998882BAD77D400C48BD7 /* CustomButton.swift in Sources */,
 				F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */,
 				F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */,
 				2E1041A72A1DDFF5008F8F84 /* SingUpDoneView.swift in Sources */,

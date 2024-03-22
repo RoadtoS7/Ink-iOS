@@ -57,6 +57,7 @@ internal enum Colors {
   internal enum Neutral {
     internal enum Container {
       internal static let primary = ColorAsset(name: "primary")
+      internal static let secondary = ColorAsset(name: "secondary")
     }
     internal enum Label {
       internal static let quaternary = ColorAsset(name: "quaternary")

@@ -22,6 +22,8 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     private var imageViewDimensionRatioConstraint: NSLayoutConstraint!
     private var imageSourceTapBar: ImageSourceTapBar!
     
+    private var dictionaryButton: UIButton!
+    
     let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
     
     var image: UIImage? {
@@ -59,6 +61,7 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
         setupImageSourceSelectionView()
         setupImageView()
         setupTapDownGesture()
+        setupDictionaryButton()
     }
     
     private func setupTopNavigationBar() {
@@ -207,6 +210,21 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapOutside))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setupDictionaryButton() {
+        let button = DictionaryButton()
+        self.dictionaryButton = button
+        
+        view.addSubview(button)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.bottomAnchor.constraint(equalTo: imageSourceTapBar.topAnchor, constant: 27.0),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0),
+            button.widthAnchor.constraint(equalToConstant: 56.0),
+            button.heightAnchor.constraint(equalTo: button.widthAnchor)
+        ])
     }
     
     @objc func handleTapOutside(sender: UITapGestureRecognizer) {

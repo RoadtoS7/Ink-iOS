@@ -28,6 +28,7 @@ internal enum Images {
   internal static let chevron24 = ImageAsset(name: "chevron-24")
   internal static let chevronMore24 = ImageAsset(name: "chevron-more-24")
   internal static let commentCount = ImageAsset(name: "comment-count")
+  internal static let dictionary = ImageAsset(name: "dictionary")
   internal static let iconsChevronMore24 = ImageAsset(name: "iconsChevronMore24")
   internal static let iconsRefresh = ImageAsset(name: "icons_refresh")
   internal static let imgSplashLogo = ImageAsset(name: "img_splash_logo")

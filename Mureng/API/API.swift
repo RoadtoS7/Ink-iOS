@@ -80,8 +80,7 @@ public class API {
         
         if let bodyObject {
             do {
-                try appendBody(request: &request
-                               , bodyObject: bodyObject)
+                try appendBody(request: &request, bodyObject: bodyObject)
             } catch {
                 #if DEBUG
                     print(error)

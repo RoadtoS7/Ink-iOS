@@ -56,6 +56,7 @@
 		F41D35682BAFF160000772C1 /* WriteDiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */; };
 		F41D356C2BAFFEAA000772C1 /* WriteDiaryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */; };
 		F41D35702BB0049C000772C1 /* IMG_0417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F41D356F2BB0049C000772C1 /* IMG_0417.JPG */; };
+		F41D35722BB00C20000772C1 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35712BB00C20000772C1 /* URLRequest.swift */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */; };
 		F43998862BAD58E300C48BD7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998852BAD58E300C48BD7 /* UIViewController+.swift */; };
@@ -187,6 +188,7 @@
 		F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPI.swift; sourceTree = "<group>"; };
 		F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPITests.swift; sourceTree = "<group>"; };
 		F41D356F2BB0049C000772C1 /* IMG_0417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0417.JPG; sourceTree = "<group>"; };
+		F41D35712BB00C20000772C1 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
 		F43998852BAD58E300C48BD7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */,
 				F4B314062B91CB0600E01D32 /* UIEdgeInset+.swift */,
 				F43998852BAD58E300C48BD7 /* UIViewController+.swift */,
+				F41D35712BB00C20000772C1 /* URLRequest.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -609,12 +612,12 @@
 		F4FB9ACF2A621BF600388AC3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F41D35652BAFF123000772C1 /* API.swift */,
 				F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */,
+				F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */,
 				F4FB9AD32A62328400388AC3 /* Host.swift */,
 				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
 				2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */,
-				F41D35652BAFF123000772C1 /* API.swift */,
-				F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */,
 				F4A74FAD2A07A1D9004D73A3 /* ButtonSoild48Style.swift in Sources */,
 				F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */,
+				F41D35722BB00C20000772C1 /* URLRequest.swift in Sources */,
 				F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */,
 				2EE1601F2B10C950009B8E62 /* WriteAnswerImagePickerView.swift in Sources */,
 				F4B3140A2B91D02100E01D32 /* ImageSourceTapBar.swift in Sources */,

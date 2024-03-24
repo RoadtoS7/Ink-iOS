@@ -50,11 +50,3 @@ final class TodayExpressionAPI: API {
         return response
     }
 }
-
-extension URLRequest {
-    mutating func addAuthHeader(value: String = "") {
-        let key: String = "X-AUTH-TOKEN"
-        let value: String = Token.shared.accessToken ?? ""
-        addValue(value, forHTTPHeaderField: key)
-    }
-}

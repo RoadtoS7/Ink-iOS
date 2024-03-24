@@ -18,7 +18,7 @@ enum APIError: LocalizedError {
     }
 }
 
-class API {
+public class API {
     let session: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10

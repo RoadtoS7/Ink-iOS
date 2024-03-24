@@ -54,6 +54,8 @@
 		F41D35642BAFEC9E000772C1 /* AnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35632BAFEC9E000772C1 /* AnswerService.swift */; };
 		F41D35662BAFF123000772C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35652BAFF123000772C1 /* API.swift */; };
 		F41D35682BAFF160000772C1 /* WriteDiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */; };
+		F41D356C2BAFFEAA000772C1 /* WriteDiaryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */; };
+		F41D35702BB0049C000772C1 /* IMG_0417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F41D356F2BB0049C000772C1 /* IMG_0417.JPG */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */; };
 		F43998862BAD58E300C48BD7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998852BAD58E300C48BD7 /* UIViewController+.swift */; };
@@ -183,6 +185,8 @@
 		F41D35632BAFEC9E000772C1 /* AnswerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerService.swift; sourceTree = "<group>"; };
 		F41D35652BAFF123000772C1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPI.swift; sourceTree = "<group>"; };
+		F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPITests.swift; sourceTree = "<group>"; };
+		F41D356F2BB0049C000772C1 /* IMG_0417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0417.JPG; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
 		F43998852BAD58E300C48BD7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -327,7 +331,9 @@
 		2E4E556B28576D0F001B5554 /* MurengTests */ = {
 			isa = PBXGroup;
 			children = (
+				F41D356F2BB0049C000772C1 /* IMG_0417.JPG */,
 				2E4E556C28576D0F001B5554 /* MurengTests.swift */,
+				F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */,
 			);
 			path = MurengTests;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41D35702BB0049C000772C1 /* IMG_0417.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,6 +1000,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41D356C2BAFFEAA000772C1 /* WriteDiaryAPITests.swift in Sources */,
 				2E4E556D28576D0F001B5554 /* MurengTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1229,7 +1237,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G49TCMH6D2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roadtos7.ios.MurengTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1250,7 +1258,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G49TCMH6D2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roadtos7.ios.MurengTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,9 @@
 import Foundation
 import Alamofire
 
-final class WriteDiaryAPI: API {
+public final class WriteDiaryAPI: API {
+    public static let shared: WriteDiaryAPI = .init()
+    
     func uploadImage(data: Data) async throws -> APIResponse<UploadImageResult> {
         let path: String = "/api/replay/image"
         let url: String = Host.baseURL + path

@@ -135,7 +135,8 @@ final class ImageSourceTapBar: UIView {
     
     func placeholderViews(count: Int) -> [UIView] {
         (0..<count).map { _ in
-            return makeImageButton(image: .add)
+            return makeCheckableImageView(image: .add)
+//            return makeImageButton(image: .add)
         }
     }
     
@@ -148,6 +149,14 @@ final class ImageSourceTapBar: UIView {
         return view
     }
     
+    func makeCheckableImageView(image: UIImage) -> UIView {
+        let imageView = CheckableImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        return imageView
+    }
+    
     func makeImageButton(image: UIImage) -> UIButton {
         let button = UIButton()
         button.setImage(image, for: .normal)
@@ -155,5 +164,51 @@ final class ImageSourceTapBar: UIView {
             self.localSourceButtonDelegate.imageSourceTabBar(self, didSelect: image)
         }
         return button
+    }
+}
+
+final class CheckableImageView: UIView {
+    private let imageView: UIImageView = {
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
+        return $0
+    }(UIImageView())
+    
+    private let dimmedFilterView: UIView = {
+        $0.backgroundColor = .black.withAlphaComponent(0.3)
+        return $0
+    }(UIView())
+    
+    convenience init(image: UIImage) {
+        self.init(frame: .zero)
+        self.imageView.image = image
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    func initLayout() {
+        addSubviews()
+        
+        imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dimmedFilterView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    private func addSubviews() {
+        addSubview(imageView)
+        addSubview(dimmedFilterView)
+    }
+    
+    private func check() {
+        dimmedFilterView.isHidden = false
+    }
+    
+    private func uncheck() {
+        dimmedFilterView.isHidden = true
     }
 }

@@ -51,6 +51,9 @@
 		F40F977C2A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */; };
 		F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */; };
 		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
+		F41D35642BAFEC9E000772C1 /* AnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35632BAFEC9E000772C1 /* AnswerService.swift */; };
+		F41D35662BAFF123000772C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35652BAFF123000772C1 /* API.swift */; };
+		F41D35682BAFF160000772C1 /* WriteDiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */; };
 		F43998862BAD58E300C48BD7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998852BAD58E300C48BD7 /* UIViewController+.swift */; };
@@ -177,6 +180,9 @@
 		F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
 		F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
+		F41D35632BAFEC9E000772C1 /* AnswerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerService.swift; sourceTree = "<group>"; };
+		F41D35652BAFF123000772C1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPI.swift; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
 		F43998852BAD58E300C48BD7 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -374,6 +380,7 @@
 		2EBFBE532AD0EE2D00D3AB18 /* WriteAnswer */ = {
 			isa = PBXGroup;
 			children = (
+				F41D35622BAFEC58000772C1 /* Service */,
 				F4B314082B91D01200E01D32 /* View */,
 				2EBFBE552AD0EE6100D3AB18 /* WriteAnswerView.swift */,
 				2E0FD8442B04F9A300CAF0F5 /* AnswerBackgroundView.swift */,
@@ -447,6 +454,14 @@
 				F4F35DB42B415FDD0097347B /* Typo.swift */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		F41D35622BAFEC58000772C1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F41D35632BAFEC9E000772C1 /* AnswerService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		F43605652A24783E0014E34D /* DI */ = {
@@ -592,6 +607,8 @@
 				F4FB9AD32A62328400388AC3 /* Host.swift */,
 				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
 				2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */,
+				F41D35652BAFF123000772C1 /* API.swift */,
+				F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -912,6 +929,7 @@
 				2E4E559228577AAC001B5554 /* UIView+Extension.swift in Sources */,
 				F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */,
 				2E4E555A28576D0D001B5554 /* ViewController.swift in Sources */,
+				F41D35662BAFF123000772C1 /* API.swift in Sources */,
 				F4B6821B29F53042000E7A92 /* Images+Generated.swift in Sources */,
 				F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */,
 				F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */,
@@ -936,6 +954,7 @@
 				F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */,
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
+				F41D35642BAFEC9E000772C1 /* AnswerService.swift in Sources */,
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
 				F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */,
 				F47D5AF62B725A5B00640B98 /* QuestionHeaderView.swift in Sources */,
@@ -955,6 +974,7 @@
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,
+				F41D35682BAFF160000772C1 /* WriteDiaryAPI.swift in Sources */,
 				F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */,
 				F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,

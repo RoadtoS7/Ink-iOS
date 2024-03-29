@@ -6,17 +6,32 @@
 //
 
 import UIKit
+import Combine
 
-final class WriteDiaryViewModel {
-    func writeDiary() {
-        Task {
-            
-        }
+final class DiaryEditorViewModel {
+    let storageAdapter: DiaryStorageAdapter
+    let question: Question
+    
+    @Published var koContent: String = ""
+    @Published var imageData: UIImage?
+    
+    var canPostAnswer: some Publisher<Bool, Never> {
+        Publishers.CombineLatest($koContent, $imageData)
+            .map({ koContent, imageData in
+                koContent.isNotEmpty && imageData != nil
+            })
+            .setFailureType(to: Never.self)
+    }
+    
+    init(question: Question,  storageAdapter: DiaryStorageAdapter) {
+        self.question = question
+        self.storageAdapter = storageAdapter
     }
 }
 
 // TODO: DiaryEditorViewContoller 코드 정리
 class DiaryEditorViewController: BaseTopNavigationTabBarController {
+    // UI
     private var scrollView: UIScrollView!
     private var contentView: UIView!
     private var questionHeaderView: QuestionHeaderView!
@@ -35,12 +50,18 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     
     let testQuestion: Question = Question(id: 0, content: "this is eng title", koreanContent: "이것은 한국어 컨텐츠 입니다.")
     
-    var image: UIImage? {
-        didSet {
-            guard let image = image else { return }
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
-            imageView.image = image
-        }
+    // ViewModel
+    private let viewModel: DiaryEditorViewModel
+    private var cancellableGroup: Set<AnyCancellable> = []
+    
+    init(viewModel: DiaryEditorViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError()
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,6 +82,11 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.Neutral.Container.primary.color
+        setUpSubviews()
+        bindViewModel()
+    }
+    
+    private func setUpSubviews() {
         setupTopNavigationBar()
         setupScrollView()
         setupContentView()
@@ -179,7 +205,7 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
             rootViewController: self,
             imageLoadingDone: { [weak self] image in
                 DispatchQueue.main.async {
-                    self?.image = image
+                    self?.viewModel.imageData = image
                 }
             })
         let imageSourceTabBar = ImageSourceTapBar(galleryPickerDelegate: galleryPickerDelegate, localSourceButtonDelegate: self)
@@ -244,6 +270,17 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
                 self.dismissImageSourceTapBar()
             }
         }
+    }
+    
+    private func bindViewModel() {
+        viewModel.$imageData
+            .filter({ $0 != nil })
+            .handleEvents(receiveOutput: { [weak self] _ in
+                guard let self else { return }
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+            })
+            .assign(to: \.image, on: imageView)
+            .store(in: &cancellableGroup)
     }
 }
 
@@ -320,6 +357,6 @@ extension DiaryEditorViewController: UIGestureRecognizerDelegate {
     }
     
     func imageSourceTabBar(_ imageSourceTapBar: ImageSourceTapBar, didSelect localImage: UIImage?) {
-        image = localImage
+        self.viewModel.imageData = localImage
     }
 }

@@ -7,8 +7,15 @@
 
 import UIKit
 
-// TODO: DiaryEditorViewContoller 코드 정리 
+final class WriteDiaryViewModel {
+    func writeDiary() {
+        Task {
+            
+        }
+    }
+}
 
+// TODO: DiaryEditorViewContoller 코드 정리
 class DiaryEditorViewController: BaseTopNavigationTabBarController {
     private var scrollView: UIScrollView!
     private var contentView: UIView!

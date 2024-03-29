@@ -270,7 +270,7 @@ final class DefaultAuthService: AuthenticationService {
         do {
             let response = try await MemberAuthAPI.shared.signUp(signUpDTO: signUpDTO)
             let memberDTO = response.data
-            return memberDTO.asModel()
+            return memberDTO.asEntity()
         } catch {
             MurengLogger.shared.logError(error)
             return nil

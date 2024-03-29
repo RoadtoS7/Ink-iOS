@@ -51,11 +51,10 @@
 		F40F977C2A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */; };
 		F40F977D2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */; };
 		F40F977E2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */; };
-		F41D35642BAFEC9E000772C1 /* AnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35632BAFEC9E000772C1 /* AnswerService.swift */; };
+		F41D35642BAFEC9E000772C1 /* DiaryStorageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35632BAFEC9E000772C1 /* DiaryStorageAdapter.swift */; };
 		F41D35662BAFF123000772C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35652BAFF123000772C1 /* API.swift */; };
 		F41D35682BAFF160000772C1 /* WriteDiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */; };
 		F41D356C2BAFFEAA000772C1 /* WriteDiaryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */; };
-		F41D35702BB0049C000772C1 /* IMG_0417.JPG in Resources */ = {isa = PBXBuildFile; fileRef = F41D356F2BB0049C000772C1 /* IMG_0417.JPG */; };
 		F41D35722BB00C20000772C1 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35712BB00C20000772C1 /* URLRequest.swift */; };
 		F43605672A2478460014E34D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43605662A2478460014E34D /* AppState.swift */; };
 		F43998842BAD570F00C48BD7 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */; };
@@ -109,6 +108,8 @@
 		F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
 		F4FB9AD42A62328400388AC3 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
 		F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */; };
+		F4FDB2252BB6B318006C1304 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2242BB6B318006C1304 /* Member.swift */; };
+		F4FDB2292BB6B6F8006C1304 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2282BB6B6F8006C1304 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,11 +184,10 @@
 		F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F40F977A2A9B31C4008895A5 /* NanumMyeongjo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Regular.ttf"; sourceTree = "<group>"; };
 		F40F977B2A9B31C4008895A5 /* NanumMyeongjo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-Bold.ttf"; sourceTree = "<group>"; };
-		F41D35632BAFEC9E000772C1 /* AnswerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerService.swift; sourceTree = "<group>"; };
+		F41D35632BAFEC9E000772C1 /* DiaryStorageAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStorageAdapter.swift; sourceTree = "<group>"; };
 		F41D35652BAFF123000772C1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPI.swift; sourceTree = "<group>"; };
 		F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryAPITests.swift; sourceTree = "<group>"; };
-		F41D356F2BB0049C000772C1 /* IMG_0417.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0417.JPG; sourceTree = "<group>"; };
 		F41D35712BB00C20000772C1 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		F43605662A2478460014E34D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F43998832BAD570F00C48BD7 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
@@ -241,6 +241,8 @@
 		F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAuthAPI.swift; sourceTree = "<group>"; };
 		F4FB9AD32A62328400388AC3 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 		F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		F4FDB2242BB6B318006C1304 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		F4FDB2282BB6B6F8006C1304 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,7 +335,6 @@
 		2E4E556B28576D0F001B5554 /* MurengTests */ = {
 			isa = PBXGroup;
 			children = (
-				F41D356F2BB0049C000772C1 /* IMG_0417.JPG */,
 				2E4E556C28576D0F001B5554 /* MurengTests.swift */,
 				F41D356B2BAFFEAA000772C1 /* WriteDiaryAPITests.swift */,
 			);
@@ -367,6 +368,7 @@
 				F4B314062B91CB0600E01D32 /* UIEdgeInset+.swift */,
 				F43998852BAD58E300C48BD7 /* UIViewController+.swift */,
 				F41D35712BB00C20000772C1 /* URLRequest.swift */,
+				F4FDB2282BB6B6F8006C1304 /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -468,7 +470,7 @@
 		F41D35622BAFEC58000772C1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				F41D35632BAFEC9E000772C1 /* AnswerService.swift */,
+				F41D35632BAFEC9E000772C1 /* DiaryStorageAdapter.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -553,6 +555,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B888892AAC319600BBD2F3 /* EnglishExpression.swift */,
+				F4FDB2242BB6B318006C1304 /* Member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -763,7 +766,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41D35702BB0049C000772C1 /* IMG_0417.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +956,7 @@
 				2EE1601F2B10C950009B8E62 /* WriteAnswerImagePickerView.swift in Sources */,
 				F4B3140A2B91D02100E01D32 /* ImageSourceTapBar.swift in Sources */,
 				F4A74FA72A076F3C004D73A3 /* PutUserNicknameView.swift in Sources */,
+				F4FDB2292BB6B6F8006C1304 /* String+.swift in Sources */,
 				2E2338D12B024ED500FFEF51 /* BottomSheetView.swift in Sources */,
 				F4F35DA72B4046610097347B /* TestView.swift in Sources */,
 				2E4E555628576D0D001B5554 /* AppDelegate.swift in Sources */,
@@ -965,7 +968,7 @@
 				F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */,
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
-				F41D35642BAFEC9E000772C1 /* AnswerService.swift in Sources */,
+				F41D35642BAFEC9E000772C1 /* DiaryStorageAdapter.swift in Sources */,
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
 				F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */,
 				F47D5AF62B725A5B00640B98 /* QuestionHeaderView.swift in Sources */,
@@ -981,6 +984,7 @@
 				2E8F64152A79F6A5003DCDAE /* AuthService.swift in Sources */,
 				F4FB9AD42A62328400388AC3 /* Host.swift in Sources */,
 				F4F35DA42B4040390097347B /* QuestionListHeaderView.swift in Sources */,
+				F4FDB2252BB6B318006C1304 /* Member.swift in Sources */,
 				F4F35DAF2B40FE9D0097347B /* MockDataForPreview.swift in Sources */,
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,

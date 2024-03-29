@@ -7,16 +7,18 @@
 
 import Foundation
 
-struct QuestionDTO: Decodable {
+struct QuestionDTO: DTO {
+    typealias EnityModel = Question
+    
     let questionId: Int
     let category: String
     let content: String
     let koContent: String
     let wordHints: [WordHintDTO]
-    let autor: AuthorDTO
+    let autor: MemberDTO
     let repliesCount: Int
     
-    func asQuestion() -> Question {
+    func asEntity() -> Question {
         .init(id: questionId, content: content, koreanContent: koContent)
     }
 }
@@ -25,17 +27,6 @@ struct WordHintDTO: Decodable {
     let hintId: Int
     let word: String
     let meaning: String
-}
-
-struct AuthorDTO: Decodable {
-    let memberId: Int
-    let identifier: String
-    let email: String
-    let image: String
-    let inkCount: Int
-    let attendanceCount: Int
-    let lastAttendanceDate: String
-    let memberSetting: MemberSettingDTO
 }
 
 final class TodayQuestionAPI: API {

@@ -17,7 +17,7 @@ struct RemoteQuestionService: QuestionService {
         do {
             let response: APIResponse<QuestionDTO> = try await TodayQuestionAPI.shared.get()
             let questionDTO: QuestionDTO = response.data
-            return questionDTO.asQuestion()
+            return questionDTO.asEntity()
         } catch {
             return Question.notReady
         }
@@ -27,7 +27,7 @@ struct RemoteQuestionService: QuestionService {
         do {
             let response: APIResponse<QuestionDTO> = try await TodayQuestionAPI.shared.refresh()
             let questionDTO: QuestionDTO = response.data
-            return questionDTO.asQuestion()
+            return questionDTO.asEntity()
         } catch {
             return Question.notReady
         }

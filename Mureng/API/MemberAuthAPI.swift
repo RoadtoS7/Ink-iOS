@@ -22,7 +22,7 @@ struct MemberAuthService: MemberAuthable {
                 return
             }
             
-            completion(memberDTO.asModel())
+            completion(memberDTO.asEntity())
         }
     }
 }
@@ -50,7 +50,7 @@ struct Member {
     let image: String
     let inkCount: Int
     let attendanceCount: Int
-    let lastAttendanceDate: Date
+    let lastAttendanceDate: Date?
     let memberSetting: MemberSetting
 }
 
@@ -63,7 +63,8 @@ struct MemberSettingDTO: Decodable {
     }
 }
 
-struct MemberDTO: Decodable {
+struct MemberDTO: DTO {
+    
     let memberId: Int
     let identifier: String
     let email: String
@@ -74,6 +75,18 @@ struct MemberDTO: Decodable {
     let lastAttendanceDate: String // "2023-10-07"
     let memberSetting: MemberSettingDTO
     
+    func asEntity() -> Member {
+        return .init(id: memberId,
+              identifier: identifier,
+              email: email,
+              nickname: nickname,
+              image: image,
+              inkCount: inkCount,
+              attendanceCount: attendanceCount,
+              lastAttendanceDate: lastAttendanceDate.makeDateWithoutTime(),
+              memberSetting: memberSetting.asModel()
+        )
+    }
     func asModel() -> Member {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

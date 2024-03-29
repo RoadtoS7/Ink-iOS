@@ -9,4 +9,5 @@ import Foundation
 
 struct Host {
     static let baseURL: String = "https://dev.hkpark.net"
+    static let fileServerBaseURL: String = "https://ink-media.hkpark.net/"
 }

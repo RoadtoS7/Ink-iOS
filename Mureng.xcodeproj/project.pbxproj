@@ -61,6 +61,7 @@
 		F43998862BAD58E300C48BD7 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998852BAD58E300C48BD7 /* UIViewController+.swift */; };
 		F43998882BAD77D400C48BD7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43998872BAD77D400C48BD7 /* CustomButton.swift */; };
 		F446BFBF2A5ADBD8000005C5 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */; };
+		F4543A172BE5AEF30007AE05 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4543A162BE5AEF30007AE05 /* ToastView.swift */; };
 		F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */; };
 		F4684BB82AA466CB006549AE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
 		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
@@ -195,6 +196,7 @@
 		F43998872BAD77D400C48BD7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		F446BFC02A5AF977000005C5 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
+		F4543A162BE5AEF30007AE05 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		F46357402B6E7B6D00641CBF /* GalleryPickerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerUseCase.swift; sourceTree = "<group>"; };
 		F4684BB72AA466CB006549AE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		F4684BB92AA47A37006549AE /* ExpressionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionRowView.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				2E2338CE2B0241D700FFEF51 /* GalleryPickerView.swift */,
 				2E2338D02B024ED500FFEF51 /* BottomSheetView.swift */,
 				F49F52042B534F680091684C /* ScrollObservableView.swift */,
+				F4543A162BE5AEF30007AE05 /* ToastView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				F4F35DA42B4040390097347B /* QuestionListHeaderView.swift in Sources */,
 				F4FDB2252BB6B318006C1304 /* Member.swift in Sources */,
 				F4F35DAF2B40FE9D0097347B /* MockDataForPreview.swift in Sources */,
+				F4543A172BE5AEF30007AE05 /* ToastView.swift in Sources */,
 				F4F35DAB2B40EE970097347B /* QuestionListCellView.swift in Sources */,
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,

@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let viewController = FullScreenHostingViewController(swiftUIView: view)
         
         let viewModel = DiaryEditorViewModel(question: Question.notReady,
-                             storageAdapter: RemoveDiaryStorageAdapter())
+                                             storageAdapter: RemoveDiaryStorageAdapter(), diaryComplianceChecker: .defaultChecker)
         let viewController = DiaryEditorViewController(viewModel: viewModel)
         let navigationController = RootNavigationViewController(rootViewController: viewController)
         

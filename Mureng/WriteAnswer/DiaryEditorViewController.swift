@@ -8,9 +8,64 @@
 import UIKit
 import Combine
 
+protocol DiaryComplianceRule {
+    var errorMessage: String { get }
+    func isSatisfied(with content: String) -> Bool
+}
+
+class DiaryQuantityRule: DiaryComplianceRule {
+    let minContentSize: Int = 50
+    
+    var errorMessage: String  {
+        "50자 이상이어야 합니다."
+    }
+    
+    func isSatisfied(with content: String) -> Bool {
+        content.count > minContentSize
+    }
+}
+
+class DiaryLanguageRule: DiaryComplianceRule {
+    var errorMessage: String {
+        "한글은 입력할 수 없어요."
+    }
+    
+    func isSatisfied(with content: String) -> Bool {
+        // Regular expression to match only English letters
+        let pattern = "^[A-Za-z]+$"
+        return content.range(of: pattern, options: .regularExpression) != nil
+    }
+}
+
+final class DiaryComplianceChecker {
+    static var defaultChecker: DiaryComplianceChecker = .init(rules: [
+        DiaryQuantityRule(),
+        DiaryLanguageRule()
+    ])
+    
+    struct Error: LocalizedError {
+        let errorDescription: String?
+    }
+    
+    let rules: [DiaryComplianceRule]
+    
+    init(rules: [DiaryComplianceRule]) {
+        self.rules = rules
+    }
+    
+    func check(contents: String) throws {
+        for rule in rules {
+            guard rule.isSatisfied(with: contents) else {
+                throw Error(errorDescription: rule.errorMessage)
+            }
+        }
+    }
+}
+
 final class DiaryEditorViewModel {
     let storageAdapter: DiaryStorageAdapter
     let question: Question
+    let diaryComplianceChecker: DiaryComplianceChecker
     
     @Published var koContent: String = ""
     @Published var imageData: UIImage?
@@ -23,9 +78,14 @@ final class DiaryEditorViewModel {
             .setFailureType(to: Never.self)
     }
     
-    init(question: Question,  storageAdapter: DiaryStorageAdapter) {
+    init(question: Question,  storageAdapter: DiaryStorageAdapter, diaryComplianceChecker: DiaryComplianceChecker) {
         self.question = question
         self.storageAdapter = storageAdapter
+        self.diaryComplianceChecker = diaryComplianceChecker
+    }
+    
+    func ensureContentMeetsPolicy(contents: String) throws {
+        try diaryComplianceChecker.check(contents: contents)
     }
 }
 
@@ -101,8 +161,14 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     
     private func setupTopNavigationBar() {
         navigationBar.addRightButtons([TopNavigationBarItem(title: "등록", action: UIAction(handler: { _ in
-            // TODO: 등록 action
-            print("$$ 등록!!")
+            let contents = self.textView.text ?? ""
+            do {
+                try self.viewModel.ensureContentMeetsPolicy(contents: contents)
+            } catch {
+                let errorMessage = error.localizedDescription
+                ToastView.present(message: errorMessage, parentView: self.view)
+                print("$$ error: !!", errorMessage)
+            }
         }))])
     }
     

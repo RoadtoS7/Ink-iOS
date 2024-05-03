@@ -13,11 +13,15 @@ protocol DiaryComplianceRule {
     func isSatisfied(with content: String) -> Bool
 }
 
-class DiaryQuantityRule: DiaryComplianceRule {
-    let minContentSize: Int = 50
+final class DiaryQuantityRule: DiaryComplianceRule {
+    private let minContentSize: Int
+    
+    init(minContentSize: Int) {
+        self.minContentSize = minContentSize
+    }
     
     var errorMessage: String  {
-        "50자 이상이어야 합니다."
+        "\(minContentSize)자 이상이어야 합니다."
     }
     
     func isSatisfied(with content: String) -> Bool {
@@ -25,7 +29,7 @@ class DiaryQuantityRule: DiaryComplianceRule {
     }
 }
 
-class DiaryLanguageRule: DiaryComplianceRule {
+final  class DiaryLanguageRule: DiaryComplianceRule {
     var errorMessage: String {
         "한글은 입력할 수 없어요."
     }
@@ -39,7 +43,7 @@ class DiaryLanguageRule: DiaryComplianceRule {
 
 final class DiaryComplianceChecker {
     static var defaultChecker: DiaryComplianceChecker = .init(rules: [
-        DiaryQuantityRule(),
+        DiaryQuantityRule(minContentSize: 2),
         DiaryLanguageRule()
     ])
     

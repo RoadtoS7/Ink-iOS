@@ -51,13 +51,11 @@ struct MurengToggleStyle: ToggleStyle {
     }
 }
 
-
-
 struct OnBoardingHeadline: View {
     let text: String
     
     var body: some View {
         Text(text)
-            .font(FontFamily.OmyuPretty.regular.swiftUIFont(fixedSize: 32))
+            .font(FontFamily.Pretendard.regular.swiftUIFont(fixedSize: 32))
     }
 }

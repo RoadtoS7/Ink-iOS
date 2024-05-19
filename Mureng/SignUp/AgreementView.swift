@@ -26,6 +26,7 @@ struct AgreementView: View {
 
     @State private var serviceUsageAgreed: Bool = false
     @State private var privacyPolicyAgreed: Bool = false
+    @State private var nextButtonTapped: Int?
     
     var all: Binding<Bool> {
         Binding(
@@ -37,8 +38,6 @@ struct AgreementView: View {
                 self.privacyPolicyAgreed = value
             })
     }
-    
-    @State private var nextButtonTapped: Int? = nil
     
     var body: some View {
         VStack(alignment: .leading, spacing: 64) {
@@ -73,7 +72,7 @@ struct AgreementView: View {
             Spacer()
             
             NavigationLink(
-                destination: SignUpNickNameView(authService: DefaultAuthService()),
+                destination: SignUpNickNameView(authServiceUser: authServiceUser, authService: DefaultAuthService()),
                 tag: 1,
                 selection: $nextButtonTapped) {
                 Button("다음") {

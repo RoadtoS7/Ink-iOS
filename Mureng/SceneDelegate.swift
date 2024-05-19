@@ -20,8 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: scene)
         let service: AuthenticationService = DefaultAuthService()
-        let view: EntryView = .init(authenticationService: service)
-        let viewController = FullScreenHostingViewController(swiftUIView: view)
+//        let view: EntryView = .init(authenticationService: service)
+        
+//        let viewController = FullScreenHostingViewController(swiftUIView: view)
+        
+        let viewModel = DiaryEditorViewModel(question: Question.notReady,
+                                             storageAdapter: RemoveDiaryStorageAdapter(), diaryComplianceChecker: .defaultChecker)
+        let viewController = DiaryEditorViewController(viewModel: viewModel)
         let navigationController = RootNavigationViewController(rootViewController: viewController)
         
         window.rootViewController = navigationController
@@ -61,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
             if let url = URLContexts.first?.url {
-                if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                if AuthApi.isKakaoTalkLoginUrl(url) {
                     _ = AuthController.handleOpenUrl(url: url)
                 }
             }

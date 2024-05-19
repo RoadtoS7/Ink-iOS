@@ -10,8 +10,8 @@ import Foundation
 struct Token {
     static var shared = Token()
     
-    private(set) var accessToken: String? = nil
-    private(set) var refreshToken: String? = nil
+    private(set) var accessToken: String?
+    private(set) var refreshToken: String? 
     
     mutating func set(token: Token) {
         self.accessToken = token.accessToken

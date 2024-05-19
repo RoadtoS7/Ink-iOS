@@ -18,19 +18,16 @@ struct SingUpDoneView: View {
                     Image(uiImage: Images.logoDark112.image)
                         .padding([.bottom], 20)
                     Text("준비를 마쳤어요!")
-                        .font(FontFamily.OmyuPretty.regular.swiftUIFont(size: 28))
+                        .font(FontFamily.Pretendard.regular.swiftUIFont(size: 28))
                     Text("매일 1개의 질문에 답변해봐요.")
                 }
                 
                 Spacer()
                 
-                NavigationLink(destination: SingUpDoneView(), tag: 2, selection: $nextButtonTapped) {
-                    Button("시작하기") {
-                        nextButtonTapped = 1
-                    }
-                    .frame(height: 48)
-                    .buttonStyle(ButtonSoild48Style())
-                }
+                NavigationLink("시작하기",
+                               destination: { HomeScreenView() })
+                .frame(height: 48)
+                .buttonStyle(ButtonSoild48Style())
             }
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, maxHeight: .infinity)

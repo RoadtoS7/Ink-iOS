@@ -9,7 +9,16 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
 
-enum AutServiceLoginResult {
+enum AutServiceLoginResult: Equatable {
+    static func == (lhs: AutServiceLoginResult, rhs: AutServiceLoginResult) -> Bool {
+        switch (lhs, rhs) {
+        case (.authenticated, .authenticated): return true
+        case (.signUp(let lshUser), .signUp(let rhsUser)): return lshUser == rhsUser
+        case (.fail, .fail): return true
+        default: return false
+        }
+    }
+    
     case authenticated
     case signUp(AuthServiceUser)
     case fail
@@ -18,9 +27,16 @@ enum AutServiceLoginResult {
 protocol AuthenticationService {
     func login() async -> AutServiceLoginResult
     func isNickNameExisted(_ nickname: String) async -> Bool?
+    func signUp(authServiceUser: AuthServiceUser) async -> Member?
 }
 
 final class DummySuccessAuthService: AuthenticationService {
+    func signUp(authServiceUser: AuthServiceUser) async -> Member? {
+        let memberSetting: MemberSetting = .init(dailyPushActive: true,
+                                                 likePushActive: true)
+        return .init(id: 0, identifier: "identifier", email: "email", nickname: "nickname", image: "imagew", inkCount: 0, attendanceCount: 0, lastAttendanceDate: .init(), memberSetting: memberSetting)
+    }
+    
     let authServiceUser: AuthServiceUser
     let nicknameExisted: Bool
     let loginResult: AutServiceLoginResult
@@ -76,14 +92,8 @@ final class DefaultAuthService: AuthenticationService {
         }
         
         let user: User? = try? await getUserInfo()
-        guard let user = user else {
-            return .fail
-        }
-        
-        let id = String(describing: user.id)
-        
-        guard let nickname = user.kakaoAccount?.profile?.nickname else {
-            MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return nickname"))
+        guard let user = user,
+              let userId = user.id else {
             return .fail
         }
         
@@ -92,7 +102,8 @@ final class DefaultAuthService: AuthenticationService {
             return .fail
         }
         
-        let authServiceUser: AuthServiceUser = .init(identifier: id, email: email, image: nickname)
+        let idText = String(userId)
+        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: email)
         return .signUp(authServiceUser)
     }
     
@@ -116,6 +127,10 @@ final class DefaultAuthService: AuthenticationService {
             return response.data.exist
         } catch {
             MurengLogger.shared.logError(error)
+            MurengLogger.shared.logDebug(
+                "providerAccessToken: \(providerAccessToken)" +
+                " providerName: \(providerName)"
+            )
             return nil
         }
     }
@@ -244,6 +259,18 @@ final class DefaultAuthService: AuthenticationService {
         do {
             let response = try await MemberAuthAPI.shared.checkNicknameDuplicated(nickName: nickname)
             return response.data.duplicated
+        } catch {
+            MurengLogger.shared.logError(error)
+            return nil
+        }
+    }
+    
+    func signUp(authServiceUser: AuthServiceUser) async -> Member? {
+        let signUpDTO: SignUpDTO = .init(authServiceUser)
+        do {
+            let response = try await MemberAuthAPI.shared.signUp(signUpDTO: signUpDTO)
+            let memberDTO = response.data
+            return memberDTO.asEntity()
         } catch {
             MurengLogger.shared.logError(error)
             return nil

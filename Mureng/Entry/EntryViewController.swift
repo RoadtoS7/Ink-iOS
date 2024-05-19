@@ -39,12 +39,10 @@ struct EntryView: View {
                                 navigationToAgreement = true
                             case .fail:
                                 print("$$ fail")
-                                return
                                 // TODO: fail 처리
                             case .authenticated:
                                 print("$$ needSignUp")
                                 // TODO: needSignUp 처리
-                                return
                             }
                             
                             loginTask = nil

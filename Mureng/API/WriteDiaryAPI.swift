@@ -78,7 +78,7 @@ struct DefaultImageDTO: Decodable {
 struct UploadAnswerBody: Encodable {
     let questionId: String
     let content: String
-    let image: String
+    let image: String?
 }
 
 /**

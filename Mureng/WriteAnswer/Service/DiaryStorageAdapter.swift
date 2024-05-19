@@ -9,15 +9,18 @@ import Foundation
 import UIKit
 
 protocol DiaryStorageAdapter {
-    func writeDiary(questionId: String, content: String, imageData: Data) async -> Answer?
+    func writeDiary(questionId: String, content: String, imageData: Data?) async -> Answer?
 }
 
 final class RemoveDiaryStorageAdapter: DiaryStorageAdapter {
-    func writeDiary(questionId: String, content: String, imageData: Data) async -> Answer? {
+    func writeDiary(questionId: String, content: String, imageData: Data?) async -> Answer? {
         do {
-            let imageResponse: APIResponse<UploadImageResult> = try await WriteDiaryAPI.shared.uploadImage(data: imageData)
-            let imagePath: String = imageResponse.data.imagePath
-
+            var imagePath: String?
+            if let imageData {
+                let imageResponse: APIResponse<UploadImageResult> = try await WriteDiaryAPI.shared.uploadImage(data: imageData)
+                 imagePath = imageResponse.data.imagePath
+            }
+            
             let diaryResponse: APIResponse<AnswerDTO> = try await uploadDiary(questionId: questionId, content: content, imagePath: imagePath)
             let answer = diaryResponse.data.asEntity()
             return answer
@@ -27,7 +30,7 @@ final class RemoveDiaryStorageAdapter: DiaryStorageAdapter {
         }
     }
     
-    func uploadDiary(questionId: String, content: String, imagePath: String) async throws -> APIResponse<AnswerDTO> {
+    func uploadDiary(questionId: String, content: String, imagePath: String?) async throws -> APIResponse<AnswerDTO> {
         let body: UploadAnswerBody = .init(questionId: questionId, content: content, image: imagePath)
         let response: APIResponse<AnswerDTO> = try await WriteDiaryAPI.shared.uploadAnswer(body: body)
         return response

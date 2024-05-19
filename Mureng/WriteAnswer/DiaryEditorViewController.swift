@@ -91,6 +91,11 @@ final class DiaryEditorViewModel {
     func ensureContentMeetsPolicy(contents: String) throws {
         try diaryComplianceChecker.check(contents: contents)
     }
+    
+    func submitContents(content: String, imageData: Data?) async -> Answer? {
+        let questionId: String = "\(question.id)"
+        return await storageAdapter.writeDiary(questionId: questionId, content: content, imageData: imageData)
+    }
 }
 
 // TODO: DiaryEditorViewContoller 코드 정리
@@ -164,16 +169,25 @@ class DiaryEditorViewController: BaseTopNavigationTabBarController {
     }
     
     private func setupTopNavigationBar() {
-        navigationBar.addRightButtons([TopNavigationBarItem(title: "등록", action: UIAction(handler: { _ in
+        let submitAction = UIAction(handler: { _ in
             let contents = self.textView.text ?? ""
+            
             do {
                 try self.viewModel.ensureContentMeetsPolicy(contents: contents)
+                Task {
+                    let imageData = self.viewModel.imageData?.pngData()
+                    let answer = await self.viewModel.submitContents(content: contents, imageData: imageData)
+                    let success = answer != nil
+                    print("$$ success: ", success)
+                }
+                
             } catch {
                 let errorMessage = error.localizedDescription
                 ToastView.present(message: errorMessage, parentView: self.view)
-                print("$$ error: !!", errorMessage)
             }
-        }))])
+        })
+        
+        navigationBar.addRightButtons([TopNavigationBarItem(title: "등록", action: submitAction)])
     }
     
     private func setupScrollView() {

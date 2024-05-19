@@ -121,6 +121,10 @@ public class API {
     func uploadFile<T: Decodable> (urlRequest: URLRequest, data: Data) async throws -> APIResponse<T> {
         log(request: urlRequest)
         let (data, _): (Data, URLResponse) = try await urlSession.upload(for: urlRequest, from: data)
+        let jsonObject = try? JSONSerialization.jsonObject(with: data)
+        let dict = jsonObject.flatMap { $0 as? [String:Any] }
+        print("$$ uploadFile response dict: ", dict)
+        
         let apiResponse = try JSONDecoder().decode(APIResponse<T>.self, from: data)
         return apiResponse
     }

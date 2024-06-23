@@ -1,5 +1,5 @@
 //
-//  SplashViewController.swift
+//  EntryView.swift
 //  Mureng
 //
 //  Created by nylah.j on 2022/06/13.
@@ -14,6 +14,7 @@ struct EntryView: View {
     let authenticationService: AuthenticationService
     
     @State private var navigationToAgreement: Bool = false
+    @State private var navigationToHome: Bool = false
     @State private var loginTask: Task<Void, Error>? = nil
     
     @StateObject var authServiceUser: AuthServiceUser = .init()
@@ -41,8 +42,7 @@ struct EntryView: View {
                                 print("$$ fail")
                                 // TODO: fail 처리
                             case .authenticated:
-                                print("$$ needSignUp")
-                                // TODO: needSignUp 처리
+                                print("$$ 로그인 성공")
                             }
                             
                             loginTask = nil

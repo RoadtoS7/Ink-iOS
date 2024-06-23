@@ -190,7 +190,10 @@ final class MemberAuthAPI: API {
     func signIn(providerTokenDTO: ProviderTokenDTO) async throws -> APIResponse<InkTokenDTO> {
         let path: String = "/api/member/signin"
         let url: String = Host.baseURL + path
-        let response = try await requestJSON(url, responseData: InkTokenDTO.self, method: .post, parameters: providerTokenDTO.asBody())
+        guard let request: URLRequest = makePostRequest(urlString: url, bodyObject: providerTokenDTO) else {
+            throw APIError.invalidURL
+        }
+        let response: APIResponse<InkTokenDTO> = try await requestJsonWithURLSession(urlRequest: request)
         return response
     }
     

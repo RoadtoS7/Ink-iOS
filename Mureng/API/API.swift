@@ -61,7 +61,7 @@ public class API {
         urlRequest: URLRequest
     ) async throws -> APIResponse<T> {
         log(request: urlRequest)
-        let (data, response): (Data, URLResponse) = try await urlSession.data(for: urlRequest)
+        let (data, _): (Data, URLResponse) = try await urlSession.data(for: urlRequest)
         print("$$ \(String(describing: urlRequest.url)) - response: \(String(describing: String(data: data, encoding: .utf8)))")
         
         let apiResponse = try JSONDecoder().decode(APIResponse<T>.self, from: data)
@@ -76,7 +76,6 @@ public class API {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         
         if let bodyObject {
             do {

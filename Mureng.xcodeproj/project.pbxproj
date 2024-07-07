@@ -95,6 +95,7 @@
 		F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
 		F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */; };
+		F4C2544C2C3A36200031A0BC /* SettingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2544B2C3A36200031A0BC /* SettingScreenView.swift */; };
 		F4C4D34F2B664BFA004C6804 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4D34E2B664BFA004C6804 /* Font+.swift */; };
 		F4E859052A8B347000B74F64 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E859042A8B347000B74F64 /* Token.swift */; };
 		F4F35D9F2B403FFD0097347B /* StringRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F35D9E2B403FFD0097347B /* StringRes.swift */; };
@@ -177,7 +178,7 @@
 		F40F97692A9B308C008895A5 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		F40F976A2A9B308C008895A5 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F40F976B2A9B308C008895A5 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
-		F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		F40F976C2A9B308C008895A5 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		F40F976D2A9B308C008895A5 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		F40F976E2A9B308C008895A5 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		F40F97792A9B31C4008895A5 /* NanumMyeongjo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 		F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		F4C2544B2C3A36200031A0BC /* SettingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenView.swift; sourceTree = "<group>"; };
 		F4C4D34E2B664BFA004C6804 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		F4E859042A8B347000B74F64 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F4F35D9E2B403FFD0097347B /* StringRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRes.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
+				F4C2544A2C3A35610031A0BC /* Setting */,
 				F4339BDB2C27CB8E00A47214 /* App */,
 				F4339BD72C27CAE100A47214 /* Navigation */,
 				F4F35DA52B4046580097347B /* Test */,
@@ -598,6 +601,14 @@
 				F4543A162BE5AEF30007AE05 /* ToastView.swift */,
 			);
 			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		F4C2544A2C3A35610031A0BC /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F4C2544B2C3A36200031A0BC /* SettingScreenView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		F4E859012A8B341400B74F64 /* SingletonStorage */ = {
@@ -958,6 +969,7 @@
 				F4E859052A8B347000B74F64 /* Token.swift in Sources */,
 				F4F35DAD2B40FE0B0097347B /* QuestionListView.swift in Sources */,
 				2E0E28DD29E29FD7001C32C3 /* RootNavigationViewController.swift in Sources */,
+				F4C2544C2C3A36200031A0BC /* SettingScreenView.swift in Sources */,
 				F4F35DB12B4102A40097347B /* QuestionListScreenView.swift in Sources */,
 				F40E42272A7F470600B37AD0 /* NicknameWarningTextStyle.swift in Sources */,
 				F4B314052B91C00E00E01D32 /* GalleryPickerReceiver.swift in Sources */,

@@ -80,11 +80,13 @@ struct SignUpNickNameView: View {
                                 return
                             }
                             let loginResult = await authService.login()
-                            guard loginResult == .authenticated else {
+                            switch loginResult {
+                            case .authenticated, loginResult:
+                                navigateToNext = true
+                            default:
                                 // TODO: 에러 팝업
-                                return
+                                break
                             }
-                            navigateToNext = true
                         }
                     }
                 }

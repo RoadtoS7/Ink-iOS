@@ -10,6 +10,13 @@ import KakaoSDKUser
 import KakaoSDKCommon
 
 enum AutServiceLoginResult: Equatable {
+    /// 이미 회원가입한 유저
+    case authenticated
+    /// 회원가입 성공한 유저
+    case signUp(AuthServiceUser)
+    /// 로그인 실패
+    case fail
+    
     static func == (lhs: AutServiceLoginResult, rhs: AutServiceLoginResult) -> Bool {
         switch (lhs, rhs) {
         case (.authenticated, .authenticated): return true
@@ -18,10 +25,6 @@ enum AutServiceLoginResult: Equatable {
         default: return false
         }
     }
-    
-    case authenticated
-    case signUp(AuthServiceUser)
-    case fail
 }
 
 protocol AuthenticationService {
@@ -97,13 +100,10 @@ final class DefaultAuthService: AuthenticationService {
             return .fail
         }
         
-        guard let email = user.kakaoAccount?.email else {
-            MurengLogger.shared.logError(InkError.unknownError("kakaologin didn't return email"))
-            return .fail
-        }
-        
         let idText = String(userId)
-        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: email)
+        // TODO: 애플로그인에서는 앞에 apple_가 들어가야 한다.
+        let kakaoUserId: String = "kakao_\(idText)"
+        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: user.kakaoAccount?.email)
         return .signUp(authServiceUser)
     }
     

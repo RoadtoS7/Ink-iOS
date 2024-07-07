@@ -20,7 +20,7 @@ class AuthServiceUser: ObservableObject {
         self.nickname = nil
     }
     
-    init(identifier: String, email: String, image: String? = nil, nickname: String? = nil) {
+    init(identifier: String, email: String?, image: String? = nil, nickname: String? = nil) {
         self.identifier = identifier
         self.email = email
         self.image = image

@@ -33,9 +33,9 @@ struct EntryView: View {
                         guard loginTask == nil else { return }
                         
                         loginTask = Task {
-                            let result: AutServiceLoginResult = await authenticationService.login()
+                            let result: AutServiceLoginResult = await authenticationService.tryLogin()
                             switch result {
-                            case .signUp(let userInfo):
+                            case .needSignUp(let userInfo):
                                 authServiceUser.fill(with: userInfo)
                                 navigationToAgreement = true
                             case .fail:

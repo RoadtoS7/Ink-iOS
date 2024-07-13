@@ -13,14 +13,14 @@ enum AutServiceLoginResult: Equatable {
     /// 이미 회원가입한 유저
     case authenticated
     /// 회원가입 성공한 유저
-    case signUp(AuthServiceUser)
+    case needSignUp(AuthServiceUser)
     /// 로그인 실패
     case fail
     
     static func == (lhs: AutServiceLoginResult, rhs: AutServiceLoginResult) -> Bool {
         switch (lhs, rhs) {
         case (.authenticated, .authenticated): return true
-        case (.signUp(let lshUser), .signUp(let rhsUser)): return lshUser == rhsUser
+        case (.needSignUp(let lshUser), .needSignUp(let rhsUser)): return lshUser == rhsUser
         case (.fail, .fail): return true
         default: return false
         }
@@ -28,7 +28,8 @@ enum AutServiceLoginResult: Equatable {
 }
 
 protocol AuthenticationService {
-    func login() async -> AutServiceLoginResult
+    func tryLogin() async -> AutServiceLoginResult
+    func loginInkServer() async -> AutServiceLoginResult
     func isNickNameExisted(_ nickname: String) async -> Bool?
     func signUp(authServiceUser: AuthServiceUser) async -> Member?
 }
@@ -47,7 +48,7 @@ final class DummySuccessAuthService: AuthenticationService {
     init(authServiceUser: AuthServiceUser, loginSuccess: Bool = true, nicknameExisted: Bool = false) {
         self.authServiceUser = authServiceUser
         self.nicknameExisted = nicknameExisted
-        self.loginResult = loginSuccess ? .signUp(authServiceUser) : .fail
+        self.loginResult = loginSuccess ? .needSignUp(authServiceUser) : .fail
     }
     
     convenience init() {
@@ -55,8 +56,12 @@ final class DummySuccessAuthService: AuthenticationService {
         self.init(authServiceUser: authService)
     }
     
-    func login() -> AutServiceLoginResult {
-        .signUp(authServiceUser)
+    func tryLogin() -> AutServiceLoginResult {
+        .needSignUp(authServiceUser)
+    }
+    
+    func loginInkServer() async -> AutServiceLoginResult {
+        .authenticated
     }
     
     func isNickNameExisted(_ nickname: String) async -> Bool? {
@@ -71,7 +76,39 @@ final class DefaultAuthService: AuthenticationService {
     // 기존에 존재하는 사용자인지 체크 (provider의 access token 필요)
     // 없으면 -> 회원가입 -> 로그인 시도
     // 있으면 -> 로그인 시도
-    func login() async -> AutServiceLoginResult {
+    
+    func tryLogin() async -> AutServiceLoginResult {
+        guard let oauthToken: OAuthToken = await getOauthToken() else {
+            return .fail
+        }
+        guard let exist = await checkUserExist(oauthToken: oauthToken) else {
+            return .fail
+        }
+        
+        if exist {
+            guard let token: Token = await loginInkServer(oauthToken: oauthToken) else {
+                return .fail
+            }
+            
+            GlobalEnv.tokenStorage.save(token: token)
+            return .authenticated
+        }
+        
+        guard let user: User = try? await getUserInfo(),
+              let userId = user.id else {
+            return .fail
+        }
+            
+        let idText = String(userId)
+        // TODO: 애플로그인에서는 앞에 apple_가 들어가야 한다.
+        let kakaoUserId: String = "kakao_\(idText)"
+        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: user.kakaoAccount?.email)
+        return .needSignUp(authServiceUser)
+    }
+    
+    
+    
+    func loginInkServer() async -> AutServiceLoginResult {
         let oauthToken: OAuthToken? = await getOauthToken()
         guard let oauthToken = oauthToken else {
             return .fail
@@ -79,32 +116,21 @@ final class DefaultAuthService: AuthenticationService {
         
         let accessToken = oauthToken.accessToken
         let providerName: String = "kakao"
-        guard let exist = await checkUserExist(providerAccessToken: accessToken, providerName: providerName) else {
+        let token: Token? = await loginInkServer(providerAccessToken: accessToken, providerName: providerName)
+        print("$$ 호출이 2번 일어나나요?")
+        guard let token else {
             return .fail
         }
         
-        if exist {
-            let token: Token? = await loginInkServer(providerAccessToken: accessToken, providerName: providerName)
-            
-            if let token = token {
-                Token.shared.set(token: token)
-                return .authenticated
-            }
-            
-            return .fail
-        }
-        
-        let user: User? = try? await getUserInfo()
-        guard let user = user,
-              let userId = user.id else {
-            return .fail
-        }
-        
-        let idText = String(userId)
-        // TODO: 애플로그인에서는 앞에 apple_가 들어가야 한다.
-        let kakaoUserId: String = "kakao_\(idText)"
-        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: user.kakaoAccount?.email)
-        return .signUp(authServiceUser)
+        GlobalEnv.tokenStorage.save(token: token)
+        return .authenticated
+    }
+    
+    private func loginInkServer(oauthToken: OAuthToken) async -> Token? {
+        let accessToken: String = oauthToken.accessToken
+        let providerName: String = "kakao"
+        let result: Token? = await loginInkServer(providerAccessToken: accessToken, providerName: providerName)
+        return result
     }
     
     private func loginInkServer(providerAccessToken: String, providerName: String) async -> Token? {
@@ -117,6 +143,13 @@ final class DefaultAuthService: AuthenticationService {
             MurengLogger.shared.logError(error)
             return nil
         }
+    }
+    
+    private func checkUserExist(oauthToken: OAuthToken) async -> Bool? {
+        let accessToken = oauthToken.accessToken
+        let providerName: String = "kakao"
+        let result = await checkUserExist(providerAccessToken: accessToken, providerName: providerName)
+        return result
     }
     
     private func checkUserExist(providerAccessToken: String, providerName: String) async -> Bool? {

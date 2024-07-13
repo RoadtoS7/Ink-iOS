@@ -39,7 +39,7 @@ final class TodayQuestionAPI: API {
         let url: String = Host.baseURL + path
         
         var urlRequest: URLRequest = try .init(url: url, method: .get)
-        let accessToken: String = Token.shared.accessToken ?? ""
+        let accessToken: String = GlobalEnv.tokenStorage.token.accessToken
         urlRequest.addAuthHeader(value: accessToken)
 
         let response: APIResponse<QuestionDTO> =  try await requestJsonWithURLSession(urlRequest: urlRequest)

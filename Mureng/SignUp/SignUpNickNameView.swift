@@ -79,9 +79,9 @@ struct SignUpNickNameView: View {
                                 // TODO: 다시 시도 팝업
                                 return
                             }
-                            let loginResult = await authService.login()
+                            let loginResult = await authService.loginInkServer()
                             switch loginResult {
-                            case .authenticated, loginResult:
+                            case .authenticated:
                                 navigateToNext = true
                             default:
                                 // TODO: 에러 팝업
@@ -94,7 +94,6 @@ struct SignUpNickNameView: View {
             .disabled(nextButtonDisabled)
             .frame(height: 48)
             .buttonStyle(ButtonSoild48Style())
-            
             
             NavigationLink(destination: SingUpDoneView(), isActive: $navigateToNext) {
                 
@@ -110,9 +109,6 @@ struct SignUpNickNameView: View {
         }
         .padding(.horizontal, 20)
         .navigationBarHidden(true)
-        .onAppear {
-            print("닉네임 입력 onAppear")
-        }
     }
     
     private func limitText(_ upper: Int) {

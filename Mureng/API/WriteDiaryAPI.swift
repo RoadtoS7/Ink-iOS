@@ -39,7 +39,7 @@ public final class WriteDiaryAPI: API {
             throw APIError.invalidURL
         }
 
-        let accessToken: String = Token.shared.accessToken ?? ""
+        let accessToken: String = GlobalEnv.tokenStorage.accessToken
         request.addAuthHeader(value: accessToken)
         
         let respone: APIResponse<DefaultImageDTO> = try await requestJsonWithURLSession(urlRequest: request)
@@ -59,7 +59,7 @@ public final class WriteDiaryAPI: API {
             throw APIError.invalidURL
         }
         
-        let accessToken: String = Token.shared.accessToken ?? ""
+        let accessToken: String = GlobalEnv.tokenStorage.accessToken
         request.addAuthHeader(value: accessToken)
         
         let response: APIResponse<AnswerDTO> = try await requestJsonWithURLSession(urlRequest: request)

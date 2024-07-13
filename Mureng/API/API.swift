@@ -40,7 +40,7 @@ public class API {
         parameters: Parameters? = nil,
         tokenOnHeader: Bool = false
     ) async throws -> APIResponse<T> {
-        let accessToken: String = Token.shared.accessToken ?? ""
+        let accessToken: String = GlobalEnv.tokenStorage.accessToken
         let httpHeader: HTTPHeader = .init(name: "X-AUTH-TOKEN", value: accessToken)
         
         return try await session.request(

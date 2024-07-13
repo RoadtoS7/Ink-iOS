@@ -11,7 +11,6 @@ struct HomeScreenView: View {
     let todayExpressionService: TodayExprssionService = RemoteTodayExpressionService()
     let questionService: QuestionService = RemoteQuestionService()
     
-//    let question: Question
     @State var question: Question = Question.notReady
     @State var todayExpressions: [EnglishExpression] = []
     @State var writableTodayDiary: Bool = false

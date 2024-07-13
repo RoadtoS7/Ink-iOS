@@ -94,6 +94,7 @@
 		F4B9B57C29F3D4A400338483 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */; };
 		F4BB300C29F5668200F1E9F5 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
 		F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */; };
+		F4BDE2292C3A68CF00AB2D0D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BDE2282C3A68CF00AB2D0D /* Login.swift */; };
 		F4C2544C2C3A36200031A0BC /* SettingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2544B2C3A36200031A0BC /* SettingScreenView.swift */; };
 		F4C4D34F2B664BFA004C6804 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4D34E2B664BFA004C6804 /* Font+.swift */; };
 		F4E859052A8B347000B74F64 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E859042A8B347000B74F64 /* Token.swift */; };
@@ -228,6 +229,7 @@
 		F4B9B57B29F3D4A400338483 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		F4BB300B29F5668200F1E9F5 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F4BB300D29F568F400F1E9F5 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		F4BDE2282C3A68CF00AB2D0D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F4C2544B2C3A36200031A0BC /* SettingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenView.swift; sourceTree = "<group>"; };
 		F4C4D34E2B664BFA004C6804 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		F4E859042A8B347000B74F64 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -309,7 +311,7 @@
 		2E4E555428576D0D001B5554 /* Mureng */ = {
 			isa = PBXGroup;
 			children = (
-				F4BDE2222C3A5F8600AB2D0D /* LocalStorage */,
+				F4BDE2272C3A68C400AB2D0D /* Login */,
 				F4C2544A2C3A35610031A0BC /* Setting */,
 				F4339BDB2C27CB8E00A47214 /* App */,
 				F4339BD72C27CAE100A47214 /* Navigation */,
@@ -601,11 +603,12 @@
 			path = CommonUI;
 			sourceTree = "<group>";
 		};
-		F4BDE2222C3A5F8600AB2D0D /* LocalStorage */ = {
+		F4BDE2272C3A68C400AB2D0D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F4BDE2282C3A68CF00AB2D0D /* Login.swift */,
 			);
-			path = LocalStorage;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F4C2544A2C3A35610031A0BC /* Setting */ = {
@@ -1034,6 +1037,7 @@
 				F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */,
 				F4F35DB52B415FDD0097347B /* Typo.swift in Sources */,
 				F41D35682BAFF160000772C1 /* WriteDiaryAPI.swift in Sources */,
+				F4BDE2292C3A68CF00AB2D0D /* Login.swift in Sources */,
 				F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */,
 				F46357412B6E7B6D00641CBF /* GalleryPickerUseCase.swift in Sources */,
 				2E35C63E2ACCF2D8000D2D03 /* QuestionService.swift in Sources */,

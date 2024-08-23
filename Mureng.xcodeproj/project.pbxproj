@@ -673,11 +673,11 @@
 			buildConfigurationList = 2E4E557C28576D0F001B5554 /* Build configuration list for PBXNativeTarget "Mureng" */;
 			buildPhases = (
 				5CF05B62C680B5BB3467C75D /* [CP] Check Pods Manifest.lock */,
+				2E4E55852857739B001B5554 /* Run Script - SwiftLint */,
 				2E4E5586285773AD001B5554 /* Run Script -SwiftGen */,
 				2E4E554E28576D0D001B5554 /* Sources */,
 				2E4E554F28576D0D001B5554 /* Frameworks */,
 				2E4E555028576D0D001B5554 /* Resources */,
-				2E4E55852857739B001B5554 /* Run Script - SwiftLint */,
 				F7399ECD58CF622AEC793AAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (

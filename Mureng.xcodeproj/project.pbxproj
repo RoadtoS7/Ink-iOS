@@ -112,7 +112,6 @@
 		F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */; };
 		F4FDB2252BB6B318006C1304 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2242BB6B318006C1304 /* Member.swift */; };
 		F4FDB2292BB6B6F8006C1304 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2282BB6B6F8006C1304 /* String+.swift */; };
-		F4FF15752C78741B00757EC8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4FF15742C78741B00757EC8 /* SnapKit */; };
 		F4FF15772C78741B00757EC8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
@@ -256,7 +255,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF15752C78741B00757EC8 /* SnapKit in Frameworks */,
 				1F45CECD7A01D3A31007820D /* Pods_Mureng.framework in Frameworks */,
 				F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */,
 				F4FF15772C78741B00757EC8 /* SnapKit-Dynamic in Frameworks */,
@@ -689,7 +687,6 @@
 			name = Mureng;
 			packageProductDependencies = (
 				F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */,
-				F4FF15742C78741B00757EC8 /* SnapKit */,
 				F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */,
 			);
 			productName = Mureng;
@@ -1435,11 +1432,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKUser;
-		};
-		F4FF15742C78741B00757EC8 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4FF15732C78741B00757EC8 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
 		};
 		F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -42,6 +42,7 @@ struct HomeScreenView: View {
             VStack(spacing: 20) {
                 // TODO: 폰트 색상 수정
                 Text("오늘의 표현")
+                    .foregroundStyle(Colors.Greyscale.greyscale700.swiftUIColor)
                 .font(FontFamily.Pretendard.regular.swiftUIFont(size: 16))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -61,6 +62,7 @@ struct HomeScreenView: View {
         }
     }
 }
+
 
 struct HomeScreenView_Previews: PreviewProvider {
     private static var question: Question = .init(

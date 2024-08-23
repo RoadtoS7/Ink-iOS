@@ -22,9 +22,9 @@ struct InkApp: App {
         WindowGroup {
             Group {
 //                if Login.shared.hasUserLogined() {
-//                    HomeScreenView()
+                    HomeScreenView()
 //                } else {
-                    EntryView(authenticationService: service)
+//                    EntryView(authenticationService: service)
 //                }
             }
             .onOpenURL(perform: { url in

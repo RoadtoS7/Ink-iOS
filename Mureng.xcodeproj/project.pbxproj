@@ -71,6 +71,37 @@
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
 		F47D5AF62B725A5B00640B98 /* QuestionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D5AF52B725A5B00640B98 /* QuestionHeaderView.swift */; };
 		F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D2C132B5D333B0097A4E0 /* EditorView.swift */; };
+		F491F4CD2C787D45008188EE /* HomeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4CC2C787D45008188EE /* HomeAppApp.swift */; };
+		F491F4CF2C787D45008188EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4CE2C787D45008188EE /* ContentView.swift */; };
+		F491F4D42C787D47008188EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F491F4D32C787D47008188EE /* Preview Assets.xcassets */; };
+		F491F4D92C787D60008188EE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB72AA466CB006549AE /* HomeScreenView.swift */; };
+		F491F4DA2C787D71008188EE /* TodayExpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B888862AAC315E00BBD2F3 /* TodayExpressionService.swift */; };
+		F491F4DB2C787D77008188EE /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63D2ACCF2D8000D2D03 /* QuestionService.swift */; };
+		F491F4DC2C787D7D008188EE /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F97642A9B25F4008895A5 /* QuestionCardView.swift */; };
+		F491F4DD2C787D88008188EE /* EnglishExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B888892AAC319600BBD2F3 /* EnglishExpression.swift */; };
+		F491F4DE2C787D94008188EE /* ButtonSoild48Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */; };
+		F491F4DF2C787D9B008188EE /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821C29F53084000E7A92 /* Colors+Generated.swift */; };
+		F491F4E02C787DA2008188EE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40F97612A9B254A008895A5 /* Colors.xcassets */; };
+		F491F4E12C787DAB008188EE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BB300B29F5668200F1E9F5 /* Fonts.swift */; };
+		F491F4E22C787DB2008188EE /* TodayExpressionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */; };
+		F491F4E32C787DB9008188EE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
+		F491F4E42C787DCB008188EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E5595285782D4001B5554 /* Images.xcassets */; };
+		F491F4E52C787DCF008188EE /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6821A29F53042000E7A92 /* Images+Generated.swift */; };
+		F491F4E62C787DD8008188EE /* MemberAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD12A621C2E00388AC3 /* MemberAuthAPI.swift */; };
+		F491F4E82C787E0A008188EE /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2242BB6B318006C1304 /* Member.swift */; };
+		F491F4E92C787E19008188EE /* WriteDiaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35672BAFF160000772C1 /* WriteDiaryAPI.swift */; };
+		F491F4EA2C787E28008188EE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F64142A79F6A5003DCDAE /* AuthService.swift */; };
+		F491F4EB2C787E2C008188EE /* AuthServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8F64122A79F174003DCDAE /* AuthServiceUser.swift */; };
+		F491F4EC2C787E35008188EE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35652BAFF123000772C1 /* API.swift */; };
+		F491F4ED2C787E39008188EE /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB9AD32A62328400388AC3 /* Host.swift */; };
+		F491F4EE2C787E48008188EE /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E859042A8B347000B74F64 /* Token.swift */; };
+		F491F4EF2C787E4F008188EE /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
+		F491F4F02C787E53008188EE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8CA412A76053E0019DCFE /* Extension.swift */; };
+		F491F4F12C787E57008188EE /* TodayQuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */; };
+		F491F4F22C787E7B008188EE /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41D35712BB00C20000772C1 /* URLRequest.swift */; };
+		F491F4F32C787E86008188EE /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2282BB6B6F8006C1304 /* String+.swift */; };
+		F491F4F52C787E90008188EE /* TodayExpressonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */; };
+		F491F4F92C787F5F008188EE /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F491F4F82C787F5F008188EE /* KakaoSDKUser */; };
 		F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */; };
 		F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52042B534F680091684C /* ScrollObservableView.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
@@ -208,6 +239,10 @@
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
 		F47D5AF52B725A5B00640B98 /* QuestionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeaderView.swift; sourceTree = "<group>"; };
 		F48D2C132B5D333B0097A4E0 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		F491F4CA2C787D45008188EE /* HomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F491F4CC2C787D45008188EE /* HomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppApp.swift; sourceTree = "<group>"; };
+		F491F4CE2C787D45008188EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F491F4D32C787D47008188EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPreferenceKey.swift; sourceTree = "<group>"; };
 		F49F52042B534F680091684C /* ScrollObservableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollObservableView.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
@@ -277,6 +312,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F491F4C72C787D45008188EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F491F4F92C787F5F008188EE /* KakaoSDKUser in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -294,6 +337,7 @@
 				2E4E555428576D0D001B5554 /* Mureng */,
 				2E4E556B28576D0F001B5554 /* MurengTests */,
 				2E4E557528576D0F001B5554 /* MurengUITests */,
+				F491F4CB2C787D45008188EE /* HomeApp */,
 				2E4E555328576D0D001B5554 /* Products */,
 				F11959C7E22CDAB82EE57E39 /* Pods */,
 				C231FADECF0DFB6CB87A037D /* Frameworks */,
@@ -306,6 +350,7 @@
 				2E4E555228576D0D001B5554 /* Mureng.app */,
 				2E4E556828576D0F001B5554 /* MurengTests.xctest */,
 				2E4E557228576D0F001B5554 /* MurengUITests.xctest */,
+				F491F4CA2C787D45008188EE /* HomeApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -531,6 +576,24 @@
 			path = AuthService;
 			sourceTree = "<group>";
 		};
+		F491F4CB2C787D45008188EE /* HomeApp */ = {
+			isa = PBXGroup;
+			children = (
+				F491F4CC2C787D45008188EE /* HomeAppApp.swift */,
+				F491F4CE2C787D45008188EE /* ContentView.swift */,
+				F491F4D22C787D47008188EE /* Preview Content */,
+			);
+			path = HomeApp;
+			sourceTree = "<group>";
+		};
+		F491F4D22C787D47008188EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F491F4D32C787D47008188EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F49F52012B534E160091684C /* PreferenceKey */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +795,27 @@
 			productReference = 2E4E557228576D0F001B5554 /* MurengUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F491F4C92C787D45008188EE /* HomeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F491F4D52C787D47008188EE /* Build configuration list for PBXNativeTarget "HomeApp" */;
+			buildPhases = (
+				F491F4C62C787D45008188EE /* Sources */,
+				F491F4C72C787D45008188EE /* Frameworks */,
+				F491F4C82C787D45008188EE /* Resources */,
+				F491F4FA2C787FF2008188EE /* Run Script - Swift Gen */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeApp;
+			packageProductDependencies = (
+				F491F4F82C787F5F008188EE /* KakaoSDKUser */,
+			);
+			productName = HomeApp;
+			productReference = F491F4CA2C787D45008188EE /* HomeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -739,7 +823,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					2E4E555128576D0D001B5554 = {
@@ -752,6 +836,9 @@
 					2E4E557128576D0F001B5554 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 2E4E555128576D0D001B5554;
+					};
+					F491F4C92C787D45008188EE = {
+						CreatedOnToolsVersion = 15.1;
 					};
 				};
 			};
@@ -774,6 +861,7 @@
 			projectRoot = "";
 			targets = (
 				2E4E555128576D0D001B5554 /* Mureng */,
+				F491F4C92C787D45008188EE /* HomeApp */,
 				2E4E556728576D0F001B5554 /* MurengTests */,
 				2E4E557128576D0F001B5554 /* MurengUITests */,
 			);
@@ -815,6 +903,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F491F4C82C787D45008188EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F491F4E02C787DA2008188EE /* Colors.xcassets in Resources */,
+				F491F4E42C787DCB008188EE /* Images.xcassets in Resources */,
+				F491F4D42C787D47008188EE /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +1046,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F491F4FA2C787FF2008188EE /* Run Script - Swift Gen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Swift Gen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\n\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 		F7399ECD58CF622AEC793AAD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1071,6 +1187,40 @@
 			files = (
 				2E4E557928576D0F001B5554 /* MurengUITestsLaunchTests.swift in Sources */,
 				2E4E557728576D0F001B5554 /* MurengUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F491F4C62C787D45008188EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F491F4F12C787E57008188EE /* TodayQuestionAPI.swift in Sources */,
+				F491F4DA2C787D71008188EE /* TodayExpressionService.swift in Sources */,
+				F491F4CF2C787D45008188EE /* ContentView.swift in Sources */,
+				F491F4CD2C787D45008188EE /* HomeAppApp.swift in Sources */,
+				F491F4EA2C787E28008188EE /* AuthService.swift in Sources */,
+				F491F4DB2C787D77008188EE /* QuestionService.swift in Sources */,
+				F491F4E62C787DD8008188EE /* MemberAuthAPI.swift in Sources */,
+				F491F4EB2C787E2C008188EE /* AuthServiceUser.swift in Sources */,
+				F491F4EE2C787E48008188EE /* Token.swift in Sources */,
+				F491F4E22C787DB2008188EE /* TodayExpressionListView.swift in Sources */,
+				F491F4F32C787E86008188EE /* String+.swift in Sources */,
+				F491F4E52C787DCF008188EE /* Images+Generated.swift in Sources */,
+				F491F4ED2C787E39008188EE /* Host.swift in Sources */,
+				F491F4DD2C787D88008188EE /* EnglishExpression.swift in Sources */,
+				F491F4DE2C787D94008188EE /* ButtonSoild48Style.swift in Sources */,
+				F491F4DF2C787D9B008188EE /* Colors+Generated.swift in Sources */,
+				F491F4F02C787E53008188EE /* Extension.swift in Sources */,
+				F491F4E32C787DB9008188EE /* ExpressionRowView.swift in Sources */,
+				F491F4EC2C787E35008188EE /* API.swift in Sources */,
+				F491F4E12C787DAB008188EE /* Fonts.swift in Sources */,
+				F491F4DC2C787D7D008188EE /* QuestionCardView.swift in Sources */,
+				F491F4F22C787E7B008188EE /* URLRequest.swift in Sources */,
+				F491F4EF2C787E4F008188EE /* MurengLogger.swift in Sources */,
+				F491F4F52C787E90008188EE /* TodayExpressonAPI.swift in Sources */,
+				F491F4E92C787E19008188EE /* WriteDiaryAPI.swift in Sources */,
+				F491F4D92C787D60008188EE /* HomeScreenView.swift in Sources */,
+				F491F4E82C787E0A008188EE /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,6 +1517,77 @@
 			};
 			name = Release;
 		};
+		F491F4D62C787D47008188EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HomeApp/Preview Content\"";
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = roadtos7.HomeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F491F4D72C787D47008188EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HomeApp/Preview Content\"";
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = roadtos7.HomeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1406,6 +1627,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F491F4D52C787D47008188EE /* Build configuration list for PBXNativeTarget "HomeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F491F4D62C787D47008188EE /* Debug */,
+				F491F4D72C787D47008188EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1428,6 +1658,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F491F4F82C787F5F008188EE /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
 		F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;

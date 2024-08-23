@@ -43,6 +43,7 @@ internal enum Colors {
   }
   internal enum Greyscale {
     internal static let greyscale100 = ColorAsset(name: "greyscale-100")
+    internal static let greyscale1000 = ColorAsset(name: "greyscale-1000")
     internal static let greyscale200 = ColorAsset(name: "greyscale-200")
     internal static let greyscale300 = ColorAsset(name: "greyscale-300")
     internal static let greyscale400 = ColorAsset(name: "greyscale-400")

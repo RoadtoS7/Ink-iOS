@@ -102,6 +102,7 @@
 		F491F4F32C787E86008188EE /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2282BB6B6F8006C1304 /* String+.swift */; };
 		F491F4F52C787E90008188EE /* TodayExpressonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */; };
 		F491F4F92C787F5F008188EE /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F491F4F82C787F5F008188EE /* KakaoSDKUser */; };
+		F491F4FC2C788421008188EE /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4FB2C788421008188EE /* TestAPI.swift */; };
 		F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */; };
 		F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52042B534F680091684C /* ScrollObservableView.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
@@ -243,6 +244,7 @@
 		F491F4CC2C787D45008188EE /* HomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppApp.swift; sourceTree = "<group>"; };
 		F491F4CE2C787D45008188EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F491F4D32C787D47008188EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F491F4FB2C788421008188EE /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
 		F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPreferenceKey.swift; sourceTree = "<group>"; };
 		F49F52042B534F680091684C /* ScrollObservableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollObservableView.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 				F4FB9AD32A62328400388AC3 /* Host.swift */,
 				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
 				2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */,
+				F491F4FB2C788421008188EE /* TestAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1164,6 +1167,7 @@
 				F4B314072B91CB0600E01D32 /* UIEdgeInset+.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,
+				F491F4FC2C788421008188EE /* TestAPI.swift in Sources */,
 				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,
 				F43998882BAD77D400C48BD7 /* CustomButton.swift in Sources */,
 				F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */,

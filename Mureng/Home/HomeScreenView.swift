@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    let todayExpressionService: TodayExprssionService = RemoteTodayExpressionService()
-    let questionService: QuestionService = RemoteQuestionService()
+    let todayExpressionService: TodayExpressionService
+    let questionService: QuestionService
     
     @State var question: Question = Question.notReady
     @State var todayExpressions: [EnglishExpression] = []
@@ -50,6 +50,7 @@ struct HomeScreenView: View {
             }
             .padding(.vertical, 20)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 24)
         .onAppear {
             Task {
@@ -60,6 +61,19 @@ struct HomeScreenView: View {
                 self.question = todayQuestion
             }
         }
+    }
+}
+
+extension HomeScreenView {
+    init(question: Question,
+         todayExpressions: [EnglishExpression],
+         writableTodayDiary: Bool) {
+        self.questionService = FakeQuestionService()
+        self.todayExpressionService = FakeTodayExpressionService()
+        
+        self.question = question
+        self.todayExpressions = todayExpressions
+        self.writableTodayDiary = writableTodayDiary
     }
 }
 
@@ -93,7 +107,7 @@ struct HomeScreenView_Previews: PreviewProvider {
             HomeScreenView(question: question,
                            todayExpressions: todayExprssions, writableTodayDiary: true)
             HomeScreenView(question: question,
-                           todayExpressions: todayExprssions, writableTodayDiary: false)
+                           todayExpressions: [], writableTodayDiary: false)
         }
     }
 }

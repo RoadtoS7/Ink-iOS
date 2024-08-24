@@ -38,7 +38,7 @@ final class DummySuccessAuthService: AuthenticationService {
     func signUp(authServiceUser: AuthServiceUser) async -> Member? {
         let memberSetting: MemberSetting = .init(dailyPushActive: true,
                                                  likePushActive: true)
-        return .init(id: 0, identifier: "identifier", email: "email", nickname: "nickname", image: "imagew", inkCount: 0, attendanceCount: 0, lastAttendanceDate: .init(), memberSetting: memberSetting)
+        return .init(id: 0, identifier: "identifier", nickname: "nickname", image: "imagew", inkCount: 0, attendanceCount: 0, lastAttendanceDate: .init(), memberSetting: memberSetting)
     }
     
     let authServiceUser: AuthServiceUser

@@ -12,9 +12,19 @@ protocol TodayExpressionService {
 }
 
 final class RemoteTodayExpressionService: TodayExpressionService {
+    let todayExpressionAPI: TodayExpressionAPI2
+    
+    init() {
+        todayExpressionAPI = TodayExpressionAPI2(api: ProductionAPI())
+    }
+    
+    init(api: BaseAPI) {
+        todayExpressionAPI = TodayExpressionAPI2(api: DebugAPI())
+    }
+    
     func get() async -> [EnglishExpression] {
         do {
-            let response: APIResponse<[TodayExpressionDTO]> = try await TodayExpressionAPI.shared.get()
+            let response: APIResponse<[TodayExpressionDTO]> = try await todayExpressionAPI.get()
             let dtos = response.data
             return dtos.map { $0.englishExpression }
         } catch {
@@ -23,6 +33,19 @@ final class RemoteTodayExpressionService: TodayExpressionService {
         }
     }
 }
+
+//final class RemoteTodayExpressionService: TodayExpressionService {
+//    func get() async -> [EnglishExpression] {
+//        do {
+//            let response: APIResponse<[TodayExpressionDTO]> = try await TodayExpressionAPI.shared.get()
+//            let dtos = response.data
+//            return dtos.map { $0.englishExpression }
+//        } catch {
+//            MurengLogger.shared.logError(error)
+//            return []
+//        }
+//    }
+//}
 
 final class FakeTodayExpressionService: TodayExpressionService {
     func get() async -> [EnglishExpression] {

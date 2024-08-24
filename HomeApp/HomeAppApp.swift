@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct HomeScreenApp: App {
+    let todayExpressionService: TodayExpressionService = RemoteTodayExpressionService(api: DebugAPI())
+    let questionSErvice: QuestionService = FakeQuestionService()
     
     var body: some Scene {
         WindowGroup {
-            HomeScreenView(todayExpressionService: FakeTodayExpressionService(), questionService: FakeQuestionService())
+            HomeScreenView(todayExpressionService: todayExpressionService, questionService: FakeQuestionService())
         }
     }
 }

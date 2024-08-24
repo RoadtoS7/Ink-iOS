@@ -66,6 +66,8 @@
 		F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BB92AA47A37006549AE /* ExpressionRowView.swift */; };
 		F4684BBC2AA48874006549AE /* TodayExpressionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */; };
 		F4684BBE2AA49436006549AE /* TodayExpressonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */; };
+		F46C258D2C7A9CC3001D66A6 /* DebugAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4FB2C788421008188EE /* DebugAPI.swift */; };
+		F46C258F2C7AA69D001D66A6 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C258E2C7AA69D001D66A6 /* Dictionary+.swift */; };
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
@@ -102,7 +104,7 @@
 		F491F4F32C787E86008188EE /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2282BB6B6F8006C1304 /* String+.swift */; };
 		F491F4F52C787E90008188EE /* TodayExpressonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */; };
 		F491F4F92C787F5F008188EE /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F491F4F82C787F5F008188EE /* KakaoSDKUser */; };
-		F491F4FC2C788421008188EE /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4FB2C788421008188EE /* TestAPI.swift */; };
+		F491F4FC2C788421008188EE /* DebugAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4FB2C788421008188EE /* DebugAPI.swift */; };
 		F49F52032B534E250091684C /* ScrollViewPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */; };
 		F49F52052B534F680091684C /* ScrollObservableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49F52042B534F680091684C /* ScrollObservableView.swift */; };
 		F4A15FE52A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */; };
@@ -235,6 +237,7 @@
 		F4684BB92AA47A37006549AE /* ExpressionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionRowView.swift; sourceTree = "<group>"; };
 		F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionListView.swift; sourceTree = "<group>"; };
 		F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressonAPI.swift; sourceTree = "<group>"; };
+		F46C258E2C7AA69D001D66A6 /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
@@ -244,7 +247,7 @@
 		F491F4CC2C787D45008188EE /* HomeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppApp.swift; sourceTree = "<group>"; };
 		F491F4CE2C787D45008188EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F491F4D32C787D47008188EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F491F4FB2C788421008188EE /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
+		F491F4FB2C788421008188EE /* DebugAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugAPI.swift; sourceTree = "<group>"; };
 		F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPreferenceKey.swift; sourceTree = "<group>"; };
 		F49F52042B534F680091684C /* ScrollObservableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollObservableView.swift; sourceTree = "<group>"; };
 		F4A15FE42A0554F20023AC96 /* TapGestureRecognizerUsingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerUsingClosure.swift; sourceTree = "<group>"; };
@@ -423,6 +426,7 @@
 				F43998852BAD58E300C48BD7 /* UIViewController+.swift */,
 				F41D35712BB00C20000772C1 /* URLRequest.swift */,
 				F4FDB2282BB6B6F8006C1304 /* String+.swift */,
+				F46C258E2C7AA69D001D66A6 /* Dictionary+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -726,7 +730,7 @@
 				F4FB9AD32A62328400388AC3 /* Host.swift */,
 				F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */,
 				2E35C63F2ACCF37F000D2D03 /* TodayQuestionAPI.swift */,
-				F491F4FB2C788421008188EE /* TestAPI.swift */,
+				F491F4FB2C788421008188EE /* DebugAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1134,6 +1138,7 @@
 				F43605672A2478460014E34D /* AppState.swift in Sources */,
 				F4B9B57929F3D15900338483 /* UIControl+.swift in Sources */,
 				2E8F64132A79F174003DCDAE /* AuthServiceUser.swift in Sources */,
+				F46C258F2C7AA69D001D66A6 /* Dictionary+.swift in Sources */,
 				F4FB9AD22A621C2E00388AC3 /* MemberAuthAPI.swift in Sources */,
 				F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */,
 				2E1041AA2A1DE8C1008F8F84 /* FullScreenHostingViewController.swift in Sources */,
@@ -1167,7 +1172,7 @@
 				F4B314072B91CB0600E01D32 /* UIEdgeInset+.swift in Sources */,
 				F4FB9ACE2A6210AC00388AC3 /* SignUpNickNameView.swift in Sources */,
 				F4684BBA2AA47A37006549AE /* ExpressionRowView.swift in Sources */,
-				F491F4FC2C788421008188EE /* TestAPI.swift in Sources */,
+				F491F4FC2C788421008188EE /* DebugAPI.swift in Sources */,
 				F40F97652A9B25F4008895A5 /* QuestionCardView.swift in Sources */,
 				F43998882BAD77D400C48BD7 /* CustomButton.swift in Sources */,
 				F48D2C142B5D333B0097A4E0 /* EditorView.swift in Sources */,
@@ -1212,6 +1217,7 @@
 				F491F4E52C787DCF008188EE /* Images+Generated.swift in Sources */,
 				F491F4ED2C787E39008188EE /* Host.swift in Sources */,
 				F491F4DD2C787D88008188EE /* EnglishExpression.swift in Sources */,
+				F46C258D2C7A9CC3001D66A6 /* DebugAPI.swift in Sources */,
 				F491F4DE2C787D94008188EE /* ButtonSoild48Style.swift in Sources */,
 				F491F4DF2C787D9B008188EE /* Colors+Generated.swift in Sources */,
 				F491F4F02C787E53008188EE /* Extension.swift in Sources */,

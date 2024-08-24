@@ -12,14 +12,14 @@ protocol TodayExpressionService {
 }
 
 final class RemoteTodayExpressionService: TodayExpressionService {
-    let todayExpressionAPI: TodayExpressionAPI2
+    let todayExpressionAPI: TodayExpressionAPI
     
     init() {
-        todayExpressionAPI = TodayExpressionAPI2(api: ProductionAPI())
+        todayExpressionAPI = TodayExpressionAPI(api: ProductionAPI())
     }
     
     init(api: BaseAPI) {
-        todayExpressionAPI = TodayExpressionAPI2(api: DebugAPI())
+        todayExpressionAPI = TodayExpressionAPI(api: DebugAPI())
     }
     
     func get() async -> [EnglishExpression] {

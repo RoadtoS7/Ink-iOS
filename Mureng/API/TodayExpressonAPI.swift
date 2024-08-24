@@ -21,7 +21,7 @@ struct TodayExpressionDTO: Decodable {
     }
 }
 
-final class TodayExpressionAPI2 {
+final class TodayExpressionAPI {
     let api: BaseAPI
     
     init(api: BaseAPI) {
@@ -39,8 +39,8 @@ final class TodayExpressionAPI2 {
     }
 }
 
-final class TodayExpressionAPI: API {
-    static var shared: TodayExpressionAPI = .init()
+final class DeprecatedTodayExpressionAPI: API {
+    static var shared: DeprecatedTodayExpressionAPI = .init()
     
     private override init() {}
     

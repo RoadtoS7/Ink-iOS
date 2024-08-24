@@ -45,7 +45,6 @@ struct MemberSetting {
 struct Member {
     let id: Int
     let identifier: String
-    let email: String
     let nickname: String
     let image: String
     let inkCount: Int
@@ -67,7 +66,7 @@ struct MemberDTO: DTO {
     
     let memberId: Int
     let identifier: String
-    let email: String
+    let email: String?
     let nickname: String
     let image: String
     let inkCount: Int
@@ -78,7 +77,6 @@ struct MemberDTO: DTO {
     func asEntity() -> Member {
         return .init(id: memberId,
               identifier: identifier,
-              email: email,
               nickname: nickname,
               image: image,
               inkCount: inkCount,
@@ -94,7 +92,6 @@ struct MemberDTO: DTO {
         
         return .init(id: memberId,
               identifier: identifier,
-              email: email,
               nickname: nickname,
               image: image,
               inkCount: inkCount,
@@ -107,27 +104,23 @@ struct MemberDTO: DTO {
 
 struct SignUp {
     let identifier: String
-    let email: String
     let nickname: String
     let image: String
 }
 
 struct SignUpDTO: Encodable {
     let identifier: String
-    let email: String
     let nickname: String
     let image: String
     
     init(_ signUp: SignUp) {
         identifier = signUp.identifier
-        email = signUp.email
         nickname = signUp.nickname
         image = signUp.image
     }
     
     init(_ authServiceUser: AuthServiceUser) {
         self.identifier = authServiceUser.identifier ?? ""
-        self.email = authServiceUser.email ?? ""
         self.nickname = authServiceUser.nickname ?? ""
         self.image = authServiceUser.image ?? ""
     }
@@ -135,7 +128,6 @@ struct SignUpDTO: Encodable {
     func asBody() -> [String: Any] {
         [
             "identifier": identifier,
-            "email": email,
             "nickname": nickname,
             "image": image
         ]

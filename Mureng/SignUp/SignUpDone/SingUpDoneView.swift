@@ -10,6 +10,8 @@ import SwiftUI
 struct SingUpDoneView: View {
     @State var nextButtonTapped: Int?
     
+    let homeScreenView: HomeScreenView = .init(todayExpressionService: RemoteTodayExpressionService(), questionService: RemoteQuestionService())
+    
     var body: some View {
             VStack {
                 Spacer()
@@ -25,7 +27,7 @@ struct SingUpDoneView: View {
                 Spacer()
                 
                 NavigationLink("시작하기",
-                               destination: { HomeScreenView() })
+                               destination: { homeScreenView })
                 .frame(height: 48)
                 .buttonStyle(ButtonSoild48Style())
             }

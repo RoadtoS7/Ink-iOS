@@ -38,7 +38,7 @@ final class DummySuccessAuthService: AuthenticationService {
     func signUp(authServiceUser: AuthServiceUser) async -> Member? {
         let memberSetting: MemberSetting = .init(dailyPushActive: true,
                                                  likePushActive: true)
-        return .init(id: 0, identifier: "identifier", email: "email", nickname: "nickname", image: "imagew", inkCount: 0, attendanceCount: 0, lastAttendanceDate: .init(), memberSetting: memberSetting)
+        return .init(id: 0, identifier: "identifier", nickname: "nickname", image: "imagew", inkCount: 0, attendanceCount: 0, lastAttendanceDate: .init(), memberSetting: memberSetting)
     }
     
     let authServiceUser: AuthServiceUser
@@ -101,12 +101,10 @@ final class DefaultAuthService: AuthenticationService {
             
         let idText = String(userId)
         // TODO: 애플로그인에서는 앞에 apple_가 들어가야 한다.
-        let kakaoUserId: String = "kakao_\(idText)"
-        let authServiceUser: AuthServiceUser = .init(identifier: idText, email: user.kakaoAccount?.email)
+        let identifier: String = "kakao_\(idText)"
+        let authServiceUser: AuthServiceUser = .init(identifier: identifier, email: user.kakaoAccount?.email)
         return .needSignUp(authServiceUser)
     }
-    
-    
     
     func loginInkServer() async -> AutServiceLoginResult {
         let oauthToken: OAuthToken? = await getOauthToken()

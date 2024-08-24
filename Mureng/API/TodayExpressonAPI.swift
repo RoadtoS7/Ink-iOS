@@ -21,8 +21,26 @@ struct TodayExpressionDTO: Decodable {
     }
 }
 
-final class TodayExpressionAPI: API {
-    static var shared: TodayExpressionAPI = .init()
+final class TodayExpressionAPI {
+    let api: BaseAPI
+    
+    init(api: BaseAPI) {
+        self.api = api
+    }
+    
+    /// 오늘의 표현을 가져옵니다.
+    typealias TodayExpressionDTOs = [TodayExpressionDTO]
+    func get() async throws -> APIResponse<TodayExpressionDTOs> {
+        let path: String = "/api/today-expression"
+        let urlLiteral: String = Host.baseURL + path
+        
+        let response: APIResponse<TodayExpressionDTOs> = try await api.request(urlLiteral: urlLiteral, method: .get, headers: [:])
+        return response
+    }
+}
+
+final class DeprecatedTodayExpressionAPI: API {
+    static var shared: DeprecatedTodayExpressionAPI = .init()
     
     private override init() {}
     

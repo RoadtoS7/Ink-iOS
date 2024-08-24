@@ -5,10 +5,7 @@ disabled_rules:
   - trailing_whitespace
   - trailing_comma
   - force_cast
-
-line_length:
-  warning: 200
-  ignores_comments: true
+  - line_length
 
 type_name:
   allowed_symbols: "_"

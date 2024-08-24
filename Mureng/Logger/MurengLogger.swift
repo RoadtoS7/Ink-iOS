@@ -13,8 +13,8 @@ final class MurengLogger {
     
     private let logger: Logger = .init()
     
-    func logError(_ error: Error) {
-        logger.error("\(error)")
+    func logError(prefix: String="", _ error: Error) {
+        logger.error("\(prefix) - \(error)")
     }
     
     func logDebug(_ message: String) {

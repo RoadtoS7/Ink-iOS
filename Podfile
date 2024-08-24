@@ -8,7 +8,6 @@ target 'Mureng' do
   # Pods for Mureng
   pod 'SwiftLint'
   pod 'SwiftGen', '~> 6.6.0'
-  pod 'SnapKit', '~> 5.6.0'
 
   target 'MurengTests' do
     inherit! :search_paths

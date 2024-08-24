@@ -31,6 +31,7 @@ struct QuestionCardView: View {
                 )
                 
             Text(question.koreanContent)
+                .foregroundStyle(Colors.Greyscale.greyscale1000.swiftUIColor)
                 .font(FontFamily.Pretendard.regular.swiftUIFont(size: 16))
             
             HStack {

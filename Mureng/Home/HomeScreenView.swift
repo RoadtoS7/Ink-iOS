@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    let todayExpressionService: TodayExprssionService = RemoteTodayExpressionService()
-    let questionService: QuestionService = RemoteQuestionService()
+    let todayExpressionService: TodayExpressionService
+    let questionService: QuestionService
     
     @State var question: Question = Question.notReady
     @State var todayExpressions: [EnglishExpression] = []
@@ -42,6 +42,7 @@ struct HomeScreenView: View {
             VStack(spacing: 20) {
                 // TODO: 폰트 색상 수정
                 Text("오늘의 표현")
+                    .foregroundStyle(Colors.Greyscale.greyscale700.swiftUIColor)
                 .font(FontFamily.Pretendard.regular.swiftUIFont(size: 16))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -49,6 +50,7 @@ struct HomeScreenView: View {
             }
             .padding(.vertical, 20)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 24)
         .onAppear {
             Task {
@@ -61,6 +63,20 @@ struct HomeScreenView: View {
         }
     }
 }
+
+extension HomeScreenView {
+    init(question: Question,
+         todayExpressions: [EnglishExpression],
+         writableTodayDiary: Bool) {
+        self.questionService = FakeQuestionService()
+        self.todayExpressionService = FakeTodayExpressionService()
+        
+        self.question = question
+        self.todayExpressions = todayExpressions
+        self.writableTodayDiary = writableTodayDiary
+    }
+}
+
 
 struct HomeScreenView_Previews: PreviewProvider {
     private static var question: Question = .init(
@@ -91,7 +107,7 @@ struct HomeScreenView_Previews: PreviewProvider {
             HomeScreenView(question: question,
                            todayExpressions: todayExprssions, writableTodayDiary: true)
             HomeScreenView(question: question,
-                           todayExpressions: todayExprssions, writableTodayDiary: false)
+                           todayExpressions: [], writableTodayDiary: false)
         }
     }
 }

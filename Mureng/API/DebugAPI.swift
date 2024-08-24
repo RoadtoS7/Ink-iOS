@@ -114,7 +114,6 @@ public final class ProductionAPI: BaseAPI {}
 
 public final class DebugAPI: BaseAPI {
     private let xAuthToken: String = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0X2lkZW50aWZpZXIiLCJuaWNrbmFtZSI6Iu2FjOyKpO2KuOycoOyggCIsImlhdCI6MTYyMDgzODEwMiwiZXhwIjoxOTAwMDAwMDAwfQ.Nu2Zjazo2wEfPvv28Lisa6PYlNjLeclmRZLEf2HiA9xyFNRhWu4bNSaG_nkhLIdkSK47Y7xGhTO--vuazaRzdw"
-
     
     public override func customRequest(request: inout URLRequest) -> URLRequest {
         request.setValue(xAuthToken, forHTTPHeaderField: HeaderKey.xAuthToken.rawValue)

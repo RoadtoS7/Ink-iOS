@@ -22,9 +22,7 @@ struct HomeScreenView: View {
             Spacer().frame(height: 28)
             
             QuestionCardView(question: question, refreshAction: {
-                Task {
-                    question = await questionService.refreshTodayQuestion()
-                }
+                question = await questionService.refreshTodayQuestion()
             })
             
             Spacer().frame(height: 24)
@@ -51,14 +49,12 @@ struct HomeScreenView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 24)
-        .onAppear {
-            Task {
-                let todayExpressions: [EnglishExpression] = await todayExpressionService.get() 
-                self.todayExpressions = todayExpressions
-                
-                let todayQuestion: Question = await questionService.getTodayQuestion()
-                self.question = todayQuestion
-            }
+        .task {
+            let todayExpressions: [EnglishExpression] = await todayExpressionService.get()
+            self.todayExpressions = todayExpressions
+            
+            let todayQuestion: Question = await questionService.getTodayQuestion()
+            self.question = todayQuestion
         }
     }
 }
@@ -73,6 +69,11 @@ extension HomeScreenView {
         self.question = question
         self.todayExpressions = todayExpressions
         self.writableTodayDiary = writableTodayDiary
+    }
+    
+    init() {
+        self.questionService = RemoteQuestionService()
+        self.todayExpressionService = RemoteTodayExpressionService()
     }
 }
 
@@ -114,7 +115,11 @@ struct HomeScreenView_Previews: PreviewProvider {
 struct HomeHeaderView: View {
     var body: some View {
         HStack {
-            Text("반가워요, 김잉크님")
+            VStack(alignment: .leading, spacing: 6, content: {
+                Text("김잉크님,")
+                Text("오늘의 질문에 답해볼까요?")
+            })
+            
             Spacer()
             ProfileImageView()
                 .frame(width: 48, height: 48)

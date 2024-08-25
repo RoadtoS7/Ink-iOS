@@ -68,6 +68,8 @@
 		F4684BBE2AA49436006549AE /* TodayExpressonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */; };
 		F46C258D2C7A9CC3001D66A6 /* DebugAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491F4FB2C788421008188EE /* DebugAPI.swift */; };
 		F46C258F2C7AA69D001D66A6 /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C258E2C7AA69D001D66A6 /* Dictionary+.swift */; };
+		F46C25912C7ADC14001D66A6 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C25902C7ADC14001D66A6 /* AsyncButton.swift */; };
+		F46C25922C7AE41F001D66A6 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C25902C7ADC14001D66A6 /* AsyncButton.swift */; };
 		F47C9D382A74CAD000AC2B82 /* MurengLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */; };
 		F47C9D3B2A74F43500AC2B82 /* KakaoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */; };
 		F47C9D3E2A754BA500AC2B82 /* MurengToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */; };
@@ -238,6 +240,7 @@
 		F4684BBB2AA48874006549AE /* TodayExpressionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressionListView.swift; sourceTree = "<group>"; };
 		F4684BBD2AA49436006549AE /* TodayExpressonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayExpressonAPI.swift; sourceTree = "<group>"; };
 		F46C258E2C7AA69D001D66A6 /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
+		F46C25902C7ADC14001D66A6 /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		F47C9D372A74CAD000AC2B82 /* MurengLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengLogger.swift; sourceTree = "<group>"; };
 		F47C9D3A2A74F43500AC2B82 /* KakaoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginAdapter.swift; sourceTree = "<group>"; };
 		F47C9D3D2A754BA500AC2B82 /* MurengToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurengToggle.swift; sourceTree = "<group>"; };
@@ -670,6 +673,7 @@
 				2E2338D02B024ED500FFEF51 /* BottomSheetView.swift */,
 				F49F52042B534F680091684C /* ScrollObservableView.swift */,
 				F4543A162BE5AEF30007AE05 /* ToastView.swift */,
+				F46C25902C7ADC14001D66A6 /* AsyncButton.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -1145,6 +1149,7 @@
 				F4B6821D29F53084000E7A92 /* Colors+Generated.swift in Sources */,
 				F41D35642BAFEC9E000772C1 /* DiaryStorageAdapter.swift in Sources */,
 				F4BB300E29F568F400F1E9F5 /* CheckBoxView.swift in Sources */,
+				F46C25912C7ADC14001D66A6 /* AsyncButton.swift in Sources */,
 				F40F97602A9B23FC008895A5 /* ExpressionCard.swift in Sources */,
 				F47D5AF62B725A5B00640B98 /* QuestionHeaderView.swift in Sources */,
 				2E35C6402ACCF37F000D2D03 /* TodayQuestionAPI.swift in Sources */,
@@ -1229,6 +1234,7 @@
 				F491F4EF2C787E4F008188EE /* MurengLogger.swift in Sources */,
 				F491F4F52C787E90008188EE /* TodayExpressonAPI.swift in Sources */,
 				F491F4E92C787E19008188EE /* WriteDiaryAPI.swift in Sources */,
+				F46C25922C7AE41F001D66A6 /* AsyncButton.swift in Sources */,
 				F491F4D92C787D60008188EE /* HomeScreenView.swift in Sources */,
 				F491F4E82C787E0A008188EE /* Member.swift in Sources */,
 			);

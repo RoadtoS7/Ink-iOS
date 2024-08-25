@@ -47,6 +47,7 @@ struct HomeScreenView: View {
             }
             .padding(.vertical, 20)
         }
+        .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 24)
         .task {

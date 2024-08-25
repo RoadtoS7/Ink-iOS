@@ -49,6 +49,7 @@ struct QuestionCardView: View {
         .padding(.vertical, 78)
         .background(Colors.white.swiftUIColor)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
     }
 }
 

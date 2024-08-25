@@ -26,7 +26,6 @@ struct HomeScreenView: View {
                     question = await questionService.refreshTodayQuestion()
                 }
             })
-            .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
             
             Spacer().frame(height: 24)
             

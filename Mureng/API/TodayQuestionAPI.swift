@@ -15,7 +15,7 @@ struct QuestionDTO: DTO {
     let content: String
     let koContent: String
     let wordHints: [WordHintDTO]
-    let autor: MemberDTO
+    let autor: MemberDTO?
     let repliesCount: Int
     
     func asEntity() -> Question {

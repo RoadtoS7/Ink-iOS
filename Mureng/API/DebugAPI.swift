@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 enum HeaderKey: String {
-    case xAuthToken = "X_AUTH_TOKEN"
+    case xAuthToken = "X-AUTH-TOKEN"
 }
 
 enum NetworkError: Error {

@@ -21,7 +21,7 @@ extension Question {
 
 struct QuestionCardView: View {
     let question: Question
-    let refreshAction: () -> Void
+    let refreshAction: () async -> Void
     
     var body: some View {
         VStack(spacing: 24) {
@@ -36,11 +36,9 @@ struct QuestionCardView: View {
             
             HStack {
                 Spacer()
-                Button(action: {
-                    refreshAction()
-                }, label: {
+                AsyncButton(action: refreshAction) {
                     Images.iconsRefresh.swiftUIImage
-                })
+                }
                 .frame(width: 32, height: 32)
             }
         }
@@ -49,6 +47,7 @@ struct QuestionCardView: View {
         .padding(.vertical, 78)
         .background(Colors.white.swiftUIColor)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
     }
 }
 

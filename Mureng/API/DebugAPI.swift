@@ -35,7 +35,10 @@ public class BaseAPI {
     ) async throws -> APIResponse<ResponsesBody> {
         do {
             var request: URLRequest = try makeURLRequest(urlLiteral: urlLiteral, method: method)
-            let customRequest: URLRequest = customRequest(request: &request)
+            headers.forEach { (key: String, value: String) in
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+            let customRequest: URLRequest = customRequest(request: request)
             MurengLogger.shared.logDebug("$$ \(urlLiteral) - request - \(customRequest.headers)")
             
             let data: Data =  try await callAPI(urlRequest: customRequest)
@@ -57,13 +60,13 @@ public class BaseAPI {
     ) async throws -> APIResponse<ResponsesBody> {
         var request: URLRequest = try makeURLRequest(urlLiteral: urlLiteral, method: method)
         let requestWithBody = try appendBodyIfNeed(request: request, bodyObject: bodyObject)
-        let customRequest: URLRequest = customRequest(request: &request)
+        let customRequest: URLRequest = customRequest(request: request)
         let data: Data =  try await callAPI(urlRequest: request)
         let response: APIResponse<ResponsesBody> = try decode(data: data)
         return response
     }
     
-    public func customRequest(request: inout URLRequest) -> URLRequest {
+    public func customRequest(request: URLRequest) -> URLRequest {
         return request
     }
     
@@ -75,6 +78,7 @@ public class BaseAPI {
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("", forHTTPHeaderField: HeaderKey.xAuthToken.rawValue)
         return request
     }
     
@@ -115,7 +119,8 @@ public final class ProductionAPI: BaseAPI {}
 public final class DebugAPI: BaseAPI {
     private let xAuthToken: String = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0X2lkZW50aWZpZXIiLCJuaWNrbmFtZSI6Iu2FjOyKpO2KuOycoOyggCIsImlhdCI6MTYyMDgzODEwMiwiZXhwIjoxOTAwMDAwMDAwfQ.Nu2Zjazo2wEfPvv28Lisa6PYlNjLeclmRZLEf2HiA9xyFNRhWu4bNSaG_nkhLIdkSK47Y7xGhTO--vuazaRzdw"
     
-    public override func customRequest(request: inout URLRequest) -> URLRequest {
+    public override func customRequest(request: URLRequest) -> URLRequest {
+        var request = request
         request.setValue(xAuthToken, forHTTPHeaderField: HeaderKey.xAuthToken.rawValue)
         return request
     }

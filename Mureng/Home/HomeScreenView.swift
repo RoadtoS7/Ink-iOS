@@ -13,7 +13,7 @@ struct HomeScreenView: View {
     
     @State var question: Question = Question.notReady
     @State var todayExpressions: [EnglishExpression] = []
-    @State var writableTodayDiary: Bool = false
+    @State var writableTodayDiary: Bool = true
     
     var body: some View {
         VStack(spacing: 0) {
@@ -22,15 +22,12 @@ struct HomeScreenView: View {
             Spacer().frame(height: 28)
             
             QuestionCardView(question: question, refreshAction: {
-                Task {
-                    question = await questionService.refreshTodayQuestion()
-                }
+                question = await questionService.refreshTodayQuestion()
             })
-            .shadow(color: .black.opacity(0.15), radius: 5, x: 0, y: 4)
             
             Spacer().frame(height: 24)
             
-            Button(writableTodayDiary ? "글쓰기" : "밤 12시에 다시 쓸 수 있어요.", action: {
+            Button(writableTodayDiary ? "답변하기" : "밤 12시에 다시 쓸 수 있어요.", action: {
                 
             })
             .buttonStyle(ButtonSoild48Style())
@@ -50,16 +47,15 @@ struct HomeScreenView: View {
             }
             .padding(.vertical, 20)
         }
+        .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 24)
-        .onAppear {
-            Task {
-                let todayExpressions: [EnglishExpression] = await todayExpressionService.get() 
-                self.todayExpressions = todayExpressions
-                
-                let todayQuestion: Question = await questionService.getTodayQuestion()
-                self.question = todayQuestion
-            }
+        .task {
+            let todayExpressions: [EnglishExpression] = await todayExpressionService.get()
+            self.todayExpressions = todayExpressions
+            
+            let todayQuestion: Question = await questionService.getTodayQuestion()
+            self.question = todayQuestion
         }
     }
 }
@@ -74,6 +70,11 @@ extension HomeScreenView {
         self.question = question
         self.todayExpressions = todayExpressions
         self.writableTodayDiary = writableTodayDiary
+    }
+    
+    init() {
+        self.questionService = RemoteQuestionService()
+        self.todayExpressionService = RemoteTodayExpressionService()
     }
 }
 
@@ -115,7 +116,11 @@ struct HomeScreenView_Previews: PreviewProvider {
 struct HomeHeaderView: View {
     var body: some View {
         HStack {
-            Text("반가워요, 김잉크님")
+            VStack(alignment: .leading, spacing: 6, content: {
+                Text("김잉크님,")
+                Text("오늘의 질문에 답해볼까요?")
+            })
+            
             Spacer()
             ProfileImageView()
                 .frame(width: 48, height: 48)

@@ -42,7 +42,7 @@ struct EntryView: View {
                                 print("$$ fail")
                                 // TODO: fail 처리
                             case .authenticated:
-                                print("$$ 로그인 성공")
+                                navigationToHome = true
                             }
                             
                             loginTask = nil
@@ -57,6 +57,12 @@ struct EntryView: View {
                     
                     NavigationLink(destination: AgreementView(authServiceUser: authServiceUser),
                                    isActive: $navigationToAgreement,
+                                   label: {
+                        EmptyView()
+                    }).hidden()
+                    
+                    NavigationLink(destination: HomeScreenView(),
+                                   isActive: $navigationToHome,
                                    label: {
                         EmptyView()
                     }).hidden()

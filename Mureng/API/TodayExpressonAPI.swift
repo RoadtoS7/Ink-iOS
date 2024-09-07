@@ -9,15 +9,15 @@ import Foundation
 import Alamofire
 
 struct TodayExpressionDTO: Decodable {
-    let id: Int
+    let expId: Int
     let expression: String
     let meaning: String
-    let example: String
-    let exampleMeaning: String
+    let expressionExample: String
+    let expressionExampleMeaning: String
     let scrappedByRequester: Bool
     
     var englishExpression: EnglishExpression {
-        .init(id: id, content: expression, koConent: meaning, example: example, koExample: exampleMeaning)
+        .init(id: expId, content: expression, koConent: meaning, example: expressionExample, koExample: expressionExampleMeaning)
     }
 }
 

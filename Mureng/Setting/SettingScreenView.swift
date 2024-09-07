@@ -30,11 +30,7 @@ struct SettingScreenView: View {
         .toolbar(content: {
             ToolbarItem(placement: .topBarLeading) {
                 HStack(spacing: 4, content: {
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Images.leftTouch.swiftUIImage
-                    })
+                    backButton
                     
                     Text("설정")
                         .foregroundStyle(
@@ -58,6 +54,14 @@ struct SettingScreenView: View {
                     .greyscale200
                     .swiftUIColor
             )
+    }
+    
+    var backButton: some View {
+        Button(action: {
+            dismiss()
+        }, label: {
+            Images.leftTouch.swiftUIImage
+        })
     }
 }
 

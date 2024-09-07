@@ -383,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				F4BDE2272C3A68C400AB2D0D /* Login */,
+				F4BDE2212C3A5B1300AB2D0D /* Unused */,
 				F4C2544A2C3A35610031A0BC /* Setting */,
 				F4339BDB2C27CB8E00A47214 /* App */,
 				F4339BD72C27CAE100A47214 /* Navigation */,
@@ -457,7 +458,6 @@
 				2E1041A82A1DE83E008F8F84 /* SignUpDone */,
 				2E6A9C7F29E0D8C700F8E2A4 /* AgreementViewController.swift */,
 				F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */,
-				F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */,
 				F446BFBE2A5ADBD8000005C5 /* AgreementView.swift */,
 				F4FB9ACD2A6210AC00388AC3 /* SignUpNickNameView.swift */,
 				F40E42262A7F470600B37AD0 /* NicknameWarningTextStyle.swift */,
@@ -701,6 +701,14 @@
 				F4BDE2282C3A68CF00AB2D0D /* Login.swift */,
 			);
 			path = Login;
+               sourceTree = "<group>";
+        };
+		F4BDE2212C3A5B1300AB2D0D /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */,
+			);
+			path = Unused;
 			sourceTree = "<group>";
 		};
 		F4C2544A2C3A35610031A0BC /* Setting */ = {

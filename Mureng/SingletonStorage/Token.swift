@@ -23,6 +23,10 @@ final class TokenStorage {
         token.refreshToken
     }
     
+    var accessTokenIsNotEmpty: Bool {
+        accessToken.isNotEmpty
+    }
+    
     init(userDefault: UserDefaults = .standard) {
         self.userDefault = userDefault
         

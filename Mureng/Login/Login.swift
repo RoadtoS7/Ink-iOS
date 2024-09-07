@@ -13,7 +13,7 @@ final class Login {
     private init() {}
     
     func hasUserLogined() -> Bool {
-        print("$$ GlobalEnv.tokenStorage.accessToken?.isNotEmpty: ", GlobalEnv.tokenStorage.token.accessToken.isNotEmpty)
-        return GlobalEnv.tokenStorage.token.accessToken.isNotEmpty
+        print("$$ GlobalEnv.tokenStorage.accessToken?.isNotEmpty: ", GlobalEnv.tokenStorage.accessTokenIsNotEmpty)
+        return GlobalEnv.tokenStorage.accessTokenIsNotEmpty
     }
 }

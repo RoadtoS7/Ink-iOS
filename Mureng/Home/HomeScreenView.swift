@@ -86,27 +86,10 @@ struct HomeScreenView_Previews: PreviewProvider {
         koreanContent: "어떤 습관을 만들고 싶나요?"
     )
     
-    private static var todayExprssions: [EnglishExpression] = [
-        .init(
-            id: 0,
-            content: "can’t wait to ~",
-            koConent: "얼른 ~하고 싶다",
-            example: "I can’t wait to go on this trip.",
-            koExample: "얼른 여행을 떠났으면 좋겠어."
-        ),
-        .init(
-            id: 0,
-            content: "can’t wait to ~",
-            koConent: "얼른 ~하고 싶다",
-            example: "I can’t wait to go on this trip.",
-            koExample: "얼른 여행을 떠났으면 좋겠어."
-        ),
-    ]
-    
     static var previews: some View {
         Group {
-            HomeScreenView(question: question,
-                           todayExpressions: todayExprssions, writableTodayDiary: true)
+            HomeScreenView(todayExpressionService: FakeTodayExpressionService(), 
+                           questionService: FakeQuestionService())
             HomeScreenView(question: question,
                            todayExpressions: [], writableTodayDiary: false)
         }

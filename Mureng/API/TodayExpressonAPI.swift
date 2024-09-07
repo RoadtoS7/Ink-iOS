@@ -34,7 +34,8 @@ final class TodayExpressionAPI {
         let path: String = "/api/today-expression"
         let urlLiteral: String = Host.baseURL + path
         
-        let response: APIResponse<TodayExpressionDTOs> = try await api.request(urlLiteral: urlLiteral, method: .get, headers: [:])
+        
+        let response: APIResponse<TodayExpressionDTOs> = try await api.request(urlLiteral: urlLiteral, method: .get, headers: [HeaderKey.xAuthToken.rawValue:GlobalEnv.tokenStorage.accessToken])
         return response
     }
 }

@@ -13,7 +13,7 @@ struct HomeScreenView: View {
     
     @State var question: Question = Question.notReady
     @State var todayExpressions: [EnglishExpression] = []
-    @State var writableTodayDiary: Bool = false
+    @State var writableTodayDiary: Bool = true
     
     var body: some View {
         VStack(spacing: 0) {
@@ -27,7 +27,7 @@ struct HomeScreenView: View {
             
             Spacer().frame(height: 24)
             
-            Button(writableTodayDiary ? "글쓰기" : "밤 12시에 다시 쓸 수 있어요.", action: {
+            Button(writableTodayDiary ? "답변하기" : "밤 12시에 다시 쓸 수 있어요.", action: {
                 
             })
             .buttonStyle(ButtonSoild48Style())

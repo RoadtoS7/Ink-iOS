@@ -115,6 +115,7 @@
 		F4A74FAD2A07A1D9004D73A3 /* ButtonSoild48Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */; };
 		F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */; };
 		F4A86E262C8C4AC9000701D7 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F4A86E2C2C8C4B85000701D7 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4A86E2B2C8C4B85000701D7 /* SnapKit-Dynamic */; };
 		F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8CA412A76053E0019DCFE /* Extension.swift */; };
 		F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */; };
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
@@ -315,6 +316,7 @@
 			files = (
 				1F45CECD7A01D3A31007820D /* Pods_Mureng.framework in Frameworks */,
 				F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */,
+				F4A86E2C2C8C4B85000701D7 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +778,7 @@
 			name = Mureng;
 			packageProductDependencies = (
 				F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */,
+				F4A86E2B2C8C4B85000701D7 /* SnapKit-Dynamic */,
 			);
 			productName = Mureng;
 			productReference = 2E4E555228576D0D001B5554 /* Mureng.app */;
@@ -878,6 +881,7 @@
 			mainGroup = 2E4E554928576D0D001B5554;
 			packageReferences = (
 				F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				F4A86E2A2C8C4B85000701D7 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 2E4E555328576D0D001B5554 /* Products */;
 			projectDirPath = "";
@@ -1641,6 +1645,14 @@
 				kind = branch;
 			};
 		};
+		F4A86E2A2C8C4B85000701D7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		F4FF15732C78741B00757EC8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1661,6 +1673,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKUser;
+		};
+		F4A86E2B2C8C4B85000701D7 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4A86E2A2C8C4B85000701D7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 		F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;

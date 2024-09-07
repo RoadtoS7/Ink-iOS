@@ -114,6 +114,7 @@
 		F4A74FAB2A078380004D73A3 /* PutUserNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */; };
 		F4A74FAD2A07A1D9004D73A3 /* ButtonSoild48Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */; };
 		F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */; };
+		F4A86E262C8C4AC9000701D7 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8CA412A76053E0019DCFE /* Extension.swift */; };
 		F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */; };
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
@@ -148,7 +149,6 @@
 		F4FCDA0C2B6F76FD008E4B36 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDA0B2B6F76FD008E4B36 /* NSLayoutConstraint.swift */; };
 		F4FDB2252BB6B318006C1304 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2242BB6B318006C1304 /* Member.swift */; };
 		F4FDB2292BB6B6F8006C1304 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDB2282BB6B6F8006C1304 /* String+.swift */; };
-		F4FF15772C78741B00757EC8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +167,20 @@
 			remoteInfo = Mureng;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4A86E272C8C4AC9000701D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4A86E262C8C4AC9000701D7 /* SnapKit-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F4CC24E95FA78CDFEA1249F /* Pods-Mureng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mureng.release.xcconfig"; path = "Target Support Files/Pods-Mureng/Pods-Mureng.release.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +271,7 @@
 		F4A74FA62A076F3C004D73A3 /* PutUserNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameView.swift; sourceTree = "<group>"; };
 		F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameViewController.swift; sourceTree = "<group>"; };
 		F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSoild48Style.swift; sourceTree = "<group>"; };
+		F4A86E282C8C4B19000701D7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A8CA412A76053E0019DCFE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowCheckBoxView.swift; sourceTree = "<group>"; };
 		F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSolid48.swift; sourceTree = "<group>"; };
@@ -300,7 +315,6 @@
 			files = (
 				1F45CECD7A01D3A31007820D /* Pods_Mureng.framework in Frameworks */,
 				F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */,
-				F4FF15772C78741B00757EC8 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +482,7 @@
 		C231FADECF0DFB6CB87A037D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4A86E282C8C4B19000701D7 /* SnapKit.framework */,
 				52455F99AEA6CCB4184EBD1B /* Pods_Mureng.framework */,
 				4520B4449C251EB559268C02 /* Pods_Mureng_MurengUITests.framework */,
 				5EB35D238D9991724C34759D /* Pods_MurengTests.framework */,
@@ -752,7 +767,7 @@
 				2E4E554E28576D0D001B5554 /* Sources */,
 				2E4E554F28576D0D001B5554 /* Frameworks */,
 				2E4E555028576D0D001B5554 /* Resources */,
-				F7399ECD58CF622AEC793AAD /* [CP] Embed Pods Frameworks */,
+				F4A86E272C8C4AC9000701D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -761,7 +776,6 @@
 			name = Mureng;
 			packageProductDependencies = (
 				F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */,
-				F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */,
 			);
 			productName = Mureng;
 			productReference = 2E4E555228576D0D001B5554 /* Mureng.app */;
@@ -794,7 +808,6 @@
 				2E4E556E28576D0F001B5554 /* Sources */,
 				2E4E556F28576D0F001B5554 /* Frameworks */,
 				2E4E557028576D0F001B5554 /* Resources */,
-				D0ADE1CE45F16191B037C1E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -865,7 +878,6 @@
 			mainGroup = 2E4E554928576D0D001B5554;
 			packageReferences = (
 				F4A74FAE2A07BC33004D73A3 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
-				F4FF15732C78741B00757EC8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 2E4E555328576D0D001B5554 /* Products */;
 			projectDirPath = "";
@@ -1040,23 +1052,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D0ADE1CE45F16191B037C1E4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mureng-MurengUITests/Pods-Mureng-MurengUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F491F4FA2C787FF2008188EE /* Run Script - Swift Gen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1074,23 +1069,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\n\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
-		};
-		F7399ECD58CF622AEC793AAD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mureng/Pods-Mureng-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mureng/Pods-Mureng-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mureng/Pods-Mureng-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

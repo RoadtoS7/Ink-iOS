@@ -29,31 +29,35 @@ struct WordHintDTO: Decodable {
     let meaning: String
 }
 
-final class TodayQuestionAPI: API {
-    static var shared: TodayQuestionAPI = .init()
-    private override init() {}
+final class TodayQuestionAPI {
+    let api: BaseAPI
+    
+    init(api: BaseAPI) {
+        self.api = api
+    }
     
     /// 현재 로그인한 사용자의 오늘의 질문을 가져옵니다.
     func get() async throws -> APIResponse<QuestionDTO> {
         let path: String = "/api/today-question"
-        let url: String = Host.baseURL + path
+        let urlLiteral: String = Host.baseURL + path
         
-        var urlRequest: URLRequest = try .init(url: url, method: .get)
-        let accessToken: String = GlobalEnv.tokenStorage.token.accessToken
-        urlRequest.addAuthHeader(value: accessToken)
-
-        let response: APIResponse<QuestionDTO> =  try await requestJsonWithURLSession(urlRequest: urlRequest)
+        let response: APIResponse<QuestionDTO> = try await api.request(
+            urlLiteral: urlLiteral,
+            method: .get,
+            headers: [HeaderKey.xAuthToken.rawValue : GlobalEnv.tokenStorage.accessToken]
+        )
         return response
     }
     
     /// 오늘의 질문을 새로고침해서 가져옵니다.
     func refresh() async throws -> APIResponse<QuestionDTO> {
         let path: String = "/api/today-question/refresh"
-        let url: String = Host.baseURL + path
-        let response: APIResponse<QuestionDTO> = try await requestJSON(
-            url,
-            responseData: QuestionDTO.self,
-            method: .get
+        let urlLiteral: String = Host.baseURL + path
+        
+        let response: APIResponse<QuestionDTO> = try await api.request(
+            urlLiteral: urlLiteral,
+            method: .get,
+            headers: [HeaderKey.xAuthToken.rawValue : GlobalEnv.tokenStorage.accessToken]
         )
         return response
     }

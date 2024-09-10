@@ -44,17 +44,26 @@ struct TestTokenApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView()
+            NavigationView(contentBuilder: {
+                
+            })
         }
     }
 }
 
-struct NavigationView: View {
+struct NavigationView<Content: View>: View {
     @State var navigationCoordinator: NavigationCoordinator<Destination> = .init()
+    
+      let content: Content
+      
+      init(@ViewBuilder contentBuilder: () -> Content){
+          self.content = contentBuilder()
+      }
     
     var body: some View {
         NavigationStack(path: $navigationCoordinator.paths) {
             VStack {
+                content
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)

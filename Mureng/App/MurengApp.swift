@@ -20,11 +20,13 @@ struct InkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                if Login.shared.hasUserLogined() {
-                    HomeScreenView(todayExpressionService: RemoteTodayExpressionService(), questionService: RemoteQuestionService())
-                } else {
-                    EntryView(authenticationService: service)
+            NavigationView {
+                Group {
+                    if Login.shared.hasUserLogined() {
+                        HomeScreenView(todayExpressionService: RemoteTodayExpressionService(), questionService: RemoteQuestionService())
+                    } else {
+                        EntryView(authenticationService: service)
+                    }
                 }
             }
             .onOpenURL(perform: { url in

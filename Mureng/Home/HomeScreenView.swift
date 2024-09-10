@@ -18,34 +18,17 @@ struct HomeScreenView: View {
     var body: some View {
         VStack(spacing: 0) {
             HomeHeaderView()
-                
             Spacer().frame(height: 28)
             
             QuestionCardView(question: question, refreshAction: {
                 question = await questionService.refreshTodayQuestion()
             })
-            
             Spacer().frame(height: 24)
             
-            Button(writableTodayDiary ? "답변하기" : "밤 12시에 다시 쓸 수 있어요.", action: {
-                
-            })
-            .buttonStyle(ButtonSoild48Style())
-            .disabled(!writableTodayDiary)
-            .frame(height: 48)
-            
+            writeAnswerButton
             Spacer().frame(height: 28)
             
-            VStack(spacing: 20) {
-                // TODO: 폰트 색상 수정
-                Text("오늘의 표현")
-                    .foregroundStyle(Colors.Greyscale.greyscale700.swiftUIColor)
-                .font(FontFamily.Pretendard.regular.swiftUIFont(size: 16))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                TodayExpressionListView(todayExpressions: todayExpressions)
-            }
-            .padding(.vertical, 20)
+            todayExpressionSection
         }
         .navigationBarBackButtonHidden()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -57,6 +40,28 @@ struct HomeScreenView: View {
             let todayQuestion: Question = await questionService.getTodayQuestion()
             self.question = todayQuestion
         }
+    }
+    
+    var writeAnswerButton: some View {
+        Button(writableTodayDiary ? "답변하기" : "밤 12시에 다시 쓸 수 있어요.", action: {
+            
+        })
+        .buttonStyle(ButtonSoild48Style())
+        .disabled(!writableTodayDiary)
+        .frame(height: 48)
+    }
+    
+    var todayExpressionSection: some View {
+        VStack(spacing: 20) {
+            // TODO: 폰트 색상 수정
+            Text("오늘의 표현")
+                .foregroundStyle(Colors.Greyscale.greyscale700.swiftUIColor)
+            .font(FontFamily.Pretendard.regular.swiftUIFont(size: 16))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            TodayExpressionListView(todayExpressions: todayExpressions)
+        }
+        .padding(.vertical, 20)
     }
 }
 
@@ -86,27 +91,10 @@ struct HomeScreenView_Previews: PreviewProvider {
         koreanContent: "어떤 습관을 만들고 싶나요?"
     )
     
-    private static var todayExprssions: [EnglishExpression] = [
-        .init(
-            id: 0,
-            content: "can’t wait to ~",
-            koConent: "얼른 ~하고 싶다",
-            example: "I can’t wait to go on this trip.",
-            koExample: "얼른 여행을 떠났으면 좋겠어."
-        ),
-        .init(
-            id: 0,
-            content: "can’t wait to ~",
-            koConent: "얼른 ~하고 싶다",
-            example: "I can’t wait to go on this trip.",
-            koExample: "얼른 여행을 떠났으면 좋겠어."
-        ),
-    ]
-    
     static var previews: some View {
         Group {
-            HomeScreenView(question: question,
-                           todayExpressions: todayExprssions, writableTodayDiary: true)
+            HomeScreenView(todayExpressionService: FakeTodayExpressionService(), 
+                           questionService: FakeQuestionService())
             HomeScreenView(question: question,
                            todayExpressions: [], writableTodayDiary: false)
         }

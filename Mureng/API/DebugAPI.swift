@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 enum HeaderKey: String {
-    case xAuthToken = "X_AUTH_TOKEN"
+    case xAuthToken = "X-AUTH-TOKEN"
 }
 
 enum NetworkError: Error {
@@ -39,7 +39,7 @@ public class BaseAPI {
                 request.addValue(value, forHTTPHeaderField: key)
             }
             let customRequest: URLRequest = customRequest(request: request)
-            MurengLogger.shared.logDebug("$$ \(urlLiteral) - request - \(customRequest.headers)")
+            MurengLogger.shared.logDebug("$$ [\(method)] \(urlLiteral) - \(customRequest.headers)")
             
             let data: Data =  try await callAPI(urlRequest: customRequest)
             MurengLogger.shared.logDebug("$$ \(urlLiteral) - data - \(String(data: data, encoding: .utf8))")
@@ -76,7 +76,7 @@ public class BaseAPI {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("", forHTTPHeaderField: HeaderKey.xAuthToken.rawValue)
         return request

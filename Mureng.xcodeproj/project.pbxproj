@@ -116,6 +116,10 @@
 		F4A74FB02A07BC33004D73A3 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = F4A74FAF2A07BC33004D73A3 /* KakaoSDKUser */; };
 		F4A86E262C8C4AC9000701D7 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F4FF15762C78741B00757EC8 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F4A86E2C2C8C4B85000701D7 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F4A86E2B2C8C4B85000701D7 /* SnapKit-Dynamic */; };
+		F4A86E342C8C5EFA000701D7 /* TestTokenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A86E332C8C5EFA000701D7 /* TestTokenApp.swift */; };
+		F4A86E362C8C5EFA000701D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A86E352C8C5EFA000701D7 /* ContentView.swift */; };
+		F4A86E382C8C5EFC000701D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A86E372C8C5EFC000701D7 /* Assets.xcassets */; };
+		F4A86E3B2C8C5EFC000701D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A86E3A2C8C5EFC000701D7 /* Preview Assets.xcassets */; };
 		F4A8CA422A76053E0019DCFE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8CA412A76053E0019DCFE /* Extension.swift */; };
 		F4ADAA032A04F91A00A55591 /* ArrowCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */; };
 		F4ADAA052A04F9D900A55591 /* ButtonSolid48.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */; };
@@ -273,6 +277,11 @@
 		F4A74FAA2A078380004D73A3 /* PutUserNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserNicknameViewController.swift; sourceTree = "<group>"; };
 		F4A74FAC2A07A1D9004D73A3 /* ButtonSoild48Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSoild48Style.swift; sourceTree = "<group>"; };
 		F4A86E282C8C4B19000701D7 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A86E312C8C5EF9000701D7 /* TestToken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestToken.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A86E332C8C5EFA000701D7 /* TestTokenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTokenApp.swift; sourceTree = "<group>"; };
+		F4A86E352C8C5EFA000701D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F4A86E372C8C5EFC000701D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4A86E3A2C8C5EFC000701D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4A8CA412A76053E0019DCFE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F4ADAA022A04F91A00A55591 /* ArrowCheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowCheckBoxView.swift; sourceTree = "<group>"; };
 		F4ADAA042A04F9D900A55591 /* ButtonSolid48.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSolid48.swift; sourceTree = "<group>"; };
@@ -344,6 +353,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A86E2E2C8C5EF9000701D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -361,7 +377,6 @@
 				2E4E555428576D0D001B5554 /* Mureng */,
 				2E4E556B28576D0F001B5554 /* MurengTests */,
 				2E4E557528576D0F001B5554 /* MurengUITests */,
-				F491F4CB2C787D45008188EE /* HomeApp */,
 				2E4E555328576D0D001B5554 /* Products */,
 				F11959C7E22CDAB82EE57E39 /* Pods */,
 				C231FADECF0DFB6CB87A037D /* Frameworks */,
@@ -375,6 +390,7 @@
 				2E4E556828576D0F001B5554 /* MurengTests.xctest */,
 				2E4E557228576D0F001B5554 /* MurengUITests.xctest */,
 				F491F4CA2C787D45008188EE /* HomeApp.app */,
+				F4A86E312C8C5EF9000701D7 /* TestToken.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -564,6 +580,8 @@
 		F4339BDB2C27CB8E00A47214 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F4A86E322C8C5EFA000701D7 /* TestToken */,
+				F491F4CB2C787D45008188EE /* HomeApp */,
 				F4339BDC2C27CB9C00A47214 /* MurengApp.swift */,
 			);
 			path = App;
@@ -626,6 +644,25 @@
 				F49F52022B534E250091684C /* ScrollViewPreferenceKey.swift */,
 			);
 			path = PreferenceKey;
+			sourceTree = "<group>";
+		};
+		F4A86E322C8C5EFA000701D7 /* TestToken */ = {
+			isa = PBXGroup;
+			children = (
+				F4A86E332C8C5EFA000701D7 /* TestTokenApp.swift */,
+				F4A86E352C8C5EFA000701D7 /* ContentView.swift */,
+				F4A86E372C8C5EFC000701D7 /* Assets.xcassets */,
+				F4A86E392C8C5EFC000701D7 /* Preview Content */,
+			);
+			path = TestToken;
+			sourceTree = "<group>";
+		};
+		F4A86E392C8C5EFC000701D7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F4A86E3A2C8C5EFC000701D7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F4B314082B91D01200E01D32 /* View */ = {
@@ -851,6 +888,23 @@
 			productReference = F491F4CA2C787D45008188EE /* HomeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F4A86E302C8C5EF9000701D7 /* TestToken */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A86E3C2C8C5EFC000701D7 /* Build configuration list for PBXNativeTarget "TestToken" */;
+			buildPhases = (
+				F4A86E2D2C8C5EF9000701D7 /* Sources */,
+				F4A86E2E2C8C5EF9000701D7 /* Frameworks */,
+				F4A86E2F2C8C5EF9000701D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestToken;
+			productName = TestToken;
+			productReference = F4A86E312C8C5EF9000701D7 /* TestToken.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -873,6 +927,9 @@
 						TestTargetID = 2E4E555128576D0D001B5554;
 					};
 					F491F4C92C787D45008188EE = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					F4A86E302C8C5EF9000701D7 = {
 						CreatedOnToolsVersion = 15.1;
 					};
 				};
@@ -899,6 +956,7 @@
 				F491F4C92C787D45008188EE /* HomeApp */,
 				2E4E556728576D0F001B5554 /* MurengTests */,
 				2E4E557128576D0F001B5554 /* MurengUITests */,
+				F4A86E302C8C5EF9000701D7 /* TestToken */,
 			);
 		};
 /* End PBXProject section */
@@ -948,6 +1006,15 @@
 				F491F4E02C787DA2008188EE /* Colors.xcassets in Resources */,
 				F491F4E42C787DCB008188EE /* Images.xcassets in Resources */,
 				F491F4D42C787D47008188EE /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A86E2F2C8C5EF9000701D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A86E3B2C8C5EFC000701D7 /* Preview Assets.xcassets in Resources */,
+				F4A86E382C8C5EFC000701D7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1230,6 +1297,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A86E2D2C8C5EF9000701D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A86E362C8C5EFA000701D7 /* ContentView.swift in Sources */,
+				F4A86E342C8C5EFA000701D7 /* TestTokenApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1399,7 +1475,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1429,7 +1505,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1532,7 +1608,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HomeApp/Preview Content\"";
 				DEVELOPMENT_TEAM = G49TCMH6D2;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1543,7 +1618,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1568,7 +1643,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HomeApp/Preview Content\"";
 				DEVELOPMENT_TEAM = G49TCMH6D2;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1579,7 +1653,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1587,6 +1661,75 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = roadtos7.HomeApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F4A86E3D2C8C5EFC000701D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = roadtos7.TestToken;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4A86E3E2C8C5EFC000701D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = roadtos7.TestToken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1638,6 +1781,15 @@
 			buildConfigurations = (
 				F491F4D62C787D47008188EE /* Debug */,
 				F491F4D72C787D47008188EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A86E3C2C8C5EFC000701D7 /* Build configuration list for PBXNativeTarget "TestToken" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A86E3D2C8C5EFC000701D7 /* Debug */,
+				F4A86E3E2C8C5EFC000701D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

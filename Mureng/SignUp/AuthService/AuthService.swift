@@ -9,7 +9,15 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
 
-enum AutServiceLoginResult: Equatable {
+enum AuthServiceError: Error {
+    /// 로그인 필요
+    case loginRequired
+    /// 알수없는 에러
+    case unknown
+    ///
+}
+
+enum AuthServiceLoginResult: Equatable {
     /// 이미 회원가입한 유저
     case authenticated
     /// 회원가입 성공한 유저
@@ -17,7 +25,7 @@ enum AutServiceLoginResult: Equatable {
     /// 로그인 실패
     case fail
     
-    static func == (lhs: AutServiceLoginResult, rhs: AutServiceLoginResult) -> Bool {
+    static func == (lhs: AuthServiceLoginResult, rhs: AuthServiceLoginResult) -> Bool {
         switch (lhs, rhs) {
         case (.authenticated, .authenticated): return true
         case (.needSignUp(let lshUser), .needSignUp(let rhsUser)): return lshUser == rhsUser
@@ -28,8 +36,8 @@ enum AutServiceLoginResult: Equatable {
 }
 
 protocol AuthenticationService {
-    func tryLogin() async -> AutServiceLoginResult
-    func loginInkServer() async -> AutServiceLoginResult
+    func tryLogin() async -> AuthServiceLoginResult
+    func loginInkServer() async -> AuthServiceLoginResult
     func isNickNameExisted(_ nickname: String) async -> Bool?
     func signUp(authServiceUser: AuthServiceUser) async -> Member?
 }
@@ -43,7 +51,7 @@ final class DummySuccessAuthService: AuthenticationService {
     
     let authServiceUser: AuthServiceUser
     let nicknameExisted: Bool
-    let loginResult: AutServiceLoginResult
+    let loginResult: AuthServiceLoginResult
     
     init(authServiceUser: AuthServiceUser, loginSuccess: Bool = true, nicknameExisted: Bool = false) {
         self.authServiceUser = authServiceUser
@@ -56,11 +64,11 @@ final class DummySuccessAuthService: AuthenticationService {
         self.init(authServiceUser: authService)
     }
     
-    func tryLogin() -> AutServiceLoginResult {
+    func tryLogin() -> AuthServiceLoginResult {
         .needSignUp(authServiceUser)
     }
     
-    func loginInkServer() async -> AutServiceLoginResult {
+    func loginInkServer() async -> AuthServiceLoginResult {
         .authenticated
     }
     
@@ -77,7 +85,7 @@ final class DefaultAuthService: AuthenticationService {
     // 없으면 -> 회원가입 -> 로그인 시도
     // 있으면 -> 로그인 시도
     
-    func tryLogin() async -> AutServiceLoginResult {
+    func tryLogin() async -> AuthServiceLoginResult {
         guard let oauthToken: OAuthToken = await getOauthToken() else {
             return .fail
         }
@@ -106,7 +114,7 @@ final class DefaultAuthService: AuthenticationService {
         return .needSignUp(authServiceUser)
     }
     
-    func loginInkServer() async -> AutServiceLoginResult {
+    func loginInkServer() async -> AuthServiceLoginResult {
         let oauthToken: OAuthToken? = await getOauthToken()
         guard let oauthToken = oauthToken else {
             return .fail

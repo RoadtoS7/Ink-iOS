@@ -13,9 +13,19 @@ protocol QuestionService {
 }
 
 struct RemoteQuestionService: QuestionService {
+    let todayQuestionAPI: TodayQuestionAPI
+    
+    init() {
+        todayQuestionAPI = TodayQuestionAPI(api: ProductionAPI())
+    }
+    
+    init(api: BaseAPI) {
+        todayQuestionAPI = TodayQuestionAPI(api: DebugAPI())
+    }
+    
     func getTodayQuestion() async -> Question {
         do {
-            let response: APIResponse<QuestionDTO> = try await TodayQuestionAPI.shared.get()
+            let response: APIResponse<QuestionDTO> = try await todayQuestionAPI.get()
             let questionDTO: QuestionDTO = response.data
             return questionDTO.asEntity()
         } catch {
@@ -25,7 +35,7 @@ struct RemoteQuestionService: QuestionService {
     
     func refreshTodayQuestion() async -> Question {
         do {
-            let response: APIResponse<QuestionDTO> = try await TodayQuestionAPI.shared.refresh()
+            let response: APIResponse<QuestionDTO> = try await todayQuestionAPI.refresh()
             let questionDTO: QuestionDTO = response.data
             return questionDTO.asEntity()
         } catch {

@@ -33,7 +33,7 @@ struct EntryView: View {
                         guard loginTask == nil else { return }
                         
                         loginTask = Task {
-                            let result: AutServiceLoginResult = await authenticationService.tryLogin()
+                            let result: AuthServiceLoginResult = await authenticationService.tryLogin()
                             switch result {
                             case .needSignUp(let userInfo):
                                 authServiceUser.fill(with: userInfo)

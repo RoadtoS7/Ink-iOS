@@ -9,15 +9,15 @@ import Foundation
 import Alamofire
 
 struct TodayExpressionDTO: Decodable {
-    let id: Int
+    let expId: Int
     let expression: String
     let meaning: String
-    let example: String
-    let exampleMeaning: String
+    let expressionExample: String
+    let expressionExampleMeaning: String
     let scrappedByRequester: Bool
     
     var englishExpression: EnglishExpression {
-        .init(id: id, content: expression, koConent: meaning, example: example, koExample: exampleMeaning)
+        .init(id: expId, content: expression, koConent: meaning, example: expressionExample, koExample: expressionExampleMeaning)
     }
 }
 
@@ -34,8 +34,11 @@ final class TodayExpressionAPI {
         let path: String = "/api/today-expression"
         let urlLiteral: String = Host.baseURL + path
         
-        
-        let response: APIResponse<TodayExpressionDTOs> = try await api.request(urlLiteral: urlLiteral, method: .get, headers: [HeaderKey.xAuthToken.rawValue:GlobalEnv.tokenStorage.accessToken])
+        let response: APIResponse<TodayExpressionDTOs> = try await api.request(
+            urlLiteral: urlLiteral,
+            method: .get,
+            headers: [HeaderKey.xAuthToken.rawValue : GlobalEnv.tokenStorage.accessToken]
+        )
         return response
     }
 }
@@ -61,11 +64,6 @@ final class DeprecatedTodayExpressionAPI: API {
         urlRequest.httpMethod = "GET"
         
         let response: APIResponse<TodayExpressionDTOs> = try await requestJsonWithURLSession(urlRequest: urlRequest)
-//        let response: APIResponse<TodayExpressionDTOs> = try await requestJSON(
-//            url,
-//            responseData: TodayExpressionDTOs.self,
-//            method: .get
-//        )
         return response
     }
 }
